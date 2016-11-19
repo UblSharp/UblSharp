@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "description": "UblSharp",
+  "authors": [ "Remco Ros" ],
+  "language": "en-US",
+  "title": "Create and parse UBL documents in C# with UblSharp.",
+  "packOptions": {
+    "tags": [ "ubl", "ublsharp" ],
+    "projectUrl": "https://github.com/remcoros/UblSharp",
+    "licenseUrl": "https://github.com/remcoros/UblSharp/blob/master/LICENSE",
+    "requireLicenseAcceptance": false
+  },
+  "dependencies": {
+    "NETStandard.Library": "1.6.0"
+  },
+  "frameworks": {
+    "net20": {
+      "frameworkAssemblies": {
+        "System.Xml": ""
+      },
+      "buildOptions": {
+        "define": [ "NET20", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT" ]
+      }
+    },
+    "net35": {
+      "frameworkAssemblies": {
+        "System.Xml": "",
+        "System.Xml.Linq": ""
+      },
+      "buildOptions": {
+        "define": [ "NET35", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
+      }
+    },
+    "net40": {
+      "frameworkAssemblies": {
+        "System.Xml": "",
+        "System.Xml.Linq": ""
+      },
+      "buildOptions": {
+        "define": [ "NET40", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
+      }
+    },
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Xml": "",
+        "System.Xml.Linq": ""
+      },
+      "buildOptions": {
+        "define": [ "NET45", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
+      }
+    },
+    "netstandard1.3": {
+      "dependencies": {
+        "System.Runtime.Serialization.Formatters": "4.3.0",
+        "System.Xml.XmlSerializer": "4.0.11",
+        "System.Xml.XmlDocument": "4.0.1"
+      },
+      "buildOptions": {
+        "define": [ "NETSTANDARD1_3", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
+      }
+    }
+  },
+  "buildOptions": {
+    "warningsAsErrors": true,
+    "xmlDoc": true,
+    "nowarn": [ "CS1591" ],
+    "optimize": true
+  },
+  "supports": {}
+}

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7855FACA-AC4B-4E98-BAB9-3BE263AADB4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UblSharp</RootNamespace>
+    <AssemblyName>UblSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <IntermediateOutputPath>obj\Debug\net35\</IntermediateOutputPath>
+    <OutputPath>bin\Debug\net35\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET35;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;FEATURE_LINQ</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <IntermediateOutputPath>obj\Debug\net35\</IntermediateOutputPath>
+    <OutputPath>bin\Release\net35\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET35;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;FEATURE_LINQ</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDocument.cs" />
+    <Compile Include="BaseDocumentExtensions.cs" />
+    <Compile Include="common\CCTS_CCT_SchemaModule-2.1.cs" />
+    <Compile Include="common\UBL-CommonAggregateComponents-2.1.cs" />
+    <Compile Include="common\UBL-CommonExtensionComponents-2.1.cs" />
+    <Compile Include="common\UBL-CommonSignatureComponents-2.1.cs" />
+    <Compile Include="common\UBL-SignatureAggregateComponents-2.1.cs" />
+    <Compile Include="common\UBL-SignatureBasicComponents-2.1.cs" />
+    <Compile Include="common\UBL-UnqualifiedDataTypes-2.1.cs" />
+    <Compile Include="common\UBL-XAdESv132-2.1.cs" />
+    <Compile Include="common\UBL-XAdESv141-2.1.cs" />
+    <Compile Include="common\UBL-xmldsig-core-schema-2.1.cs" />
+    <Compile Include="IBaseDocument.cs" />
+    <Compile Include="Internal\ExtensionAttribute.cs" />
+    <Compile Include="maindoc\UBL-ApplicationResponse-2.1.cs" />
+    <Compile Include="maindoc\UBL-AttachedDocument-2.1.cs" />
+    <Compile Include="maindoc\UBL-AwardedNotification-2.1.cs" />
+    <Compile Include="maindoc\UBL-BaseDocument-2.1.cs" />
+    <Compile Include="maindoc\UBL-BillOfLading-2.1.cs" />
+    <Compile Include="maindoc\UBL-CallForTenders-2.1.cs" />
+    <Compile Include="maindoc\UBL-Catalogue-2.1.cs" />
+    <Compile Include="maindoc\UBL-CatalogueDeletion-2.1.cs" />
+    <Compile Include="maindoc\UBL-CatalogueItemSpecificationUpdate-2.1.cs" />
+    <Compile Include="maindoc\UBL-CataloguePricingUpdate-2.1.cs" />
+    <Compile Include="maindoc\UBL-CatalogueRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-CertificateOfOrigin-2.1.cs" />
+    <Compile Include="maindoc\UBL-ContractAwardNotice-2.1.cs" />
+    <Compile Include="maindoc\UBL-ContractNotice-2.1.cs" />
+    <Compile Include="maindoc\UBL-CreditNote-2.1.cs" />
+    <Compile Include="maindoc\UBL-DebitNote-2.1.cs" />
+    <Compile Include="maindoc\UBL-DespatchAdvice-2.1.cs" />
+    <Compile Include="maindoc\UBL-DocumentStatus-2.1.cs" />
+    <Compile Include="maindoc\UBL-DocumentStatusRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-ExceptionCriteria-2.1.cs" />
+    <Compile Include="maindoc\UBL-ExceptionNotification-2.1.cs" />
+    <Compile Include="maindoc\UBL-Forecast-2.1.cs" />
+    <Compile Include="maindoc\UBL-ForecastRevision-2.1.cs" />
+    <Compile Include="maindoc\UBL-ForwardingInstructions-2.1.cs" />
+    <Compile Include="maindoc\UBL-FreightInvoice-2.1.cs" />
+    <Compile Include="maindoc\UBL-FulfilmentCancellation-2.1.cs" />
+    <Compile Include="maindoc\UBL-GoodsItemItinerary-2.1.cs" />
+    <Compile Include="maindoc\UBL-GuaranteeCertificate-2.1.cs" />
+    <Compile Include="maindoc\UBL-InstructionForReturns-2.1.cs" />
+    <Compile Include="maindoc\UBL-InventoryReport-2.1.cs" />
+    <Compile Include="maindoc\UBL-Invoice-2.1.cs" />
+    <Compile Include="maindoc\UBL-ItemInformationRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-Order-2.1.cs" />
+    <Compile Include="maindoc\UBL-OrderCancellation-2.1.cs" />
+    <Compile Include="maindoc\UBL-OrderChange-2.1.cs" />
+    <Compile Include="maindoc\UBL-OrderResponse-2.1.cs" />
+    <Compile Include="maindoc\UBL-OrderResponseSimple-2.1.cs" />
+    <Compile Include="maindoc\UBL-PackingList-2.1.cs" />
+    <Compile Include="maindoc\UBL-PriorInformationNotice-2.1.cs" />
+    <Compile Include="maindoc\UBL-ProductActivity-2.1.cs" />
+    <Compile Include="maindoc\UBL-Quotation-2.1.cs" />
+    <Compile Include="maindoc\UBL-ReceiptAdvice-2.1.cs" />
+    <Compile Include="maindoc\UBL-Reminder-2.1.cs" />
+    <Compile Include="maindoc\UBL-RemittanceAdvice-2.1.cs" />
+    <Compile Include="maindoc\UBL-RequestForQuotation-2.1.cs" />
+    <Compile Include="maindoc\UBL-RetailEvent-2.1.cs" />
+    <Compile Include="maindoc\UBL-SelfBilledCreditNote-2.1.cs" />
+    <Compile Include="maindoc\UBL-SelfBilledInvoice-2.1.cs" />
+    <Compile Include="maindoc\UBL-Statement-2.1.cs" />
+    <Compile Include="maindoc\UBL-StockAvailabilityReport-2.1.cs" />
+    <Compile Include="maindoc\UBL-Tender-2.1.cs" />
+    <Compile Include="maindoc\UBL-TendererQualification-2.1.cs" />
+    <Compile Include="maindoc\UBL-TendererQualificationResponse-2.1.cs" />
+    <Compile Include="maindoc\UBL-TenderReceipt-2.1.cs" />
+    <Compile Include="maindoc\UBL-TradeItemLocationProfile-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportationStatus-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportationStatusRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportExecutionPlan-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportExecutionPlanRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportProgressStatus-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportProgressStatusRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportServiceDescription-2.1.cs" />
+    <Compile Include="maindoc\UBL-TransportServiceDescriptionRequest-2.1.cs" />
+    <Compile Include="maindoc\UBL-UnawardedNotification-2.1.cs" />
+    <Compile Include="maindoc\UBL-UtilityStatement-2.1.cs" />
+    <Compile Include="maindoc\UBL-Waybill-2.1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UblDocument.cs" />
+    <Compile Include="UblDocumentManager.cs" />
+    <Compile Include="UnqualifiedDataTypes\DateType.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
