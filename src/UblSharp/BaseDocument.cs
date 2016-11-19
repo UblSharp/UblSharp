@@ -6,19 +6,20 @@ namespace UblSharp
 {
     public partial class BaseDocument : IBaseDocument
     {
-        private static readonly XmlSerializerNamespaces _xmlns = new XmlSerializerNamespaces(new[]
-        {
-            new XmlQualifiedName("cac", "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"),
-            new XmlQualifiedName("cbc", "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
-        });
-
         public BaseDocument()
         {
             UBLVersionID = "2.1";
         }
 
-        [EditorBrowsable(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        public static XmlSerializerNamespaces DefaultXmlns { get; set; } = new XmlSerializerNamespaces(new[]
+        {
+            new XmlQualifiedName("cac", "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"),
+            new XmlQualifiedName("cbc", "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+        });
+
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
         [XmlNamespaceDeclarations]
-        public XmlSerializerNamespaces Xmlns { get; set; } = _xmlns;
+        public XmlSerializerNamespaces Xmlns { get; set; } = DefaultXmlns;
     }
 }

@@ -49,6 +49,14 @@
         "define": [ "NET45", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
       }
     },
+    "netstandard1.1": {
+      "dependencies": {
+        "System.Xml.XmlSerializer": "4.0.11"        
+      },
+      "buildOptions": {
+        "define": [ "NETSTANDARD1_1", "FEATURE_LINQ" ]
+      }
+    },
     "netstandard1.3": {
       "dependencies": {
         "System.Runtime.Serialization.Formatters": "4.3.0",

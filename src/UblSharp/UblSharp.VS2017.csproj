@@ -57,6 +57,11 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
+    <PackageReference Include="System.Xml.XmlSerializer">
+      <Version>4.0.11</Version>
+    </PackageReference>
+  </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
     <PackageReference Include="System.Runtime.Serialization.Formatters">
       <Version>4.3.0</Version>
@@ -72,16 +77,19 @@
     <DefineConstants>$(DefineConstants);NET20;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <DefineConstants>$(DefineConstants);NET35;FEATURE_LINQ</DefineConstants>
+    <DefineConstants>$(DefineConstants);NET35;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <DefineConstants>$(DefineConstants);NET40</DefineConstants>
+    <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <DefineConstants>$(DefineConstants);NET45</DefineConstants>
+    <DefineConstants>$(DefineConstants);NET45;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_1;FEATURE_LINQ</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD1_3</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>

@@ -74,7 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KrampV21\KrampSampleTests.cs" />
-    <Compile Include="ResourceHelper.cs" />
+    <Compile Include="UseCases\CreateDocuments.cs" />
+    <Compile Include="Util\ResourceHelper.cs" />
     <Compile Include="Samples\MyTransportationStatus.cs" />
     <Compile Include="Samples\SampleTests.partial.cs" />
     <Compile Include="Samples\UBL-CreditNote-2.0-Example.cs" />

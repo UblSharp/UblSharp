@@ -1,7 +1,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace UblSharp.Tests
+namespace UblSharp.Tests.Util
 {
     public static class ResourceHelper
     {

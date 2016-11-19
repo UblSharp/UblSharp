@@ -6,6 +6,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using Microsoft.XmlDiffPatch;
+using UblSharp.Tests.Util;
 using UblSharp.UnqualifiedDataTypes;
 using Xunit.Abstractions;
 
