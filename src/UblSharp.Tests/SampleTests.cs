@@ -5,11 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using FluentAssertions;
-using FluentAssertions.Equivalency;
 using Microsoft.XmlDiffPatch;
-using Org.XmlUnit.Builder;
-using Org.XmlUnit.Diff;
 using UblSharp.UnqualifiedDataTypes;
 using Xunit.Abstractions;
 
@@ -87,23 +83,6 @@ namespace UblSharp.Tests
             using (var fileReader = CreateReaderForSampleDocument2(sampleDocument))
             using (var docReader = CreateReaderForDoc2(ublDocument))
             {
-                //var diff = DiffBuilder
-                //    .Compare(Input.FromStream(fileReader))
-                //    .IgnoreComments()
-                //    .IgnoreWhitespace()
-                //    .CheckForSimilar()
-                //    .WithComparisonFormatter(new DefaultComparisonFormatter())
-                //    .WithTest(Input.FromStream(docReader))
-                //    .Build();
-                //if (diff.HasDifferences())
-                //{
-                //    output.WriteLine(diff.ToString());
-                //}
-                //else
-                //{
-                //    areEqual = true;
-                //}
-
                 var options = XmlDiffOptions.IgnoreComments | XmlDiffOptions.IgnoreWhitespace | XmlDiffOptions.IgnoreNamespaces | XmlDiffOptions.IgnorePI | XmlDiffOptions.IgnoreXmlDecl;
                 var xmlDiff = new XmlDiff(options);
 
