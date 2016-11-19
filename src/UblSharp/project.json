@@ -11,7 +11,7 @@
     "requireLicenseAcceptance": false
   },
   "dependencies": {
-    "NETStandard.Library": "1.6.0"
+    "NETStandard.Library": "1.6.1"
   },
   "frameworks": {
     "net20": {
@@ -52,8 +52,8 @@
     "netstandard1.3": {
       "dependencies": {
         "System.Runtime.Serialization.Formatters": "4.3.0",
-        "System.Xml.XmlSerializer": "4.0.11",
-        "System.Xml.XmlDocument": "4.0.1"
+        "System.Xml.XmlSerializer": "4.3.0",
+        "System.Xml.XmlDocument": "4.3.0"
       },
       "buildOptions": {
         "define": [ "NETSTANDARD1_3", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ" ]
