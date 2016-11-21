@@ -4,11 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace UblSharp.Tests.Generator
 {
+
     // simple recursive code generator
     public class XmlToCs
     {
@@ -21,6 +23,7 @@ using UblSharp.CommonAggregateComponents;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.UnqualifiedDataTypes;
 using UblSharp.XmlDigitalSignature;
+using UblSharp.Tests.Util;
 
 namespace UblSharp.Tests.Samples
 {{
@@ -129,12 +132,12 @@ namespace UblSharp.Tests.Samples
                     if (xmlElementName == "UBLExtension")
                     {
                         // Don't know how to handle this one yet. ExtensionContent = "new XElement.Parse(something)"? or change ExtensionContent to object with xmltypeattributes
-                        HasExtensionsOrSignature = true;
-                        continue;
+                        // HasExtensionsOrSignature = true;
+                        // continue;
                     }
                     if (xmlElementName == "Signature" || xmlElementName == "UBLExtensions")
                     {
-                        HasExtensionsOrSignature = true;
+                        // HasExtensionsOrSignature = true;
                     }
 
                     PropertyInfo propInfo = GetPropertyThatMightBeRenamed(propType, xmlElementName);
@@ -161,7 +164,17 @@ namespace UblSharp.Tests.Samples
                              && propInfo.PropertyType.GetGenericTypeDefinition() == typeof(List<>))
                     {
                         var elType = propInfo.PropertyType.GenericTypeArguments[0];
-                        GenerateNewListStatement(elem.ToArray(), propInfo.PropertyType, tabLevel + 1, ",");
+                        var elements = elem.ToArray();
+                        var extensionElement = elements.FirstOrDefault();
+                        if (extensionElement?.Name.LocalName == "UBLExtensions")
+                        {
+                            elements = extensionElement.Elements().ToArray();
+                        }
+                        GenerateNewListStatement(elements, propInfo.PropertyType, tabLevel + 1, ",");
+                    }
+                    else if (propInfo.PropertyType.Name == "XmlElement")
+                    {
+                        GenerateXmlElementAssignmentValue(elem.First(), propInfo.PropertyType, tabLevel + 1, localDelimiter);
                     }
                     else
                     {
@@ -246,6 +259,17 @@ namespace UblSharp.Tests.Samples
                 GenerateNewClassStatement(item, elType, tabLevel + 1, localDelimiter);
             }
             WriteLine(tabLevel, $"}}{delimiter}");
+        }
+
+        private void GenerateXmlElementAssignmentValue(XElement xElement, Type propertyType, int tabLevel, string delimiter)
+        {
+            string innerXml;
+            using (var rdr = xElement.CreateReader())
+            {
+                rdr.MoveToContent();
+                innerXml = rdr.ReadInnerXml();
+            }
+            WriteLine(0, $@"@""{innerXml.Replace("\"", "\"\"")}"".ToXmlElement()");
         }
 
         private void GeneratePropertyAssignmentValue(XElement xElement, Type propertyType, int tabLevel, string delimiter)

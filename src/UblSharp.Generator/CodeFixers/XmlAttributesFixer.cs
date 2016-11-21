@@ -9,9 +9,11 @@ namespace UblSharp.Generator.CodeFixers
     {
         private readonly string[] _attributesToRemove = { "System.ComponentModel.DesignerCategoryAttribute", "System.CodeDom.Compiler.GeneratedCodeAttribute" };
 
+        protected CodeTypeDeclaration CurrentType { get; set; }
+
         protected override void VisitType(CodeTypeDeclaration type)
         {
-            var typeName = type.Name;
+            CurrentType = type;
             var attributes = type.CustomAttributes.Cast<CodeAttributeDeclaration>().ToList();
 
             foreach (var attributeName in _attributesToRemove)
@@ -103,6 +105,26 @@ namespace UblSharp.Generator.CodeFixers
                         xmlElAttr.Arguments.Insert(0, new CodeAttributeArgument(new CodePrimitiveExpression(member.Name)));
                     }
                 }
+
+                xmlElAttr = attributes.FirstOrDefault(x => x.Name == "System.Xml.Serialization.XmlArrayAttribute");
+                if (xmlElAttr != null)
+                {
+                    var arg = xmlElAttr.Arguments.Cast<CodeAttributeArgument>().FirstOrDefault(x => x.Name == "" || x.Name == "Name");
+                    if (arg == null)
+                    {
+                        xmlElAttr.Arguments.Insert(0, new CodeAttributeArgument(new CodePrimitiveExpression(member.Name)));
+                    }
+                }
+            }
+
+            // Ignore Value of TimeType
+            if ((CurrentType.Name == "TimeType" || CurrentType.Name == "DateType")
+                && member.Name == "Value")
+            {
+                var attr = attributes.Single(x => x.Name == "System.Xml.Serialization.XmlTextAttribute");
+                member.CustomAttributes.Remove(attr);
+                member.CustomAttributes.Add(new CodeAttributeDeclaration("System.Xml.Serialization.XmlIgnoreAttribute"));
+                member.Type = new CodeTypeReference(typeof(System.DateTimeOffset));
             }
 
             base.VisitField(member);

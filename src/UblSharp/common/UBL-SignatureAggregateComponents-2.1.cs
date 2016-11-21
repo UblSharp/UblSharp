@@ -29,15 +29,15 @@ namespace UblSharp.SignatureAggregateComponents
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IdentifierType @__ID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReferencedSignatureID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ReferencedSignatureID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2", Order=1)]
         public ReferencedSignatureIDType @__ReferencedSignatureID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=2)]
         public XmlSignatureType @__Signature;
         
         /// <summary>
@@ -64,6 +64,7 @@ namespace UblSharp.SignatureAggregateComponents
             }
         }
 
+        
         /// <summary>
         /// This associates this signature with the identifier of a signature business object in the document.
         /// <para />ComponentType: BBIE
@@ -88,6 +89,7 @@ namespace UblSharp.SignatureAggregateComponents
             }
         }
 
+        
         /// <summary>
         /// This is a single digital signature as defined by the W3C specification.
         /// </summary>

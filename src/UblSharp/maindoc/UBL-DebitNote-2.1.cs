@@ -25,172 +25,772 @@ namespace UblSharp
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("DebitNote", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2")]
     [System.Xml.Serialization.XmlRootAttribute("DebitNote", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2", IsNullable=false)]
-    public partial class DebitNoteType : BaseDocument
+    public partial class DebitNoteType : BaseDocument, IBaseDocument
     {
         
+        [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
+        public UBLExtensionType[] @__UBLExtensions
+        {
+            get
+            {
+                return UBLExtensions?.ToArray();
+            }
+            set
+            {
+                UBLExtensions = value == null ? null : new System.Collections.Generic.List<UBLExtensionType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UBLVersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public IdentifierType @__UBLVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CustomizationID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
+        public IdentifierType @__CustomizationID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
+        public IdentifierType @__ProfileID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileExecutionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
+        public IdentifierType @__ProfileExecutionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public IndicatorType @__CopyIndicator;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
+        public IdentifierType @__UUID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public DateType @__IssueDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public TimeType @__IssueTime;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Note;
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
+        public TextType[] @__Note
+        {
+            get
+            {
+                return Note?.ToArray();
+            }
+            set
+            {
+                Note = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxPointDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxPointDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public DateType @__TaxPointDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public CodeType @__DocumentCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
         public CodeType @__TaxCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PricingCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PricingCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
         public CodeType @__PricingCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=15)]
         public CodeType @__PaymentCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentAlternativeCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentAlternativeCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=16)]
         public CodeType @__PaymentAlternativeCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCostCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCostCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=17)]
         public CodeType @__AccountingCostCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCost", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCost", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=18)]
         public TextType @__AccountingCost;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=19)]
         public NumericType @__LineCountNumeric;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PeriodType> @__InvoicePeriod;
+        [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
+        public PeriodType[] @__InvoicePeriod
+        {
+            get
+            {
+                return InvoicePeriod?.ToArray();
+            }
+            set
+            {
+                InvoicePeriod = value == null ? null : new System.Collections.Generic.List<PeriodType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("DiscrepancyResponse", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
+        public ResponseType[] @__DiscrepancyResponse
+        {
+            get
+            {
+                return DiscrepancyResponse?.ToArray();
+            }
+            set
+            {
+                DiscrepancyResponse = value == null ? null : new System.Collections.Generic.List<ResponseType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DiscrepancyResponse", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<ResponseType> @__DiscrepancyResponse;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OrderReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("OrderReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public OrderReferenceType @__OrderReference;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BillingReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<BillingReferenceType> @__BillingReference;
+        [System.Xml.Serialization.XmlElementAttribute("BillingReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
+        public BillingReferenceType[] @__BillingReference
+        {
+            get
+            {
+                return BillingReference?.ToArray();
+            }
+            set
+            {
+                BillingReference = value == null ? null : new System.Collections.Generic.List<BillingReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("DespatchDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
+        public DocumentReferenceType[] @__DespatchDocumentReference
+        {
+            get
+            {
+                return DespatchDocumentReference?.ToArray();
+            }
+            set
+            {
+                DespatchDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("ReceiptDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=25)]
+        public DocumentReferenceType[] @__ReceiptDocumentReference
+        {
+            get
+            {
+                return ReceiptDocumentReference?.ToArray();
+            }
+            set
+            {
+                ReceiptDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("StatementDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=26)]
+        public DocumentReferenceType[] @__StatementDocumentReference
+        {
+            get
+            {
+                return StatementDocumentReference?.ToArray();
+            }
+            set
+            {
+                StatementDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("ContractDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=27)]
+        public DocumentReferenceType[] @__ContractDocumentReference
+        {
+            get
+            {
+                return ContractDocumentReference?.ToArray();
+            }
+            set
+            {
+                ContractDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=28)]
+        public DocumentReferenceType[] @__AdditionalDocumentReference
+        {
+            get
+            {
+                return AdditionalDocumentReference?.ToArray();
+            }
+            set
+            {
+                AdditionalDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=29)]
+        public SignatureType[] @__Signature
+        {
+            get
+            {
+                return Signature?.ToArray();
+            }
+            set
+            {
+                Signature = value == null ? null : new System.Collections.Generic.List<SignatureType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DespatchDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__DespatchDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReceiptDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__ReceiptDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("StatementDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__StatementDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ContractDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__ContractDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__AdditionalDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=30)]
         public SupplierPartyType @__AccountingSupplierParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=31)]
         public CustomerPartyType @__AccountingCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PayeeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PayeeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=32)]
         public PartyType @__PayeeParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=33)]
         public CustomerPartyType @__BuyerCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=34)]
         public SupplierPartyType @__SellerSupplierParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxRepresentativeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxRepresentativeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=35)]
         public PartyType @__TaxRepresentativeParty;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PrepaidPayment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PaymentType> @__PrepaidPayment;
+        [System.Xml.Serialization.XmlElementAttribute("PrepaidPayment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=36)]
+        public PaymentType[] @__PrepaidPayment
+        {
+            get
+            {
+                return PrepaidPayment?.ToArray();
+            }
+            set
+            {
+                PrepaidPayment = value == null ? null : new System.Collections.Generic.List<PaymentType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=37)]
+        public AllowanceChargeType[] @__AllowanceCharge
+        {
+            get
+            {
+                return AllowanceCharge?.ToArray();
+            }
+            set
+            {
+                AllowanceCharge = value == null ? null : new System.Collections.Generic.List<AllowanceChargeType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Delivery", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=38)]
+        public DeliveryType[] @__Delivery
+        {
+            get
+            {
+                return Delivery?.ToArray();
+            }
+            set
+            {
+                Delivery = value == null ? null : new System.Collections.Generic.List<DeliveryType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=39)]
+        public DeliveryTermsType[] @__DeliveryTerms
+        {
+            get
+            {
+                return DeliveryTerms?.ToArray();
+            }
+            set
+            {
+                DeliveryTerms = value == null ? null : new System.Collections.Generic.List<DeliveryTermsType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=40)]
+        public PaymentMeansType[] @__PaymentMeans
+        {
+            get
+            {
+                return PaymentMeans?.ToArray();
+            }
+            set
+            {
+                PaymentMeans = value == null ? null : new System.Collections.Generic.List<PaymentMeansType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=41)]
+        public PaymentTermsType[] @__PaymentTerms
+        {
+            get
+            {
+                return PaymentTerms?.ToArray();
+            }
+            set
+            {
+                PaymentTerms = value == null ? null : new System.Collections.Generic.List<PaymentTermsType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<AllowanceChargeType> @__AllowanceCharge;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Delivery", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DeliveryType> @__Delivery;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DeliveryTermsType> @__DeliveryTerms;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PaymentMeansType> @__PaymentMeans;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PaymentTermsType> @__PaymentTerms;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=42)]
         public ExchangeRateType @__TaxExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PricingExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PricingExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=43)]
         public ExchangeRateType @__PricingExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=44)]
         public ExchangeRateType @__PaymentExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentAlternativeExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentAlternativeExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=45)]
         public ExchangeRateType @__PaymentAlternativeExchangeRate;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<TaxTotalType> @__TaxTotal;
+        [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=46)]
+        public TaxTotalType[] @__TaxTotal
+        {
+            get
+            {
+                return TaxTotal?.ToArray();
+            }
+            set
+            {
+                TaxTotal = value == null ? null : new System.Collections.Generic.List<TaxTotalType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("RequestedMonetaryTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("RequestedMonetaryTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=47)]
         public MonetaryTotalType @__RequestedMonetaryTotal;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DebitNoteLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DebitNoteLineType> @__DebitNoteLine;
+        [System.Xml.Serialization.XmlElementAttribute("DebitNoteLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=48)]
+        public DebitNoteLineType[] @__DebitNoteLine
+        {
+            get
+            {
+                return DebitNoteLine?.ToArray();
+            }
+            set
+            {
+                DebitNoteLine = value == null ? null : new System.Collections.Generic.List<DebitNoteLineType>(value);
+            }
+        }
+        
+        /// <summary>
+        /// A container for all extensions present in the document.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<UBLExtensionType> IBaseDocument.UBLExtensions { get; set; }
+
+        
+        /// <summary>
+        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. Note. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Note
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Note { get; set; }
+
+        
+        /// <summary>
+        /// A period (rather than a specific invoice) associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Invoice_ Period. Period
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Invoice
+        /// <para />PropertyTerm: Period
+        /// <para />AssociatedObjectClass: Period
+        /// <para />RepresentationTerm: Period
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PeriodType> InvoicePeriod { get; set; }
+
+        
+        /// <summary>
+        /// A reason for the Debit Note as a whole.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Discrepancy_ Response. Response
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Discrepancy
+        /// <para />PropertyTerm: Response
+        /// <para />AssociatedObjectClass: Response
+        /// <para />RepresentationTerm: Response
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ResponseType> DiscrepancyResponse { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a billing document associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Billing Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Billing Reference
+        /// <para />AssociatedObjectClass: Billing Reference
+        /// <para />RepresentationTerm: Billing Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<BillingReferenceType> BillingReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a Despatch Advice associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Despatch_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Despatch
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> DespatchDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a Receipt Advice associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Receipt_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Receipt
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> ReceiptDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a Statement associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Statement_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Statement
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> StatementDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a contract associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Contract_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Contract
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> ContractDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to an additional document associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Additional_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Additional
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A signature applied to this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Signature
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Signature
+        /// <para />AssociatedObjectClass: Signature
+        /// <para />RepresentationTerm: Signature
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<SignatureType> IBaseDocument.Signature { get; set; }
+
+        
+        /// <summary>
+        /// A prepaid payment.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Prepaid_ Payment. Payment
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTermQualifier: Prepaid
+        /// <para />PropertyTerm: Payment
+        /// <para />AssociatedObjectClass: Payment
+        /// <para />RepresentationTerm: Payment
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PaymentType> PrepaidPayment { get; set; }
+
+        
+        /// <summary>
+        /// A discount or charge that applies to a price component.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Allowance Charge
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Allowance Charge
+        /// <para />AssociatedObjectClass: Allowance Charge
+        /// <para />RepresentationTerm: Allowance Charge
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AllowanceChargeType> AllowanceCharge { get; set; }
+
+        
+        /// <summary>
+        /// A delivery associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Delivery
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Delivery
+        /// <para />AssociatedObjectClass: Delivery
+        /// <para />RepresentationTerm: Delivery
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DeliveryType> Delivery { get; set; }
+
+        
+        /// <summary>
+        /// A set of delivery terms associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Delivery Terms
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Delivery Terms
+        /// <para />AssociatedObjectClass: Delivery Terms
+        /// <para />RepresentationTerm: Delivery Terms
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DeliveryTermsType> DeliveryTerms { get; set; }
+
+        
+        /// <summary>
+        /// Expected means of payment.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Payment Means
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Payment Means
+        /// <para />AssociatedObjectClass: Payment Means
+        /// <para />RepresentationTerm: Payment Means
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PaymentMeansType> PaymentMeans { get; set; }
+
+        
+        /// <summary>
+        /// A set of payment terms associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Payment Terms
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Payment Terms
+        /// <para />AssociatedObjectClass: Payment Terms
+        /// <para />RepresentationTerm: Payment Terms
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PaymentTermsType> PaymentTerms { get; set; }
+
+        
+        /// <summary>
+        /// The total amount of a specific type of tax.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Tax Total
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Tax Total
+        /// <para />AssociatedObjectClass: Tax Total
+        /// <para />RepresentationTerm: Tax Total
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TaxTotalType> TaxTotal { get; set; }
+
+        
+        /// <summary>
+        /// A Debit Note line.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Debit Note. Debit Note Line
+        /// <para />Cardinality: 1..n
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Debit Note Line
+        /// <para />AssociatedObjectClass: Debit Note Line
+        /// <para />RepresentationTerm: Debit Note Line
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DebitNoteLineType> DebitNoteLine { get; set; }
+
+        
+        /// <summary>
+        /// Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. UBL Version Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: UBL Version Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>2.0.5</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UBLVersionID
+        {
+            get
+            {
+                if (__UBLVersionID == null) { __UBLVersionID = new IdentifierType(); }
+                return __UBLVersionID;
+            }
+            set
+            {
+                __UBLVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined customization of UBL for a specific use.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. Customization Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Customization Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>NES</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.CustomizationID
+        {
+            get
+            {
+                if (__CustomizationID == null) { __CustomizationID = new IdentifierType(); }
+                return __CustomizationID;
+            }
+            set
+            {
+                __CustomizationID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined profile of the customization of UBL being used.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. Profile Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Profile Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BasicProcurementProcess</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileID
+        {
+            get
+            {
+                if (__ProfileID == null) { __ProfileID = new IdentifierType(); }
+                return __ProfileID;
+            }
+            set
+            {
+                __ProfileID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. Profile Execution Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Profile Execution Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BPP-1001</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileExecutionID
+        {
+            get
+            {
+                if (__ProfileExecutionID == null) { __ProfileExecutionID = new IdentifierType(); }
+                return __ProfileExecutionID;
+            }
+            set
+            {
+                __ProfileExecutionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An identifier for this document, assigned by the sender.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. Identifier
+        /// <para />Cardinality: 1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
         
         /// <summary>
         /// Indicates whether this document is a copy (true) or not (false).
@@ -217,6 +817,32 @@ namespace UblSharp
             }
         }
 
+        
+        /// <summary>
+        /// A universally unique identifier for an instance of this document.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Debit Note. UUID. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Debit Note
+        /// <para />PropertyTerm: UUID
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UUID
+        {
+            get
+            {
+                if (__UUID == null) { __UUID = new IdentifierType(); }
+                return __UUID;
+            }
+            set
+            {
+                __UUID = value;
+            }
+        }
+
+        
         /// <summary>
         /// The date, assigned by the sender, on which this document was issued.
         /// <para />ComponentType: BBIE
@@ -241,6 +867,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the sender, at which this document was issued.
         /// <para />ComponentType: BBIE
@@ -265,30 +892,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Debit Note. Note. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Note
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Note
-        {
-            get
-            {
-                if (__Note == null) { __Note = new System.Collections.Generic.List<TextType>(); }
-                return __Note;
-            }
-            set
-            {
-                __Note = value;
-            }
-        }
-
+        
         /// <summary>
         /// The date of the Debit Note, used to indicate the point at which tax becomes applicable.
         /// <para />ComponentType: BBIE
@@ -313,6 +917,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the default currency for this document.
         /// <para />ComponentType: BBIE
@@ -339,6 +944,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the currency used for tax amounts in the Debit Note.
         /// <para />ComponentType: BBIE
@@ -365,6 +971,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the currency used for prices in the Debit Note.
         /// <para />ComponentType: BBIE
@@ -391,6 +998,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the currency used for payment in the Debit Note.
         /// <para />ComponentType: BBIE
@@ -417,6 +1025,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the alternative currency used for payment in the Debit Note.
         /// <para />ComponentType: BBIE
@@ -443,6 +1052,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The Buyer&apos;s accounting code, applied to the Credit Note as a whole.
         /// <para />ComponentType: BBIE
@@ -467,6 +1077,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The Buyer&apos;s accounting code, applied to the Credit Note as a whole, expressed as text.
         /// <para />ComponentType: BBIE
@@ -491,6 +1102,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The number of Debit Note Lines in this document.
         /// <para />ComponentType: BBIE
@@ -515,56 +1127,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A period (rather than a specific invoice) associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Invoice_ Period. Period
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Invoice
-        /// <para />PropertyTerm: Period
-        /// <para />AssociatedObjectClass: Period
-        /// <para />RepresentationTerm: Period
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PeriodType> InvoicePeriod
-        {
-            get
-            {
-                if (__InvoicePeriod == null) { __InvoicePeriod = new System.Collections.Generic.List<PeriodType>(); }
-                return __InvoicePeriod;
-            }
-            set
-            {
-                __InvoicePeriod = value;
-            }
-        }
-
-        /// <summary>
-        /// A reason for the Debit Note as a whole.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Discrepancy_ Response. Response
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Discrepancy
-        /// <para />PropertyTerm: Response
-        /// <para />AssociatedObjectClass: Response
-        /// <para />RepresentationTerm: Response
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ResponseType> DiscrepancyResponse
-        {
-            get
-            {
-                if (__DiscrepancyResponse == null) { __DiscrepancyResponse = new System.Collections.Generic.List<ResponseType>(); }
-                return __DiscrepancyResponse;
-            }
-            set
-            {
-                __DiscrepancyResponse = value;
-            }
-        }
-
+        
         /// <summary>
         /// A reference to an Order with which this Debit Note is associated.
         /// <para />ComponentType: ASBIE
@@ -589,155 +1152,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A reference to a billing document associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Billing Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Billing Reference
-        /// <para />AssociatedObjectClass: Billing Reference
-        /// <para />RepresentationTerm: Billing Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<BillingReferenceType> BillingReference
-        {
-            get
-            {
-                if (__BillingReference == null) { __BillingReference = new System.Collections.Generic.List<BillingReferenceType>(); }
-                return __BillingReference;
-            }
-            set
-            {
-                __BillingReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to a Despatch Advice associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Despatch_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Despatch
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> DespatchDocumentReference
-        {
-            get
-            {
-                if (__DespatchDocumentReference == null) { __DespatchDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __DespatchDocumentReference;
-            }
-            set
-            {
-                __DespatchDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to a Receipt Advice associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Receipt_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Receipt
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> ReceiptDocumentReference
-        {
-            get
-            {
-                if (__ReceiptDocumentReference == null) { __ReceiptDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __ReceiptDocumentReference;
-            }
-            set
-            {
-                __ReceiptDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to a Statement associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Statement_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Statement
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> StatementDocumentReference
-        {
-            get
-            {
-                if (__StatementDocumentReference == null) { __StatementDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __StatementDocumentReference;
-            }
-            set
-            {
-                __StatementDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to a contract associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Contract_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Contract
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> ContractDocumentReference
-        {
-            get
-            {
-                if (__ContractDocumentReference == null) { __ContractDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __ContractDocumentReference;
-            }
-            set
-            {
-                __ContractDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to an additional document associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Additional_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Additional
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference
-        {
-            get
-            {
-                if (__AdditionalDocumentReference == null) { __AdditionalDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __AdditionalDocumentReference;
-            }
-            set
-            {
-                __AdditionalDocumentReference = value;
-            }
-        }
-
+        
         /// <summary>
         /// The accounting supplier party.
         /// <para />ComponentType: ASBIE
@@ -763,6 +1178,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The accounting customer party.
         /// <para />ComponentType: ASBIE
@@ -788,6 +1204,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The payee.
         /// <para />ComponentType: ASBIE
@@ -813,6 +1230,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The buyer.
         /// <para />ComponentType: ASBIE
@@ -838,6 +1256,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The seller.
         /// <para />ComponentType: ASBIE
@@ -863,6 +1282,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The tax representative.
         /// <para />ComponentType: ASBIE
@@ -888,151 +1308,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A prepaid payment.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Prepaid_ Payment. Payment
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTermQualifier: Prepaid
-        /// <para />PropertyTerm: Payment
-        /// <para />AssociatedObjectClass: Payment
-        /// <para />RepresentationTerm: Payment
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PaymentType> PrepaidPayment
-        {
-            get
-            {
-                if (__PrepaidPayment == null) { __PrepaidPayment = new System.Collections.Generic.List<PaymentType>(); }
-                return __PrepaidPayment;
-            }
-            set
-            {
-                __PrepaidPayment = value;
-            }
-        }
-
-        /// <summary>
-        /// A discount or charge that applies to a price component.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Allowance Charge
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Allowance Charge
-        /// <para />AssociatedObjectClass: Allowance Charge
-        /// <para />RepresentationTerm: Allowance Charge
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<AllowanceChargeType> AllowanceCharge
-        {
-            get
-            {
-                if (__AllowanceCharge == null) { __AllowanceCharge = new System.Collections.Generic.List<AllowanceChargeType>(); }
-                return __AllowanceCharge;
-            }
-            set
-            {
-                __AllowanceCharge = value;
-            }
-        }
-
-        /// <summary>
-        /// A delivery associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Delivery
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Delivery
-        /// <para />AssociatedObjectClass: Delivery
-        /// <para />RepresentationTerm: Delivery
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DeliveryType> Delivery
-        {
-            get
-            {
-                if (__Delivery == null) { __Delivery = new System.Collections.Generic.List<DeliveryType>(); }
-                return __Delivery;
-            }
-            set
-            {
-                __Delivery = value;
-            }
-        }
-
-        /// <summary>
-        /// A set of delivery terms associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Delivery Terms
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Delivery Terms
-        /// <para />AssociatedObjectClass: Delivery Terms
-        /// <para />RepresentationTerm: Delivery Terms
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DeliveryTermsType> DeliveryTerms
-        {
-            get
-            {
-                if (__DeliveryTerms == null) { __DeliveryTerms = new System.Collections.Generic.List<DeliveryTermsType>(); }
-                return __DeliveryTerms;
-            }
-            set
-            {
-                __DeliveryTerms = value;
-            }
-        }
-
-        /// <summary>
-        /// Expected means of payment.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Payment Means
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Payment Means
-        /// <para />AssociatedObjectClass: Payment Means
-        /// <para />RepresentationTerm: Payment Means
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PaymentMeansType> PaymentMeans
-        {
-            get
-            {
-                if (__PaymentMeans == null) { __PaymentMeans = new System.Collections.Generic.List<PaymentMeansType>(); }
-                return __PaymentMeans;
-            }
-            set
-            {
-                __PaymentMeans = value;
-            }
-        }
-
-        /// <summary>
-        /// A set of payment terms associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Payment Terms
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Payment Terms
-        /// <para />AssociatedObjectClass: Payment Terms
-        /// <para />RepresentationTerm: Payment Terms
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PaymentTermsType> PaymentTerms
-        {
-            get
-            {
-                if (__PaymentTerms == null) { __PaymentTerms = new System.Collections.Generic.List<PaymentTermsType>(); }
-                return __PaymentTerms;
-            }
-            set
-            {
-                __PaymentTerms = value;
-            }
-        }
-
+        
         /// <summary>
         /// The exchange rate between the document currency and the tax currency.
         /// <para />ComponentType: ASBIE
@@ -1058,6 +1334,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the pricing currency.
         /// <para />ComponentType: ASBIE
@@ -1083,6 +1360,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the payment currency.
         /// <para />ComponentType: ASBIE
@@ -1108,6 +1386,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the payment alternative currency.
         /// <para />ComponentType: ASBIE
@@ -1133,30 +1412,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// The total amount of a specific type of tax.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Tax Total
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Tax Total
-        /// <para />AssociatedObjectClass: Tax Total
-        /// <para />RepresentationTerm: Tax Total
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TaxTotalType> TaxTotal
-        {
-            get
-            {
-                if (__TaxTotal == null) { __TaxTotal = new System.Collections.Generic.List<TaxTotalType>(); }
-                return __TaxTotal;
-            }
-            set
-            {
-                __TaxTotal = value;
-            }
-        }
-
+        
         /// <summary>
         /// The total amount payable on the Debit Note, including allowances, charges, and taxes.
         /// <para />ComponentType: ASBIE
@@ -1179,30 +1435,6 @@ namespace UblSharp
             set
             {
                 __RequestedMonetaryTotal = value;
-            }
-        }
-
-        /// <summary>
-        /// A Debit Note line.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Debit Note. Debit Note Line
-        /// <para />Cardinality: 1..n
-        /// <para />ObjectClass: Debit Note
-        /// <para />PropertyTerm: Debit Note Line
-        /// <para />AssociatedObjectClass: Debit Note Line
-        /// <para />RepresentationTerm: Debit Note Line
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DebitNoteLineType> DebitNoteLine
-        {
-            get
-            {
-                if (__DebitNoteLine == null) { __DebitNoteLine = new System.Collections.Generic.List<DebitNoteLineType>(); }
-                return __DebitNoteLine;
-            }
-            set
-            {
-                __DebitNoteLine = value;
             }
         }
 

@@ -20,11 +20,11 @@ namespace UblSharp.Xades
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=0)]
         public DigestMethodType @__DigestMethod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestValue", Namespace = "http://www.w3.org/2000/09/xmldsig#", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("DigestValue", Namespace = "http://www.w3.org/2000/09/xmldsig#", DataType="base64Binary", Order=1)]
         public byte[] @__DigestValue;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -49,6 +49,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] DigestValue
         {
@@ -62,6 +63,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -75,6 +77,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string URI
         {
@@ -123,6 +126,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool referencedData
         {
@@ -136,6 +140,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool referencedDataSpecified
         {
@@ -161,38 +166,50 @@ namespace UblSharp.Xades
     public abstract partial class GenericTimeStampType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType))]
+        [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType))]
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=1)]
         public CanonicalizationMethodType @__CanonicalizationMethod;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType))]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType), Order=2)]
         [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType))]
-        public System.Collections.Generic.List<object> @__Items1;
+        public object[] @__Items1
+        {
+            get
+            {
+                return Items1?.ToArray();
+            }
+            set
+            {
+                Items1 = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items1 { get; set; }
+
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public CanonicalizationMethodType CanonicalizationMethod
         {
@@ -207,20 +224,7 @@ namespace UblSharp.Xades
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items1
-        {
-            get
-            {
-                if (__Items1 == null) { __Items1 = new System.Collections.Generic.List<object>(); }
-                return __Items1;
-            }
-            set
-            {
-                __Items1 = value;
-            }
-        }
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -266,6 +270,7 @@ namespace UblSharp.Xades
              return value.Value;
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -279,6 +284,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Encoding
         {
@@ -292,6 +298,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Value
         {
@@ -315,78 +322,75 @@ namespace UblSharp.Xades
     public partial class AnyType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> @__Any;
+        public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> @__Any;
+        public System.Xml.Linq.XNode[] @__Any
 #else
-        public System.Collections.Generic.List<object> @__Any;
+        public object[] @__Any
 #endif
+        {
+            get
+            {
+                return Any?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlNode>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XNode>(value);
+#else
+                Any = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlAttribute> @__AnyAttr;
+        public System.Xml.XmlAttribute[] @__AnyAttr
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XAttribute> @__AnyAttr;
+        public System.Xml.Linq.XAttribute[] @__AnyAttr
 #else
-        public System.Collections.Generic.List<object> @__AnyAttr;
+        public object[] @__AnyAttr
 #endif
+        {
+            get
+            {
+                return AnyAttr?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                AnyAttr = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlAttribute>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                AnyAttr = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XAttribute>(value);
+#else
+                AnyAttr = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> Any
+        public System.Collections.Generic.List<System.Xml.XmlNode> Any { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any
+        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any { get; set; }
 #else
-        public System.Collections.Generic.List<object> Any
+        public System.Collections.Generic.List<object> Any { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.XmlNode>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.Linq.XNode>(); }
-#else
-                if (__Any == null) { __Any = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Any;
-            }
-            set
-            {
-                __Any = value;
-            }
-        }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlAttribute> AnyAttr
+        public System.Collections.Generic.List<System.Xml.XmlAttribute> AnyAttr { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XAttribute> AnyAttr
+        public System.Collections.Generic.List<System.Xml.Linq.XAttribute> AnyAttr { get; set; }
 #else
-        public System.Collections.Generic.List<object> AnyAttr
+        public System.Collections.Generic.List<object> AnyAttr { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__AnyAttr == null) { __AnyAttr = new System.Collections.Generic.List<System.Xml.XmlAttribute>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__AnyAttr == null) { __AnyAttr = new System.Collections.Generic.List<System.Xml.Linq.XAttribute>(); }
-#else
-                if (__AnyAttr == null) { __AnyAttr = new System.Collections.Generic.List<object>(); }
-#endif
-                return __AnyAttr;
-            }
-            set
-            {
-                __AnyAttr = value;
-            }
-        }
 
     }
     
@@ -407,64 +411,61 @@ namespace UblSharp.Xades
     public partial class RevocationValuesType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedCRLValue", IsNullable=false)]
-        public System.Collections.Generic.List<EncapsulatedPKIDataType> @__CRLValues;
+        public EncapsulatedPKIDataType[] @__CRLValues
+        {
+            get
+            {
+                return CRLValues?.ToArray();
+            }
+            set
+            {
+                CRLValues = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedOCSPValue", IsNullable=false)]
-        public System.Collections.Generic.List<EncapsulatedPKIDataType> @__OCSPValues;
+        public EncapsulatedPKIDataType[] @__OCSPValues
+        {
+            get
+            {
+                return OCSPValues?.ToArray();
+            }
+            set
+            {
+                OCSPValues = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("OtherValue", IsNullable=false)]
-        public System.Collections.Generic.List<AnyType> @__OtherValues;
+        public AnyType[] @__OtherValues
+        {
+            get
+            {
+                return OtherValues?.ToArray();
+            }
+            set
+            {
+                OtherValues = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<EncapsulatedPKIDataType> CRLValues
-        {
-            get
-            {
-                if (__CRLValues == null) { __CRLValues = new System.Collections.Generic.List<EncapsulatedPKIDataType>(); }
-                return __CRLValues;
-            }
-            set
-            {
-                __CRLValues = value;
-            }
-        }
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> CRLValues { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<EncapsulatedPKIDataType> OCSPValues
-        {
-            get
-            {
-                if (__OCSPValues == null) { __OCSPValues = new System.Collections.Generic.List<EncapsulatedPKIDataType>(); }
-                return __OCSPValues;
-            }
-            set
-            {
-                __OCSPValues = value;
-            }
-        }
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> OCSPValues { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<AnyType> OtherValues
-        {
-            get
-            {
-                if (__OtherValues == null) { __OtherValues = new System.Collections.Generic.List<AnyType>(); }
-                return __OtherValues;
-            }
-            set
-            {
-                __OtherValues = value;
-            }
-        }
+        public System.Collections.Generic.List<AnyType> OtherValues { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -488,29 +489,28 @@ namespace UblSharp.Xades
     public partial class CertificateValuesType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType))]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType))]
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {

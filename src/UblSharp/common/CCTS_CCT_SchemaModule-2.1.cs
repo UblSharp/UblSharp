@@ -14,192 +14,6 @@ namespace UblSharp.CoreComponentTypes
     
     
     /// <summary>
-    /// A number of monetary units specified in a currency where the unit of the currency is explicit or implied.
-    /// <para />UniqueID: UNDT000001
-    /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Amount. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Amount
-    /// <para />PrimitiveType: decimal
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AmountType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctAmountType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctAmountType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("currencyID", DataType="normalizedString")]
-        public string @__currencyID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("currencyCodeListVersionID", DataType="normalizedString")]
-        public string @__currencyCodeListVersionID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public decimal @__Value;
-        
-        /// <summary>
-        /// The currency of the amount.
-        /// <para />UniqueID: UNDT000001-SC2
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Amount Currency. Identifier
-        /// <para />ObjectClass: Amount Currency
-        /// <para />PropertyTermName: Identification
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// <para />UsageRule: Reference UNECE Rec 9, using 3-letter alphabetic codes.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string currencyID
-        {
-            get
-            {
-                return __currencyID;
-            }
-            set
-            {
-                __currencyID = value;
-            }
-        }
-
-        /// <summary>
-        /// The VersionID of the UN/ECE Rec9 code list.
-        /// <para />UniqueID: UNDT000001-SC3
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Amount Currency. Code List Version. Identifier
-        /// <para />ObjectClass: Amount Currency
-        /// <para />PropertyTermName: Code List Version
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string currencyCodeListVersionID
-        {
-            get
-            {
-                return __currencyCodeListVersionID;
-            }
-            set
-            {
-                __currencyCodeListVersionID = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public decimal Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
-    
-    /// <summary>
-    /// A character string (i.e. a finite set of characters) generally in the form of words of a language.
-    /// <para />UniqueID: UNDT000019
-    /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Text. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Text
-    /// <para />PrimitiveType: string
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyNameType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctTextType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctTextType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("languageID", DataType="language")]
-        public string @__languageID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("languageLocaleID", DataType="normalizedString")]
-        public string @__languageLocaleID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string @__Value;
-        
-        /// <summary>
-        /// The identifier of the language used in the content component.
-        /// <para />UniqueID: UNDT000019-SC2
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Language. Identifier
-        /// <para />ObjectClass: Language
-        /// <para />PropertyTermName: Identification
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string languageID
-        {
-            get
-            {
-                return __languageID;
-            }
-            set
-            {
-                __languageID = value;
-            }
-        }
-
-        /// <summary>
-        /// The identification of the locale of the language.
-        /// <para />UniqueID: UNDT000019-SC3
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Language. Locale. Identifier
-        /// <para />ObjectClass: Language
-        /// <para />PropertyTermName: Locale
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string languageLocaleID
-        {
-            get
-            {
-                return __languageLocaleID;
-            }
-            set
-            {
-                __languageLocaleID = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
-    
-    /// <summary>
     /// A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.
     /// <para />UniqueID: UNDT000011
     /// <para />CategoryCode: CCT
@@ -277,6 +91,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The name of the identification scheme.
         /// <para />UniqueID: UNDT000011-SC3
@@ -300,6 +115,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The identification of the agency that maintains the identification scheme.
         /// <para />UniqueID: UNDT000011-SC4
@@ -324,6 +140,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The name of the agency that maintains the identification scheme.
         /// <para />UniqueID: UNDT000011-SC5
@@ -347,6 +164,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The version of the identification scheme.
         /// <para />UniqueID: UNDT000011-SC6
@@ -370,6 +188,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The Uniform Resource Identifier that identifies where the identification scheme data is located.
         /// <para />UniqueID: UNDT000011-SC7
@@ -393,6 +212,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The Uniform Resource Identifier that identifies where the identification scheme is located.
         /// <para />UniqueID: UNDT000011-SC8
@@ -416,6 +236,197 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// A number of monetary units specified in a currency where the unit of the currency is explicit or implied.
+    /// <para />UniqueID: UNDT000001
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Amount. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Amount
+    /// <para />PrimitiveType: decimal
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AmountType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctAmountType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public abstract partial class CctAmountType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("currencyID", DataType="normalizedString")]
+        public string @__currencyID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("currencyCodeListVersionID", DataType="normalizedString")]
+        public string @__currencyCodeListVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal @__Value;
+        
+        /// <summary>
+        /// The currency of the amount.
+        /// <para />UniqueID: UNDT000001-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Amount Currency. Identifier
+        /// <para />ObjectClass: Amount Currency
+        /// <para />PropertyTermName: Identification
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// <para />UsageRule: Reference UNECE Rec 9, using 3-letter alphabetic codes.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string currencyID
+        {
+            get
+            {
+                return __currencyID;
+            }
+            set
+            {
+                __currencyID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The VersionID of the UN/ECE Rec9 code list.
+        /// <para />UniqueID: UNDT000001-SC3
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Amount Currency. Code List Version. Identifier
+        /// <para />ObjectClass: Amount Currency
+        /// <para />PropertyTermName: Code List Version
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string currencyCodeListVersionID
+        {
+            get
+            {
+                return __currencyCodeListVersionID;
+            }
+            set
+            {
+                __currencyCodeListVersionID = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public decimal Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// A character string (i.e. a finite set of characters) generally in the form of words of a language.
+    /// <para />UniqueID: UNDT000019
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Text. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Text
+    /// <para />PrimitiveType: string
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyNameType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctTextType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    public abstract partial class CctTextType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("languageID", DataType="language")]
+        public string @__languageID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("languageLocaleID", DataType="normalizedString")]
+        public string @__languageLocaleID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string @__Value;
+        
+        /// <summary>
+        /// The identifier of the language used in the content component.
+        /// <para />UniqueID: UNDT000019-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Language. Identifier
+        /// <para />ObjectClass: Language
+        /// <para />PropertyTermName: Identification
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string languageID
+        {
+            get
+            {
+                return __languageID;
+            }
+            set
+            {
+                __languageID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The identification of the locale of the language.
+        /// <para />UniqueID: UNDT000019-SC3
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Language. Locale. Identifier
+        /// <para />ObjectClass: Language
+        /// <para />PropertyTermName: Locale
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string languageLocaleID
+        {
+            get
+            {
+                return __languageLocaleID;
+            }
+            set
+            {
+                __languageLocaleID = value;
+            }
+        }
+
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Value
         {
@@ -514,6 +525,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// An agency that maintains one or more lists of codes.
         /// <para />UniqueID: UNDT000007-SC3
@@ -538,6 +550,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The name of the agency that maintains the list of codes.
         /// <para />UniqueID: UNDT000007-SC4
@@ -561,6 +574,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The name of a list of codes.
         /// <para />UniqueID: UNDT000007-SC5
@@ -584,6 +598,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The version of the list of codes.
         /// <para />UniqueID: UNDT000007-SC6
@@ -607,6 +622,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The textual equivalent of the code content component.
         /// <para />UniqueID: UNDT000007-SC7
@@ -630,6 +646,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The identifier of the language used in the code name.
         /// <para />UniqueID: UNDT000007-SC8
@@ -653,6 +670,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The Uniform Resource Identifier that identifies where the code list is located.
         /// <para />UniqueID: UNDT000007-SC9
@@ -676,6 +694,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The Uniform Resource Identifier that identifies where the code list scheme is located.
         /// <para />UniqueID: UNDT000007-SC10
@@ -699,6 +718,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Value
         {
@@ -775,6 +795,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The quantity unit code list.
         /// <para />UniqueID: UNDT000018-SC3
@@ -798,6 +819,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The identification of the agency that maintains the quantity unit code list
         /// <para />UniqueID: UNDT000018-SC4
@@ -822,6 +844,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The name of the agency which maintains the quantity unit code list.
         /// <para />UniqueID: UNDT000018-SC5
@@ -845,6 +868,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public decimal Value
         {
@@ -912,6 +936,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public decimal Value
         {
@@ -981,6 +1006,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The version of the measure unit code list.
         /// <para />UniqueID: UNDT000013-SC3
@@ -1004,6 +1030,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public decimal Value
         {
@@ -1092,6 +1119,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The mime type of the binary object.
         /// <para />UniqueID: UNDT000002-SC3
@@ -1115,6 +1143,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// Specifies the decoding algorithm of the binary object.
         /// <para />UniqueID: UNDT000002-SC4
@@ -1138,6 +1167,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The character set of the binary object if the mime type is text.
         /// <para />UniqueID: UNDT000002-SC5
@@ -1161,6 +1191,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The Uniform Resource Identifier that identifies where the binary object is located.
         /// <para />UniqueID: UNDT000002-SC6
@@ -1184,6 +1215,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         /// <summary>
         /// The filename of the binary object.
         /// <para />UniqueID: UNDT000002-SC7
@@ -1207,6 +1239,7 @@ namespace UblSharp.CoreComponentTypes
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Value
         {

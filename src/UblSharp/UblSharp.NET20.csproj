@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-     <IntermediateOutputPath>obj\Debug\net20\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\Debug\net20\</IntermediateOutputPath>
     <OutputPath>bin\Debug\net20\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NET20;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-     <IntermediateOutputPath>obj\Debug\net20\</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\Debug\net20\</IntermediateOutputPath>
     <OutputPath>bin\Release\net20\</OutputPath>
     <DefineConstants>TRACE;NET20;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="BaseDocument.cs" />
     <Compile Include="BaseDocumentExtensions.cs" />
+    <Compile Include="CommonExtensionComponents\UBLExtensionType.cs" />
     <Compile Include="common\CCTS_CCT_SchemaModule-2.1.cs" />
     <Compile Include="common\UBL-CommonAggregateComponents-2.1.cs" />
     <Compile Include="common\UBL-CommonExtensionComponents-2.1.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="UblDocument.cs" />
     <Compile Include="UblDocumentManager.cs" />
     <Compile Include="UnqualifiedDataTypes\DateType.cs" />
+    <Compile Include="UnqualifiedDataTypes\TimeType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

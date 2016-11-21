@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
+using FluentAssertions;
 using Microsoft.XmlDiffPatch;
+using UblSharp.Tests.Samples;
 using UblSharp.Tests.Util;
 using UblSharp.UnqualifiedDataTypes;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace UblSharp.Tests
@@ -15,6 +19,11 @@ namespace UblSharp.Tests
     public partial class SampleTests
     {
         private readonly ITestOutputHelper _output;
+
+        public static readonly Dictionary<string, string> SkippedTests = new Dictionary<string, string>
+        {
+            { "UBL-Invoice-2.0-Enveloped.xml", "xml serializer removed some unnecessary namespaces" }
+        };
 
         public SampleTests(ITestOutputHelper output)
         {
@@ -26,29 +35,43 @@ namespace UblSharp.Tests
         {
             // serialize
             var doc = factory();
-            XDocument sampledocument;
+            string rawSample;
             using (var res = ResourceHelper.GetResource("Samples." + documentFilename))
+            using (var rdr = new StreamReader(res))
             {
-                sampledocument = XDocument.Load(res);
+                rawSample = rdr.ReadToEnd();
             }
 
+            var sampledocument = XDocument.Parse(rawSample, LoadOptions.SetBaseUri);
+
             var document = ToXDocument(doc);
+
             var areEqual = UblXmlComparer.IsCopyEqual(sampledocument, document, _output);
             if (!areEqual)
             {
-                _output.WriteLine(sampledocument.ToString());
-                _output.WriteLine(document.ToString());
+                var sb = new StringBuilder();
+                using (var stream = new StringWriter(sb))
+                    doc.GetSerializer().Serialize(stream, doc);
+                var rawDocumentText = sb.ToString();
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".orig.xml")), rawSample);
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".sample.xml")), sampledocument.ToString());
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".test.xml")), rawDocumentText);
             }
+
+            areEqual.Should().BeTrue();
 
             // deserialize
-            T sampleDoc;
-            using (var res = ResourceHelper.GetResource("Samples." + documentFilename))
-            {
-                sampleDoc = UblDocument.FromStream<T>(res);
-            }
+            var sampleDoc = UblDocument.FromXDocument<T>(sampledocument);
+
+            //var p1 = (sampleDoc as TransportationStatusType)?.__UBLVersionID;
+            //var p2 = (doc as TransportationStatusType)?.__UBLVersionID;
 
             // TODO compare doc models
-
+            doc.ShouldBeEquivalentTo(sampleDoc, options => options
+                    .ExcludingProperties()
+                    .ExcludingFields()
+                    .Including(x => x.SelectedMemberInfo.Name.StartsWith("__", StringComparison.Ordinal))
+            );
             return areEqual;
         }
 
@@ -56,14 +79,29 @@ namespace UblSharp.Tests
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
-            var sb = new StringBuilder();
-            using (var sw = new StringWriter(sb))
-            using (var writer = XmlWriter.Create(sw))
+            using (var ms = new MemoryStream())
             {
-                document.Serialize(writer);
-            }
+                document.Serialize(ms);
 
-            return XDocument.Parse(sb.ToString());
+                ms.Position = 0;
+                return XDocument.Load(ms);
+            }
+        }
+
+        private static XDocument ToFormattedXDocument(BaseDocument document)
+        {
+            if (document == null) throw new ArgumentNullException(nameof(document));
+
+            using (var ms = new MemoryStream())
+            {
+                using (var writer = XmlWriter.Create(ms, UblDocumentManager.Default.XmlWriterSettings))
+                {
+                    document.Serialize(writer);
+                }
+
+                ms.Position = 0;
+                return XDocument.Load(ms);
+            }
         }
     }
 
@@ -158,28 +196,29 @@ namespace UblSharp.Tests
                 schemaLocationAttr.Remove();
             }
 
-            var id = xDoc.Root.Elements().Where(x => x.Name.LocalName == "ID").Select((element, index) => new
-            {
-                element,
-                index
-            }).FirstOrDefault();
-            var uuid = xDoc.Root.Elements().Where(x => x.Name.LocalName == "UUID").Select((element, index) => new
-            {
-                element,
-                index
-            }).FirstOrDefault();
-            if (id != null && uuid != null)
-            {
-                uuid.element.Remove();
-                id.element.AddAfterSelf(uuid.element);
-            }
+            //var id = xDoc.Root.Elements().Where(x => x.Name.LocalName == "ID").Select((element, index) => new
+            //{
+            //    element,
+            //    index
+            //}).FirstOrDefault();
+            //var uuid = xDoc.Root.Elements().Where(x => x.Name.LocalName == "UUID").Select((element, index) => new
+            //{
+            //    element,
+            //    index
+            //}).FirstOrDefault();
+            //if (id != null && uuid != null)
+            //{
+            //    uuid.element.Remove();
+            //    id.element.AddAfterSelf(uuid.element);
+            //}
 
             // Format the time string in the inputfile to make XmlComparer happy
             foreach (var node in xDoc.Root.Descendants().Where(n => n.Name.Namespace == cbcNamespace && n.Name.LocalName.EndsWith("Time")))
             {
                 TimeType ublTimeType = node.Value;
+                node.Value = XmlConvert.ToString(ublTimeType.Value).Split('T').Last();
                 // node.Value = XmlConvert.ToString(ublTimeType.Value, XmlDateTimeSerializationMode.RoundtripKind).Split('T').Last();
-                node.Value = XmlConvert.ToString(DateTime.MinValue + ublTimeType.Value.TimeOfDay, "HH:mm:ss.fffffffzzzzzz");
+                // node.Value = XmlConvert.ToString(DateTime.MinValue + ublTimeType.Value.TimeOfDay, "HH:mm:ss.fffffffzzzzzz");
             }
 
             // remove empty elements.

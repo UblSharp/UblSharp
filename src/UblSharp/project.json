@@ -51,7 +51,7 @@
     },
     "netstandard1.1": {
       "dependencies": {
-        "System.Xml.XmlSerializer": "4.0.11"        
+        "System.Xml.XmlSerializer": "4.0.11"
       },
       "buildOptions": {
         "define": [ "NETSTANDARD1_1", "FEATURE_LINQ" ]

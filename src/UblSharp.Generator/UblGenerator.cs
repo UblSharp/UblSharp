@@ -32,6 +32,7 @@ namespace UblSharp.Generator
             new XmlAttributesFixer(),
             new ArrayToListConverter(),
             new ImplicitAssignmentFixer(),
+            new AddISharedPropertiesInterface(),
             new FieldToPropertyConverter() // make sure this is done last
         );
 
@@ -110,7 +111,8 @@ namespace UblSharp.Generator
             {
                 BracingStyle = "C",
                 IndentString = "    ",
-                BlankLinesBetweenMembers = true
+                BlankLinesBetweenMembers = true,
+                VerbatimOrder = true
             };
 
             var namespaceProvider = new CodeNamespaceProvider(maindocSchemaSet, options);

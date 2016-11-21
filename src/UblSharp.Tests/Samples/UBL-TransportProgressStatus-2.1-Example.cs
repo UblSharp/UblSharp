@@ -7,6 +7,7 @@ using UblSharp.CommonAggregateComponents;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.UnqualifiedDataTypes;
 using UblSharp.XmlDigitalSignature;
+using UblSharp.Tests.Util;
 
 namespace UblSharp.Tests.Samples
 {

@@ -25,72 +25,390 @@ namespace UblSharp
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("GuaranteeCertificate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:GuaranteeCertificate-2")]
     [System.Xml.Serialization.XmlRootAttribute("GuaranteeCertificate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:GuaranteeCertificate-2", IsNullable=false)]
-    public partial class GuaranteeCertificateType : BaseDocument
+    public partial class GuaranteeCertificateType : BaseDocument, IBaseDocument
     {
         
+        [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
+        public UBLExtensionType[] @__UBLExtensions
+        {
+            get
+            {
+                return UBLExtensions?.ToArray();
+            }
+            set
+            {
+                UBLExtensions = value == null ? null : new System.Collections.Generic.List<UBLExtensionType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UBLVersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public IdentifierType @__UBLVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CustomizationID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
+        public IdentifierType @__CustomizationID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
+        public IdentifierType @__ProfileID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileExecutionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
+        public IdentifierType @__ProfileExecutionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public IndicatorType @__CopyIndicator;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ContractFolderID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
+        public IdentifierType @__UUID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ContractFolderID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public IdentifierType @__ContractFolderID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public DateType @__IssueDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TimeType @__IssueTime;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("GuaranteeTypeCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("GuaranteeTypeCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public CodeType @__GuaranteeTypeCode;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Purpose", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Purpose;
+        [System.Xml.Serialization.XmlElementAttribute("Purpose", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
+        public TextType[] @__Purpose
+        {
+            get
+            {
+                return Purpose?.ToArray();
+            }
+            set
+            {
+                Purpose = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LiabilityAmount", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("LiabilityAmount", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
         public AmountType @__LiabilityAmount;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ConstitutionCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ConstitutionCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
         public CodeType @__ConstitutionCode;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Note;
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=15)]
+        public TextType[] @__Note
+        {
+            get
+            {
+                return Note?.ToArray();
+            }
+            set
+            {
+                Note = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ApplicablePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ApplicablePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
         public PeriodType @__ApplicablePeriod;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ApplicableRegulation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<RegulationType> @__ApplicableRegulation;
+        [System.Xml.Serialization.XmlElementAttribute("ApplicableRegulation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
+        public RegulationType[] @__ApplicableRegulation
+        {
+            get
+            {
+                return ApplicableRegulation?.ToArray();
+            }
+            set
+            {
+                ApplicableRegulation = value == null ? null : new System.Collections.Generic.List<RegulationType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("GuaranteeDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
+        public DocumentReferenceType[] @__GuaranteeDocumentReference
+        {
+            get
+            {
+                return GuaranteeDocumentReference?.ToArray();
+            }
+            set
+            {
+                GuaranteeDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("ImmobilizedSecurity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
+        public ImmobilizedSecurityType[] @__ImmobilizedSecurity
+        {
+            get
+            {
+                return ImmobilizedSecurity?.ToArray();
+            }
+            set
+            {
+                ImmobilizedSecurity = value == null ? null : new System.Collections.Generic.List<ImmobilizedSecurityType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
+        public SignatureType[] @__Signature
+        {
+            get
+            {
+                return Signature?.ToArray();
+            }
+            set
+            {
+                Signature = value == null ? null : new System.Collections.Generic.List<SignatureType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("GuaranteeDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__GuaranteeDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ImmobilizedSecurity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<ImmobilizedSecurityType> @__ImmobilizedSecurity;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("GuarantorParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("GuarantorParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
         public PartyType @__GuarantorParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("InterestedParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("InterestedParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public PartyType @__InterestedParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BeneficiaryParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("BeneficiaryParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public PartyType @__BeneficiaryParty;
+        
+        /// <summary>
+        /// A container for all extensions present in the document.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<UBLExtensionType> IBaseDocument.UBLExtensions { get; set; }
+
+        
+        /// <summary>
+        /// A textual description of the purpose of the bid bond guarantee.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Purpose. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Purpose
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Purpose { get; set; }
+
+        
+        /// <summary>
+        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Note. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Note
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Note { get; set; }
+
+        
+        /// <summary>
+        /// A reference to an applicable regulation.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Applicable_ Regulation. Regulation
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTermQualifier: Applicable
+        /// <para />PropertyTerm: Regulation
+        /// <para />AssociatedObjectClass: Regulation
+        /// <para />RepresentationTerm: Regulation
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<RegulationType> ApplicableRegulation { get; set; }
+
+        
+        /// <summary>
+        /// A reference to a legal document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Guarantee_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTermQualifier: Guarantee
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> GuaranteeDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// Details of an immobilized security.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Immobilized Security
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Immobilized Security
+        /// <para />AssociatedObjectClass: Immobilized Security
+        /// <para />RepresentationTerm: Immobilized Security
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ImmobilizedSecurityType> ImmobilizedSecurity { get; set; }
+
+        
+        /// <summary>
+        /// A signature applied to this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Signature
+        /// <para />Cardinality: 1..n
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Signature
+        /// <para />AssociatedObjectClass: Signature
+        /// <para />RepresentationTerm: Signature
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<SignatureType> IBaseDocument.Signature { get; set; }
+
+        
+        /// <summary>
+        /// Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. UBL Version Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: UBL Version Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>2.0.5</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UBLVersionID
+        {
+            get
+            {
+                if (__UBLVersionID == null) { __UBLVersionID = new IdentifierType(); }
+                return __UBLVersionID;
+            }
+            set
+            {
+                __UBLVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined customization of UBL for a specific use.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Customization Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Customization Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>NES</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.CustomizationID
+        {
+            get
+            {
+                if (__CustomizationID == null) { __CustomizationID = new IdentifierType(); }
+                return __CustomizationID;
+            }
+            set
+            {
+                __CustomizationID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined profile of the customization of UBL being used.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Profile Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Profile Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BasicProcurementProcess</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileID
+        {
+            get
+            {
+                if (__ProfileID == null) { __ProfileID = new IdentifierType(); }
+                return __ProfileID;
+            }
+            set
+            {
+                __ProfileID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Profile Execution Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Profile Execution Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BPP-1001</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileExecutionID
+        {
+            get
+            {
+                if (__ProfileExecutionID == null) { __ProfileExecutionID = new IdentifierType(); }
+                return __ProfileExecutionID;
+            }
+            set
+            {
+                __ProfileExecutionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An identifier for this document, assigned by the sender.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
         
         /// <summary>
         /// Indicates whether this document is a copy (true) or not (false).
@@ -117,6 +435,32 @@ namespace UblSharp
             }
         }
 
+        
+        /// <summary>
+        /// A universally unique identifier for an instance of this document.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Guarantee Certificate. UUID. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Guarantee Certificate
+        /// <para />PropertyTerm: UUID
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UUID
+        {
+            get
+            {
+                if (__UUID == null) { __UUID = new IdentifierType(); }
+                return __UUID;
+            }
+            set
+            {
+                __UUID = value;
+            }
+        }
+
+        
         /// <summary>
         /// An identifier, assigned by the sender, for the process file (i.e., record) to which this document belongs.
         /// <para />ComponentType: BBIE
@@ -141,6 +485,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The date, assigned by the sender, on which this document was issued.
         /// <para />ComponentType: BBIE
@@ -165,6 +510,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the sender, at which this document was issued.
         /// <para />ComponentType: BBIE
@@ -189,6 +535,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the type of the guarantee.
         /// <para />ComponentType: BBIE
@@ -213,30 +560,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A textual description of the purpose of the bid bond guarantee.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Guarantee Certificate. Purpose. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Guarantee Certificate
-        /// <para />PropertyTerm: Purpose
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Purpose
-        {
-            get
-            {
-                if (__Purpose == null) { __Purpose = new System.Collections.Generic.List<TextType>(); }
-                return __Purpose;
-            }
-            set
-            {
-                __Purpose = value;
-            }
-        }
-
+        
         /// <summary>
         /// The liability amount (a monetary value) in the bid bond guarantee.
         /// <para />ComponentType: BBIE
@@ -261,6 +585,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The code stating the constitution means of the guarantee.
         /// <para />ComponentType: BBIE
@@ -285,30 +610,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Guarantee Certificate. Note. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Guarantee Certificate
-        /// <para />PropertyTerm: Note
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Note
-        {
-            get
-            {
-                if (__Note == null) { __Note = new System.Collections.Generic.List<TextType>(); }
-                return __Note;
-            }
-            set
-            {
-                __Note = value;
-            }
-        }
-
+        
         /// <summary>
         /// The specified period in the tendering process for which this bid bond guarantee is effective
         /// <para />ComponentType: ASBIE
@@ -334,80 +636,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A reference to an applicable regulation.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Guarantee Certificate. Applicable_ Regulation. Regulation
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Guarantee Certificate
-        /// <para />PropertyTermQualifier: Applicable
-        /// <para />PropertyTerm: Regulation
-        /// <para />AssociatedObjectClass: Regulation
-        /// <para />RepresentationTerm: Regulation
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<RegulationType> ApplicableRegulation
-        {
-            get
-            {
-                if (__ApplicableRegulation == null) { __ApplicableRegulation = new System.Collections.Generic.List<RegulationType>(); }
-                return __ApplicableRegulation;
-            }
-            set
-            {
-                __ApplicableRegulation = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to a legal document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Guarantee Certificate. Guarantee_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Guarantee Certificate
-        /// <para />PropertyTermQualifier: Guarantee
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> GuaranteeDocumentReference
-        {
-            get
-            {
-                if (__GuaranteeDocumentReference == null) { __GuaranteeDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __GuaranteeDocumentReference;
-            }
-            set
-            {
-                __GuaranteeDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// Details of an immobilized security.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Guarantee Certificate. Immobilized Security
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Guarantee Certificate
-        /// <para />PropertyTerm: Immobilized Security
-        /// <para />AssociatedObjectClass: Immobilized Security
-        /// <para />RepresentationTerm: Immobilized Security
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ImmobilizedSecurityType> ImmobilizedSecurity
-        {
-            get
-            {
-                if (__ImmobilizedSecurity == null) { __ImmobilizedSecurity = new System.Collections.Generic.List<ImmobilizedSecurityType>(); }
-                return __ImmobilizedSecurity;
-            }
-            set
-            {
-                __ImmobilizedSecurity = value;
-            }
-        }
-
+        
         /// <summary>
         /// The guarantee creditor organization that has the authority to charge bid bond guarantee credit.
         /// <para />ComponentType: ASBIE
@@ -433,6 +662,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party depositing the bid bond guarantee.
         /// <para />ComponentType: ASBIE
@@ -458,6 +688,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The beneficiary of the bid bond guarantee.
         /// <para />ComponentType: ASBIE

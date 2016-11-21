@@ -4,7 +4,7 @@
     <Description>UblSharp</Description>
     <AssemblyTitle>Create and parse UBL documents in C# with UblSharp.</AssemblyTitle>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <TargetFrameworks>net40;net45;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard1.1;netstandard1.3</TargetFrameworks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <WarningsAsErrors>true</WarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

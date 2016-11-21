@@ -8,7 +8,7 @@ namespace UblSharp.Validation.Internal
 {
     internal class XsdResolver : XmlResolver
     {
-        private static readonly Dictionary<Uri, object> _xsdCache = new Dictionary<Uri, object>();
+        private readonly Dictionary<Uri, object> _xsdCache = new Dictionary<Uri, object>();
 
         public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)
         {

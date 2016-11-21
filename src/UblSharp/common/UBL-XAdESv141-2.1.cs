@@ -21,11 +21,11 @@ namespace UblSharp.Xades
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CertificateValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+        [System.Xml.Serialization.XmlElementAttribute("CertificateValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=0)]
         public CertificateValuesType @__CertificateValues;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("RevocationValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+        [System.Xml.Serialization.XmlElementAttribute("RevocationValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
         public RevocationValuesType @__RevocationValues;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -50,6 +50,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public RevocationValuesType RevocationValues
         {
@@ -64,6 +65,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -77,6 +79,7 @@ namespace UblSharp.Xades
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string UR
         {

@@ -72,8 +72,10 @@ namespace UblSharp.Validation
         public IEnumerable<UblDocumentValidationError> Validate(XDocument xmlDocument, bool suppressWarnings = false)
         {
             if (xmlDocument == null) throw new ArgumentNullException(nameof(xmlDocument));
+            if (xmlDocument.Root == null) throw new InvalidOperationException("Document must have a root node.");
 
-            var ns = xmlDocument.Root.GetDefaultNamespace().NamespaceName;
+            var rootDocName = xmlDocument.Root.Name.LocalName;
+            var ns = $"urn:oasis:names:specification:ubl:schema:xsd:{rootDocName}-2";
             var errors = new List<UblDocumentValidationError>();
             ValidationEventHandler valHandler = (s, e) =>
                 {
@@ -86,13 +88,7 @@ namespace UblSharp.Validation
             // Add schema to cached xmlschemaset from assembly resource
             if (!_cachedSchema.Contains(ns))
             {
-                var docNsType = ns.Substring(ns.LastIndexOf(":", StringComparison.Ordinal) + 1);
-                if (docNsType.EndsWith("-2"))
-                {
-                    docNsType = docNsType.Substring(0, docNsType.Length - 2);
-                }
-
-                var xsdName = $"{BaseNamespace}.maindoc.UBL-{docNsType}-";
+                var xsdName = $"{BaseNamespace}.maindoc.UBL-{rootDocName}-";
 
                 var manifestStreamName = _executingAssembly.GetManifestResourceNames().FirstOrDefault(x => x.StartsWith(xsdName) && x.EndsWith(".xsd"));
                 if (string.IsNullOrEmpty(manifestStreamName))

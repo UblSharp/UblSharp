@@ -26,184 +26,665 @@ namespace UblSharp
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("OrderResponse", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2")]
     [System.Xml.Serialization.XmlRootAttribute("OrderResponse", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2", IsNullable=false)]
-    public partial class OrderResponseType : BaseDocument
+    public partial class OrderResponseType : BaseDocument, IBaseDocument
     {
         
+        [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
+        public UBLExtensionType[] @__UBLExtensions
+        {
+            get
+            {
+                return UBLExtensions?.ToArray();
+            }
+            set
+            {
+                UBLExtensions = value == null ? null : new System.Collections.Generic.List<UBLExtensionType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SalesOrderID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UBLVersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public IdentifierType @__UBLVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CustomizationID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
+        public IdentifierType @__CustomizationID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
+        public IdentifierType @__ProfileID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileExecutionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
+        public IdentifierType @__ProfileExecutionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SalesOrderID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public IdentifierType @__SalesOrderID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public IndicatorType @__CopyIndicator;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
+        public IdentifierType @__UUID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public DateType @__IssueDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TimeType @__IssueTime;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OrderResponseCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("OrderResponseCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public CodeType @__OrderResponseCode;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Note;
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
+        public TextType[] @__Note
+        {
+            get
+            {
+                return Note?.ToArray();
+            }
+            set
+            {
+                Note = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
         public CodeType @__DocumentCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PricingCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PricingCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
         public CodeType @__PricingCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxCurrencyCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=15)]
         public CodeType @__TaxCurrencyCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TotalPackagesQuantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TotalPackagesQuantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=16)]
         public QuantityType @__TotalPackagesQuantity;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("GrossWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("GrossWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=17)]
         public MeasureType @__GrossWeightMeasure;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("NetWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("NetWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=18)]
         public MeasureType @__NetWeightMeasure;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("NetNetWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("NetNetWeightMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=19)]
         public MeasureType @__NetNetWeightMeasure;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("GrossVolumeMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("GrossVolumeMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=20)]
         public MeasureType @__GrossVolumeMeasure;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("NetVolumeMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("NetVolumeMeasure", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=21)]
         public MeasureType @__NetVolumeMeasure;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CustomerReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("CustomerReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=22)]
         public TextType @__CustomerReference;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCostCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCostCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=23)]
         public CodeType @__AccountingCostCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCost", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCost", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=24)]
         public TextType @__AccountingCost;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=25)]
         public NumericType @__LineCountNumeric;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PeriodType> @__ValidityPeriod;
+        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=26)]
+        public PeriodType[] @__ValidityPeriod
+        {
+            get
+            {
+                return ValidityPeriod?.ToArray();
+            }
+            set
+            {
+                ValidityPeriod = value == null ? null : new System.Collections.Generic.List<PeriodType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("OrderReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=27)]
+        public OrderReferenceType[] @__OrderReference
+        {
+            get
+            {
+                return OrderReference?.ToArray();
+            }
+            set
+            {
+                OrderReference = value == null ? null : new System.Collections.Generic.List<OrderReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("OrderDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=28)]
+        public DocumentReferenceType[] @__OrderDocumentReference
+        {
+            get
+            {
+                return OrderDocumentReference?.ToArray();
+            }
+            set
+            {
+                OrderDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OrderReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<OrderReferenceType> @__OrderReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OrderDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__OrderDocumentReference;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OriginatorDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("OriginatorDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=29)]
         public DocumentReferenceType @__OriginatorDocumentReference;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__AdditionalDocumentReference;
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=30)]
+        public DocumentReferenceType[] @__AdditionalDocumentReference
+        {
+            get
+            {
+                return AdditionalDocumentReference?.ToArray();
+            }
+            set
+            {
+                AdditionalDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Contract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=31)]
+        public ContractType[] @__Contract
+        {
+            get
+            {
+                return Contract?.ToArray();
+            }
+            set
+            {
+                Contract = value == null ? null : new System.Collections.Generic.List<ContractType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=32)]
+        public SignatureType[] @__Signature
+        {
+            get
+            {
+                return Signature?.ToArray();
+            }
+            set
+            {
+                Signature = value == null ? null : new System.Collections.Generic.List<SignatureType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Contract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<ContractType> @__Contract;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=33)]
         public SupplierPartyType @__SellerSupplierParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=34)]
         public CustomerPartyType @__BuyerCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=35)]
         public CustomerPartyType @__OriginatorCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("FreightForwarderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("FreightForwarderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=36)]
         public PartyType @__FreightForwarderParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=37)]
         public SupplierPartyType @__AccountingSupplierParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AccountingCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AccountingCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=38)]
         public CustomerPartyType @__AccountingCustomerParty;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Delivery", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DeliveryType> @__Delivery;
+        [System.Xml.Serialization.XmlElementAttribute("Delivery", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=39)]
+        public DeliveryType[] @__Delivery
+        {
+            get
+            {
+                return Delivery?.ToArray();
+            }
+            set
+            {
+                Delivery = value == null ? null : new System.Collections.Generic.List<DeliveryType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=40)]
         public DeliveryTermsType @__DeliveryTerms;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PaymentMeansType> @__PaymentMeans;
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=41)]
+        public PaymentMeansType[] @__PaymentMeans
+        {
+            get
+            {
+                return PaymentMeans?.ToArray();
+            }
+            set
+            {
+                PaymentMeans = value == null ? null : new System.Collections.Generic.List<PaymentMeansType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=42)]
+        public PaymentTermsType[] @__PaymentTerms
+        {
+            get
+            {
+                return PaymentTerms?.ToArray();
+            }
+            set
+            {
+                PaymentTerms = value == null ? null : new System.Collections.Generic.List<PaymentTermsType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=43)]
+        public AllowanceChargeType[] @__AllowanceCharge
+        {
+            get
+            {
+                return AllowanceCharge?.ToArray();
+            }
+            set
+            {
+                AllowanceCharge = value == null ? null : new System.Collections.Generic.List<AllowanceChargeType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PaymentTermsType> @__PaymentTerms;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<AllowanceChargeType> @__AllowanceCharge;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransactionConditions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransactionConditions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=44)]
         public TransactionConditionsType @__TransactionConditions;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TaxExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=45)]
         public ExchangeRateType @__TaxExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PricingExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PricingExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=46)]
         public ExchangeRateType @__PricingExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentExchangeRate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=47)]
         public ExchangeRateType @__PaymentExchangeRate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DestinationCountry", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DestinationCountry", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=48)]
         public CountryType @__DestinationCountry;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<TaxTotalType> @__TaxTotal;
+        [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=49)]
+        public TaxTotalType[] @__TaxTotal
+        {
+            get
+            {
+                return TaxTotal?.ToArray();
+            }
+            set
+            {
+                TaxTotal = value == null ? null : new System.Collections.Generic.List<TaxTotalType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LegalMonetaryTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("LegalMonetaryTotal", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=50)]
         public MonetaryTotalType @__LegalMonetaryTotal;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OrderLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<OrderLineType> @__OrderLine;
+        [System.Xml.Serialization.XmlElementAttribute("OrderLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=51)]
+        public OrderLineType[] @__OrderLine
+        {
+            get
+            {
+                return OrderLine?.ToArray();
+            }
+            set
+            {
+                OrderLine = value == null ? null : new System.Collections.Generic.List<OrderLineType>(value);
+            }
+        }
+        
+        /// <summary>
+        /// A container for all extensions present in the document.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<UBLExtensionType> IBaseDocument.UBLExtensions { get; set; }
+
+        
+        /// <summary>
+        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. Note. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Note
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Note { get; set; }
+
+        
+        /// <summary>
+        /// The period for which the Order Response is valid.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Validity_ Period. Period
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTermQualifier: Validity
+        /// <para />PropertyTerm: Period
+        /// <para />AssociatedObjectClass: Period
+        /// <para />RepresentationTerm: Period
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PeriodType> ValidityPeriod { get; set; }
+
+        
+        /// <summary>
+        /// A reference to the Order being responded to.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Order Reference
+        /// <para />Cardinality: 1..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Order Reference
+        /// <para />AssociatedObjectClass: Order Reference
+        /// <para />RepresentationTerm: Order Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<OrderReferenceType> OrderReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to an Order other than the one being responded to.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Order_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTermQualifier: Order
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> OrderDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A reference to an additional document associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Additional_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTermQualifier: Additional
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A contract associated with the Order being responded to.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Contract
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Contract
+        /// <para />AssociatedObjectClass: Contract
+        /// <para />RepresentationTerm: Contract
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ContractType> Contract { get; set; }
+
+        
+        /// <summary>
+        /// A signature applied to this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Signature
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Signature
+        /// <para />AssociatedObjectClass: Signature
+        /// <para />RepresentationTerm: Signature
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<SignatureType> IBaseDocument.Signature { get; set; }
+
+        
+        /// <summary>
+        /// A delivery associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Delivery
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Delivery
+        /// <para />AssociatedObjectClass: Delivery
+        /// <para />RepresentationTerm: Delivery
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DeliveryType> Delivery { get; set; }
+
+        
+        /// <summary>
+        /// Expected means of payment.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Payment Means
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Payment Means
+        /// <para />AssociatedObjectClass: Payment Means
+        /// <para />RepresentationTerm: Payment Means
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PaymentMeansType> PaymentMeans { get; set; }
+
+        
+        /// <summary>
+        /// A set of payment terms associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Payment Terms
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Payment Terms
+        /// <para />AssociatedObjectClass: Payment Terms
+        /// <para />RepresentationTerm: Payment Terms
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PaymentTermsType> PaymentTerms { get; set; }
+
+        
+        /// <summary>
+        /// A discount or charge that applies to a price component.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Allowance Charge
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Allowance Charge
+        /// <para />AssociatedObjectClass: Allowance Charge
+        /// <para />RepresentationTerm: Allowance Charge
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AllowanceChargeType> AllowanceCharge { get; set; }
+
+        
+        /// <summary>
+        /// The total amount of a specific type of tax, as calculated by the seller.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Tax Total
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Tax Total
+        /// <para />AssociatedObjectClass: Tax Total
+        /// <para />RepresentationTerm: Tax Total
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TaxTotalType> TaxTotal { get; set; }
+
+        
+        /// <summary>
+        /// A line associated with a line in the Catalogue and specifying a kind of item being ordered.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Order Response. Order Line
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Order Line
+        /// <para />AssociatedObjectClass: Order Line
+        /// <para />RepresentationTerm: Order Line
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<OrderLineType> OrderLine { get; set; }
+
+        
+        /// <summary>
+        /// Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. UBL Version Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: UBL Version Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>2.0.5</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UBLVersionID
+        {
+            get
+            {
+                if (__UBLVersionID == null) { __UBLVersionID = new IdentifierType(); }
+                return __UBLVersionID;
+            }
+            set
+            {
+                __UBLVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined customization of UBL.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. Customization Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Customization Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>NES</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.CustomizationID
+        {
+            get
+            {
+                if (__CustomizationID == null) { __CustomizationID = new IdentifierType(); }
+                return __CustomizationID;
+            }
+            set
+            {
+                __CustomizationID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined profile of the customization of UBL being used.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. Profile Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Profile Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BasicProcurementProcess</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileID
+        {
+            get
+            {
+                if (__ProfileID == null) { __ProfileID = new IdentifierType(); }
+                return __ProfileID;
+            }
+            set
+            {
+                __ProfileID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. Profile Execution Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Profile Execution Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BPP-1001</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileExecutionID
+        {
+            get
+            {
+                if (__ProfileExecutionID == null) { __ProfileExecutionID = new IdentifierType(); }
+                return __ProfileExecutionID;
+            }
+            set
+            {
+                __ProfileExecutionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An identifier for this document, assigned by the sender.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. Identifier
+        /// <para />Cardinality: 1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// <para />AlternativeBusinessTerms: Purchase Order Response Number, Acknowledgement of Order Number
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
         
         /// <summary>
         /// An identifier for the Order, issued by the Seller.
@@ -230,6 +711,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// Indicates whether this document is a copy (true) or not (false).
         /// <para />ComponentType: BBIE
@@ -255,6 +737,32 @@ namespace UblSharp
             }
         }
 
+        
+        /// <summary>
+        /// A universally unique identifier for an instance of this document.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Order Response. UUID. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Order Response
+        /// <para />PropertyTerm: UUID
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UUID
+        {
+            get
+            {
+                if (__UUID == null) { __UUID = new IdentifierType(); }
+                return __UUID;
+            }
+            set
+            {
+                __UUID = value;
+            }
+        }
+
+        
         /// <summary>
         /// The date, assigned by the sender, on which this document was issued.
         /// <para />ComponentType: BBIE
@@ -279,6 +787,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the sender, at which this document was issued.
         /// <para />ComponentType: BBIE
@@ -303,6 +812,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the type of response for this Order.
         /// <para />ComponentType: BBIE
@@ -327,30 +837,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Order Response. Note. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Note
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Note
-        {
-            get
-            {
-                if (__Note == null) { __Note = new System.Collections.Generic.List<TextType>(); }
-                return __Note;
-            }
-            set
-            {
-                __Note = value;
-            }
-        }
-
+        
         /// <summary>
         /// A code signifying the default currency for this document.
         /// <para />ComponentType: BBIE
@@ -377,6 +864,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the currency that is used for all prices in the Order Response.
         /// <para />ComponentType: BBIE
@@ -403,6 +891,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the currency that is used for all tax amounts in the Order Response.
         /// <para />ComponentType: BBIE
@@ -429,6 +918,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total number of packages contained in the Order Response.
         /// <para />ComponentType: BBIE
@@ -454,6 +944,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total gross weight for the Order Response (goods + packaging + transport equipment).
         /// <para />ComponentType: BBIE
@@ -479,6 +970,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total net weight for the Order Response (goods + packaging).
         /// <para />ComponentType: BBIE
@@ -504,6 +996,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total net weight of the goods in the Order Response excluding packaging.
         /// <para />ComponentType: BBIE
@@ -529,6 +1022,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total volume of the goods in the Order Response including packaging.
         /// <para />ComponentType: BBIE
@@ -554,6 +1048,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The total volume of the goods in the Order Response excluding packaging.
         /// <para />ComponentType: BBIE
@@ -579,6 +1074,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A supplementary reference assigned by the buyer, e.g., the CRI in a purchasing card transaction.
         /// <para />ComponentType: BBIE
@@ -604,6 +1100,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// An accounting cost code applied to the order as a whole.
         /// <para />ComponentType: BBIE
@@ -628,6 +1125,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// An accounting cost code applied to the order as a whole, expressed as text.
         /// <para />ComponentType: BBIE
@@ -652,6 +1150,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The number of Order Lines in this document.
         /// <para />ComponentType: BBIE
@@ -676,80 +1175,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// The period for which the Order Response is valid.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Validity_ Period. Period
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTermQualifier: Validity
-        /// <para />PropertyTerm: Period
-        /// <para />AssociatedObjectClass: Period
-        /// <para />RepresentationTerm: Period
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PeriodType> ValidityPeriod
-        {
-            get
-            {
-                if (__ValidityPeriod == null) { __ValidityPeriod = new System.Collections.Generic.List<PeriodType>(); }
-                return __ValidityPeriod;
-            }
-            set
-            {
-                __ValidityPeriod = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to the Order being responded to.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Order Reference
-        /// <para />Cardinality: 1..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Order Reference
-        /// <para />AssociatedObjectClass: Order Reference
-        /// <para />RepresentationTerm: Order Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<OrderReferenceType> OrderReference
-        {
-            get
-            {
-                if (__OrderReference == null) { __OrderReference = new System.Collections.Generic.List<OrderReferenceType>(); }
-                return __OrderReference;
-            }
-            set
-            {
-                __OrderReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A reference to an Order other than the one being responded to.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Order_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTermQualifier: Order
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> OrderDocumentReference
-        {
-            get
-            {
-                if (__OrderDocumentReference == null) { __OrderDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __OrderDocumentReference;
-            }
-            set
-            {
-                __OrderDocumentReference = value;
-            }
-        }
-
+        
         /// <summary>
         /// A reference to an originator document associated with this document.
         /// <para />ComponentType: ASBIE
@@ -775,55 +1201,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A reference to an additional document associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Additional_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTermQualifier: Additional
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference
-        {
-            get
-            {
-                if (__AdditionalDocumentReference == null) { __AdditionalDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __AdditionalDocumentReference;
-            }
-            set
-            {
-                __AdditionalDocumentReference = value;
-            }
-        }
-
-        /// <summary>
-        /// A contract associated with the Order being responded to.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Contract
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Contract
-        /// <para />AssociatedObjectClass: Contract
-        /// <para />RepresentationTerm: Contract
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ContractType> Contract
-        {
-            get
-            {
-                if (__Contract == null) { __Contract = new System.Collections.Generic.List<ContractType>(); }
-                return __Contract;
-            }
-            set
-            {
-                __Contract = value;
-            }
-        }
-
+        
         /// <summary>
         /// The seller.
         /// <para />ComponentType: ASBIE
@@ -849,6 +1227,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The buyer.
         /// <para />ComponentType: ASBIE
@@ -874,6 +1253,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The originator.
         /// <para />ComponentType: ASBIE
@@ -899,6 +1279,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A freight forwarder or carrier.
         /// <para />ComponentType: ASBIE
@@ -924,6 +1305,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The accounting supplier party.
         /// <para />ComponentType: ASBIE
@@ -949,6 +1331,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The accounting customer party.
         /// <para />ComponentType: ASBIE
@@ -974,30 +1357,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A delivery associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Delivery
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Delivery
-        /// <para />AssociatedObjectClass: Delivery
-        /// <para />RepresentationTerm: Delivery
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DeliveryType> Delivery
-        {
-            get
-            {
-                if (__Delivery == null) { __Delivery = new System.Collections.Generic.List<DeliveryType>(); }
-                return __Delivery;
-            }
-            set
-            {
-                __Delivery = value;
-            }
-        }
-
+        
         /// <summary>
         /// A set of delivery terms associated with this document.
         /// <para />ComponentType: ASBIE
@@ -1022,78 +1382,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// Expected means of payment.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Payment Means
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Payment Means
-        /// <para />AssociatedObjectClass: Payment Means
-        /// <para />RepresentationTerm: Payment Means
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PaymentMeansType> PaymentMeans
-        {
-            get
-            {
-                if (__PaymentMeans == null) { __PaymentMeans = new System.Collections.Generic.List<PaymentMeansType>(); }
-                return __PaymentMeans;
-            }
-            set
-            {
-                __PaymentMeans = value;
-            }
-        }
-
-        /// <summary>
-        /// A set of payment terms associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Payment Terms
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Payment Terms
-        /// <para />AssociatedObjectClass: Payment Terms
-        /// <para />RepresentationTerm: Payment Terms
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PaymentTermsType> PaymentTerms
-        {
-            get
-            {
-                if (__PaymentTerms == null) { __PaymentTerms = new System.Collections.Generic.List<PaymentTermsType>(); }
-                return __PaymentTerms;
-            }
-            set
-            {
-                __PaymentTerms = value;
-            }
-        }
-
-        /// <summary>
-        /// A discount or charge that applies to a price component.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Allowance Charge
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Allowance Charge
-        /// <para />AssociatedObjectClass: Allowance Charge
-        /// <para />RepresentationTerm: Allowance Charge
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<AllowanceChargeType> AllowanceCharge
-        {
-            get
-            {
-                if (__AllowanceCharge == null) { __AllowanceCharge = new System.Collections.Generic.List<AllowanceChargeType>(); }
-                return __AllowanceCharge;
-            }
-            set
-            {
-                __AllowanceCharge = value;
-            }
-        }
-
+        
         /// <summary>
         /// A specification of purchasing or sales conditions applying to the whole Order.
         /// <para />ComponentType: ASBIE
@@ -1118,6 +1407,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the tax currency.
         /// <para />ComponentType: ASBIE
@@ -1143,6 +1433,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the pricing currency.
         /// <para />ComponentType: ASBIE
@@ -1168,6 +1459,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The exchange rate between the document currency and the payment currency.
         /// <para />ComponentType: ASBIE
@@ -1193,6 +1485,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The country of destination (for customs purposes).
         /// <para />ComponentType: ASBIE
@@ -1218,30 +1511,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// The total amount of a specific type of tax, as calculated by the seller.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Tax Total
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Tax Total
-        /// <para />AssociatedObjectClass: Tax Total
-        /// <para />RepresentationTerm: Tax Total
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TaxTotalType> TaxTotal
-        {
-            get
-            {
-                if (__TaxTotal == null) { __TaxTotal = new System.Collections.Generic.List<TaxTotalType>(); }
-                return __TaxTotal;
-            }
-            set
-            {
-                __TaxTotal = value;
-            }
-        }
-
+        
         /// <summary>
         /// The total amount of the Order (or counter-offer).
         /// <para />ComponentType: ASBIE
@@ -1264,30 +1534,6 @@ namespace UblSharp
             set
             {
                 __LegalMonetaryTotal = value;
-            }
-        }
-
-        /// <summary>
-        /// A line associated with a line in the Catalogue and specifying a kind of item being ordered.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Order Response. Order Line
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Order Response
-        /// <para />PropertyTerm: Order Line
-        /// <para />AssociatedObjectClass: Order Line
-        /// <para />RepresentationTerm: Order Line
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<OrderLineType> OrderLine
-        {
-            get
-            {
-                if (__OrderLine == null) { __OrderLine = new System.Collections.Generic.List<OrderLineType>(); }
-                return __OrderLine;
-            }
-            set
-            {
-                __OrderLine = value;
             }
         }
 

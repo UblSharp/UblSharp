@@ -26,9 +26,18 @@ namespace UblSharp.CommonSignatureComponents
     public partial class UBLDocumentSignaturesType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2")]
-        public System.Collections.Generic.List<SignatureInformationType> @__SignatureInformation;
+        [System.Xml.Serialization.XmlElementAttribute("SignatureInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2", Order=0)]
+        public SignatureInformationType[] @__SignatureInformation
+        {
+            get
+            {
+                return SignatureInformation?.ToArray();
+            }
+            set
+            {
+                SignatureInformation = value == null ? null : new System.Collections.Generic.List<SignatureInformationType>(value);
+            }
+        }
         
         /// <summary>
         /// Each of these is scaffolding for a single digital signature.
@@ -41,18 +50,7 @@ namespace UblSharp.CommonSignatureComponents
         /// <para />RepresentationTerm: Signature Information
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<SignatureInformationType> SignatureInformation
-        {
-            get
-            {
-                if (__SignatureInformation == null) { __SignatureInformation = new System.Collections.Generic.List<SignatureInformationType>(); }
-                return __SignatureInformation;
-            }
-            set
-            {
-                __SignatureInformation = value;
-            }
-        }
+        public System.Collections.Generic.List<SignatureInformationType> SignatureInformation { get; set; }
 
     }
 }

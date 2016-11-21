@@ -14,47 +14,36 @@ namespace UblSharp.UnqualifiedDataTypes
     
     
     /// <summary>
-    /// One calendar day according the Gregorian calendar.
-    /// <para />UniqueID: UBLUDT000009
+    /// A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.
+    /// <para />UniqueID: UBLUDT0000011
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Date. Type
+    /// <para />DictionaryEntryName: Identifier. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Date
+    /// <para />RepresentationTermName: Identifier
     /// <para />PrimitiveType: string
+    /// <para />UsageRule: Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the identifier list and thus, are not declared as attributes.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionURIType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("DateType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class DateType
+    [System.Xml.Serialization.XmlTypeAttribute("IdentifierType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public partial class IdentifierType : CctIdentifierType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute(DataType="date")]
-        public System.DateTime @__Value;
-        
-        public static implicit operator DateType(System.DateTime value)
+        public static implicit operator IdentifierType(string value)
         {
-             return new DateType { Value = value };
+             return value == null ? null : new IdentifierType { Value = value };
         }
 
-        public static implicit operator System.DateTime(DateType value)
+        public static implicit operator string(IdentifierType value)
         {
              return value.Value;
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.DateTime Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
         }
 
     }
@@ -130,41 +119,6 @@ namespace UblSharp.UnqualifiedDataTypes
         }
 
         public static implicit operator string(NameType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.
-    /// <para />UniqueID: UBLUDT0000011
-    /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Identifier. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Identifier
-    /// <para />PrimitiveType: string
-    /// <para />UsageRule: Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the identifier list and thus, are not declared as attributes.
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("IdentifierType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class IdentifierType : CctIdentifierType
-    {
-        
-        public static implicit operator IdentifierType(string value)
-        {
-             return value == null ? null : new IdentifierType { Value = value };
-        }
-
-        public static implicit operator string(IdentifierType value)
         {
              return value.Value;
         }
@@ -367,6 +321,43 @@ namespace UblSharp.UnqualifiedDataTypes
     }
     
     /// <summary>
+    /// One calendar day according the Gregorian calendar.
+    /// <para />UniqueID: UBLUDT000009
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Date. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Date
+    /// <para />PrimitiveType: string
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("DateType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    public partial class DateType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.DateTimeOffset @__Value;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.DateTimeOffset Value
+        {
+            get
+            {
+                if (__Value == null) { __Value = new System.DateTimeOffset(); }
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
     /// An instance of time that occurs every day.
     /// <para />UniqueID: UBLUDT0000010
     /// <para />CategoryCode: UDT
@@ -384,24 +375,15 @@ namespace UblSharp.UnqualifiedDataTypes
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute(DataType="time")]
-        public System.DateTime @__Value;
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public System.DateTimeOffset @__Value;
         
-        public static implicit operator TimeType(System.DateTime value)
-        {
-             return new TimeType { Value = value };
-        }
-
-        public static implicit operator System.DateTime(TimeType value)
-        {
-             return value.Value;
-        }
-
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.DateTime Value
+        public System.DateTimeOffset Value
         {
             get
             {
+                if (__Value == null) { __Value = new System.DateTimeOffset(); }
                 return __Value;
             }
             set
@@ -443,6 +425,7 @@ namespace UblSharp.UnqualifiedDataTypes
              return value.Value;
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool Value
         {

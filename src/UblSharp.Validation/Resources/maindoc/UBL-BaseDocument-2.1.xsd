@@ -30,7 +30,7 @@
             </ccts:Component>
          </xsd:documentation>
       </xsd:annotation>
-      <xsd:sequence>
+      <!--<xsd:sequence>
            <xsd:element ref="ext:UBLExtensions" minOccurs="0" maxOccurs="1">
               <xsd:annotation>
                  <xsd:documentation>A container for all extensions present in the document.</xsd:documentation>
@@ -152,6 +152,6 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-      </xsd:sequence>
+      </xsd:sequence>-->
    </xsd:complexType>
 </xsd:schema>

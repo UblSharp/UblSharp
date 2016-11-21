@@ -7,6 +7,7 @@ using UblSharp.CommonAggregateComponents;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.UnqualifiedDataTypes;
 using UblSharp.XmlDigitalSignature;
+using UblSharp.Tests.Util;
 
 namespace UblSharp.Tests.Samples
 {
@@ -20,6 +21,42 @@ namespace UblSharp.Tests.Samples
                 {
                     new UBLExtensionType
                     {
+                        ExtensionURI = "dummy1",
+                        ExtensionContent = @"<dummy1:AnExtension xmlns:dummy1=""urn:X-dummy1""></dummy1:AnExtension>".ToXmlElement()
+                    },
+                    new UBLExtensionType
+                    {
+                        ExtensionURI = "dummy2",
+                        ExtensionContent = @"<dummy2:AnotherExtension xmlns:dummy2=""urn:X-dummy2""></dummy2:AnotherExtension>".ToXmlElement()
+                    },
+                    new UBLExtensionType
+                    {
+                        ExtensionContent = @"<sig:UBLDocumentSignatures xmlns:sig=""urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2""><sac:SignatureInformation xmlns:sac=""urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2""><ds:Signature xmlns:ds=""http://www.w3.org/2000/09/xmldsig#"" Id=""addedSig""><ds:SignedInfo><ds:CanonicalizationMethod Algorithm=""http://www.w3.org/TR/2001/REC-xml-c14n-20010315"" /><ds:SignatureMethod Algorithm=""http://www.w3.org/2000/09/xmldsig#rsa-sha1"" /><ds:Reference URI=""""><ds:Transforms><ds:Transform Algorithm=""http://www.w3.org/TR/1999/REC-xpath-19991116""><ds:XPath>
+            count(ancestor-or-self::sig:UBLDocumentSignatures |
+                  here()/ancestor::sig:UBLDocumentSignatures[1]) &gt;
+            count(ancestor-or-self::sig:UBLDocumentSignatures)
+          </ds:XPath></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm=""http://www.w3.org/2000/09/xmldsig#sha1"" /><ds:DigestValue>d7OYkPHx+k+Qg+tBX2RfdzaBuYs=</ds:DigestValue></ds:Reference><ds:Reference URI=""#xades-test-s""><ds:DigestMethod Algorithm=""http://www.w3.org/2000/09/xmldsig#sha1"" /><ds:DigestValue>rcWlUoFmv2beSz8h5BKpxBv/IWQ=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue Id=""addedSigVal"">nUGjDSgnAizCE4n8VsJhM1DljVf+lmQqKcXiuWkM2xUaRFoni4VUiku7BzC4I8w2
+NbDjhusexvxIzN5IZf8uY4gXn4OrNuWsYZT/U73qj0T8N32jsHpeyXFMsuUq5kgG
+m4MqK4QcI8/VnSYqfGOF/wCJi0GDM/sccLbB7tKgX8Y=</ds:SignatureValue><ds:KeyInfo><ds:KeyValue><ds:RSAKeyValue><ds:Modulus>
+uXEmg0yTZN1Yf7IuwDcf+MhHjILcPtFXVW3FRFpy5ymWDDmoOddPJrG3S6zHcCbu
+kdqJR+fIHhpGauMifTbC4k9F0UNgT0DSzxoOkVMFwv/pREK28lvnDZD1rGnS9GKt
+cyOMVbGe5BSl49iBI5xhpUtmRYxVR/RAxSUmCrfZFoM=
+</ds:Modulus><ds:Exponent>
+AQAB
+</ds:Exponent></ds:RSAKeyValue></ds:KeyValue><ds:X509Data><ds:X509Certificate>MIICcTCCAdoCCQDzGe/d5rwBKzANBgkqhkiG9w0BAQUFADB9MQswCQYDVQQGEwJV
+UzEWMBQGA1UECAwNTWFzc2FjaHVzZXR0czETMBEGA1UEBwwKQnVybGluZ3RvbjEO
+MAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF1VCTCBUZWNobmljYWwgQ29tbWl0dGVl
+MQ8wDQYDVQQDDAZVQkwgVEMwHhcNMTMwMjE1MTg1OTQ2WhcNMTMwMzE3MTg1OTQ2
+WjB9MQswCQYDVQQGEwJVUzEWMBQGA1UECAwNTWFzc2FjaHVzZXR0czETMBEGA1UE
+BwwKQnVybGluZ3RvbjEOMAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF1VCTCBUZWNo
+bmljYWwgQ29tbWl0dGVlMQ8wDQYDVQQDDAZVQkwgVEMwgZ8wDQYJKoZIhvcNAQEB
+BQADgY0AMIGJAoGBALlxJoNMk2TdWH+yLsA3H/jIR4yC3D7RV1VtxURacucplgw5
+qDnXTyaxt0usx3Am7pHaiUfnyB4aRmrjIn02wuJPRdFDYE9A0s8aDpFTBcL/6URC
+tvJb5w2Q9axp0vRirXMjjFWxnuQUpePYgSOcYaVLZkWMVUf0QMUlJgq32RaDAgMB
+AAEwDQYJKoZIhvcNAQEFBQADgYEAVtqeUFJQa64pqCYJAxflCGdOKFBX2p8LCo3K
+eupnQC9UvLdOxuS8fAjzo40FQG687/7NGcZ30ysVjy/s3XyqxDFLln601vI470i9
+6Gip3cBF8WHB5lUnvaT9dNEYFDBBR22glEnY9SA8y8EbbO+Cy8hIQEzULoVOkr/a
+JfeH5w4=</ds:X509Certificate><ds:X509SubjectName>CN=UBL TC,OU=UBL Technical Committee,O=OASIS,L=Burlington,ST=Massachusetts,C=US</ds:X509SubjectName><ds:X509IssuerSerial><ds:X509IssuerName>CN=UBL TC,OU=UBL Technical Committee,O=OASIS,L=Burlington,ST=Massachusetts,C=US</ds:X509IssuerName><ds:X509SerialNumber>17517295961972146475</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></ds:KeyInfo><ds:Object><QualifyingProperties xmlns=""http://uri.etsi.org/01903/v1.3.2#"" Target=""#addedSig""><SignedProperties Id=""xades-test-s""><SignedSignatureProperties><SigningTime>2010-11-26T18:00:00Z</SigningTime></SignedSignatureProperties></SignedProperties><UnsignedProperties Id=""xades-test-u""><UnsignedSignatureProperties><SignatureTimeStamp><XMLTimeStamp>2010-11-26T18:00:00Z</XMLTimeStamp></SignatureTimeStamp></UnsignedSignatureProperties></UnsignedProperties></QualifyingProperties></ds:Object></ds:Signature></sac:SignatureInformation></sig:UBLDocumentSignatures>".ToXmlElement()
                     }
                 },
                 UBLVersionID = "2.0",

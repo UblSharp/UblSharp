@@ -19,16 +19,31 @@ namespace UblSharp.XmlDigitalSignature
     public partial class DigestMethodType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> @__Any;
+        public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> @__Any;
+        public System.Xml.Linq.XNode[] @__Any
 #else
-        public System.Collections.Generic.List<object> @__Any;
+        public object[] @__Any
 #endif
+        {
+            get
+            {
+                return Any?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlNode>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XNode>(value);
+#else
+                Any = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Algorithm", DataType="anyURI")]
@@ -36,30 +51,14 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> Any
+        public System.Collections.Generic.List<System.Xml.XmlNode> Any { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any
+        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any { get; set; }
 #else
-        public System.Collections.Generic.List<object> Any
+        public System.Collections.Generic.List<object> Any { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.XmlNode>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.Linq.XNode>(); }
-#else
-                if (__Any == null) { __Any = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Any;
-            }
-            set
-            {
-                __Any = value;
-            }
-        }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Algorithm
         {
@@ -84,16 +83,31 @@ namespace UblSharp.XmlDigitalSignature
     public partial class CanonicalizationMethodType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> @__Any;
+        public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> @__Any;
+        public System.Xml.Linq.XNode[] @__Any
 #else
-        public System.Collections.Generic.List<object> @__Any;
+        public object[] @__Any
 #endif
+        {
+            get
+            {
+                return Any?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlNode>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XNode>(value);
+#else
+                Any = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Algorithm", DataType="anyURI")]
@@ -101,30 +115,14 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> Any
+        public System.Collections.Generic.List<System.Xml.XmlNode> Any { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any
+        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any { get; set; }
 #else
-        public System.Collections.Generic.List<object> Any
+        public System.Collections.Generic.List<object> Any { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.XmlNode>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.Linq.XNode>(); }
-#else
-                if (__Any == null) { __Any = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Any;
-            }
-            set
-            {
-                __Any = value;
-            }
-        }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Algorithm
         {
@@ -149,11 +147,11 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("X509IssuerName")]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerName", Order=0)]
         public string @__X509IssuerName;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("X509SerialNumber", DataType="integer")]
+        [System.Xml.Serialization.XmlElementAttribute("X509SerialNumber", DataType="integer", Order=1)]
         public string @__X509SerialNumber;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -169,6 +167,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string X509SerialNumber
         {
@@ -194,24 +193,37 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignedInfo")]
+        [System.Xml.Serialization.XmlElementAttribute("SignedInfo", Order=0)]
         public SignedInfoType @__SignedInfo;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureValue")]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureValue", Order=1)]
         public SignatureValueType @__SignatureValue;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("KeyInfo")]
+        [System.Xml.Serialization.XmlElementAttribute("KeyInfo", Order=2)]
         public KeyInfoType @__KeyInfo;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Object")]
-        public System.Collections.Generic.List<ObjectType> @__Object;
+        [System.Xml.Serialization.XmlElementAttribute("Object", Order=3)]
+        public ObjectType[] @__Object
+        {
+            get
+            {
+                return Object?.ToArray();
+            }
+            set
+            {
+                Object = value == null ? null : new System.Collections.Generic.List<ObjectType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ObjectType> Object { get; set; }
+
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public SignedInfoType SignedInfo
@@ -227,6 +239,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public SignatureValueType SignatureValue
         {
@@ -241,6 +254,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public KeyInfoType KeyInfo
         {
@@ -255,20 +269,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ObjectType> Object
-        {
-            get
-            {
-                if (__Object == null) { __Object = new System.Collections.Generic.List<ObjectType>(); }
-                return __Object;
-            }
-            set
-            {
-                __Object = value;
-            }
-        }
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -294,20 +295,33 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod")]
+        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Order=0)]
         public CanonicalizationMethodType @__CanonicalizationMethod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureMethod")]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureMethod", Order=1)]
         public SignatureMethodType @__SignatureMethod;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Reference")]
-        public System.Collections.Generic.List<ReferenceType> @__Reference;
+        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=2)]
+        public ReferenceType[] @__Reference
+        {
+            get
+            {
+                return Reference?.ToArray();
+            }
+            set
+            {
+                Reference = value == null ? null : new System.Collections.Generic.List<ReferenceType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ReferenceType> Reference { get; set; }
+
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public CanonicalizationMethodType CanonicalizationMethod
@@ -323,6 +337,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public SignatureMethodType SignatureMethod
         {
@@ -337,20 +352,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ReferenceType> Reference
-        {
-            get
-            {
-                if (__Reference == null) { __Reference = new System.Collections.Generic.List<ReferenceType>(); }
-                return __Reference;
-            }
-            set
-            {
-                __Reference = value;
-            }
-        }
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -376,23 +378,48 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("HMACOutputLength", DataType="integer")]
+        [System.Xml.Serialization.XmlElementAttribute("HMACOutputLength", DataType="integer", Order=0)]
         public string @__HMACOutputLength;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> @__Any;
+        public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> @__Any;
+        public System.Xml.Linq.XNode[] @__Any
 #else
-        public System.Collections.Generic.List<object> @__Any;
+        public object[] @__Any
 #endif
+        {
+            get
+            {
+                return Any?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlNode>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XNode>(value);
+#else
+                Any = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Algorithm", DataType="anyURI")]
         public string @__Algorithm;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+#if FEATURE_XMLDOCUMENT
+        public System.Collections.Generic.List<System.Xml.XmlNode> Any { get; set; }
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any { get; set; }
+#else
+        public System.Collections.Generic.List<object> Any { get; set; }
+#endif
+
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string HMACOutputLength
@@ -407,32 +434,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-#if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> Any
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any
-#else
-        public System.Collections.Generic.List<object> Any
-#endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.XmlNode>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.Linq.XNode>(); }
-#else
-                if (__Any == null) { __Any = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Any;
-            }
-            set
-            {
-                __Any = value;
-            }
-        }
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Algorithm
         {
@@ -457,16 +459,25 @@ namespace UblSharp.XmlDigitalSignature
     public partial class ReferenceType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
-        public System.Collections.Generic.List<TransformType> @__Transforms;
+        public TransformType[] @__Transforms
+        {
+            get
+            {
+                return Transforms?.ToArray();
+            }
+            set
+            {
+                Transforms = value == null ? null : new System.Collections.Generic.List<TransformType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestMethod")]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Order=0)]
         public DigestMethodType @__DigestMethod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestValue", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("DigestValue", DataType="base64Binary", Order=1)]
         public byte[] @__DigestValue;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -482,19 +493,9 @@ namespace UblSharp.XmlDigitalSignature
         public string @__Type;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TransformType> Transforms
-        {
-            get
-            {
-                if (__Transforms == null) { __Transforms = new System.Collections.Generic.List<TransformType>(); }
-                return __Transforms;
-            }
-            set
-            {
-                __Transforms = value;
-            }
-        }
+        public System.Collections.Generic.List<TransformType> Transforms { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public DigestMethodType DigestMethod
         {
@@ -509,6 +510,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] DigestValue
         {
@@ -522,6 +524,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -535,6 +538,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string URI
         {
@@ -548,6 +552,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Type
         {
@@ -572,47 +577,45 @@ namespace UblSharp.XmlDigitalSignature
     public partial class TransformType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string))]
-        public System.Collections.Generic.List<object> @__Items;
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
-        public System.Collections.Generic.List<string> @__Text;
+        public string[] @__Text
+        {
+            get
+            {
+                return Text?.ToArray();
+            }
+            set
+            {
+                Text = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Algorithm", DataType="anyURI")]
         public string @__Algorithm;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<string> Text
-        {
-            get
-            {
-                if (__Text == null) { __Text = new System.Collections.Generic.List<string>(); }
-                return __Text;
-            }
-            set
-            {
-                __Text = value;
-            }
-        }
+        public System.Collections.Generic.List<System.String> Text { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Algorithm
         {
@@ -655,6 +658,7 @@ namespace UblSharp.XmlDigitalSignature
              return value.Value;
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -668,6 +672,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Value
         {
@@ -692,9 +697,8 @@ namespace UblSharp.XmlDigitalSignature
     public partial class KeyInfoType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType))]
         [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType))]
@@ -702,63 +706,61 @@ namespace UblSharp.XmlDigitalSignature
         [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType))]
         [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public System.Collections.Generic.List<ItemsChoiceType2> @__ItemsElementName;
+        public ItemsChoiceType2[] @__ItemsElementName
+        {
+            get
+            {
+                return ItemsElementName?.ToArray();
+            }
+            set
+            {
+                ItemsElementName = value == null ? null : new System.Collections.Generic.List<ItemsChoiceType2>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
-        public System.Collections.Generic.List<string> @__Text;
+        public string[] @__Text
+        {
+            get
+            {
+                return Text?.ToArray();
+            }
+            set
+            {
+                Text = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ItemsChoiceType2> ItemsElementName
-        {
-            get
-            {
-                if (__ItemsElementName == null) { __ItemsElementName = new System.Collections.Generic.List<ItemsChoiceType2>(); }
-                return __ItemsElementName;
-            }
-            set
-            {
-                __ItemsElementName = value;
-            }
-        }
+        public System.Collections.Generic.List<ItemsChoiceType2> ItemsElementName { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<string> Text
-        {
-            get
-            {
-                if (__Text == null) { __Text = new System.Collections.Generic.List<string>(); }
-                return __Text;
-            }
-            set
-            {
-                __Text = value;
-            }
-        }
+        public System.Collections.Generic.List<System.String> Text { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -785,13 +787,26 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType))]
+        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType))]
         public object @__Item;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
-        public System.Collections.Generic.List<string> @__Text;
+        public string[] @__Text
+        {
+            get
+            {
+                return Text?.ToArray();
+            }
+            set
+            {
+                Text = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.String> Text { get; set; }
+
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public object Item
@@ -803,20 +818,6 @@ namespace UblSharp.XmlDigitalSignature
             set
             {
                 __Item = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<string> Text
-        {
-            get
-            {
-                if (__Text == null) { __Text = new System.Collections.Generic.List<string>(); }
-                return __Text;
-            }
-            set
-            {
-                __Text = value;
             }
         }
 
@@ -832,31 +833,31 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("P", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("P", DataType="base64Binary", Order=0)]
         public byte[] @__P;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Q", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("Q", DataType="base64Binary", Order=1)]
         public byte[] @__Q;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("G", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("G", DataType="base64Binary", Order=2)]
         public byte[] @__G;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Y", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("Y", DataType="base64Binary", Order=3)]
         public byte[] @__Y;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("J", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("J", DataType="base64Binary", Order=4)]
         public byte[] @__J;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Seed", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("Seed", DataType="base64Binary", Order=5)]
         public byte[] @__Seed;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PgenCounter", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("PgenCounter", DataType="base64Binary", Order=6)]
         public byte[] @__PgenCounter;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -872,6 +873,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Q
         {
@@ -885,6 +887,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] G
         {
@@ -898,6 +901,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Y
         {
@@ -911,6 +915,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] J
         {
@@ -924,6 +929,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Seed
         {
@@ -937,6 +943,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] PgenCounter
         {
@@ -962,11 +969,11 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Modulus", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("Modulus", DataType="base64Binary", Order=0)]
         public byte[] @__Modulus;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Exponent", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("Exponent", DataType="base64Binary", Order=1)]
         public byte[] @__Exponent;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -982,6 +989,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public byte[] Exponent
         {
@@ -1006,45 +1014,42 @@ namespace UblSharp.XmlDigitalSignature
     public partial class PGPDataType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public System.Collections.Generic.List<ItemsChoiceType1> @__ItemsElementName;
+        public ItemsChoiceType1[] @__ItemsElementName
+        {
+            get
+            {
+                return ItemsElementName?.ToArray();
+            }
+            set
+            {
+                ItemsElementName = value == null ? null : new System.Collections.Generic.List<ItemsChoiceType1>(value);
+            }
+        }
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ItemsChoiceType1> ItemsElementName
-        {
-            get
-            {
-                if (__ItemsElementName == null) { __ItemsElementName = new System.Collections.Generic.List<ItemsChoiceType1>(); }
-                return __ItemsElementName;
-            }
-            set
-            {
-                __ItemsElementName = value;
-            }
-        }
+        public System.Collections.Generic.List<ItemsChoiceType1> ItemsElementName { get; set; }
 
     }
     
@@ -1058,10 +1063,10 @@ namespace UblSharp.XmlDigitalSignature
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID")]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", Order=0)]
         PGPKeyID,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket")]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", Order=1)]
         PGPKeyPacket,
     }
     
@@ -1074,9 +1079,18 @@ namespace UblSharp.XmlDigitalSignature
     public partial class RetrievalMethodType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
-        public System.Collections.Generic.List<TransformType> @__Transforms;
+        public TransformType[] @__Transforms
+        {
+            get
+            {
+                return Transforms?.ToArray();
+            }
+            set
+            {
+                Transforms = value == null ? null : new System.Collections.Generic.List<TransformType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
@@ -1087,19 +1101,9 @@ namespace UblSharp.XmlDigitalSignature
         public string @__Type;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TransformType> Transforms
-        {
-            get
-            {
-                if (__Transforms == null) { __Transforms = new System.Collections.Generic.List<TransformType>(); }
-                return __Transforms;
-            }
-            set
-            {
-                __Transforms = value;
-            }
-        }
+        public System.Collections.Generic.List<TransformType> Transforms { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string URI
         {
@@ -1113,6 +1117,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Type
         {
@@ -1138,7 +1143,7 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", DataType="base64Binary", Order=0)]
         public byte[][] @__SPKISexp;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -1164,6 +1169,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
         public System.Xml.XmlElement Any
@@ -1194,48 +1200,45 @@ namespace UblSharp.XmlDigitalSignature
     public partial class X509DataType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary")]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType))]
         [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+                Items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public System.Collections.Generic.List<ItemsChoiceType> @__ItemsElementName;
+        public ItemsChoiceType[] @__ItemsElementName
+        {
+            get
+            {
+                return ItemsElementName?.ToArray();
+            }
+            set
+            {
+                ItemsElementName = value == null ? null : new System.Collections.Generic.List<ItemsChoiceType>(value);
+            }
+        }
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<object> Items
-        {
-            get
-            {
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
+        public System.Collections.Generic.List<System.Object> Items { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ItemsChoiceType> ItemsElementName
-        {
-            get
-            {
-                if (__ItemsElementName == null) { __ItemsElementName = new System.Collections.Generic.List<ItemsChoiceType>(); }
-                return __ItemsElementName;
-            }
-            set
-            {
-                __ItemsElementName = value;
-            }
-        }
+        public System.Collections.Generic.List<ItemsChoiceType> ItemsElementName { get; set; }
 
     }
     
@@ -1249,19 +1252,19 @@ namespace UblSharp.XmlDigitalSignature
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509CRL")]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", Order=0)]
         X509CRL,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509Certificate")]
+        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", Order=1)]
         X509Certificate,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial")]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", Order=2)]
         X509IssuerSerial,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509SKI")]
+        [System.Xml.Serialization.XmlElementAttribute("X509SKI", Order=3)]
         X509SKI,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName")]
+        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", Order=4)]
         X509SubjectName,
     }
     
@@ -1275,25 +1278,25 @@ namespace UblSharp.XmlDigitalSignature
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("KeyName")]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", Order=0)]
         KeyName,
         
-        [System.Xml.Serialization.XmlElementAttribute("KeyValue")]
+        [System.Xml.Serialization.XmlElementAttribute("KeyValue", Order=1)]
         KeyValue,
         
-        [System.Xml.Serialization.XmlElementAttribute("MgmtData")]
+        [System.Xml.Serialization.XmlElementAttribute("MgmtData", Order=2)]
         MgmtData,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPData")]
+        [System.Xml.Serialization.XmlElementAttribute("PGPData", Order=3)]
         PGPData,
         
-        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod")]
+        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", Order=4)]
         RetrievalMethod,
         
-        [System.Xml.Serialization.XmlElementAttribute("SPKIData")]
+        [System.Xml.Serialization.XmlElementAttribute("SPKIData", Order=5)]
         SPKIData,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509Data")]
+        [System.Xml.Serialization.XmlElementAttribute("X509Data", Order=6)]
         X509Data,
     }
     
@@ -1306,16 +1309,31 @@ namespace UblSharp.XmlDigitalSignature
     public partial class ObjectType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> @__Any;
+        public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> @__Any;
+        public System.Xml.Linq.XNode[] @__Any
 #else
-        public System.Collections.Generic.List<object> @__Any;
+        public object[] @__Any
 #endif
+        {
+            get
+            {
+                return Any?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlNode>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Any = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XNode>(value);
+#else
+                Any = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
@@ -1331,30 +1349,14 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlNode> Any
+        public System.Collections.Generic.List<System.Xml.XmlNode> Any { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any
+        public System.Collections.Generic.List<System.Xml.Linq.XNode> Any { get; set; }
 #else
-        public System.Collections.Generic.List<object> Any
+        public System.Collections.Generic.List<object> Any { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.XmlNode>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Any == null) { __Any = new System.Collections.Generic.List<System.Xml.Linq.XNode>(); }
-#else
-                if (__Any == null) { __Any = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Any;
-            }
-            set
-            {
-                __Any = value;
-            }
-        }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -1368,6 +1370,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string MimeType
         {
@@ -1381,6 +1384,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Encoding
         {
@@ -1405,23 +1409,21 @@ namespace UblSharp.XmlDigitalSignature
     public partial class TransformsType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Transform")]
-        public System.Collections.Generic.List<TransformType> @__Transform;
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TransformType> Transform
+        [System.Xml.Serialization.XmlElementAttribute("Transform", Order=0)]
+        public TransformType[] @__Transform
         {
             get
             {
-                if (__Transform == null) { __Transform = new System.Collections.Generic.List<TransformType>(); }
-                return __Transform;
+                return Transform?.ToArray();
             }
             set
             {
-                __Transform = value;
+                Transform = value == null ? null : new System.Collections.Generic.List<TransformType>(value);
             }
         }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TransformType> Transform { get; set; }
 
     }
     
@@ -1434,28 +1436,27 @@ namespace UblSharp.XmlDigitalSignature
     public partial class ManifestType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Reference")]
-        public System.Collections.Generic.List<ReferenceType> @__Reference;
+        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=0)]
+        public ReferenceType[] @__Reference
+        {
+            get
+            {
+                return Reference?.ToArray();
+            }
+            set
+            {
+                Reference = value == null ? null : new System.Collections.Generic.List<ReferenceType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ReferenceType> Reference
-        {
-            get
-            {
-                if (__Reference == null) { __Reference = new System.Collections.Generic.List<ReferenceType>(); }
-                return __Reference;
-            }
-            set
-            {
-                __Reference = value;
-            }
-        }
+        public System.Collections.Generic.List<ReferenceType> Reference { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -1480,28 +1481,27 @@ namespace UblSharp.XmlDigitalSignature
     public partial class SignaturePropertiesType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureProperty")]
-        public System.Collections.Generic.List<SignaturePropertyType> @__SignatureProperty;
+        [System.Xml.Serialization.XmlElementAttribute("SignatureProperty", Order=0)]
+        public SignaturePropertyType[] @__SignatureProperty
+        {
+            get
+            {
+                return SignatureProperty?.ToArray();
+            }
+            set
+            {
+                SignatureProperty = value == null ? null : new System.Collections.Generic.List<SignaturePropertyType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<SignaturePropertyType> SignatureProperty
-        {
-            get
-            {
-                if (__SignatureProperty == null) { __SignatureProperty = new System.Collections.Generic.List<SignaturePropertyType>(); }
-                return __SignatureProperty;
-            }
-            set
-            {
-                __SignatureProperty = value;
-            }
-        }
+        public System.Collections.Generic.List<SignaturePropertyType> SignatureProperty { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {
@@ -1526,19 +1526,43 @@ namespace UblSharp.XmlDigitalSignature
     public partial class SignaturePropertyType
     {
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlElement> @__Items;
+        public System.Xml.XmlElement[] @__Items
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XElement> @__Items;
+        public System.Xml.Linq.XElement[] @__Items
 #else
-        public System.Collections.Generic.List<object> @__Items;
+        public object[] @__Items
 #endif
+        {
+            get
+            {
+                return Items?.ToArray();
+            }
+            set
+            {
+#if FEATURE_XMLDOCUMENT
+                Items = value == null ? null : new System.Collections.Generic.List<System.Xml.XmlElement>(value);
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+                Items = value == null ? null : new System.Collections.Generic.List<System.Xml.Linq.XElement>(value);
+#else
+                Items = value == null ? null : new System.Collections.Generic.List<object>(value);
+#endif
+            }
+        }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
-        public System.Collections.Generic.List<string> @__Text;
+        public string[] @__Text
+        {
+            get
+            {
+                return Text?.ToArray();
+            }
+            set
+            {
+                Text = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAttributeAttribute("Target", DataType="anyURI")]
@@ -1550,44 +1574,18 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
 #if FEATURE_XMLDOCUMENT
-        public System.Collections.Generic.List<System.Xml.XmlElement> Items
+        public System.Collections.Generic.List<System.Xml.XmlElement> Items { get; set; }
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Collections.Generic.List<System.Xml.Linq.XElement> Items
+        public System.Collections.Generic.List<System.Xml.Linq.XElement> Items { get; set; }
 #else
-        public System.Collections.Generic.List<object> Items
+        public System.Collections.Generic.List<object> Items { get; set; }
 #endif
-        {
-            get
-            {
-#if FEATURE_XMLDOCUMENT
-                if (__Items == null) { __Items = new System.Collections.Generic.List<System.Xml.XmlElement>(); }
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-                if (__Items == null) { __Items = new System.Collections.Generic.List<System.Xml.Linq.XElement>(); }
-#else
-                if (__Items == null) { __Items = new System.Collections.Generic.List<object>(); }
-#endif
-                return __Items;
-            }
-            set
-            {
-                __Items = value;
-            }
-        }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<string> Text
-        {
-            get
-            {
-                if (__Text == null) { __Text = new System.Collections.Generic.List<string>(); }
-                return __Text;
-            }
-            set
-            {
-                __Text = value;
-            }
-        }
+        public System.Collections.Generic.List<System.String> Text { get; set; }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Target
         {
@@ -1601,6 +1599,7 @@ namespace UblSharp.XmlDigitalSignature
             }
         }
 
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public string Id
         {

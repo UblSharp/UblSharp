@@ -1,6 +1,10 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Xml;
+#if FEATURE_LINQ
+using System.Xml.Linq;
+#endif
 
 namespace UblSharp
 {
@@ -22,8 +26,28 @@ namespace UblSharp
 
             using (var rdr = new StreamReader(stream, encoding))
             {
-                return (T)UblDocumentManager.Default.GetSerializer<T>().Deserialize(rdr);
+                return (T)UblDocumentManager.Default.GetSerializer(typeof(T)).Deserialize(rdr);
             }
         }
+
+        public static T FromXmlReader<T>(XmlReader reader)
+            where T : BaseDocument
+        {
+            if (reader == null) throw new ArgumentNullException(nameof(reader));
+
+            return (T)UblDocumentManager.Default.GetSerializer(typeof(T)).Deserialize(reader);
+        }
+
+#if FEATURE_LINQ
+        public static T FromXDocument<T>(XDocument document)
+            where T : BaseDocument
+        {
+            if (document == null) throw new ArgumentNullException(nameof(document));
+            using (var reader = new StringReader(document.ToString()))
+            {
+                return (T)UblDocumentManager.Default.GetSerializer(typeof(T)).Deserialize(reader);
+            }
+        }
+#endif
     }
 }

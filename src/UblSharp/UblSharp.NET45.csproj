@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="BaseDocument.cs" />
     <Compile Include="BaseDocumentExtensions.cs" />
+    <Compile Include="CommonExtensionComponents\UBLExtensionType.cs" />
     <Compile Include="UblDocument.cs" />
     <Compile Include="UblDocumentManager.cs" />
     <Compile Include="UnqualifiedDataTypes\DateType.cs" />
@@ -123,6 +124,12 @@
     <Compile Include="maindoc\UBL-Waybill-2.1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnqualifiedDataTypes\TimeType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\DependencyValidation1\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

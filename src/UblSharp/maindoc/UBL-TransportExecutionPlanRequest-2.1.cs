@@ -25,120 +25,483 @@ namespace UblSharp
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("TransportExecutionPlanRequest", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2")]
     [System.Xml.Serialization.XmlRootAttribute("TransportExecutionPlanRequest", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2", IsNullable=false)]
-    public partial class TransportExecutionPlanRequestType : BaseDocument
+    public partial class TransportExecutionPlanRequestType : BaseDocument, IBaseDocument
     {
         
+        [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
+        public UBLExtensionType[] @__UBLExtensions
+        {
+            get
+            {
+                return UBLExtensions?.ToArray();
+            }
+            set
+            {
+                UBLExtensions = value == null ? null : new System.Collections.Generic.List<UBLExtensionType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UBLVersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public IdentifierType @__UBLVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CustomizationID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
+        public IdentifierType @__CustomizationID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
+        public IdentifierType @__ProfileID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileExecutionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
+        public IdentifierType @__ProfileExecutionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public IdentifierType @__VersionID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("CopyIndicator", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public IndicatorType @__CopyIndicator;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
+        public IdentifierType @__UUID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public DateType @__IssueDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TimeType @__IssueTime;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public CodeType @__DocumentStatusCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusReasonCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusReasonCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public CodeType @__DocumentStatusReasonCode;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusReasonDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__DocumentStatusReasonDescription;
+        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusReasonDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
+        public TextType[] @__DocumentStatusReasonDescription
+        {
+            get
+            {
+                return DocumentStatusReasonDescription?.ToArray();
+            }
+            set
+            {
+                DocumentStatusReasonDescription = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
+        public TextType[] @__Note
+        {
+            get
+            {
+                return Note?.ToArray();
+            }
+            set
+            {
+                Note = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("TransportUserRemarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=15)]
+        public TextType[] @__TransportUserRemarks
+        {
+            get
+            {
+                return TransportUserRemarks?.ToArray();
+            }
+            set
+            {
+                TransportUserRemarks = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Note;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportUserRemarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__TransportUserRemarks;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SenderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("SenderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
         public PartyType @__SenderParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
         public PartyType @__ReceiverParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportUserParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportUserParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
         public PartyType @__TransportUserParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportServiceProviderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportServiceProviderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
         public PartyType @__TransportServiceProviderParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PayeeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("PayeeParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
         public PartyType @__PayeeParty;
         
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
+        public SignatureType[] @__Signature
+        {
+            get
+            {
+                return Signature?.ToArray();
+            }
+            set
+            {
+                Signature = value == null ? null : new System.Collections.Generic.List<SignatureType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportExecutionPlanDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportExecutionPlanDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public DocumentReferenceType @__TransportExecutionPlanDocumentReference;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportServiceDescriptionDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportServiceDescriptionDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public DocumentReferenceType @__TransportServiceDescriptionDocumentReference;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<DocumentReferenceType> @__AdditionalDocumentReference;
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
+        public DocumentReferenceType[] @__AdditionalDocumentReference
+        {
+            get
+            {
+                return AdditionalDocumentReference?.ToArray();
+            }
+            set
+            {
+                AdditionalDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportContract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportContract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=25)]
         public ContractType @__TransportContract;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportServiceProviderResponseDeadlinePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PeriodType> @__TransportServiceProviderResponseDeadlinePeriod;
+        [System.Xml.Serialization.XmlElementAttribute("TransportServiceProviderResponseDeadlinePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=26)]
+        public PeriodType[] @__TransportServiceProviderResponseDeadlinePeriod
+        {
+            get
+            {
+                return TransportServiceProviderResponseDeadlinePeriod?.ToArray();
+            }
+            set
+            {
+                TransportServiceProviderResponseDeadlinePeriod = value == null ? null : new System.Collections.Generic.List<PeriodType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("MainTransportationService", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("MainTransportationService", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=27)]
         public TransportationServiceType @__MainTransportationService;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AdditionalTransportationService", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<TransportationServiceType> @__AdditionalTransportationService;
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalTransportationService", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=28)]
+        public TransportationServiceType[] @__AdditionalTransportationService
+        {
+            get
+            {
+                return AdditionalTransportationService?.ToArray();
+            }
+            set
+            {
+                AdditionalTransportationService = value == null ? null : new System.Collections.Generic.List<TransportationServiceType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ServiceStartTimePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ServiceStartTimePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=29)]
         public PeriodType @__ServiceStartTimePeriod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ServiceEndTimePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ServiceEndTimePeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=30)]
         public PeriodType @__ServiceEndTimePeriod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("FromLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("FromLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=31)]
         public LocationType @__FromLocation;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ToLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ToLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=32)]
         public LocationType @__ToLocation;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AtLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("AtLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=33)]
         public LocationType @__AtLocation;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TransportExecutionTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TransportExecutionTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=34)]
         public TransportExecutionTermsType @__TransportExecutionTerms;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Consignment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<ConsignmentType> @__Consignment;
+        [System.Xml.Serialization.XmlElementAttribute("Consignment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=35)]
+        public ConsignmentType[] @__Consignment
+        {
+            get
+            {
+                return Consignment?.ToArray();
+            }
+            set
+            {
+                Consignment = value == null ? null : new System.Collections.Generic.List<ConsignmentType>(value);
+            }
+        }
+        
+        /// <summary>
+        /// A container for all extensions present in the document.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<UBLExtensionType> IBaseDocument.UBLExtensions { get; set; }
+
+        
+        /// <summary>
+        /// A reason associated with the status of the Transport Execution Plan Request.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Document Status Reason Description. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Document Status Reason Description
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        /// <example>123 Standard Chartered Tower</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> DocumentStatusReasonDescription { get; set; }
+
+        
+        /// <summary>
+        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Note. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Note
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Note { get; set; }
+
+        
+        /// <summary>
+        /// Remarks from the transport user regarding the transport operations referenced in the Transport Execution Plan Request.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Transport User_ Remarks. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTermQualifier: Transport User
+        /// <para />PropertyTerm: Remarks
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> TransportUserRemarks { get; set; }
+
+        
+        /// <summary>
+        /// A signature applied to this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Signature
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Signature
+        /// <para />AssociatedObjectClass: Signature
+        /// <para />RepresentationTerm: Signature
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<SignatureType> IBaseDocument.Signature { get; set; }
+
+        
+        /// <summary>
+        /// A reference to an additional document associated with this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Additional_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTermQualifier: Additional
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference { get; set; }
+
+        
+        /// <summary>
+        /// A deadline for a response from the Transport Service Provider to this Transport Execution Plan Request.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Transport Service Provider Response Deadline_ Period. Period
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTermQualifier: Transport Service Provider Response Deadline
+        /// <para />PropertyTerm: Period
+        /// <para />AssociatedObjectClass: Period
+        /// <para />RepresentationTerm: Period
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PeriodType> TransportServiceProviderResponseDeadlinePeriod { get; set; }
+
+        
+        /// <summary>
+        /// A description of an additional transportation service referenced in the Transport Execution Plan Request.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Additional_ Transportation Service. Transportation Service
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTermQualifier: Additional
+        /// <para />PropertyTerm: Transportation Service
+        /// <para />AssociatedObjectClass: Transportation Service
+        /// <para />RepresentationTerm: Transportation Service
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TransportationServiceType> AdditionalTransportationService { get; set; }
+
+        
+        /// <summary>
+        /// A description of an identifiable collection of goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Consignment
+        /// <para />Cardinality: 1..n
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Consignment
+        /// <para />AssociatedObjectClass: Consignment
+        /// <para />RepresentationTerm: Consignment
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ConsignmentType> Consignment { get; set; }
+
+        
+        /// <summary>
+        /// Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. UBL Version Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: UBL Version Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UBLVersionID
+        {
+            get
+            {
+                if (__UBLVersionID == null) { __UBLVersionID = new IdentifierType(); }
+                return __UBLVersionID;
+            }
+            set
+            {
+                __UBLVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined customization of UBL for a specific use.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Customization Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Customization Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.CustomizationID
+        {
+            get
+            {
+                if (__CustomizationID == null) { __CustomizationID = new IdentifierType(); }
+                return __CustomizationID;
+            }
+            set
+            {
+                __CustomizationID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined profile of the customization of UBL being used.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Profile Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Profile Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileID
+        {
+            get
+            {
+                if (__ProfileID == null) { __ProfileID = new IdentifierType(); }
+                return __ProfileID;
+            }
+            set
+            {
+                __ProfileID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Profile Execution Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Profile Execution Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileExecutionID
+        {
+            get
+            {
+                if (__ProfileExecutionID == null) { __ProfileExecutionID = new IdentifierType(); }
+                return __ProfileExecutionID;
+            }
+            set
+            {
+                __ProfileExecutionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An identifier for this document, assigned by the sender.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. Identifier
+        /// <para />Cardinality: 1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
         
         /// <summary>
         /// An identifier for the current version of the Transport Execution Plan Request.
@@ -165,6 +528,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// Indicates whether this document is a copy (true) or not (false).
         /// <para />ComponentType: BBIE
@@ -190,6 +554,32 @@ namespace UblSharp
             }
         }
 
+        
+        /// <summary>
+        /// A universally unique identifier for an instance of this document.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Transport Execution Plan Request. UUID. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Transport Execution Plan Request
+        /// <para />PropertyTerm: UUID
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UUID
+        {
+            get
+            {
+                if (__UUID == null) { __UUID = new IdentifierType(); }
+                return __UUID;
+            }
+            set
+            {
+                __UUID = value;
+            }
+        }
+
+        
         /// <summary>
         /// The date, assigned by the sender, on which this document was issued.
         /// <para />ComponentType: BBIE
@@ -215,6 +605,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the sender, at which this document was issued.
         /// <para />ComponentType: BBIE
@@ -239,6 +630,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying the status of the Transport Execution Plan Request.
         /// <para />ComponentType: BBIE
@@ -264,6 +656,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A code signifying a reason associated with the status of the Transport Execution Plan Request.
         /// <para />ComponentType: BBIE
@@ -288,80 +681,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A reason associated with the status of the Transport Execution Plan Request.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Document Status Reason Description. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTerm: Document Status Reason Description
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        /// <example>123 Standard Chartered Tower</example>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> DocumentStatusReasonDescription
-        {
-            get
-            {
-                if (__DocumentStatusReasonDescription == null) { __DocumentStatusReasonDescription = new System.Collections.Generic.List<TextType>(); }
-                return __DocumentStatusReasonDescription;
-            }
-            set
-            {
-                __DocumentStatusReasonDescription = value;
-            }
-        }
-
-        /// <summary>
-        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Note. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTerm: Note
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Note
-        {
-            get
-            {
-                if (__Note == null) { __Note = new System.Collections.Generic.List<TextType>(); }
-                return __Note;
-            }
-            set
-            {
-                __Note = value;
-            }
-        }
-
-        /// <summary>
-        /// Remarks from the transport user regarding the transport operations referenced in the Transport Execution Plan Request.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Transport User_ Remarks. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTermQualifier: Transport User
-        /// <para />PropertyTerm: Remarks
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> TransportUserRemarks
-        {
-            get
-            {
-                if (__TransportUserRemarks == null) { __TransportUserRemarks = new System.Collections.Generic.List<TextType>(); }
-                return __TransportUserRemarks;
-            }
-            set
-            {
-                __TransportUserRemarks = value;
-            }
-        }
-
+        
         /// <summary>
         /// The party sending the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -387,6 +707,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party receiving the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -412,6 +733,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party requesting the transport services referenced in the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -437,6 +759,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party providing the transport services referenced in the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -462,6 +785,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party that will pay for the transport service(s) referred to in a Transport Execution Plan.
         /// <para />ComponentType: ASBIE
@@ -487,6 +811,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A reference to an original Transport Execution Plan Document.
         /// <para />ComponentType: ASBIE
@@ -512,6 +837,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A reference to the Transport Service Description, which is used by a transport service provider to announce transport services to transport users (buyers).
         /// <para />ComponentType: ASBIE
@@ -537,31 +863,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A reference to an additional document associated with this document.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Additional_ Document Reference. Document Reference
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTermQualifier: Additional
-        /// <para />PropertyTerm: Document Reference
-        /// <para />AssociatedObjectClass: Document Reference
-        /// <para />RepresentationTerm: Document Reference
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<DocumentReferenceType> AdditionalDocumentReference
-        {
-            get
-            {
-                if (__AdditionalDocumentReference == null) { __AdditionalDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>(); }
-                return __AdditionalDocumentReference;
-            }
-            set
-            {
-                __AdditionalDocumentReference = value;
-            }
-        }
-
+        
         /// <summary>
         /// A potential contract related to the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -587,31 +889,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A deadline for a response from the Transport Service Provider to this Transport Execution Plan Request.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Transport Service Provider Response Deadline_ Period. Period
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTermQualifier: Transport Service Provider Response Deadline
-        /// <para />PropertyTerm: Period
-        /// <para />AssociatedObjectClass: Period
-        /// <para />RepresentationTerm: Period
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PeriodType> TransportServiceProviderResponseDeadlinePeriod
-        {
-            get
-            {
-                if (__TransportServiceProviderResponseDeadlinePeriod == null) { __TransportServiceProviderResponseDeadlinePeriod = new System.Collections.Generic.List<PeriodType>(); }
-                return __TransportServiceProviderResponseDeadlinePeriod;
-            }
-            set
-            {
-                __TransportServiceProviderResponseDeadlinePeriod = value;
-            }
-        }
-
+        
         /// <summary>
         /// A description of the main transportation service referenced in the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -637,31 +915,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A description of an additional transportation service referenced in the Transport Execution Plan Request.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Additional_ Transportation Service. Transportation Service
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTermQualifier: Additional
-        /// <para />PropertyTerm: Transportation Service
-        /// <para />AssociatedObjectClass: Transportation Service
-        /// <para />RepresentationTerm: Transportation Service
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TransportationServiceType> AdditionalTransportationService
-        {
-            get
-            {
-                if (__AdditionalTransportationService == null) { __AdditionalTransportationService = new System.Collections.Generic.List<TransportationServiceType>(); }
-                return __AdditionalTransportationService;
-            }
-            set
-            {
-                __AdditionalTransportationService = value;
-            }
-        }
-
+        
         /// <summary>
         /// The period within which the services referred to in the Transport Execution Plan Request must begin.
         /// <para />ComponentType: ASBIE
@@ -687,6 +941,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The period during which the services referred to in the Transport Execution Plan Request must be completed.
         /// <para />ComponentType: ASBIE
@@ -712,6 +967,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The location of origin of the transport service referenced in the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -737,6 +993,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The destination location for the transport service referenced in the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -762,6 +1019,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The location of a transport service (e.g., terminal handling service) that does not require transport movement.
         /// <para />ComponentType: ASBIE
@@ -787,6 +1045,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// A description of terms and conditions related to the Transport Execution Plan Request.
         /// <para />ComponentType: ASBIE
@@ -808,30 +1067,6 @@ namespace UblSharp
             set
             {
                 __TransportExecutionTerms = value;
-            }
-        }
-
-        /// <summary>
-        /// A description of an identifiable collection of goods items to be transported between the consignor and the consignee. This information may be defined within a transport contract. A consignment may comprise more than one shipment (e.g., when consolidated by a freight forwarder).
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Transport Execution Plan Request. Consignment
-        /// <para />Cardinality: 1..n
-        /// <para />ObjectClass: Transport Execution Plan Request
-        /// <para />PropertyTerm: Consignment
-        /// <para />AssociatedObjectClass: Consignment
-        /// <para />RepresentationTerm: Consignment
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ConsignmentType> Consignment
-        {
-            get
-            {
-                if (__Consignment == null) { __Consignment = new System.Collections.Generic.List<ConsignmentType>(); }
-                return __Consignment;
-            }
-            set
-            {
-                __Consignment = value;
             }
         }
 

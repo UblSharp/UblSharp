@@ -25,84 +25,427 @@ namespace UblSharp
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("CataloguePricingUpdate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2")]
     [System.Xml.Serialization.XmlRootAttribute("CataloguePricingUpdate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2", IsNullable=false)]
-    public partial class CataloguePricingUpdateType : BaseDocument
+    public partial class CataloguePricingUpdateType : BaseDocument, IBaseDocument
     {
         
+        [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
+        public UBLExtensionType[] @__UBLExtensions
+        {
+            get
+            {
+                return UBLExtensions?.ToArray();
+            }
+            set
+            {
+                UBLExtensions = value == null ? null : new System.Collections.Generic.List<UBLExtensionType>(value);
+            }
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("UBLVersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public IdentifierType @__UBLVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CustomizationID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
+        public IdentifierType @__CustomizationID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
+        public IdentifierType @__ProfileID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProfileExecutionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
+        public IdentifierType @__ProfileExecutionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
+        public IdentifierType @__UUID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public NameType @__Name;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public DateType @__IssueDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public TimeType @__IssueTime;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("RevisionDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("RevisionDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public DateType @__RevisionDate;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("RevisionTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("RevisionTime", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TimeType @__RevisionTime;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Note;
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
+        public TextType[] @__Note
+        {
+            get
+            {
+                return Note?.ToArray();
+            }
+            set
+            {
+                Note = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
+        public TextType[] @__Description
+        {
+            get
+            {
+                return Description?.ToArray();
+            }
+            set
+            {
+                Description = value == null ? null : new System.Collections.Generic.List<TextType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public System.Collections.Generic.List<TextType> @__Description;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
         public IdentifierType @__VersionID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("LineCountNumeric", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=15)]
         public NumericType @__LineCountNumeric;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<PeriodType> @__ValidityPeriod;
+        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
+        public PeriodType[] @__ValidityPeriod
+        {
+            get
+            {
+                return ValidityPeriod?.ToArray();
+            }
+            set
+            {
+                ValidityPeriod = value == null ? null : new System.Collections.Generic.List<PeriodType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("RelatedCatalogueReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("RelatedCatalogueReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
         public CatalogueReferenceType @__RelatedCatalogueReference;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReferencedContract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<ContractType> @__ReferencedContract;
+        [System.Xml.Serialization.XmlElementAttribute("ReferencedContract", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
+        public ContractType[] @__ReferencedContract
+        {
+            get
+            {
+                return ReferencedContract?.ToArray();
+            }
+            set
+            {
+                ReferencedContract = value == null ? null : new System.Collections.Generic.List<ContractType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
+        public SignatureType[] @__Signature
+        {
+            get
+            {
+                return Signature?.ToArray();
+            }
+            set
+            {
+                Signature = value == null ? null : new System.Collections.Generic.List<SignatureType>(value);
+            }
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ProviderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ProviderParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
         public PartyType @__ProviderParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
         public PartyType @__ReceiverParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public SupplierPartyType @__SellerSupplierParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ContractorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("ContractorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public CustomerPartyType @__ContractorCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TradingTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("TradingTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
         public TradingTermsType @__TradingTerms;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DefaultLanguage", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
+        [System.Xml.Serialization.XmlElementAttribute("DefaultLanguage", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=25)]
         public LanguageType @__DefaultLanguage;
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CataloguePricingUpdateLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
-        public System.Collections.Generic.List<CataloguePricingUpdateLineType> @__CataloguePricingUpdateLine;
+        [System.Xml.Serialization.XmlElementAttribute("CataloguePricingUpdateLine", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=26)]
+        public CataloguePricingUpdateLineType[] @__CataloguePricingUpdateLine
+        {
+            get
+            {
+                return CataloguePricingUpdateLine?.ToArray();
+            }
+            set
+            {
+                CataloguePricingUpdateLine = value == null ? null : new System.Collections.Generic.List<CataloguePricingUpdateLineType>(value);
+            }
+        }
+        
+        /// <summary>
+        /// A container for all extensions present in the document.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<UBLExtensionType> IBaseDocument.UBLExtensions { get; set; }
+
+        
+        /// <summary>
+        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Note. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Note
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Note { get; set; }
+
+        
+        /// <summary>
+        /// Describes the Catalogue Revision.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Description. Text
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Description
+        /// <para />RepresentationTerm: Text
+        /// <para />DataType: Text. Type
+        /// </summary>
+        /// <example>adjustment of prices for Christmas trading period</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TextType> Description { get; set; }
+
+        
+        /// <summary>
+        /// A period, assigned by the seller, during which the information in the Catalogue Revision is effective. This may be given as start and end dates or as a duration.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Validity_ Period. Period
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTermQualifier: Validity
+        /// <para />PropertyTerm: Period
+        /// <para />AssociatedObjectClass: Period
+        /// <para />RepresentationTerm: Period
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<PeriodType> ValidityPeriod { get; set; }
+
+        
+        /// <summary>
+        /// A contract or framework agreement with which the Catalogue is associated.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Referenced_ Contract. Contract
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTermQualifier: Referenced
+        /// <para />PropertyTerm: Contract
+        /// <para />AssociatedObjectClass: Contract
+        /// <para />RepresentationTerm: Contract
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<ContractType> ReferencedContract { get; set; }
+
+        
+        /// <summary>
+        /// A signature applied to this document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Signature
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Signature
+        /// <para />AssociatedObjectClass: Signature
+        /// <para />RepresentationTerm: Signature
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        System.Collections.Generic.List<SignatureType> IBaseDocument.Signature { get; set; }
+
+        
+        /// <summary>
+        /// One or more lines in the Catalogue Pricing Update, each line updating a specific catalogue item.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Catalogue Pricing Update Line
+        /// <para />Cardinality: 1..n
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Catalogue Pricing Update Line
+        /// <para />AssociatedObjectClass: Catalogue Pricing Update Line
+        /// <para />RepresentationTerm: Catalogue Pricing Update Line
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CataloguePricingUpdateLineType> CataloguePricingUpdateLine { get; set; }
+
+        
+        /// <summary>
+        /// Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. UBL Version Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: UBL Version Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>2.0.5</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UBLVersionID
+        {
+            get
+            {
+                if (__UBLVersionID == null) { __UBLVersionID = new IdentifierType(); }
+                return __UBLVersionID;
+            }
+            set
+            {
+                __UBLVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined customization of UBL for a specific use.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Customization Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Customization Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>NES</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.CustomizationID
+        {
+            get
+            {
+                if (__CustomizationID == null) { __CustomizationID = new IdentifierType(); }
+                return __CustomizationID;
+            }
+            set
+            {
+                __CustomizationID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies a user-defined profile of the subset of UBL being used.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Profile Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Profile Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        /// <example>BasicProcurementProcess</example>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileID
+        {
+            get
+            {
+                if (__ProfileID == null) { __ProfileID = new IdentifierType(); }
+                return __ProfileID;
+            }
+            set
+            {
+                __ProfileID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Profile Execution Identifier. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Profile Execution Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ProfileExecutionID
+        {
+            get
+            {
+                if (__ProfileExecutionID == null) { __ProfileExecutionID = new IdentifierType(); }
+                return __ProfileExecutionID;
+            }
+            set
+            {
+                __ProfileExecutionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An identifier for this document, assigned by the sender.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. Identifier
+        /// <para />Cardinality: 1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: Identifier
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A universally unique identifier for an instance of this document.
+        /// <para />ComponentType: BBIE
+        /// <para />DictionaryEntryName: Catalogue Pricing Update. UUID. Identifier
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Catalogue Pricing Update
+        /// <para />PropertyTerm: UUID
+        /// <para />RepresentationTerm: Identifier
+        /// <para />DataType: Identifier. Type
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        IdentifierType IBaseDocument.UUID
+        {
+            get
+            {
+                if (__UUID == null) { __UUID = new IdentifierType(); }
+                return __UUID;
+            }
+            set
+            {
+                __UUID = value;
+            }
+        }
+
         
         /// <summary>
         /// Text, assigned by the sender, that identifies this document to business users.
@@ -129,6 +472,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The date, assigned by the sender, on which this document was issued.
         /// <para />ComponentType: BBIE
@@ -153,6 +497,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the sender, at which this document was issued.
         /// <para />ComponentType: BBIE
@@ -177,6 +522,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The date, assigned by the seller, on which the Catalogue was revised.
         /// <para />ComponentType: BBIE
@@ -201,6 +547,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The time, assigned by the seller, at which the Catalogue was revised.
         /// <para />ComponentType: BBIE
@@ -225,55 +572,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Catalogue Pricing Update. Note. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Catalogue Pricing Update
-        /// <para />PropertyTerm: Note
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Note
-        {
-            get
-            {
-                if (__Note == null) { __Note = new System.Collections.Generic.List<TextType>(); }
-                return __Note;
-            }
-            set
-            {
-                __Note = value;
-            }
-        }
-
-        /// <summary>
-        /// Describes the Catalogue Revision.
-        /// <para />ComponentType: BBIE
-        /// <para />DictionaryEntryName: Catalogue Pricing Update. Description. Text
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Catalogue Pricing Update
-        /// <para />PropertyTerm: Description
-        /// <para />RepresentationTerm: Text
-        /// <para />DataType: Text. Type
-        /// </summary>
-        /// <example>adjustment of prices for Christmas trading period</example>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<TextType> Description
-        {
-            get
-            {
-                if (__Description == null) { __Description = new System.Collections.Generic.List<TextType>(); }
-                return __Description;
-            }
-            set
-            {
-                __Description = value;
-            }
-        }
-
+        
         /// <summary>
         /// Indicates the current version of the catalogue.
         /// <para />ComponentType: BBIE
@@ -299,6 +598,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The number of lines in the document.
         /// <para />ComponentType: BBIE
@@ -323,31 +623,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A period, assigned by the seller, during which the information in the Catalogue Revision is effective. This may be given as start and end dates or as a duration.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Catalogue Pricing Update. Validity_ Period. Period
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Catalogue Pricing Update
-        /// <para />PropertyTermQualifier: Validity
-        /// <para />PropertyTerm: Period
-        /// <para />AssociatedObjectClass: Period
-        /// <para />RepresentationTerm: Period
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<PeriodType> ValidityPeriod
-        {
-            get
-            {
-                if (__ValidityPeriod == null) { __ValidityPeriod = new System.Collections.Generic.List<PeriodType>(); }
-                return __ValidityPeriod;
-            }
-            set
-            {
-                __ValidityPeriod = value;
-            }
-        }
-
+        
         /// <summary>
         /// A reference to the Catalogue being updated.
         /// <para />ComponentType: ASBIE
@@ -373,31 +649,7 @@ namespace UblSharp
             }
         }
 
-        /// <summary>
-        /// A contract or framework agreement with which the Catalogue is associated.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Catalogue Pricing Update. Referenced_ Contract. Contract
-        /// <para />Cardinality: 0..n
-        /// <para />ObjectClass: Catalogue Pricing Update
-        /// <para />PropertyTermQualifier: Referenced
-        /// <para />PropertyTerm: Contract
-        /// <para />AssociatedObjectClass: Contract
-        /// <para />RepresentationTerm: Contract
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<ContractType> ReferencedContract
-        {
-            get
-            {
-                if (__ReferencedContract == null) { __ReferencedContract = new System.Collections.Generic.List<ContractType>(); }
-                return __ReferencedContract;
-            }
-            set
-            {
-                __ReferencedContract = value;
-            }
-        }
-
+        
         /// <summary>
         /// The party sending the Catalogue Pricing Update.
         /// <para />ComponentType: ASBIE
@@ -423,6 +675,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The party receiving the Catalogue Pricing Update.
         /// <para />ComponentType: ASBIE
@@ -448,6 +701,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The seller.
         /// <para />ComponentType: ASBIE
@@ -473,6 +727,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The customer party responsible for the contracts with which the Catalogue is associated.
         /// <para />ComponentType: ASBIE
@@ -498,6 +753,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The trading terms associated with the Catalogue.
         /// <para />ComponentType: ASBIE
@@ -522,6 +778,7 @@ namespace UblSharp
             }
         }
 
+        
         /// <summary>
         /// The default language for the catalogue pricing update.
         /// <para />ComponentType: ASBIE
@@ -544,30 +801,6 @@ namespace UblSharp
             set
             {
                 __DefaultLanguage = value;
-            }
-        }
-
-        /// <summary>
-        /// One or more lines in the Catalogue Pricing Update, each line updating a specific catalogue item.
-        /// <para />ComponentType: ASBIE
-        /// <para />DictionaryEntryName: Catalogue Pricing Update. Catalogue Pricing Update Line
-        /// <para />Cardinality: 1..n
-        /// <para />ObjectClass: Catalogue Pricing Update
-        /// <para />PropertyTerm: Catalogue Pricing Update Line
-        /// <para />AssociatedObjectClass: Catalogue Pricing Update Line
-        /// <para />RepresentationTerm: Catalogue Pricing Update Line
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<CataloguePricingUpdateLineType> CataloguePricingUpdateLine
-        {
-            get
-            {
-                if (__CataloguePricingUpdateLine == null) { __CataloguePricingUpdateLine = new System.Collections.Generic.List<CataloguePricingUpdateLineType>(); }
-                return __CataloguePricingUpdateLine;
-            }
-            set
-            {
-                __CataloguePricingUpdateLine = value;
             }
         }
 

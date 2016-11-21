@@ -49,6 +49,12 @@ namespace UblSharp.Generator.Extensions
             return typeMember.UserData[XmlSchemaTypeKey] as XmlSchemaType;
         }
 
+        public static bool IsMaindocSchema(this CodeTypeMember typeMember)
+        {
+            var uri = typeMember.GetSchema().SourceUri;
+            return uri.Contains("maindoc") && !uri.Contains("BaseDocument");
+        }
+
         public static bool HasAnyRequiredMembers(this CodeTypeMember typeMember)
         {
             var xmlComplexType = GetXmlSchemaType(typeMember) as XmlSchemaComplexType;

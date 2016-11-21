@@ -11,6 +11,249 @@ namespace UblSharp.CommonExtensionComponents
     using UnqualifiedDataTypes;
     
     
+    /// <summary>
+    /// A single extension for private use.
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("UBLExtensionType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public partial class UBLExtensionType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
+        public IdentifierType @__ID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
+        public NameType @__Name;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyID", Order=2)]
+        public ExtensionAgencyIDType @__ExtensionAgencyID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyName", Order=3)]
+        public ExtensionAgencyNameType @__ExtensionAgencyName;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionVersionID", Order=4)]
+        public ExtensionVersionIDType @__ExtensionVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyURI", Order=5)]
+        public ExtensionAgencyURIType @__ExtensionAgencyURI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionURI", Order=6)]
+        public ExtensionURIType @__ExtensionURI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionReasonCode", Order=7)]
+        public ExtensionReasonCodeType @__ExtensionReasonCode;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionReason", Order=8)]
+        public ExtensionReasonType @__ExtensionReason;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExtensionContent", Order=9)]
+#if FEATURE_XMLDOCUMENT
+        public System.Xml.XmlElement @__ExtensionContent;
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+        public System.Xml.Linq.XElement @__ExtensionContent;
+#else
+        public object @__ExtensionContent;
+#endif
+        
+        /// <summary>
+        /// An identifier for the Extension assigned by the creator of the extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public IdentifierType ID
+        {
+            get
+            {
+                if (__ID == null) { __ID = new IdentifierType(); }
+                return __ID;
+            }
+            set
+            {
+                __ID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A name for the Extension assigned by the creator of the extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public NameType Name
+        {
+            get
+            {
+                if (__Name == null) { __Name = new NameType(); }
+                return __Name;
+            }
+            set
+            {
+                __Name = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// An agency that maintains one or more Extensions.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionAgencyIDType ExtensionAgencyID
+        {
+            get
+            {
+                if (__ExtensionAgencyID == null) { __ExtensionAgencyID = new ExtensionAgencyIDType(); }
+                return __ExtensionAgencyID;
+            }
+            set
+            {
+                __ExtensionAgencyID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The name of the agency that maintains the Extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionAgencyNameType ExtensionAgencyName
+        {
+            get
+            {
+                if (__ExtensionAgencyName == null) { __ExtensionAgencyName = new ExtensionAgencyNameType(); }
+                return __ExtensionAgencyName;
+            }
+            set
+            {
+                __ExtensionAgencyName = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The version of the Extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionVersionIDType ExtensionVersionID
+        {
+            get
+            {
+                if (__ExtensionVersionID == null) { __ExtensionVersionID = new ExtensionVersionIDType(); }
+                return __ExtensionVersionID;
+            }
+            set
+            {
+                __ExtensionVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A URI for the Agency that maintains the Extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionAgencyURIType ExtensionAgencyURI
+        {
+            get
+            {
+                if (__ExtensionAgencyURI == null) { __ExtensionAgencyURI = new ExtensionAgencyURIType(); }
+                return __ExtensionAgencyURI;
+            }
+            set
+            {
+                __ExtensionAgencyURI = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A URI for the Extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionURIType ExtensionURI
+        {
+            get
+            {
+                if (__ExtensionURI == null) { __ExtensionURI = new ExtensionURIType(); }
+                return __ExtensionURI;
+            }
+            set
+            {
+                __ExtensionURI = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A code for reason the Extension is being included.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionReasonCodeType ExtensionReasonCode
+        {
+            get
+            {
+                if (__ExtensionReasonCode == null) { __ExtensionReasonCode = new ExtensionReasonCodeType(); }
+                return __ExtensionReasonCode;
+            }
+            set
+            {
+                __ExtensionReasonCode = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A description of the reason for the Extension.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ExtensionReasonType ExtensionReason
+        {
+            get
+            {
+                if (__ExtensionReason == null) { __ExtensionReason = new ExtensionReasonType(); }
+                return __ExtensionReason;
+            }
+            set
+            {
+                __ExtensionReason = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The definition of the extension content.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+#if FEATURE_XMLDOCUMENT
+        public System.Xml.XmlElement ExtensionContent
+#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
+        public System.Xml.Linq.XElement ExtensionContent
+#else
+        public object ExtensionContent
+#endif
+        {
+            get
+            {
+                return __ExtensionContent;
+            }
+            set
+            {
+                __ExtensionContent = value;
+            }
+        }
+
+    }
+    
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
@@ -45,6 +288,26 @@ namespace UblSharp.CommonExtensionComponents
         }
 
         public static implicit operator string(ExtensionAgencyNameType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("ExtensionReasonCodeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    public partial class ExtensionReasonCodeType : CodeType
+    {
+        
+        public static implicit operator ExtensionReasonCodeType(string value)
+        {
+             return value == null ? null : new ExtensionReasonCodeType { Value = value };
+        }
+
+        public static implicit operator string(ExtensionReasonCodeType value)
         {
              return value.Value;
         }
@@ -127,260 +390,6 @@ namespace UblSharp.CommonExtensionComponents
         public static implicit operator string(ExtensionAgencyIDType value)
         {
              return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionReasonCodeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionReasonCodeType : CodeType
-    {
-        
-        public static implicit operator ExtensionReasonCodeType(string value)
-        {
-             return value == null ? null : new ExtensionReasonCodeType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionReasonCodeType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// A single extension for private use.
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("UBLExtensionType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class UBLExtensionType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public IdentifierType @__ID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
-        public NameType @__Name;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyID")]
-        public ExtensionAgencyIDType @__ExtensionAgencyID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyName")]
-        public ExtensionAgencyNameType @__ExtensionAgencyName;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionVersionID")]
-        public ExtensionVersionIDType @__ExtensionVersionID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyURI")]
-        public ExtensionAgencyURIType @__ExtensionAgencyURI;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionURI")]
-        public ExtensionURIType @__ExtensionURI;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionReasonCode")]
-        public ExtensionReasonCodeType @__ExtensionReasonCode;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionReason")]
-        public ExtensionReasonType @__ExtensionReason;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ExtensionContent")]
-#if FEATURE_XMLDOCUMENT
-        public System.Xml.XmlElement @__ExtensionContent;
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Xml.Linq.XElement @__ExtensionContent;
-#else
-        public object @__ExtensionContent;
-#endif
-        
-        /// <summary>
-        /// An identifier for the Extension assigned by the creator of the extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public IdentifierType ID
-        {
-            get
-            {
-                if (__ID == null) { __ID = new IdentifierType(); }
-                return __ID;
-            }
-            set
-            {
-                __ID = value;
-            }
-        }
-
-        /// <summary>
-        /// A name for the Extension assigned by the creator of the extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public NameType Name
-        {
-            get
-            {
-                if (__Name == null) { __Name = new NameType(); }
-                return __Name;
-            }
-            set
-            {
-                __Name = value;
-            }
-        }
-
-        /// <summary>
-        /// An agency that maintains one or more Extensions.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyIDType ExtensionAgencyID
-        {
-            get
-            {
-                if (__ExtensionAgencyID == null) { __ExtensionAgencyID = new ExtensionAgencyIDType(); }
-                return __ExtensionAgencyID;
-            }
-            set
-            {
-                __ExtensionAgencyID = value;
-            }
-        }
-
-        /// <summary>
-        /// The name of the agency that maintains the Extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyNameType ExtensionAgencyName
-        {
-            get
-            {
-                if (__ExtensionAgencyName == null) { __ExtensionAgencyName = new ExtensionAgencyNameType(); }
-                return __ExtensionAgencyName;
-            }
-            set
-            {
-                __ExtensionAgencyName = value;
-            }
-        }
-
-        /// <summary>
-        /// The version of the Extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionVersionIDType ExtensionVersionID
-        {
-            get
-            {
-                if (__ExtensionVersionID == null) { __ExtensionVersionID = new ExtensionVersionIDType(); }
-                return __ExtensionVersionID;
-            }
-            set
-            {
-                __ExtensionVersionID = value;
-            }
-        }
-
-        /// <summary>
-        /// A URI for the Agency that maintains the Extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyURIType ExtensionAgencyURI
-        {
-            get
-            {
-                if (__ExtensionAgencyURI == null) { __ExtensionAgencyURI = new ExtensionAgencyURIType(); }
-                return __ExtensionAgencyURI;
-            }
-            set
-            {
-                __ExtensionAgencyURI = value;
-            }
-        }
-
-        /// <summary>
-        /// A URI for the Extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionURIType ExtensionURI
-        {
-            get
-            {
-                if (__ExtensionURI == null) { __ExtensionURI = new ExtensionURIType(); }
-                return __ExtensionURI;
-            }
-            set
-            {
-                __ExtensionURI = value;
-            }
-        }
-
-        /// <summary>
-        /// A code for reason the Extension is being included.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionReasonCodeType ExtensionReasonCode
-        {
-            get
-            {
-                if (__ExtensionReasonCode == null) { __ExtensionReasonCode = new ExtensionReasonCodeType(); }
-                return __ExtensionReasonCode;
-            }
-            set
-            {
-                __ExtensionReasonCode = value;
-            }
-        }
-
-        /// <summary>
-        /// A description of the reason for the Extension.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionReasonType ExtensionReason
-        {
-            get
-            {
-                if (__ExtensionReason == null) { __ExtensionReason = new ExtensionReasonType(); }
-                return __ExtensionReason;
-            }
-            set
-            {
-                __ExtensionReason = value;
-            }
-        }
-
-        /// <summary>
-        /// The definition of the extension content.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-#if FEATURE_XMLDOCUMENT
-        public System.Xml.XmlElement ExtensionContent
-#elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ
-        public System.Xml.Linq.XElement ExtensionContent
-#else
-        public object ExtensionContent
-#endif
-        {
-            get
-            {
-                return __ExtensionContent;
-            }
-            set
-            {
-                __ExtensionContent = value;
-            }
         }
 
     }

@@ -20,9 +20,10 @@ namespace UblSharp.Generator.XsdFixers
             var maindocSchemas = schemas.Where(x => x.SourceUri.Contains("maindoc")).ToList();
             var baseDocSchema = schemas.Single(x => x.SourceUri.Contains("BaseDocument"));
 
-            var elementsToRemove = ((XmlSchemaSequence)baseDocSchema.Items.OfType<XmlSchemaComplexType>().Single().ContentTypeParticle)
-                .Items.Cast<XmlSchemaElement>()
-                .ToLookup(x => x.QualifiedName.Name);
+            var elementsToRemove = (baseDocSchema.Items.OfType<XmlSchemaComplexType>().Single().ContentTypeParticle as XmlSchemaSequence)
+                                       ?.Items.Cast<XmlSchemaElement>()
+                                       .ToLookup(x => x.QualifiedName.Name) ?? new XmlSchemaElement[0].ToLookup(x => "");
+
             var baseDocSchemaImport = new XmlSchemaImport { Namespace = baseDocSchema.TargetNamespace, Schema = baseDocSchema };
 
             foreach (var maindocSchema in maindocSchemas)

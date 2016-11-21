@@ -30,6 +30,8 @@ namespace UblSharp.Generator.ConditionalFeatures
                     lines.Insert(lineNum + 5, origLine.Replace(type.Key, "object"));
                     lines.Insert(lineNum + 6, "#endif");
                     lineNum += 8;
+
+                    // lines[lineNum] = origLine.Replace(type.Key, "object");
                 }
             }
 

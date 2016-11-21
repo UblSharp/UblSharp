@@ -7,6 +7,7 @@ using UblSharp.CommonAggregateComponents;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.UnqualifiedDataTypes;
 using UblSharp.XmlDigitalSignature;
+using UblSharp.Tests.Util;
 
 namespace UblSharp.Tests.Samples
 {
@@ -20,6 +21,7 @@ namespace UblSharp.Tests.Samples
                 {
                     new UBLExtensionType
                     {
+                        ExtensionContent = @"<mec:Additional xmlns:mec=""urn:X-MyCompany:Extension"" xmlns:mac=""urn:X-MyCompany:Aggregate"" xmlns:mbc=""urn:X-MyCompany:Basic""><mac:QualificationLevel><cbc:ID xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"">L1</cbc:ID><cbc:Description xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"">Level 1</cbc:Description><mbc:LevelPrerequisite>Level0</mbc:LevelPrerequisite></mac:QualificationLevel><mac:ThirdPartyBilling><cac:Party xmlns:cac=""urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2""><cac:PartyName><cbc:Name xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"">Jane Doe</cbc:Name></cac:PartyName></cac:Party></mac:ThirdPartyBilling></mec:Additional>".ToXmlElement()
                     }
                 },
                 UBLVersionID = "2.1",
