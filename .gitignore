@@ -226,3 +226,5 @@ $RECYCLE.BIN/
 *.lock.json
 *.nuget.props
 *.nuget.targets
+
+.idea
