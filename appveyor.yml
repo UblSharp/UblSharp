@@ -8,7 +8,7 @@ nuget:
   disable_publish_on_pr: true
 build_script:
 - ps: .\src\build.ps1
-test: on
+test: off
 artifacts:
 - path: .\artifacts\**\*.nupkg
   name: NuGet
