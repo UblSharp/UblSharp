@@ -15,10 +15,10 @@ For example, using the Visual Studio package manager console:
 
 ## Available packages
 
-| Package               | Description
-| -                     | -
-| UblSharp              | Contains all UBL 2.0/2.1 common, aggregate and document types, annoted with .NET Xml* attributes. Also contains some basic serialization functions.
-| UblSharp.Validation   | Contains validation functions to validate XML documents and UblSharp (.NET) objects using the OASIS UBL 2.1 xsd specifications.
+| Package               | Description 
+| --------------------- | ----------- 
+| UblSharp              | Contains all UBL 2.0/2.1 common, aggregate and document types, annoted with .NET Xml* attributes. Also contains some basic serialization functions. 
+| UblSharp.Validation   | Contains validation functions to validate XML documents and UblSharp (.NET) objects using the OASIS UBL 2.1 xsd specifications. 
 
 
 # License
