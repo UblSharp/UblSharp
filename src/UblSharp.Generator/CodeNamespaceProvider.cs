@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Schema;
+using UblSharp.Generator.Extensions;
 
 namespace UblSharp.Generator
 {
@@ -42,7 +43,8 @@ namespace UblSharp.Generator
             ["cctscct"] = "CoreComponentTypes",
             ["ccts-cct"] = "CoreComponentTypes",
             ["ccts"] = "CoreComponentTypes",
-            ["abs"] = "Abs",
+            ["cct"] = "CoreComponentTypes",
+            ["abs"] = "",
             ["xades"] = "Xades",
             ["sac"] = "SignatureAggregateComponents",
             ["csc"] = "CommonSignatureComponents",
@@ -52,7 +54,9 @@ namespace UblSharp.Generator
         };
 
         private Dictionary<string, string> _xml2CSharpNamespaceMapping;
+        private Dictionary<string, string> _namespace2Foldermapping;
         private readonly string[] _unwantedPrefixes = { "", "xsd", "abs", "cct" };
+        private readonly string[] _unwantedFolderPrefixes = { "", "xsd" };
 
         public CodeNamespaceProvider(XmlSchemaSet schemaSet, UblGeneratorOptions options)
         {
@@ -63,6 +67,12 @@ namespace UblSharp.Generator
                 .Select(qname => new { qname.Namespace, qname.Name })
                 .Distinct()
                 .ToDictionary(key => key.Namespace, val => $"{options.Namespace}.{_realNamespaces[val.Name]}");
+
+            _namespace2Foldermapping = schemaSet.Schemas().Cast<XmlSchema>()
+                .SelectMany(schema => schema.Namespaces.ToArray().Where(qname => !_unwantedFolderPrefixes.Contains(qname.Name)))
+                .Select(qname => new { qname.Namespace, qname.Name })
+                .GroupBy(x => x.Namespace)
+                .ToDictionary(key => key.Key, val => $"{_realNamespaces[val.First().Name]}");
 
             var mainSchemas = schemaSet.Schemas().Cast<XmlSchema>().Where(x => x.SourceUri.Contains("maindoc"));
             foreach (var schema in mainSchemas)
@@ -79,6 +89,9 @@ namespace UblSharp.Generator
             _xml2CSharpNamespaceMapping[Namespaces.Csc] = $"{options.Namespace}.{_realNamespaces["csc"]}";
             _xml2CSharpNamespaceMapping[Namespaces.Xades132] = $"{options.Namespace}.{_realNamespaces["xades"]}";
             _xml2CSharpNamespaceMapping[Namespaces.Xades141] = $"{options.Namespace}.{_realNamespaces["xades"]}";
+            _namespace2Foldermapping[Namespaces.Csc] = $"{_realNamespaces["csc"]}";
+            _namespace2Foldermapping[Namespaces.Xades132] = $"{_realNamespaces["xades"]}";
+            _namespace2Foldermapping[Namespaces.Xades141] = $"{_realNamespaces["xades"]}";
         }
 
         public CodeNamespace CreateCodeNamespace(string xmlNamespace)
@@ -108,6 +121,16 @@ namespace UblSharp.Generator
             {
                 throw new InvalidOperationException("Cannot find namespace for: " + xmlNamespace);
             }
+        }
+
+        public string GetNamespaceFolderName(XmlSchema schema)
+        {
+            if (schema.IsMaindocSchema() || schema.SourceUri.Contains("BaseDocument"))
+            {
+                return "maindoc";
+            }
+
+            return _namespace2Foldermapping[schema.TargetNamespace];
         }
     }
 }

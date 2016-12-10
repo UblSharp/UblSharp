@@ -51,7 +51,12 @@ namespace UblSharp.Generator.Extensions
 
         public static bool IsMaindocSchema(this CodeTypeMember typeMember)
         {
-            var uri = typeMember.GetSchema().SourceUri;
+            return typeMember.GetSchema().IsMaindocSchema();
+        }
+
+        public static bool IsMaindocSchema(this XmlSchema schema)
+        {
+            var uri = schema.SourceUri;
             return uri.Contains("maindoc") && !uri.Contains("BaseDocument");
         }
 

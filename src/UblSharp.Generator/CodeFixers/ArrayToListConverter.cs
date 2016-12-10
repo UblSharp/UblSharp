@@ -1,5 +1,6 @@
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Linq;
 using UblSharp.Generator.Extensions;
 
@@ -26,27 +27,30 @@ namespace UblSharp.Generator.CodeFixers
                 }
             }
 
-            var arrayMembers = type.Members.OfType<CodeMemberField>().Where(x => x.Type.ArrayElementType != null && !_typesToIgnore.Contains(x.Type.ArrayElementType.BaseType)).ToList();
+            var arrayMembers = type.Members.OfType<CodeMemberField>().Where(x => !x.Name.StartsWith("__") && x.Type.ArrayElementType != null && !_typesToIgnore.Contains(x.Type.ArrayElementType.BaseType)).ToList();
             foreach (var field in arrayMembers)
             {
                 var prop = new CodeMemberProperty()
                 {
                     Type = field.Type,
                     Name = "__" + field.Name,
-                    Attributes = field.Attributes,
-                    CustomAttributes = field.CustomAttributes
+                    Attributes = field.Attributes
                 };
+
+                prop.CustomAttributes.AddRange(field.CustomAttributes);
+
+                var fieldName = field.Name.MakePrivateFieldName();
                 prop.GetStatements.Add(new CodeSnippetExpression()
                 {
-                    Value = $@"return {field.Name}?.ToArray()"
+                    Value = $@"return {fieldName}?.ToArray()"
                 });
                 prop.SetStatements.Add(new CodeSnippetExpression()
                 {
-                    Value = $@"{field.Name} = value == null ? null : new System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}>(value)"
+                    Value = $@"{fieldName} = value == null ? null : new System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}>(value)"
                 });
 
-                string interfaceDecl = "";
-                string visibility = "public ";
+                var interfaceDecl = "";
+                var visibility = "public ";
                 if (type.IsMaindocSchema() && new[] { "UBLExtensions", "Signature" }.Contains(field.Name))
                 {
                     interfaceDecl = "IBaseDocument.";
@@ -55,7 +59,11 @@ namespace UblSharp.Generator.CodeFixers
 
                 var snip = new CodeSnippetTypeMember();
                 snip.Text = $@"        [System.Xml.Serialization.XmlIgnoreAttribute]
-        {visibility}System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}> {interfaceDecl}{field.Name} {{ get; set; }}" + Environment.NewLine;
+        {visibility}System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}> {interfaceDecl}{field.Name}
+        {{
+            get {{ return {fieldName} ?? ({fieldName} = new System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}>()); }}
+            set {{ {fieldName} = value; }}
+        }}" + Environment.NewLine;
 
                 snip.Comments.AddRange(field.Comments);
                 //var propPub = new CodeMemberProperty()
@@ -75,11 +83,15 @@ namespace UblSharp.Generator.CodeFixers
                 //{
                 //    Value = $@"__{field.Name} = value"
                 //});
-
+                field.Name = fieldName;
+                field.Attributes = MemberAttributes.Private;
+                field.Type = new CodeTypeReference($"System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}>");
+                field.CustomAttributes.Clear();
+                field.Comments.Clear();
                 var index = type.Members.IndexOf(field);
-                type.Members.RemoveAt(index);
-                type.Members.Insert(index, prop);
-                // type.Members.Add(propPub);
+                // type.Members.RemoveAt(index);
+                type.Members.Insert(index + 1, prop);
+                // type.Members.Add(prop);
                 type.Members.Add(snip);
             }
 

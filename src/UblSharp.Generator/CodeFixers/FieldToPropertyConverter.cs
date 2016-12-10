@@ -91,10 +91,10 @@ namespace UblSharp.Generator.CodeFixers
         private void FixType(CodeTypeDeclaration type)
         {
             var properties = new List<CodeTypeMember>();
-            foreach (var field in type.Members.OfType<CodeMemberField>().ToList())
+            foreach (var field in type.Members.OfType<CodeMemberField>().Where(f => !f.Attributes.HasFlag(MemberAttributes.Private)).ToList())
             {
                 var propertyName = field.Name;
-                var fieldName = field.Name.MakePrivateFieldName();
+                var fieldName = field.Name.MakePrivatePropertyName();
                 var snippet = new CodeSnippetTypeMember();
                 var typeName = _csharp.GetTypeOutput(field.Type);
 

@@ -52,6 +52,7 @@ namespace UblSharp.Generator
             var xmldsigFilename = new DirectoryInfo(commonDirectory).GetFiles("UBL-xmldsig-core-schema-*.xsd").Single().FullName;
             var maindocDirectory = Path.Combine(baseInputDirectory, "maindoc");
             var maindocfiles = new DirectoryInfo(maindocDirectory).GetFiles("*.xsd").ToList();
+            // var extrafiles = new DirectoryInfo(commonDirectory).GetFiles("UBL-CommonSignatureComponents*.xsd").ToList();
             // var maindocfiles = new DirectoryInfo(maindocDirectory).GetFiles("UBL-Order-2.1.xsd").ToList();
             // maindocfiles.Add(new DirectoryInfo(maindocDirectory).GetFiles("UBL-BaseDocument-*.xsd").Single());
 
@@ -79,6 +80,17 @@ namespace UblSharp.Generator
                     maindocSchemaSet.Add(schema);
                 }
             }
+
+            //foreach (var extrafile in extrafiles)
+            //{
+            //    using (var reader = XmlReader.Create(extrafile.FullName, readerSettings))
+            //    {
+            //        var schema = XmlSchema.Read(reader, null);
+            //        maindocSchemaSet.Add(schema);
+            //    }
+            //}
+
+            maindocSchemaSet.Compile();
 
             foreach (var schemaFixer in _schemaFixers)
             {
@@ -155,8 +167,13 @@ namespace UblSharp.Generator
 
                 var xsdFilename = new Uri(schema.SourceUri).LocalPath;
                 var fi = new FileInfo(xsdFilename);
-                var outputFile = Path.Combine(fi.Directory.Name, fi.Name);
-                outputFile = Path.Combine(options.OutputPath, Path.ChangeExtension(outputFile, ".cs"));
+                var foldername = namespaceProvider.GetNamespaceFolderName(schema);
+                string targetPath = Path.Combine(options.OutputPath, foldername);
+                if (!Directory.Exists(targetPath))
+                {
+                    Directory.CreateDirectory(targetPath);
+                }
+                var outputFile = Path.Combine(targetPath, Path.ChangeExtension(fi.Name, ".generated.cs"));
 
                 using (var ofile = File.CreateText(outputFile))
                 {
