@@ -4,8 +4,5 @@
   },
   "runtimes": {
     "win": {}
-  },
-  "dependencies": {
-    "Microsoft.DependencyValidation.Analyzers": "0.8.0"
   }
 }

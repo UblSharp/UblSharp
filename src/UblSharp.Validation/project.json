@@ -1,10 +1,10 @@
 {
     "version": "1.0.0-alpha-*",
-    "description": "UblSharp",
+    "description": "UblSharp.Validation",
     "authors": ["Remco Ros"],
     "language": "en-US",
     "copyright": "Copyright Remco Ros",
-    "title": "Create and parse UBL documents in C# with UblSharp.",
+    "title": "Validate UBL XML documents and .NET types created with UblSharp.",
     "packOptions": {
         "tags": ["ubl", "ublsharp"],
         "projectUrl": "https://github.com/remcoros/UblSharp",
@@ -16,7 +16,10 @@
         }
     },
     "dependencies": {
-        "NETStandard.Library": "1.6.1"
+        "NETStandard.Library": "1.6.1",
+        "UblSharp": {
+            "target": "project"
+        }
     },
     "frameworks": {
         "net20": {
@@ -53,31 +56,19 @@
             "buildOptions": {
                 "define": ["NET45", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ"]
             }
-        },
-        "netstandard1.1": {
-            "dependencies": {
-                "System.Xml.XmlSerializer": "4.0.11"
-            },
-            "buildOptions": {
-                "define": ["NETSTANDARD1_1", "FEATURE_LINQ"]
-            }
-        },
-        "netstandard1.3": {
-            "dependencies": {
-                "System.Runtime.Serialization.Formatters": "4.3.0",
-                "System.Xml.XmlSerializer": "4.3.0",
-                "System.Xml.XmlDocument": "4.3.0"
-            },
-            "buildOptions": {
-                "define": ["NETSTANDARD1_3", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ"]
-            }
         }
     },
     "buildOptions": {
         "warningsAsErrors": true,
         "xmlDoc": true,
         "nowarn": ["CS1591"],
-        "optimize": true
+        "optimize": true,
+        "embed": {
+            "include": [
+                "Resources/common/*.xsd",
+                "Resources/maindoc/*.xsd"
+            ]
+        }
     },
     "supports": {}
 }

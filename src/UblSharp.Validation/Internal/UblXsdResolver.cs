@@ -6,25 +6,18 @@ using System.Xml;
 
 namespace UblSharp.Validation.Internal
 {
-    internal class XsdResolver : XmlResolver
+    public class UblXsdResolver : XmlResolver
     {
-        private readonly Dictionary<Uri, object> _xsdCache = new Dictionary<Uri, object>();
-
         public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)
         {
-            if (_xsdCache.ContainsKey(absoluteUri))
-            {
-                return _xsdCache[absoluteUri];
-            }
-
             var xsdResourceAssembly = Assembly.GetExecutingAssembly();
 
             if (absoluteUri.IsFile && absoluteUri.Segments.Length >= 2)
             {
-                var manifestName = string.Format("{0}.Resources.{1}.{2}",
-                                                 xsdResourceAssembly.GetName().Name,
-                                                 absoluteUri.Segments[absoluteUri.Segments.Length - 2].Trim('/'),
-                                                 absoluteUri.Segments[absoluteUri.Segments.Length - 1]);
+                var assemblyName = xsdResourceAssembly.GetName().Name;
+                var documentName = absoluteUri.Segments[absoluteUri.Segments.Length - 2].Trim('/') + "." +
+                                   absoluteUri.Segments[absoluteUri.Segments.Length - 1].Trim('/');
+                var manifestName = $"{assemblyName}.Resources.{documentName}";
 
                 var manifestStream = xsdResourceAssembly.GetManifestResourceStream(manifestName);
                 if (manifestStream == null)
@@ -32,7 +25,6 @@ namespace UblSharp.Validation.Internal
                     throw new Exception("Could not find xsd: " + manifestName);
                 }
 
-                _xsdCache[absoluteUri] = manifestStream;
                 return manifestStream;
             }
 

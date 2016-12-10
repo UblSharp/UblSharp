@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Reflection;
+using System.Text;
+using System.Xml;
+#if FEATURE_LINQ
 using System.Xml.Linq;
+#endif
 using System.Xml.Schema;
+using System.Xml.Serialization;
 using UblSharp.Validation.Internal;
 
 namespace UblSharp.Validation
@@ -15,6 +20,7 @@ namespace UblSharp.Validation
         private readonly Assembly _executingAssembly = Assembly.GetExecutingAssembly();
         private readonly UblDocumentManager _documentManager;
         private static readonly ValidationEventHandler _schemaValHandler = (s, e) => { throw new Exception(e.Message); };
+        private readonly UblXsdResolver _xsdResolver = new UblXsdResolver();
 
         public UblDocumentValidator()
             : this(UblDocumentManager.Default)
@@ -26,10 +32,29 @@ namespace UblSharp.Validation
             _documentManager = documentManager;
             _cachedSchema = new XmlSchemaSet()
             {
-                XmlResolver = new XsdResolver()
+                XmlResolver = _xsdResolver
             };
 
+            var xsdName = $"{BaseNamespace}.maindoc.UBL-";
+            foreach (var manifestStreamName in _executingAssembly.GetManifestResourceNames())
+            {
+                if (manifestStreamName.StartsWith(xsdName)
+                    && manifestStreamName.EndsWith(".xsd"))
+                {
+                    using (var manifestStream = _executingAssembly.GetManifestResourceStream(manifestStreamName))
+                    {
+                        if (manifestStream == null)
+                        {
+                            throw new Exception("Could not find xsd: " + xsdName);
+                        }
+
+                        _cachedSchema.Add(XmlSchema.Read(manifestStream, _schemaValHandler));
+                    }
+                }
+            }
+
             _cachedSchema.Add(XmlSchema.Read(_executingAssembly.GetManifestResourceStream($"{BaseNamespace}.common.UBL-xmldsig-core-schema-2.1.xsd"), _schemaValHandler));
+            _cachedSchema.Compile();
         }
 
         public static UblDocumentValidator Default { get; set; } = new UblDocumentValidator();
@@ -38,79 +63,125 @@ namespace UblSharp.Validation
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
-            var serializer = _documentManager.GetSerializer(document.GetType());
-            var xmlDocument = new XDocument();
-            using (var xmlWriter = xmlDocument.CreateWriter())
+            foreach (var x in Validate(document))
             {
-                serializer.Serialize(xmlWriter, document);
+                if (x.Severity == XmlSeverityType.Error
+                    || (warningsAsErrors && x.Severity == XmlSeverityType.Warning))
+                {
+                    return false;
+                }
             }
 
-            return IsValid(xmlDocument, warningsAsErrors);
+            return true;
         }
 
+        public bool IsValid(XmlDocument xmlDocument, bool warningsAsErrors = false)
+        {
+            if (xmlDocument == null) throw new ArgumentNullException(nameof(xmlDocument));
+
+            foreach (var x in Validate(xmlDocument))
+            {
+                if (x.Severity == XmlSeverityType.Error
+                    || (warningsAsErrors && x.Severity == XmlSeverityType.Warning))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+#if FEATURE_LINQ
         public bool IsValid(XDocument xmlDocument, bool warningsAsErrors = false)
         {
             if (xmlDocument == null) throw new ArgumentNullException(nameof(xmlDocument));
 
-            return !Validate(xmlDocument).Any(x => x.Severity == XmlSeverityType.Error || (warningsAsErrors && x.Severity == XmlSeverityType.Warning));
+            foreach (var x in Validate(xmlDocument))
+            {
+                if (x.Severity == XmlSeverityType.Error
+                    || (warningsAsErrors && x.Severity == XmlSeverityType.Warning))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
+#endif
 
         public IEnumerable<UblDocumentValidationError> Validate(BaseDocument document, bool suppressWarnings = false)
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
             var serializer = _documentManager.GetSerializer(document.GetType());
-            var xmlDocument = new XDocument();
-            using (var xmlWriter = xmlDocument.CreateWriter())
-            {
-                serializer.Serialize(xmlWriter, document);
-            }
 
-            return Validate(xmlDocument, suppressWarnings);
+            using (var memStream = new MemoryStream())
+            {
+                serializer.Serialize(memStream, document);
+                memStream.Seek(0, SeekOrigin.Begin);
+                return Validate(memStream, suppressWarnings);
+            }
         }
 
+        private IEnumerable<UblDocumentValidationError> Validate(MemoryStream memStream, bool suppressWarnings)
+        {
+            var errors = new List<UblDocumentValidationError>();
+            var settings = new XmlReaderSettings()
+            {
+                ValidationType = ValidationType.Schema,
+                ValidationFlags = XmlSchemaValidationFlags.ProcessIdentityConstraints | XmlSchemaValidationFlags.ProcessSchemaLocation | XmlSchemaValidationFlags.ReportValidationWarnings,
+                Schemas = _cachedSchema,
+                XmlResolver = _xsdResolver
+            };
+            settings.ValidationEventHandler += (s, e) => ValidationHandler(errors, suppressWarnings, e);
+
+            using (var xmlReader = XmlReader.Create(memStream, settings))
+            {
+                while (xmlReader.Read())
+                {
+                }
+            }
+            return errors;
+        }
+
+        public IEnumerable<UblDocumentValidationError> Validate(XmlDocument xmlDocument, bool suppressWarnings = false)
+        {
+            if (xmlDocument == null)
+                throw new ArgumentNullException(nameof(xmlDocument));
+            if (xmlDocument.DocumentElement == null)
+                throw new InvalidOperationException("Document must have a root node.");
+
+            using (var memStream = new MemoryStream())
+            {
+                xmlDocument.Save(memStream);
+                memStream.Seek(0, SeekOrigin.Begin);
+                return Validate(memStream, suppressWarnings);
+            }
+        }
+
+#if FEATURE_LINQ
         public IEnumerable<UblDocumentValidationError> Validate(XDocument xmlDocument, bool suppressWarnings = false)
         {
             if (xmlDocument == null) throw new ArgumentNullException(nameof(xmlDocument));
             if (xmlDocument.Root == null) throw new InvalidOperationException("Document must have a root node.");
 
-            var rootDocName = xmlDocument.Root.Name.LocalName;
-            var ns = $"urn:oasis:names:specification:ubl:schema:xsd:{rootDocName}-2";
-            var errors = new List<UblDocumentValidationError>();
-            ValidationEventHandler valHandler = (s, e) =>
-                {
-                    if (suppressWarnings && e.Severity == XmlSeverityType.Warning)
-                        return;
-
-                    errors.Add(new UblDocumentValidationError(e.Exception, e.Message, e.Severity));
-                };
-
-            // Add schema to cached xmlschemaset from assembly resource
-            if (!_cachedSchema.Contains(ns))
+            using (var memStream = new MemoryStream())
+            using (var writer = XmlWriter.Create(memStream, _documentManager.XmlWriterSettings))
             {
-                var xsdName = $"{BaseNamespace}.maindoc.UBL-{rootDocName}-";
-
-                var manifestStreamName = _executingAssembly.GetManifestResourceNames().FirstOrDefault(x => x.StartsWith(xsdName) && x.EndsWith(".xsd"));
-                if (string.IsNullOrEmpty(manifestStreamName))
-                {
-                    throw new Exception("Could not find xsd: " + xsdName);
-                }
-
-                using (var manifestStream = _executingAssembly.GetManifestResourceStream(manifestStreamName))
-                {
-                    if (manifestStream == null)
-                    {
-                        throw new Exception("Could not find xsd: " + xsdName);
-                    }
-
-                    _cachedSchema.Add(XmlSchema.Read(manifestStream, _schemaValHandler));
-                }
-
-                _cachedSchema.Compile();
+                xmlDocument.Save(writer);
+                writer.Flush();
+                memStream.Seek(0, SeekOrigin.Begin);
+                return Validate(memStream, suppressWarnings);
             }
+        }
+#endif
 
-            xmlDocument.Validate(_cachedSchema, valHandler);
-            return errors;
+        private void ValidationHandler(List<UblDocumentValidationError> errors, bool suppressWarnings, ValidationEventArgs e)
+        {
+            if (suppressWarnings && e.Severity == XmlSeverityType.Warning)
+                return;
+
+            errors.Add(new UblDocumentValidationError(e.Exception, e.Message, e.Severity));
         }
     }
 }

@@ -1,0 +1,29 @@
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+  - master
+nuget:
+  disable_publish_on_pr: true
+build_script:
+- ps: .\src\build.ps1
+test: on
+artifacts:
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
+deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/ublsharp/api/v2/package
+  api_key:
+    secure: /2wgQOLH8yZpi5+g8/Brrw6nqfO3F+5A/O95RmiMlptAoRug61sfnT7YwhpyOTQt
+  skip_symbols: true
+  on:
+    branch: master
+- provider: NuGet
+  name: production
+  api_key:
+    secure: blAaZjGqOvQBCza3DoX/WzEkuQDFRRpmK9DLX+wb1xKscLAzEuq+FurLgoOeAmEN
+  on:
+    branch: master
+    appveyor_repo_tag: true
