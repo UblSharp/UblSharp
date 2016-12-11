@@ -25,3 +25,12 @@ deploy:
     secure: blAaZjGqOvQBCza3DoX/WzEkuQDFRRpmK9DLX+wb1xKscLAzEuq+FurLgoOeAmEN
   on:
     appveyor_repo_tag: true
+- provider: GitHub
+  auth_token:
+    secure: voP35JF5npCVqWOFWeEUQnjC+qXk6QAPcIAxRDcgaaB9NovL05c6YjavzQepCA8b
+  artifact: NuGet
+  draft: true
+  prerelease: true
+  force_update: true
+  on:
+    appveyor_repo_tag: true
