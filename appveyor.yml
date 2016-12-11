@@ -15,14 +15,14 @@ deploy:
 - provider: NuGet
   server: https://www.myget.org/F/ublsharp/api/v2/package
   api_key:
-    secure: /2wgQOLH8yZpi5+g8/Brrw6nqfO3F+5A/O95RmiMlptAoRug61sfnT7YwhpyOTQt
+    secure: lJMCPwGiDw8APCDOU7Wyjcr+MXV1VV2rC8AkX9dpk4lX+WGs29YCa1H0RxNy3tlI
   skip_symbols: true
   on:
     branch: master
 - provider: NuGet
   name: production
   api_key:
-    secure: blAaZjGqOvQBCza3DoX/WzEkuQDFRRpmK9DLX+wb1xKscLAzEuq+FurLgoOeAmEN
+    secure: 0Idnj65UTCZqpVUDI/8Y8/mMLJ3fTLbknyKgAF3A5jVN2M2vGCcG3EDWh4GyUIdt
   on:
     appveyor_repo_tag: true
 - provider: GitHub
