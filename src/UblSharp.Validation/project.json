@@ -3,16 +3,16 @@
     "description": "UblSharp.Validation",
     "authors": ["Remco Ros"],
     "language": "en-US",
-    "copyright": "Copyright Remco Ros",
+    "copyright": "Copyright © Remco Ros 2016",
     "title": "Validate UBL XML documents and .NET types created with UblSharp.",
     "packOptions": {
         "tags": ["ubl", "ublsharp"],
-        "projectUrl": "https://github.com/remcoros/UblSharp",
-        "licenseUrl": "https://github.com/remcoros/UblSharp/blob/master/LICENSE",
+        "projectUrl": "https://github.com/UblSharp/UblSharp",
+        "licenseUrl": "https://github.com/UblSharp/UblSharp/blob/master/LICENSE",
         "requireLicenseAcceptance": false,
         "repository": {
             "type": "git",
-            "url": "https://github.com/remcoros/UblSharp"
+            "url": "https://github.com/UblSharp/UblSharp"
         }
     },
     "dependencies": {
