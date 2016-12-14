@@ -43,14 +43,17 @@ namespace UblSharp
             }
         }
 
+#if !NETSTANDARD1_0
         public static void Save<T>(this T document, string fileName)
             where T : IBaseDocument
         {
-            using (var writer = XmlWriter.Create(fileName, _xmlWriterSettings))
+            using (var stream = File.CreateText(fileName))
+            using (var writer = XmlWriter.Create(stream, _xmlWriterSettings))
             {
                 Save(document, writer);
             }
         }
+#endif
 
         public static void Save<T>(this T document, TextWriter writer)
             where T : IBaseDocument

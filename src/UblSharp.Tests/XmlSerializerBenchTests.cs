@@ -8,31 +8,9 @@ using Xunit;
 
 namespace UblSharp.Tests.Playground
 {
-    public class XmlSerializerBenchTests
+    public class PregenSerializersTests
     {
-        [Fact]
-        public void CreatingMultipleXmlSerializerForSameType()
-        {
-            // This test is used to do some profiling on the XmlSerializer constructor, which is (without sgen'ed assemblies) slooooow, because it creates temporary serialization assemblies.
-
-            // 1 warmup
-            var serializer = new XmlSerializer(typeof(OrderType));
-
-            // loop of 10 instances
-            var count = 10;
-            for (var i = 0; i < count; i++)
-            {
-                serializer = new XmlSerializer(typeof(OrderType));
-            }
-
-            // loop of 10 instances
-            for (var i = 0; i < count; i++)
-            {
-                serializer = new XmlSerializer(typeof(OrderType));
-            }
-        }
-
-        [Fact]
+        [Fact(Skip = "Disable sgen test until supported")]
         public void CanLoadXmlSerializers()
         {
             AssertCanLoadXmlSerializers(typeof(OrderType));

@@ -22,18 +22,33 @@ function Exec
 
 Push-Location $(Split-Path $Script:MyInvocation.MyCommand.Path)
 
-if(Test-Path .\..\artifacts) { Remove-Item .\..\artifacts -Force -Recurse }
+# Build scriptblock
 
-exec { & dotnet restore }
-
-exec { & dotnet build .\UblSharp -c Release }
-exec { & dotnet build .\UblSharp.Validation -c Release }
+$sgen = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sgen.exe" 
 
 $revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 $revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
 
+if(Test-Path .\..\artifacts) { Remove-Item .\..\artifacts -Force -Recurse }
+
+exec { & dotnet restore }
+
+# UblSharp
+exec { & dotnet build .\UblSharp -c Release }
+
+# Generate XmlSerializers assemblies
+#$sgenfw = @("net20", "net35", "net40", "net45")
+#foreach ($fw in $sgenfw) {
+#    exec { & $sgen /assembly:.\UblSharp\bin\Release\$fw\UblSharp.dll /verbose /force }
+#}
+
+# UblSharp.Validation
+exec { & dotnet build .\UblSharp.Validation -c Release }
+
+# Build/Run tests
 exec { & dotnet test .\UblSharp.Tests -c Release }
 
+# Create packages  
 exec { & dotnet pack .\UblSharp -c Release -o .\..\artifacts --version-suffix=$revision }
 exec { & dotnet pack .\UblSharp.Validation -c Release -o .\..\artifacts --version-suffix=$revision }
 

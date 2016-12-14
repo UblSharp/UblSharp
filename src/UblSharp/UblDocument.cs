@@ -16,9 +16,11 @@ namespace UblSharp
         private static readonly XmlReaderSettings _xmlReaderSettings = new XmlReaderSettings()
         {
             IgnoreWhitespace = true,
-            DtdProcessing = DtdProcessing.Parse,
+            // DtdProcessing = DtdProcessing.Parse, -- Parse is not defined in .net standard
+#if !(NET20 || NET35)
+            DtdProcessing = (DtdProcessing)2,
+#endif
             MaxCharactersFromEntities = (long)1e7,
-            XmlResolver = null,
         };
 
         public static XmlWriterSettings XmlWriterSettings { get; private set; } = new XmlWriterSettings()
@@ -27,7 +29,6 @@ namespace UblSharp
             Encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false),
             Indent = true,
             IndentChars = "\t",
-            WriteEndDocumentOnClose = false,
 #if !(NET20 || NET35)
             NamespaceHandling = NamespaceHandling.OmitDuplicates,
 #endif
@@ -85,6 +86,7 @@ namespace UblSharp
 
         public static XmlSerializer GetSerializer<T>() => GetSerializer(typeof(T));
 
+#if FEATURE_XMLDOCUMENT
         public static T Load<T>(XmlDocument document) where T : BaseDocument
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
@@ -100,6 +102,7 @@ namespace UblSharp
                 }
             }
         }
+#endif
 
 #if FEATURE_LINQ
         public static T Load<T>(XDocument document) where T : BaseDocument
@@ -112,11 +115,15 @@ namespace UblSharp
             //{
             //    return (T)UblDocumentManager.Default.GetSerializer(typeof(T)).Deserialize(reader);
             //}
+#if NET20 || NET35
+            using (var reader = document.CreateReader())
+#else
             using (var reader = document.CreateReader(ReaderOptions.OmitDuplicateNamespaces))
+#endif
             {
                 return Load<T>(reader);
             }
         }
 #endif
-    }
+        }
 }
