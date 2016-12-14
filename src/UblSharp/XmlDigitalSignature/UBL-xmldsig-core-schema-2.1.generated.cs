@@ -183,11 +183,11 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("X509IssuerName", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerName")]
         public string @__X509IssuerName;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("X509SerialNumber", DataType="integer", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("X509SerialNumber", DataType="integer")]
         public string @__X509SerialNumber;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -229,20 +229,20 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignedInfo", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SignedInfo")]
         public SignedInfoType @__SignedInfo;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureValue", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureValue")]
         public SignatureValueType @__SignatureValue;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("KeyInfo", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyInfo")]
         public KeyInfoType @__KeyInfo;
         
         private System.Collections.Generic.List<ObjectType> _object;
         
-        [System.Xml.Serialization.XmlElementAttribute("Object", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("Object")]
         public ObjectType[] @__Object
         {
             get
@@ -337,16 +337,16 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod")]
         public CanonicalizationMethodType @__CanonicalizationMethod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureMethod", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureMethod")]
         public SignatureMethodType @__SignatureMethod;
         
         private System.Collections.Generic.List<ReferenceType> _reference;
         
-        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType[] @__Reference
         {
             get
@@ -426,7 +426,7 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("HMACOutputLength", DataType="integer", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("HMACOutputLength", DataType="integer")]
         public string @__HMACOutputLength;
         
 #if FEATURE_XMLDOCUMENT
@@ -541,11 +541,11 @@ namespace UblSharp.XmlDigitalSignature
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod")]
         public DigestMethodType @__DigestMethod;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestValue", DataType="base64Binary", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestValue", DataType="base64Binary")]
         public byte[] @__DigestValue;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -652,7 +652,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<System.Object> _items;
         
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string))]
         public object[] @__Items
         {
             get
@@ -784,14 +784,14 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<System.Object> _items;
         
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType))]
         [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType))]
         [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType))]
         [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType))]
         [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType))]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("__ItemsElementName")]
         public object[] @__Items
         {
             get
@@ -806,7 +806,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType2> _itemsElementName;
         
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType2[] @__ItemsElementName
         {
@@ -889,7 +889,7 @@ namespace UblSharp.XmlDigitalSignature
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType))]
         [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType))]
         public object @__Item;
         
@@ -941,31 +941,31 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("P", DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("P", DataType="base64Binary")]
         public byte[] @__P;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Q", DataType="base64Binary", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("Q", DataType="base64Binary")]
         public byte[] @__Q;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("G", DataType="base64Binary", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("G", DataType="base64Binary")]
         public byte[] @__G;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Y", DataType="base64Binary", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("Y", DataType="base64Binary")]
         public byte[] @__Y;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("J", DataType="base64Binary", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute("J", DataType="base64Binary")]
         public byte[] @__J;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Seed", DataType="base64Binary", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute("Seed", DataType="base64Binary")]
         public byte[] @__Seed;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("PgenCounter", DataType="base64Binary", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute("PgenCounter", DataType="base64Binary")]
         public byte[] @__PgenCounter;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -1077,11 +1077,11 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Modulus", DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Modulus", DataType="base64Binary")]
         public byte[] @__Modulus;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Exponent", DataType="base64Binary", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("Exponent", DataType="base64Binary")]
         public byte[] @__Exponent;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -1125,9 +1125,9 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<System.Object> _items;
         
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType="base64Binary")]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("__ItemsElementName")]
         public object[] @__Items
         {
             get
@@ -1142,7 +1142,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType1> _itemsElementName;
         
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType1[] @__ItemsElementName
         {
@@ -1173,20 +1173,19 @@ namespace UblSharp.XmlDigitalSignature
 
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("UblSharp.Generator", "1.0.0.0")]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
-    [System.Xml.Serialization.XmlTypeAttribute("ItemsChoiceType", Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
     public enum ItemsChoiceType1
     {
         
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", Order=0)]
         PGPKeyID,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", Order=1)]
         PGPKeyPacket,
     }
     
@@ -1269,7 +1268,7 @@ namespace UblSharp.XmlDigitalSignature
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", DataType="base64Binary")]
         public byte[][] @__SPKISexp;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
@@ -1329,12 +1328,12 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<System.Object> _items;
         
         [System.Xml.Serialization.XmlAnyElementAttribute()]
-        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType))]
         [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string))]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("__ItemsElementName")]
         public object[] @__Items
         {
             get
@@ -1349,7 +1348,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType> _itemsElementName;
         
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType[] @__ItemsElementName
         {
@@ -1380,61 +1379,51 @@ namespace UblSharp.XmlDigitalSignature
 
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("UblSharp.Generator", "1.0.0.0")]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
-    [System.Xml.Serialization.XmlTypeAttribute("ItemsChoiceType", Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
     public enum ItemsChoiceType
     {
         
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509CRL", Order=0)]
         X509CRL,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", Order=1)]
         X509Certificate,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", Order=2)]
         X509IssuerSerial,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509SKI", Order=3)]
         X509SKI,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", Order=4)]
         X509SubjectName,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("UblSharp.Generator", "1.0.0.0")]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
-    [System.Xml.Serialization.XmlTypeAttribute("ItemsChoiceType", Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
     public enum ItemsChoiceType2
     {
         
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
         
-        [System.Xml.Serialization.XmlElementAttribute("KeyName", Order=0)]
         KeyName,
         
-        [System.Xml.Serialization.XmlElementAttribute("KeyValue", Order=1)]
         KeyValue,
         
-        [System.Xml.Serialization.XmlElementAttribute("MgmtData", Order=2)]
         MgmtData,
         
-        [System.Xml.Serialization.XmlElementAttribute("PGPData", Order=3)]
         PGPData,
         
-        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", Order=4)]
         RetrievalMethod,
         
-        [System.Xml.Serialization.XmlElementAttribute("SPKIData", Order=5)]
         SPKIData,
         
-        [System.Xml.Serialization.XmlElementAttribute("X509Data", Order=6)]
         X509Data,
     }
     
@@ -1567,7 +1556,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<TransformType> _transform;
         
-        [System.Xml.Serialization.XmlElementAttribute("Transform", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Transform")]
         public TransformType[] @__Transform
         {
             get
@@ -1600,7 +1589,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ReferenceType> _reference;
         
-        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType[] @__Reference
         {
             get
@@ -1651,7 +1640,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<SignaturePropertyType> _signatureProperty;
         
-        [System.Xml.Serialization.XmlElementAttribute("SignatureProperty", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureProperty")]
         public SignaturePropertyType[] @__SignatureProperty
         {
             get

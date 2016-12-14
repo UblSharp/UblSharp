@@ -8,7 +8,6 @@ using System.Xml;
 using System.Xml.Linq;
 #endif
 using System.Xml.Schema;
-using System.Xml.Serialization;
 using UblSharp.Validation.Internal;
 
 namespace UblSharp.Validation
@@ -18,18 +17,21 @@ namespace UblSharp.Validation
         private const string BaseNamespace = "UblSharp.Validation.Resources";
         private readonly XmlSchemaSet _cachedSchema;
         private readonly Assembly _executingAssembly = Assembly.GetExecutingAssembly();
-        private readonly UblDocumentManager _documentManager;
         private static readonly ValidationEventHandler _schemaValHandler = (s, e) => { throw new Exception(e.Message); };
         private readonly UblXsdResolver _xsdResolver = new UblXsdResolver();
+        private static readonly XmlWriterSettings _xmlWriterSettings = new XmlWriterSettings()
+        {
+            CloseOutput = false,
+            Indent = false,
+            CheckCharacters = false,
+#if !(NET20 || NET35)
+            NamespaceHandling = NamespaceHandling.OmitDuplicates,
+#endif
+            Encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
+        };
 
         public UblDocumentValidator()
-            : this(UblDocumentManager.Default)
         {
-        }
-
-        public UblDocumentValidator(UblDocumentManager documentManager)
-        {
-            _documentManager = documentManager;
             _cachedSchema = new XmlSchemaSet()
             {
                 XmlResolver = _xsdResolver
@@ -38,8 +40,8 @@ namespace UblSharp.Validation
             var xsdName = $"{BaseNamespace}.maindoc.UBL-";
             foreach (var manifestStreamName in _executingAssembly.GetManifestResourceNames())
             {
-                if (manifestStreamName.StartsWith(xsdName)
-                    && manifestStreamName.EndsWith(".xsd"))
+                if (manifestStreamName.StartsWith(xsdName, StringComparison.Ordinal)
+                    && manifestStreamName.EndsWith(".xsd", StringComparison.Ordinal))
                 {
                     using (var manifestStream = _executingAssembly.GetManifestResourceStream(manifestStreamName))
                     {
@@ -59,7 +61,8 @@ namespace UblSharp.Validation
 
         public static UblDocumentValidator Default { get; set; } = new UblDocumentValidator();
 
-        public bool IsValid(BaseDocument document, bool warningsAsErrors = false)
+        public bool IsValid<T>(T document, bool warningsAsErrors = false)
+            where T : IBaseDocument
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
@@ -109,11 +112,12 @@ namespace UblSharp.Validation
         }
 #endif
 
-        public IEnumerable<UblDocumentValidationError> Validate(BaseDocument document, bool suppressWarnings = false)
+        public IEnumerable<UblDocumentValidationError> Validate<T>(T document, bool suppressWarnings = false)
+            where T : IBaseDocument
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
-            var serializer = _documentManager.GetSerializer(document.GetType());
+            var serializer = document.GetSerializer();
 
             using (var memStream = new MemoryStream())
             {
@@ -139,6 +143,7 @@ namespace UblSharp.Validation
             {
                 while (xmlReader.Read())
                 {
+                    // Read all XML content
                 }
             }
             return errors;
@@ -166,7 +171,7 @@ namespace UblSharp.Validation
             if (xmlDocument.Root == null) throw new InvalidOperationException("Document must have a root node.");
 
             using (var memStream = new MemoryStream())
-            using (var writer = XmlWriter.Create(memStream, _documentManager.XmlWriterSettings))
+            using (var writer = XmlWriter.Create(memStream, _xmlWriterSettings))
             {
                 xmlDocument.Save(writer);
                 writer.Flush();

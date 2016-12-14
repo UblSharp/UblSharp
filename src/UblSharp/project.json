@@ -54,12 +54,12 @@
                 "define": ["NET45", "FEATURE_SERIALIZATION", "FEATURE_XMLDOCUMENT", "FEATURE_LINQ"]
             }
         },
-        "netstandard1.1": {
+        "netstandard1.0": {
             "dependencies": {
                 "System.Xml.XmlSerializer": "4.0.11"
             },
             "buildOptions": {
-                "define": ["NETSTANDARD1_1", "FEATURE_LINQ"]
+                "define": ["NETSTANDARD1_0", "FEATURE_LINQ"]
             }
         },
         "netstandard1.3": {

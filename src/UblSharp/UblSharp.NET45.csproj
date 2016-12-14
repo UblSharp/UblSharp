@@ -21,6 +21,7 @@
     <DefineConstants>TRACE;DEBUG;NET45;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;FEATURE_LINQ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE;DEBUG;NET45;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;FEATURE_LINQ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -114,7 +116,6 @@
     <Compile Include="SignatureAggregateComponents\UBL-SignatureAggregateComponents-2.1.generated.cs" />
     <Compile Include="SignatureBasicComponents\UBL-SignatureBasicComponents-2.1.generated.cs" />
     <Compile Include="UblDocument.cs" />
-    <Compile Include="UblDocumentManager.cs" />
     <Compile Include="UnqualifiedDataTypes\DateType.cs" />
     <Compile Include="IBaseDocument.cs" />
     <Compile Include="Internal\ExtensionAttribute.cs" />

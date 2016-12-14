@@ -35,7 +35,7 @@ namespace UblSharp.Tests
         public void ShouldBeValidDocumentOf<T>(Stream documentStream) where T : BaseDocument
         {
             var validator = new UblDocumentValidator();
-            var document = UblDocument.FromStream<T>(documentStream);
+            var document = UblDocument.Load<T>(documentStream);
 
             // _output.WriteLine(document.GetType().ToString());
 
@@ -81,7 +81,7 @@ namespace UblSharp.Tests
         public void ShouldBeInvalidDocumentOf<T>(Stream documentStream) where T : BaseDocument
         {
             var validator = new UblDocumentValidator();
-            var document = UblDocument.FromStream<T>(documentStream);
+            var document = UblDocument.Load<T>(documentStream);
             var errors = validator.Validate(document).ToList();
             foreach (var error in errors)
             {

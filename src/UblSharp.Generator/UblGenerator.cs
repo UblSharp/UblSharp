@@ -27,11 +27,16 @@ namespace UblSharp.Generator
                 UblBaseDocumentFixer.FixBaseDocumentInheritance
             };
 
-        private readonly CodeNamespaceFixer _codeFixer = new CodeNamespaceFixer(
+        private readonly CodeNamespaceFixer _globalCodeFixer = new CodeNamespaceFixer(
+            new ImplicitAssignmentFixer()
+        );
+
+        private readonly CodeNamespaceFixer _namespacedCodeFixer = new CodeNamespaceFixer(
             new UblDocumentationFixer(),
             new XmlAttributesFixer(),
+            // new AddClsCompliantAttribute(),
+            new AddXmlMemberOrderToFields(),
             new ArrayToListConverter(),
-            new ImplicitAssignmentFixer(),
             new AddISharedPropertiesInterface(),
             new FieldToPropertyConverter() // make sure this is done last
         );
@@ -111,7 +116,7 @@ namespace UblSharp.Generator
 
             var tempCodeNamespace = CreateCodeNamespace(maindocSchemaSet, rootNamespaces.ToArray());
 
-            _codeFixer.Fix(tempCodeNamespace);
+            _globalCodeFixer.Fix(tempCodeNamespace);
 
             var codeDeclsBySchema = (from t in tempCodeNamespace.Types.Cast<CodeTypeDeclaration>()
                                      group t by t.GetSchema() into g
@@ -140,6 +145,8 @@ namespace UblSharp.Generator
                 {
                     continue;
                 }
+
+                _namespacedCodeFixer.Fix(codeNamespace);
 
                 var sb = new StringBuilder();
                 using (var sw = new StringWriter(sb))

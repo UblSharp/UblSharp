@@ -12,21 +12,6 @@ namespace UblSharp.Generator.CodeFixers
 
         protected override void VisitType(CodeTypeDeclaration type)
         {
-            var members = type.Members.OfType<CodeMemberField>().ToList();
-            var order = 0;
-            foreach (var field in members)
-            {
-                var attr = field.CustomAttributes.Cast<CodeAttributeDeclaration>()
-                    .FirstOrDefault(x =>
-                        x.Name.EndsWith("XmlElementAttribute")
-                        || x.Name.EndsWith("XmlArrayAttribute"));
-                if (attr != null)
-                {
-                    attr.Arguments.Add(new CodeAttributeArgument("Order", new CodePrimitiveExpression(order)));
-                    order++;
-                }
-            }
-
             var arrayMembers = type.Members.OfType<CodeMemberField>().Where(x => !x.Name.StartsWith("__") && x.Type.ArrayElementType != null && !_typesToIgnore.Contains(x.Type.ArrayElementType.BaseType)).ToList();
             foreach (var field in arrayMembers)
             {
@@ -66,6 +51,7 @@ namespace UblSharp.Generator.CodeFixers
         }}" + Environment.NewLine;
 
                 snip.Comments.AddRange(field.Comments);
+
                 //var propPub = new CodeMemberProperty()
                 //{
                 //    Type = field.Type,
@@ -88,10 +74,17 @@ namespace UblSharp.Generator.CodeFixers
                 field.Type = new CodeTypeReference($"System.Collections.Generic.List<{field.Type.ArrayElementType.BaseType}>");
                 field.CustomAttributes.Clear();
                 field.Comments.Clear();
+
+                // Fix items choice types
+                var attr = prop.CustomAttributes.Cast<CodeAttributeDeclaration>().FirstOrDefault(x => x.Name.EndsWith("XmlChoiceIdentifierAttribute"));
+                if (attr != null)
+                {
+                    var expr = (CodePrimitiveExpression)attr.Arguments[0].Value;
+                    expr.Value = "__" + expr.Value;
+                }
+
                 var index = type.Members.IndexOf(field);
-                // type.Members.RemoveAt(index);
                 type.Members.Insert(index + 1, prop);
-                // type.Members.Add(prop);
                 type.Members.Add(snip);
             }
 

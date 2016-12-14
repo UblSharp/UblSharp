@@ -51,7 +51,7 @@ namespace UblSharp.Tests
             {
                 var sb = new StringBuilder();
                 using (var stream = new StringWriter(sb))
-                    doc.GetSerializer().Serialize(stream, doc);
+                    doc.Save(stream);
                 var rawDocumentText = sb.ToString();
                 File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".orig.xml")), rawSample);
                 File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".sample.xml")), sampledocument.ToString());
@@ -61,7 +61,7 @@ namespace UblSharp.Tests
             areEqual.Should().BeTrue();
 
             // deserialize
-            var sampleDoc = UblDocument.FromXDocument<T>(sampledocument);
+            var sampleDoc = UblDocument.Load<T>(sampledocument);
 
             //var p1 = (sampleDoc as TransportationStatusType)?.__UBLVersionID;
             //var p2 = (doc as TransportationStatusType)?.__UBLVersionID;
@@ -85,29 +85,14 @@ namespace UblSharp.Tests
             return areEqual;
         }
 
-        private static XDocument ToXDocument(BaseDocument document)
+        private static XDocument ToXDocument<T>(T document)
+            where T : IBaseDocument
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
             using (var ms = new MemoryStream())
             {
-                document.Serialize(ms);
-
-                ms.Position = 0;
-                return XDocument.Load(ms);
-            }
-        }
-
-        private static XDocument ToFormattedXDocument(BaseDocument document)
-        {
-            if (document == null) throw new ArgumentNullException(nameof(document));
-
-            using (var ms = new MemoryStream())
-            {
-                using (var writer = XmlWriter.Create(ms, UblDocumentManager.Default.XmlWriterSettings))
-                {
-                    document.Serialize(writer);
-                }
+                document.Save(ms);
 
                 ms.Position = 0;
                 return XDocument.Load(ms);

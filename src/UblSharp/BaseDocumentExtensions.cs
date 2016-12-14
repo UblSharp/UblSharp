@@ -7,41 +7,64 @@ namespace UblSharp
 {
     public static class BaseDocumentExtensions
     {
-        public static XmlSerializer GetSerializer(this BaseDocument document)
+        private static readonly XmlWriterSettings _xmlWriterSettings = new XmlWriterSettings()
+        {
+            CloseOutput = false,
+            Indent = true,
+            IndentChars = "\t",
+#if !(NET20 || NET35)
+            NamespaceHandling = NamespaceHandling.OmitDuplicates,
+#endif
+            Encoding = new System.Text.UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
+        };
+
+        public static XmlSerializer GetSerializer<T>(this T document)
+            where T : IBaseDocument
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
-            return UblDocumentManager.Default.GetSerializer(document.GetType());
+            return UblDocument.GetSerializer(document.GetType());
         }
 
-        public static void Serialize(this BaseDocument document, Stream stream)
+        public static void WriteTo<T>(this T document, XmlWriter writer)
+            where T : IBaseDocument
         {
-            if (document == null) throw new ArgumentNullException(nameof(document));
-            if (stream == null) throw new ArgumentNullException(nameof(stream));
-
-            var type = document.GetType();
-            var serializer = UblDocumentManager.Default.GetSerializer(type);
-            serializer.Serialize(stream, document);
-        }
-
-        public static void Serialize(this BaseDocument document, TextWriter writer)
-        {
-            if (document == null) throw new ArgumentNullException(nameof(document));
             if (writer == null) throw new ArgumentNullException(nameof(writer));
 
-            var type = document.GetType();
-            var serializer = UblDocumentManager.Default.GetSerializer(type);
-            serializer.Serialize(writer, document);
+            GetSerializer(document).Serialize(writer, document);
         }
 
-        public static void Serialize(this BaseDocument document, XmlWriter writer)
+        public static void Save<T>(this T document, Stream stream)
+            where T : IBaseDocument
         {
-            if (document == null) throw new ArgumentNullException(nameof(document));
-            if (writer == null) throw new ArgumentNullException(nameof(writer));
+            using (var writer = XmlWriter.Create(stream, _xmlWriterSettings))
+            {
+                Save(document, writer);
+            }
+        }
 
-            var type = document.GetType();
-            var serializer = UblDocumentManager.Default.GetSerializer(type);
-            serializer.Serialize(writer, document);
+        public static void Save<T>(this T document, string fileName)
+            where T : IBaseDocument
+        {
+            using (var writer = XmlWriter.Create(fileName, _xmlWriterSettings))
+            {
+                Save(document, writer);
+            }
+        }
+
+        public static void Save<T>(this T document, TextWriter writer)
+            where T : IBaseDocument
+        {
+            using (var xmlWriter = XmlWriter.Create(writer, _xmlWriterSettings))
+            {
+                Save(document, xmlWriter);
+            }
+        }
+
+        public static void Save<T>(this T document, XmlWriter writer)
+            where T : IBaseDocument
+        {
+            WriteTo(document, writer);
         }
     }
 }

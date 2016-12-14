@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeFixers\AddClsCompliantAttribute.cs" />
     <Compile Include="CodeFixers\AddISharedPropertiesInterface.cs" />
+    <Compile Include="CodeFixers\AddXmlMemberOrderToFields.cs" />
     <Compile Include="CodeFixers\ArrayToListConverter.cs" />
     <Compile Include="CodeNamespaceVisitor.cs" />
     <Compile Include="CodeFixers\XmlAttributesFixer.cs" />
