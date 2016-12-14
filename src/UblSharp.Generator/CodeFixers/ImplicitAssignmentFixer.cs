@@ -31,6 +31,26 @@ namespace UblSharp.Generator.CodeFixers
 
         protected override void VisitNamespace(CodeNamespace codeNamespace)
         {
+            // Ignore TimeType and DateType .Value
+            // do this before adding the implicit operators, because we will have our own implementation in the partial class
+            var fields = codeNamespace.Types.Cast<CodeTypeDeclaration>().SelectMany(x => x.Members.OfType<CodeMemberField>().Select(f => new { Type = x, Field = f }));
+            foreach (var fieldt in fields)
+            {
+                var type = fieldt.Type;
+                var member = fieldt.Field;
+
+                // Ignore Value of TimeType
+                if ((type.Name == "TimeType" || type.Name == "DateType")
+                    && member.Name == "Value")
+                {
+                    var attributes = member.CustomAttributes.Cast<CodeAttributeDeclaration>().ToList();
+                    var attr = attributes.Single(x => x.Name == "System.Xml.Serialization.XmlTextAttribute");
+                    member.CustomAttributes.Remove(attr);
+                    member.CustomAttributes.Add(new CodeAttributeDeclaration("System.Xml.Serialization.XmlIgnoreAttribute"));
+                    member.Type = new CodeTypeReference(typeof(System.DateTimeOffset));
+                }
+            }
+
             var classes = codeNamespace.Types.Cast<CodeTypeDeclaration>().Where(c => c.IsClass).ToList();
 
             var codeDeclsBase = classes.Where(c =>

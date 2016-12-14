@@ -343,7 +343,7 @@ namespace UblSharp.Xades
 #endif
         
         [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
 #if FEATURE_XMLDOCUMENT
         public System.Xml.XmlNode[] @__Any
 #elif !FEATURE_XMLDOCUMENT && FEATURE_LINQ

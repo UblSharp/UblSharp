@@ -14,6 +14,11 @@ namespace UblSharp.Generator.CodeFixers
         protected override void VisitType(CodeTypeDeclaration type)
         {
             CurrentType = type;
+            base.VisitType(type);
+        }
+
+        protected override void VisitClass(CodeTypeDeclaration type)
+        {
             var attributes = type.CustomAttributes.Cast<CodeAttributeDeclaration>().ToList();
 
             foreach (var attributeName in _attributesToRemove)
@@ -48,7 +53,7 @@ namespace UblSharp.Generator.CodeFixers
 
             // FixXmlSignatureType(type, attributes);
 
-            base.VisitType(type);
+            base.VisitClass(type);
         }
 
         private void FixXmlSignatureType(CodeTypeDeclaration type, List<CodeAttributeDeclaration> attributes)
@@ -69,8 +74,14 @@ namespace UblSharp.Generator.CodeFixers
             }
         }
 
+
         protected override void VisitField(CodeMemberField member)
         {
+            if (!CurrentType.IsClass)
+            {
+                return;
+            }
+
             var attributes = member.CustomAttributes.Cast<CodeAttributeDeclaration>().ToList();
             if (attributes.Count == 0)
             {
@@ -115,16 +126,6 @@ namespace UblSharp.Generator.CodeFixers
                         xmlElAttr.Arguments.Insert(0, new CodeAttributeArgument(new CodePrimitiveExpression(member.Name)));
                     }
                 }
-            }
-
-            // Ignore Value of TimeType
-            if ((CurrentType.Name == "TimeType" || CurrentType.Name == "DateType")
-                && member.Name == "Value")
-            {
-                var attr = attributes.Single(x => x.Name == "System.Xml.Serialization.XmlTextAttribute");
-                member.CustomAttributes.Remove(attr);
-                member.CustomAttributes.Add(new CodeAttributeDeclaration("System.Xml.Serialization.XmlIgnoreAttribute"));
-                member.Type = new CodeTypeReference(typeof(System.DateTimeOffset));
             }
 
             base.VisitField(member);
