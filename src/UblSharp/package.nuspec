@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>UblSharp</id>
-    <version>1.0.0-preview4</version>
+    <version>1.0.0-preview5</version>
     <title>Create and parse UBL documents in C# with UblSharp.</title>
     <authors>Remco Ros</authors>
     <owners>Remco Ros</owners>
