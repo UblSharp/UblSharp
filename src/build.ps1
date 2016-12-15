@@ -20,36 +20,53 @@ function Exec
     }
 }
 
-Push-Location $(Split-Path $Script:MyInvocation.MyCommand.Path)
+# Build script configuration
 
-# Build scriptblock
+$configuration = "Release"
+$projects = @(".\UblSharp", ".\UblSharp.Validation")
 
 $sgen = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sgen.exe" 
 
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
-$revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
+# End configuration
+
+Push-Location $(Split-Path $Script:MyInvocation.MyCommand.Path)
 
 if(Test-Path .\..\artifacts) { Remove-Item .\..\artifacts -Force -Recurse }
+New-Item -ItemType directory -Path .\..\artifacts
 
 exec { & dotnet restore }
 
-# UblSharp
-exec { & dotnet build .\UblSharp -c Release }
+# Build projects
+foreach($project in $projects) {
+    exec { & dotnet build $project -c Release }
+}
 
 # Generate XmlSerializers assemblies
-#$sgenfw = @("net20", "net35", "net40", "net45")
-#foreach ($fw in $sgenfw) {
-#    exec { & $sgen /assembly:.\UblSharp\bin\Release\$fw\UblSharp.dll /verbose /force }
-#}
+$sgenfw = @("net20", "net35", "net40", "net45")
+foreach ($fw in $sgenfw) {
+    exec { & $sgen /assembly:.\UblSharp\bin\$configuration\$fw\UblSharp.dll /verbose /force }
+}
 
-# UblSharp.Validation
-exec { & dotnet build .\UblSharp.Validation -c Release }
+# build tests first
+exec { & dotnet build .\UblSharp.Tests -c Release }
+
+# manually copy sgen assemblies to test bin directory
+# hack: hard-coded platform name
+Copy-Item -Path ".\UblSharp\bin\$configuration\net45\UblSharp.XmlSerializers.dll" -Destination ".\UblSharp.Tests\bin\$configuration\net46\win7-x64" -Force
 
 # Build/Run tests
 exec { & dotnet test .\UblSharp.Tests -c Release }
 
 # Create packages  
-exec { & dotnet pack .\UblSharp -c Release -o .\..\artifacts --version-suffix=$revision }
-exec { & dotnet pack .\UblSharp.Validation -c Release -o .\..\artifacts --version-suffix=$revision }
+foreach($project in $projects) {
+    [xml]$nuspec = Get-Content "$project\package.nuspec"
+    $version = $nuspec.package.metadata.version
+
+    if ($env:APPVEYOR_BUILD_NUMBER -ne $NULL){
+        $version = "$version-ci$env:APPVEYOR_BUILD_NUMBER"
+    }
+
+    exec { & nuget pack "$project\package.nuspec" -version $version -symbols -outputdirectory .\..\artifacts -properties Configuration=Release }
+}
 
 Pop-Location

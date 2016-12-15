@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicTypeTests.cs" />
-    <Compile Include="XmlSerializerBenchTests.cs" />
+    <Compile Include="PregenSerializersTests.cs" />
     <Compile Include="UblDocumentValidatorTests.cs" />
     <Compile Include="KrampV21\KrampSampleTests.cs" />
     <Compile Include="Util\UblXmlComparer.cs" />
@@ -151,10 +151,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\DependencyValidation1\DependencyValidation1.layerdiagram">
-      <Link>DependencyValidation1.layerdiagram</Link>
-      <Visible>False</Visible>
-    </AdditionalFiles>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

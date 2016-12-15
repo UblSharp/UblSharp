@@ -6,11 +6,12 @@ using System.Text;
 using System.Xml.Serialization;
 using Xunit;
 
-namespace UblSharp.Tests.Playground
+namespace UblSharp.Tests
 {
     public class PregenSerializersTests
     {
-        [Fact(Skip = "Disable sgen test until supported")]
+        // [Fact(Skip = "Disable sgen test until supported")]
+        [Fact]
         public void CanLoadXmlSerializers()
         {
             AssertCanLoadXmlSerializers(typeof(OrderType));

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UblSharp.Validation</id>
+    <version>1.0.0-preview4</version>
+    <title>Validate UBL XML documents and .NET types created with UblSharp.</title>
+    <authors>Remco Ros</authors>
+    <owners>Remco Ros</owners>
+    <licenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/UblSharp/UblSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UblSharp.Validation</description>
+    <copyright>Copyright © Remco Ros 2016</copyright>
+    <language>en-US</language>
+    <tags>ubl,ublsharp</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework2.0">
+        <dependency id="NETStandard.Library" version="[1.6.1, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+      </group>
+      <group targetFramework=".NETFramework3.5">
+        <dependency id="NETStandard.Library" version="[1.6.1, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+      </group>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="NETStandard.Library" version="[1.6.1, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+      </group>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="NETStandard.Library" version="[1.6.1, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework2.0" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>    
+    <file src="bin\Release\net20\UblSharp.Validation.dll" target="lib\net20" />
+    <file src="bin\Release\net20\UblSharp.Validation.xml" target="lib\net20" />
+    
+    <file src="bin\Release\net35\UblSharp.Validation.dll" target="lib\net35" />
+    <file src="bin\Release\net35\UblSharp.Validation.xml" target="lib\net35" />
+    
+    <file src="bin\Release\net40\UblSharp.Validation.dll" target="lib\net40" />
+    <file src="bin\Release\net40\UblSharp.Validation.xml" target="lib\net40" />
+    
+    <file src="bin\Release\net45\UblSharp.Validation.dll" target="lib\net45" />
+    <file src="bin\Release\net45\UblSharp.Validation.xml" target="lib\net45" />
+    <file src="**\*.cs" target="src" />
+  </files>
+</package>
