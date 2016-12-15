@@ -1,3 +1,7 @@
+param (
+    [Parameter(Mandatory=$false)]
+    [switch] $NuGet
+)
 <#
 .SYNOPSIS
   This is a helper function that runs a scriptblock and checks the PS variable $lastexitcode
@@ -62,7 +66,8 @@ foreach($project in $projects) {
     [xml]$nuspec = Get-Content "$project\package.nuspec"
     $version = $nuspec.package.metadata.version
 
-    if ($env:APPVEYOR_BUILD_NUMBER -ne $NULL){
+    # Do not add ci version number when building package for nuget.org
+    if ($NuGet -eq $false -And $env:APPVEYOR_BUILD_NUMBER -ne $NULL){
         $version = "$version-ci$env:APPVEYOR_BUILD_NUMBER"
     }
 
