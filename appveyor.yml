@@ -1,7 +1,5 @@
 -
   version: '{build}'
-  pull_requests:
-    do_not_increment_build_number: true
   cache: '%userprofile%\.nuget\packages'
   nuget:
     project_feed: true
@@ -25,11 +23,9 @@
     only: 
       - /release.*/
   version: '{build}'
-  pull_requests:
-    do_not_increment_build_number: true
   cache: '%userprofile%\.nuget\packages'
   nuget:
-    project_feed: false
+    project_feed: true
     disable_publish_on_pr: true
   build_script:
   - ps: .\src\build.ps1 -NuGet
@@ -42,6 +38,8 @@
     name: production
     api_key:
       secure: 0Idnj65UTCZqpVUDI/8Y8/mMLJ3fTLbknyKgAF3A5jVN2M2vGCcG3EDWh4GyUIdt
+    on:
+      appveyor_repo_tag: true
   - provider: GitHub
     auth_token:
       secure: voP35JF5npCVqWOFWeEUQnjC+qXk6QAPcIAxRDcgaaB9NovL05c6YjavzQepCA8b
@@ -49,3 +47,5 @@
     draft: true
     prerelease: true
     force_update: true
+    on:
+      appveyor_repo_tag: true
