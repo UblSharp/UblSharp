@@ -54,7 +54,7 @@ foreach($project in $projects) {
 
     [xml]$nuspec = Get-Content "$project\package.nuspec" -Encoding UTF8
     $nuspec.package.metadata.version = $version
-    $nuspec.Save("$project\package.nuspec")
+    $nuspec.Save((Resolve-Path "$project\package.nuspec"))
 
     Write-Host "Updated version in $project\package.nuspec to $version"
 
