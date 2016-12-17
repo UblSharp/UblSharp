@@ -2,27 +2,9 @@ param (
     [Parameter(Mandatory=$false)]
     [switch] $NuGet
 )
-<#
-.SYNOPSIS
-  This is a helper function that runs a scriptblock and checks the PS variable $lastexitcode
-  to see if an error occcured. If an error is detected then an exception is thrown.
-  This function allows you to run command-line programs without having to
-  explicitly check the $lastexitcode variable.
-.EXAMPLE
-  exec { svn info $repository_trunk } "Error executing SVN. Please verify SVN command-line client is installed"
-#>
-function Exec
-{
-    [CmdletBinding()]
-    param(
-        [Parameter(Position=0,Mandatory=1)][scriptblock]$cmd,
-        [Parameter(Position=1,Mandatory=0)][string]$errorMessage = ($msgs.error_bad_command -f $cmd)
-    )
-    & $cmd
-    if ($lastexitcode -ne 0) {
-        throw ("Exec: " + $errorMessage)
-    }
-}
+
+# includes
+. "$PSScriptRoot\.build\build-functions.ps1"
 
 # Build script configuration
 
@@ -36,7 +18,7 @@ $sgen = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tool
 Push-Location $(Split-Path $Script:MyInvocation.MyCommand.Path)
 
 if(Test-Path .\..\artifacts) { Remove-Item .\..\artifacts -Force -Recurse }
-New-Item -ItemType directory -Path .\..\artifacts
+New-Item -ItemType directory -Path .\..\artifacts | Out-Null
 
 exec { & dotnet restore }
 
@@ -63,13 +45,18 @@ exec { & dotnet test .\UblSharp.Tests -c Release }
 
 # Create packages  
 foreach($project in $projects) {
-    [xml]$nuspec = Get-Content "$project\package.nuspec"
-    $version = $nuspec.package.metadata.version
+    $version = (ConvertFrom-Json -InputObject (Get-Content $project\project.json -Raw)).version
 
     # Do not add ci version number when building package for nuget.org
     if ($NuGet -eq $false -And $env:APPVEYOR_BUILD_NUMBER -ne $NULL){
         $version = "$version-ci$env:APPVEYOR_BUILD_NUMBER"
     }
+
+    [xml]$nuspec = Get-Content "$project\package.nuspec" -Encoding UTF8
+    $nuspec.package.metadata.version = $version
+    $nuspec.Save((Resolve-Path "$project\package.nuspec"))
+
+    Write-Host "Updated version in $project\package.nuspec to $version"
 
     exec { & nuget pack "$project\package.nuspec" -version $version -symbols -outputdirectory .\..\artifacts -properties Configuration=Release }
 }
