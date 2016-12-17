@@ -4,7 +4,7 @@ param (
 )
 
 # includes
-. .\.build\build-functions.ps1
+. "$PSScriptRoot\.build\build-functions.ps1"
 
 # Build script configuration
 
