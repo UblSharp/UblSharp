@@ -16,19 +16,19 @@
     <dependencies>
       <group targetFramework=".NETFramework2.0">
         <dependency id="NETStandard.Library" version="[1.6.1, )" />
-        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview6, )" />
       </group>
       <group targetFramework=".NETFramework3.5">
         <dependency id="NETStandard.Library" version="[1.6.1, )" />
-        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview6, )" />
       </group>
       <group targetFramework=".NETFramework4.0">
         <dependency id="NETStandard.Library" version="[1.6.1, )" />
-        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview6, )" />
       </group>
       <group targetFramework=".NETFramework4.5">
         <dependency id="NETStandard.Library" version="[1.6.1, )" />
-        <dependency id="UblSharp" version="[1.0.0-preview4, )" />
+        <dependency id="UblSharp" version="[1.0.0-preview6, )" />
       </group>
     </dependencies>
     <frameworkAssemblies>
