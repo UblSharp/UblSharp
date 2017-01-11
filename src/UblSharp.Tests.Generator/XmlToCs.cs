@@ -182,7 +182,7 @@ namespace UblSharp.Tests.Samples
                     }
                 }
             }
-            else
+            else if (!string.IsNullOrEmpty(xElement.Value))
             {
                 foreach (var attribute in xElement.Attributes())
                 {
