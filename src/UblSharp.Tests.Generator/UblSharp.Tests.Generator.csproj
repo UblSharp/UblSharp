@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UblSharp\UblSharp.NET45.csproj">
-      <Project>{97A7A08A-82D9-440D-9E80-92DF10F4682B}</Project>
-      <Name>UblSharp.NET45</Name>
+    <ProjectReference Include="..\UblSharp\UblSharp.csproj">
+      <Project>{df56ee48-75ea-43ed-b3fc-efc3fa2fc3e4}</Project>
+      <Name>UblSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
