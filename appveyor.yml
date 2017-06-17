@@ -5,7 +5,7 @@
     project_feed: true
     disable_publish_on_pr: true
   build_script:
-  - ps: .\src\build.ps1
+  - ps: .\build.ps1
   test: off
   artifacts:
   - path: .\artifacts\**\*.nupkg
@@ -28,7 +28,7 @@
     project_feed: true
     disable_publish_on_pr: true
   build_script:
-  - ps: .\src\build.ps1 -NuGet
+  - ps: .\build.ps1 -NuGet
   test: off
   artifacts:
   - path: .\artifacts\**\*.nupkg
