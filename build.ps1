@@ -50,7 +50,7 @@ foreach ($project in $projects) {
         & $sgen /assembly:$file /verbose /force
     }
 
-    Start-Job -Name "sgen-$_" $do_sgen -ArgumentList ($sgen, [System.IO.Path]::GetFullPath(".\src\UblSharp\bin\$configuration\$_\UblSharp.dll"))
+    Start-Job -Name "sgen-$_" $do_sgen -ArgumentList ($sgen, [System.IO.Path]::GetFullPath("$PSScriptRoot\src\UblSharp\bin\$configuration\$_\UblSharp.dll"))
 }
 
 While (Get-Job -State "Running") { Start-Sleep 1 }

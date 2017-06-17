@@ -1,6 +1,6 @@
 -
   version: '{build}'
-  cache: '%userprofile%\.nuget\packages'
+  cache: '%userprofile%\.nuget\packages' -> appveyor.yml.cache
   nuget:
     project_feed: true
     disable_publish_on_pr: true
@@ -23,7 +23,7 @@
     only: 
       - /release.*/
   version: '{build}'
-  cache: '%userprofile%\.nuget\packages'
+  cache: '%userprofile%\.nuget\packages' -> appveyor.yml.cache
   nuget:
     project_feed: true
     disable_publish_on_pr: true
