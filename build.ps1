@@ -79,7 +79,7 @@ foreach ($project in $projects) {
 
     # Write-Host "Updated version in $project\package.nuspec to $version"
     $projectFile = $(Join-Path $project['root'] $project['csproj'])
-    exec { & dotnet pack $projectFile -c Release --no-build --version-suffix "$suffix" --include-symbols -o "$PSScriptRoot\artifacts" }
+    exec { & dotnet pack $projectFile -c Release --no-build --version-suffix=$suffix --include-symbols -o "$PSScriptRoot\artifacts" }
 }
 
 Pop-Location
