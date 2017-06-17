@@ -4,8 +4,8 @@
     <AssemblyTitle>Create and parse UBL documents in C# with UblSharp.</AssemblyTitle>
     <Description>Create and parse UBL documents in C# with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
-    <Authors>Remco Ros</Authors>    
-    <VersionPrefix>1.0.0-preview6</VersionPrefix>
+    <Authors>Remco Ros</Authors>
+    <VersionPrefix>1.0.0-preview7</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp</PackageTags>
@@ -13,12 +13,26 @@
     <PackageLicenseUrl>https://github.com/remcoros/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>UblSharp</RootNamespace>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <TargetFrameworks>net20;net35;net40;netstandard1.0;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard1.0;netstandard1.3</TargetFrameworks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <WarningsAsErrors>true</WarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(OutputPath)\net20\UblSharp.XmlSerializers.dll">
+      <PackagePath>lib\net20</PackagePath>
+    </Content>
+    <Content Include="$(OutputPath)\net35\UblSharp.XmlSerializers.dll">
+      <PackagePath>lib\net35</PackagePath>
+    </Content>
+    <Content Include="$(OutputPath)\net40\UblSharp.XmlSerializers.dll">
+      <PackagePath>lib\net40</PackagePath> 
+    </Content>
+    <Content Include="$(OutputPath)\net45\UblSharp.XmlSerializers.dll">
+      <PackagePath>lib\net45</PackagePath>
+    </Content>
+  </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net20' ">
     <Reference Include="System.Xml" />
     <Reference Include="System" />
@@ -29,6 +43,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System" />
@@ -56,6 +76,9 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ</DefineConstants>
   </PropertyGroup>
@@ -65,4 +88,4 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
-</Project>
+  </Project>

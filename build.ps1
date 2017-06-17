@@ -44,7 +44,7 @@ foreach ($project in $projects) {
 }
 
 # Generate XmlSerializers assemblies (in parallel)
-"net20", "net35", "net40" | ForEach-Object {
+"net20", "net35", "net40", "net45" | ForEach-Object {
     $do_sgen = {
         param($sgen, $file)
         & $sgen /assembly:$file /verbose /force
@@ -79,7 +79,7 @@ foreach ($project in $projects) {
 
     # Write-Host "Updated version in $project\package.nuspec to $version"
     $projectFile = $(Join-Path $project['root'] $project['csproj'])
-    exec { & dotnet pack $projectFile -c Release --no-build --version-suffix $suffix --include-symbols -o "$PSScriptRoot\artifacts" /p:PackageBuild=true}
+    exec { & dotnet pack $projectFile -c Release --no-build --version-suffix $suffix --include-symbols -o "$PSScriptRoot\artifacts" }
 }
 
 Pop-Location
