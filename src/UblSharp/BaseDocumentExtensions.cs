@@ -26,14 +26,6 @@ namespace UblSharp
             return UblDocument.GetSerializer(document.GetType());
         }
 
-        public static void WriteTo<T>(this T document, XmlWriter writer)
-            where T : IBaseDocument
-        {
-            if (writer == null) throw new ArgumentNullException(nameof(writer));
-
-            GetSerializer(document).Serialize(writer, document);
-        }
-
         public static void Save<T>(this T document, Stream stream)
             where T : IBaseDocument
         {
@@ -67,7 +59,10 @@ namespace UblSharp
         public static void Save<T>(this T document, XmlWriter writer)
             where T : IBaseDocument
         {
-            WriteTo(document, writer);
+            if (document == null) throw new ArgumentNullException(nameof(document));
+            if (writer == null) throw new ArgumentNullException(nameof(writer));
+
+            GetSerializer(document).Serialize(writer, document);
         }
     }
 }
