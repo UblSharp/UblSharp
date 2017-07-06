@@ -24,6 +24,7 @@ namespace UblSharp.Validation
             CloseOutput = false,
             Indent = false,
             CheckCharacters = false,
+            NewLineHandling = NewLineHandling.None,            
 #if !(NET20 || NET35)
             NamespaceHandling = NamespaceHandling.OmitDuplicates,
 #endif
