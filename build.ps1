@@ -22,7 +22,7 @@ Push-Location $(Split-Path $Script:MyInvocation.MyCommand.Path)
 # version suffix info
 $tag = $(git tag -l --points-at HEAD)
 $branch = $(git rev-parse --abbrev-ref HEAD)
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = "local" }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
+$revision = @{ $true = "{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $false = "local" }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 $suffix = @{ $true = "local"; $false = "ci$revision"}[$revision -eq "local"]
 # When suffix is not local, assume appveyor build. When also on a tag, it's a release package, make sure suffix stays empty
 $suffix = @{ $true = ""; $false = "$suffix"}[$suffix -ne "local" -and $tag -ne $NULL]
@@ -64,7 +64,7 @@ exec { & dotnet build .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no
 
 # manually copy sgen assemblies to test bin directory
 # hack: hard-coded platform name
-Copy-Item -Path ".\src\UblSharp\bin\$configuration\net40\UblSharp.XmlSerializers.dll" -Destination ".\src\UblSharp.Tests\bin\$configuration\net46\win7-x64" -Force
+Copy-Item -Path ".\src\UblSharp\bin\$configuration\net45\UblSharp.XmlSerializers.dll" -Destination ".\src\UblSharp.Tests\bin\$configuration\net46\" -Force
 
 # Build/Run tests
 exec { & dotnet test .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-build }
