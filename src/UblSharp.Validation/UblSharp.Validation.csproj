@@ -5,7 +5,7 @@
     <Description>Validate UBL XML documents and .NET types created with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.0-preview10</VersionPrefix>
+    <VersionPrefix>1.0.0-rc1</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp;ublsharp.validation</PackageTags>
