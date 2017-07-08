@@ -48,7 +48,7 @@ namespace UblSharp.Validation
                     {
                         if (manifestStream == null)
                         {
-                            throw new Exception("Could not find xsd: " + xsdName);
+                            throw new InvalidOperationException($"Error while getting manifest resource '{manifestStreamName}'");
                         }
 
                         _cachedSchema.Add(XmlSchema.Read(manifestStream, _schemaValHandler));
@@ -56,7 +56,17 @@ namespace UblSharp.Validation
                 }
             }
 
-            _cachedSchema.Add(XmlSchema.Read(_executingAssembly.GetManifestResourceStream($"{BaseNamespace}.common.UBL-xmldsig-core-schema-2.1.xsd"), _schemaValHandler));
+            var resourceName = $"{BaseNamespace}.common.UBL-xmldsig-core-schema-2.1.xsd";
+            using (var stream = _executingAssembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                {
+                    throw new InvalidOperationException($"Error while getting manifest resource '{resourceName}'");
+                }
+
+                _cachedSchema.Add(XmlSchema.Read(stream, _schemaValHandler));
+            }
+
             _cachedSchema.Compile();
         }
 
