@@ -12,9 +12,9 @@ namespace UblSharp
 {
     public static class UblDocument
     {
-        private static readonly Dictionary<Type, XmlSerializer> _typeCache = new Dictionary<Type, XmlSerializer>();
-        
-        public static XmlReaderSettings XmlReaderSettings { get; } = new XmlReaderSettings()
+        private static readonly Dictionary<Type, XmlSerializer> s_typeCache = new Dictionary<Type, XmlSerializer>();
+
+        private static readonly XmlReaderSettings s_xmlReaderSettings = new XmlReaderSettings()
         {
             CheckCharacters = false,
             IgnoreWhitespace = true,
@@ -24,7 +24,7 @@ namespace UblSharp
 #endif
         };
 
-        public static XmlWriterSettings XmlWriterSettings { get; } = new XmlWriterSettings()
+        private static readonly XmlWriterSettings s_xmlWriterSettings = new XmlWriterSettings()
         {
             CloseOutput = false,
             Encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false),
@@ -37,7 +37,7 @@ namespace UblSharp
 
         public static T Load<T>(Stream stream) where T : IBaseDocument
         {
-            using (var rdr = XmlReader.Create(stream, XmlReaderSettings))
+            using (var rdr = XmlReader.Create(stream, s_xmlReaderSettings))
             {
                 return Load<T>(rdr);
             }
@@ -45,7 +45,7 @@ namespace UblSharp
 
         public static T Load<T>(string uri) where T : IBaseDocument
         {
-            using (var rdr = XmlReader.Create(uri, XmlReaderSettings))
+            using (var rdr = XmlReader.Create(uri, s_xmlReaderSettings))
             {
                 return Load<T>(rdr);
             }
@@ -53,7 +53,7 @@ namespace UblSharp
 
         public static T Load<T>(TextReader reader) where T : IBaseDocument
         {
-            using (var rdr = XmlReader.Create(reader, XmlReaderSettings))
+            using (var rdr = XmlReader.Create(reader, s_xmlReaderSettings))
             {
                 return Load<T>(rdr);
             }
@@ -67,7 +67,7 @@ namespace UblSharp
         public static T Parse<T>(string text) where T : IBaseDocument
         {
             using (var rdr = new StringReader(text))
-            using (var xmlRdr = XmlReader.Create(rdr, XmlReaderSettings))
+            using (var xmlRdr = XmlReader.Create(rdr, s_xmlReaderSettings))
             {
                 return Load<T>(xmlRdr);
             }
@@ -76,10 +76,10 @@ namespace UblSharp
         public static XmlSerializer GetSerializer(Type type)
         {
             XmlSerializer serializer;
-            if (!_typeCache.TryGetValue(type, out serializer))
+            if (!s_typeCache.TryGetValue(type, out serializer))
             {
                 serializer = new XmlSerializer(type);
-                _typeCache[type] = serializer;
+                s_typeCache[type] = serializer;
             }
 
             return serializer;
@@ -95,13 +95,13 @@ namespace UblSharp
 
 #if NETSTANDARD1_0 || NETSTANDARD1_3
             using (var memStream = new MemoryStream())
-            using (var xmlWriter = XmlWriter.Create(memStream, XmlWriterSettings))
+            using (var xmlWriter = XmlWriter.Create(memStream, s_xmlWriterSettings))
             {
                 document.Save(xmlWriter);
 
                 memStream.Seek(0, SeekOrigin.Begin);
                 
-                using (var reader = XmlReader.Create(memStream, XmlReaderSettings))
+                using (var reader = XmlReader.Create(memStream, s_xmlReaderSettings))
                 {
                     return Load<T>(reader);
                 }
@@ -137,5 +137,46 @@ namespace UblSharp
             }
         }
 #endif
+
+        public static void Save<T>(T document, Stream stream)
+            where T : IBaseDocument
+        {
+            using (var writer = XmlWriter.Create(stream, s_xmlWriterSettings))
+            {
+                Save(document, writer);
+            }
+        }
+
+#if !NETSTANDARD1_0
+        public static void Save<T>(T document, string fileName)
+            where T : IBaseDocument
+        {
+            using (var stream = File.CreateText(fileName))
+            using (var writer = XmlWriter.Create(stream, s_xmlWriterSettings))
+            {
+                Save(document, writer);
+            }
+        }
+#endif
+
+        public static void Save<T>(T document, TextWriter writer)
+            where T : IBaseDocument
+        {
+            using (var xmlWriter = XmlWriter.Create(writer, s_xmlWriterSettings))
+            {
+                Save(document, xmlWriter);
+            }
+        }
+
+        public static void Save<T>(T document, XmlWriter writer)
+            where T : IBaseDocument
+        {
+            if (document == null)
+                throw new ArgumentNullException(nameof(document));
+            if (writer == null)
+                throw new ArgumentNullException(nameof(writer));
+
+            GetSerializer(document.GetType()).Serialize(writer, document);
+        }
     }
 }
