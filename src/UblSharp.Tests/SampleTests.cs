@@ -47,6 +47,7 @@ namespace UblSharp.Tests
             var document = ToXDocument(doc);
 
             var areEqual = UblXmlComparer.IsCopyEqual(sampledocument, document, _output);
+#if DEBUG
             if (!areEqual)
             {
                 var sb = new StringBuilder();
@@ -57,6 +58,7 @@ namespace UblSharp.Tests
                 File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".sample.xml")), sampledocument.ToString());
                 File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".test.xml")), rawDocumentText);
             }
+#endif
 
             areEqual.Should().BeTrue();
 
@@ -88,7 +90,8 @@ namespace UblSharp.Tests
         private static XDocument ToXDocument<T>(T document)
             where T : IBaseDocument
         {
-            if (document == null) throw new ArgumentNullException(nameof(document));
+            if (document == null)
+                throw new ArgumentNullException(nameof(document));
 
             using (var ms = new MemoryStream())
             {
