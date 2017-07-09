@@ -1,6 +1,7 @@
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using UblSharp.Generator.Extensions;
 
@@ -22,6 +23,7 @@ namespace UblSharp.Generator.CodeFixers
                     Attributes = field.Attributes
                 };
 
+                prop.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.EditorBrowsableAttribute", new CodeAttributeArgument(new CodeFieldReferenceExpression(new CodeTypeReferenceExpression(typeof(EditorBrowsableState)), "Never"))));
                 prop.CustomAttributes.AddRange(field.CustomAttributes);
 
                 var fieldName = field.Name.MakePrivateFieldName();
