@@ -181,7 +181,7 @@ namespace UblSharp
                 throw new ArgumentNullException(nameof(writer));
 
             var serializer = GetSerializer(document.GetType());
-#if NETSTANDARD1_0 || NETSTANDARD1_3
+#if DISABLE_XMLNSDECL
             var baseDoc = document as BaseDocument;
             if (baseDoc != null)
             {

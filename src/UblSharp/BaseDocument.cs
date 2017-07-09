@@ -18,7 +18,7 @@ namespace UblSharp
         });
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-#if !(NETSTANDARD1_3 || NETSTANDARD1_0)
+#if !DISABLE_XMLNSDECL
         [XmlNamespaceDeclarations]
 #else
         [XmlIgnore]

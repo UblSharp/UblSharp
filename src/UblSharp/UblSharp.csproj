@@ -55,10 +55,10 @@
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ;DISABLE_XMLNSDECL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;DISABLE_XMLNSDECL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
