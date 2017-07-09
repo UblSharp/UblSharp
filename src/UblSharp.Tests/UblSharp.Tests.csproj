@@ -14,15 +14,22 @@
   <ItemGroup>
     <EmbeddedResource Include="**\*.xml" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <DefineConstants>$(DefineConstants);FEATURE_XMLDIFFPATCH;FEATURE_VALIDATION;FEATURE_SGEN</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
     <PackageReference Include="FluentAssertions" Version="4.19.3" />
+  </ItemGroup>
+  <ItemGroup Condition=" $(DefineConstants.Contains('FEATURE_XMLDIFFPATCH')) ">
     <PackageReference Include="XMLDiffPatch" Version="1.0.8.28" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" $(DefineConstants.Contains('FEATURE_VALIDATION')) ">
     <ProjectReference Include="..\UblSharp.Validation\UblSharp.Validation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
   </ItemGroup>
   <ItemGroup>

@@ -8,14 +8,19 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using FluentAssertions;
 using UblSharp.Tests.Util;
+#if FEATURE_VALIDATION
 using UblSharp.Validation;
+#endif
 using Xunit.Abstractions;
 
 namespace UblSharp.Tests
 {
     public partial class SampleTests
     {
+#if FEATURE_VALIDATION
         private static UblDocumentValidator _validater = new UblDocumentValidator();
+#endif
+
         private readonly ITestOutputHelper _output;
 
         public static readonly Dictionary<string, string> SkippedTests = new Dictionary<string, string>
@@ -45,8 +50,11 @@ namespace UblSharp.Tests
             var sampledocument = XDocument.Parse(rawSample, LoadOptions.SetBaseUri);
 
             var document = ToXDocument(doc);
+            bool areEqual = true;
 
-            var areEqual = UblXmlComparer.IsCopyEqual(sampledocument, document, _output);
+#if FEATURE_XMLDIFFPATCH
+            areEqual = UblXmlComparer.IsCopyEqual(sampledocument, document, _output);
+
 #if DEBUG
             if (!areEqual)
             {
@@ -61,6 +69,7 @@ namespace UblSharp.Tests
 #endif
 
             areEqual.Should().BeTrue();
+#endif
 
             // deserialize
             var sampleDoc = UblDocument.Load<T>(sampledocument);
@@ -75,6 +84,7 @@ namespace UblSharp.Tests
                     .Including(x => x.SelectedMemberInfo.Name.StartsWith("__", StringComparison.Ordinal))
             );
 
+#if FEATURE_VALIDATION
             var errors = _validater.Validate(doc).ToList();
             foreach (var error in errors)
             {
@@ -83,6 +93,7 @@ namespace UblSharp.Tests
 
             _validater.IsValid(doc).Should().BeTrue();
             errors.Should().NotContain(x => x.Severity == XmlSeverityType.Error);
+#endif
 
             return areEqual;
         }

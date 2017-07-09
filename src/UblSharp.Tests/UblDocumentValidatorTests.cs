@@ -1,3 +1,4 @@
+#if FEATURE_VALIDATION
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -122,3 +123,4 @@ namespace UblSharp.Tests
         }
     }
 }
+#endif

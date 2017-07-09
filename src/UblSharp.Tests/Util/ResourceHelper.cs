@@ -7,7 +7,8 @@ namespace UblSharp.Tests.Util
     {
         public static Stream GetResource(string name)
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(Assembly.GetExecutingAssembly().GetName().Name + "." + name);
+            var assembly = typeof(ResourceHelper).GetTypeInfo().Assembly;
+            return assembly.GetManifestResourceStream(assembly.GetName().Name + "." + name);
         }
     }
 }

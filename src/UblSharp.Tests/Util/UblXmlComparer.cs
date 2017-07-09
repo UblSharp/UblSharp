@@ -1,3 +1,4 @@
+#if FEATURE_XMLDIFFPATCH
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -134,3 +135,4 @@ namespace UblSharp.Tests.Util
         }
     }
 }
+#endif
