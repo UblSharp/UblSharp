@@ -7,6 +7,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using FluentAssertions;
+using FluentAssertions.Equivalency;
 using UblSharp.Tests.Util;
 #if FEATURE_VALIDATION
 using UblSharp.Validation;
@@ -25,9 +26,9 @@ namespace UblSharp.Tests
 
         public static readonly Dictionary<string, string> SkippedTests = new Dictionary<string, string>
         {
-            { "UBL-Invoice-2.0-Enveloped.xml", "xml serializer removed some unnecessary namespaces" },
-            { "UBL-ForecastRevision-2.1-Example.xml", "The element 'ForecastRevisionLine' has invalid child element 'SourceForecastIssueDate'. List of possible elements expected: 'ID'." },
-            { "UBL-OrderResponse-2.1-Example.xml", "The element 'LineItem' has incomplete content." }
+            //{ "UBL-Invoice-2.0-Enveloped.xml", "xml serializer removed some unnecessary namespaces" },
+            //{ "UBL-ForecastRevision-2.1-Example.xml", "The element 'ForecastRevisionLine' has invalid child element 'SourceForecastIssueDate'. List of possible elements expected: 'ID'." },
+            //{ "UBL-OrderResponse-2.1-Example.xml", "The element 'LineItem' has incomplete content." }
         };
 
         public SampleTests(ITestOutputHelper output)
@@ -39,7 +40,7 @@ namespace UblSharp.Tests
             where T : BaseDocument
         {
             // serialize
-            var doc = factory();
+            var subject = factory();
             string rawSample;
             using (var res = ResourceHelper.GetResource("Samples." + documentFilename))
             using (var rdr = new StreamReader(res))
@@ -47,70 +48,86 @@ namespace UblSharp.Tests
                 rawSample = rdr.ReadToEnd();
             }
 
-            var sampledocument = XDocument.Parse(rawSample, LoadOptions.SetBaseUri);
-
-            var document = ToXDocument(doc);
             bool areEqual = true;
 
 #if FEATURE_XMLDIFFPATCH
-            areEqual = UblXmlComparer.IsCopyEqual(sampledocument, document, _output);
+            XDocument sampleDocument;
+            using (var strRdr = new StringReader(rawSample))
+            using (var xmlRdr = XmlReader.Create(
+                strRdr, new XmlReaderSettings()
+                {
+                    CheckCharacters = false
+                }))
+            {
+                sampleDocument = XDocument.Load(xmlRdr, LoadOptions.SetBaseUri);
+            }
+
+            var subjectXDoc = subject.ToXDocument();
+            areEqual = UblXmlComparer.IsCopyEqual(sampleDocument, subjectXDoc, _output);
 
 #if DEBUG
             if (!areEqual)
             {
                 var sb = new StringBuilder();
                 using (var stream = new StringWriter(sb))
-                    doc.Save(stream);
+                    subject.Save(stream);
                 var rawDocumentText = sb.ToString();
-                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".orig.xml")), rawSample);
-                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".sample.xml")), sampledocument.ToString());
-                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.ChangeExtension(documentFilename, ".test.xml")), rawDocumentText);
+                File.WriteAllText(Path.Combine(AppContext.BaseDirectory, Path.ChangeExtension(documentFilename, ".orig.xml")), rawSample);
+                File.WriteAllText(Path.Combine(AppContext.BaseDirectory, Path.ChangeExtension(documentFilename, ".sample.xml")), sampleDocument.ToString());
+                File.WriteAllText(Path.Combine(AppContext.BaseDirectory, Path.ChangeExtension(documentFilename, ".test.xml")), rawDocumentText);
             }
 #endif
 
-            areEqual.Should().BeTrue();
+            areEqual.Should().BeTrue("XML should be equal");
 #endif
 
-            // deserialize
-            var sampleDoc = UblDocument.Load<T>(sampledocument);
-
-            //var p1 = (sampleDoc as TransportationStatusType)?.__UBLVersionID;
-            //var p2 = (doc as TransportationStatusType)?.__UBLVersionID;
-
-            // TODO compare doc models
-            doc.ShouldBeEquivalentTo(sampleDoc, options => options
-                    .ExcludingProperties()
-                    .ExcludingFields()
-                    .Including(x => x.SelectedMemberInfo.Name.StartsWith("__", StringComparison.Ordinal))
-            );
+            var sampleDoc = UblDocument.Parse<T>(rawSample);
+            var trace = new StringBuilderTraceWriter();
+            try
+            {
+                subject.ShouldBeEquivalentTo(
+                    sampleDoc, options => options
+                        .ExcludingProperties()
+                        .ExcludingFields()
+                        .Including(x => x.SelectedMemberInfo.Name.StartsWith("__", StringComparison.Ordinal))
+                        .WithTracing(trace));
+            }
+            catch
+            {
+#if DEBUG
+                var sb = new StringBuilder();
+                using (var stream = new StringWriter(sb))
+                    subject.Save(stream);
+                var rawDocumentText = sb.ToString();
+                File.WriteAllText(Path.Combine(AppContext.BaseDirectory, Path.ChangeExtension(documentFilename, ".orig.xml")), rawSample);
+                File.WriteAllText(Path.Combine(AppContext.BaseDirectory, Path.ChangeExtension(documentFilename, ".test.xml")), rawDocumentText);
+#endif
+                throw;
+            }
+            finally
+            {
+                _output.WriteLine(trace.ToString());
+            }
 
 #if FEATURE_VALIDATION
-            var errors = _validater.Validate(doc).ToList();
+            var errors = _validater.Validate(subject).ToList();
             foreach (var error in errors)
             {
                 _output.WriteLine($"{error.Severity}: {error.Message}");
             }
 
-            _validater.IsValid(doc).Should().BeTrue();
+            _validater.IsValid(subject).Should().BeTrue();
             errors.Should().NotContain(x => x.Severity == XmlSeverityType.Error);
 #endif
 
             return areEqual;
         }
 
-        private static XDocument ToXDocument<T>(T document)
-            where T : IBaseDocument
+#if !NETCORE
+        public static class AppContext
         {
-            if (document == null)
-                throw new ArgumentNullException(nameof(document));
-
-            using (var ms = new MemoryStream())
-            {
-                document.Save(ms);
-
-                ms.Position = 0;
-                return XDocument.Load(ms);
-            }
+            public static string BaseDirectory => AppDomain.CurrentDomain.BaseDirectory;
         }
+#endif
     }
 }
