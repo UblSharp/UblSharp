@@ -128,11 +128,9 @@ namespace UblSharp.Validation
         {
             if (document == null) throw new ArgumentNullException(nameof(document));
 
-            var serializer = document.GetSerializer();
-
             using (var memStream = new MemoryStream())
             {
-                serializer.Serialize(memStream, document);
+                document.Save(memStream);
                 memStream.Seek(0, SeekOrigin.Begin);
                 return Validate(memStream, suppressWarnings);
             }

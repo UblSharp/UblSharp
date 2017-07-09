@@ -85,10 +85,13 @@ namespace UblSharp
             return serializer;
         }
 
-        public static XmlSerializer GetSerializer<T>() => GetSerializer(typeof(T));
+        public static XmlSerializer GetSerializer<T>()
+            where T : IBaseDocument
+            => GetSerializer(typeof(T));
 
 #if FEATURE_XMLDOCUMENT
-        public static T Load<T>(XmlDocument document) where T : BaseDocument
+        public static T Load<T>(XmlDocument document) 
+            where T : IBaseDocument
         {
             if (document == null)
                 throw new ArgumentNullException(nameof(document));
@@ -116,7 +119,8 @@ namespace UblSharp
 #endif
 
 #if FEATURE_LINQ
-        public static T Load<T>(XDocument document) where T : BaseDocument
+        public static T Load<T>(XDocument document) 
+            where T : IBaseDocument
         {
             if (document == null)
                 throw new ArgumentNullException(nameof(document));
@@ -176,7 +180,38 @@ namespace UblSharp
             if (writer == null)
                 throw new ArgumentNullException(nameof(writer));
 
-            GetSerializer(document.GetType()).Serialize(writer, document);
+            var serializer = GetSerializer(document.GetType());
+#if NETSTANDARD1_0 || NETSTANDARD1_3
+            var baseDoc = document as BaseDocument;
+            if (baseDoc != null)
+            {
+                serializer.Serialize(writer, document, baseDoc.Xmlns);
+            }
+            else
+            {
+                serializer.Serialize(writer, document);
+            }
+#else
+            serializer.Serialize(writer, document);
+#endif
         }
+
+#if FEATURE_LINQ
+        public static XDocument ToXDocument<T>(T document)
+            where T : IBaseDocument
+        {
+            if (document == null)
+                throw new ArgumentNullException(nameof(document));
+
+            var sb = new StringBuilder();
+            using (var sw = new StringWriter(sb))
+            using (var writer = XmlWriter.Create(sw))
+            {
+                document.Save(writer);
+            }
+
+            return XDocument.Parse(sb.ToString());
+        }
+#endif
     }
 }
