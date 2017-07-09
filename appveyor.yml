@@ -1,6 +1,5 @@
 -
   version: '{build}'
-  image: Visual Studio 2017 Preview
   cache: 
   - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
   nuget:
@@ -25,7 +24,6 @@
     only: 
       - /release.*/
   version: '{build}'
-  image: Visual Studio 2017 Preview
   cache: 
   - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
   nuget:

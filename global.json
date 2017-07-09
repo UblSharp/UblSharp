@@ -3,6 +3,6 @@
         "src"
     ],
     "sdk": {
-        "version": "2.0.0-preview2-006497"
+        "version": "1.0.4"
     }
 }
