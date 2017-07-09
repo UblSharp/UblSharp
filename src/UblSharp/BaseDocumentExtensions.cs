@@ -1,5 +1,10 @@
+using System;
 using System.IO;
+using System.Text;
 using System.Xml;
+#if FEATURE_LINQ
+using System.Xml.Linq;
+#endif
 using System.Xml.Serialization;
 
 namespace UblSharp
@@ -37,5 +42,13 @@ namespace UblSharp
         {
             UblDocument.Save(document, writer);
         }
+
+#if FEATURE_LINQ
+        public static XDocument ToXDocument<T>(this T document)
+            where T : IBaseDocument
+        {
+            return UblDocument.ToXDocument(document);
+        }
+#endif
     }
 }

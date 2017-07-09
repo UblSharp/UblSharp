@@ -197,6 +197,12 @@ namespace UblSharp.Tests.Samples
                 {
                     new ForecastRevisionLineType
                     {
+                        ID = new IdentifierType
+                        {
+                        },
+                        RevisedForecastLineID = new IdentifierType
+                        {
+                        },
                         SourceForecastIssueDate = "2005-02-17",
                         SourceForecastIssueTime = "10:00:00.000",
                         AdjustmentReasonCode = "REVISED_PROMOTION",

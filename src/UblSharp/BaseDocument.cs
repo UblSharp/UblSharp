@@ -18,7 +18,11 @@ namespace UblSharp
         });
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
+#if !DISABLE_XMLNSDECL
         [XmlNamespaceDeclarations]
+#else
+        [XmlIgnore]
+#endif
         public XmlSerializerNamespaces Xmlns { get; set; } = DefaultXmlns;
 
         [XmlIgnore]

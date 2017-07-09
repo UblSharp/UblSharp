@@ -124,7 +124,8 @@ namespace UblSharp.Tests.Samples
             if (xElement.HasElements)
             {
                 string localDelimiter = ",";
-                var xElements = xElement.Elements().Where(e => !e.IsEmpty).GroupBy(g => g.Name.LocalName).ToList();
+                // var xElements = xElement.Elements().Where(e => !e.IsEmpty).GroupBy(g => g.Name.LocalName).ToList();
+                var xElements = xElement.Elements().GroupBy(g => g.Name.LocalName).ToList();
                 foreach (var elem in xElements)
                 {
                     string xmlElementName = elem.First().Name.LocalName;
@@ -293,7 +294,7 @@ namespace UblSharp.Tests.Samples
             }
 
             var hasAttributes = xElement.Attributes().Where(a => a.IsNamespaceDeclaration == false).Any();
-            if (xElement.HasElements || hasAttributes)
+            if (xElement.HasElements || hasAttributes || xElement.IsEmpty || string.IsNullOrEmpty(xElement.Value))
                 return false;
 
             // Only basetypes from UblSharp.UnqualifiedDataTypes having static implicit assignment functions can be assigned as a one-liner when Attributes and Elements are empty
