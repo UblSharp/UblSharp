@@ -15,10 +15,10 @@
     <EmbeddedResource Include="**\*.xml" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <DefineConstants>$(DefineConstants);NET46;FEATURE_XMLDIFFPATCH;FEATURE_VALIDATION;FEATURE_SGEN</DefineConstants>
+    <DefineConstants>$(DefineConstants);FEATURE_VALIDATION;FEATURE_SGEN</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
-    <DefineConstants>$(DefineConstants);NETCORE;FEATURE_XMLDIFFPATCH</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net46|AnyCPU'">
     <NoWarn>1701;1702;1705;CS1589</NoWarn>
@@ -28,9 +28,6 @@
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
     <PackageReference Include="FluentAssertions" Version="4.19.3" />
-  </ItemGroup>
-  <ItemGroup Condition=" $(DefineConstants.Contains('FEATURE_XMLDIFFPATCH')) ">
-    <!--<PackageReference Include="XMLDiffPatch" Version="1.0.8.28" />-->
   </ItemGroup>
   <ItemGroup Condition=" $(DefineConstants.Contains('FEATURE_VALIDATION')) ">
     <ProjectReference Include="..\UblSharp.Validation\UblSharp.Validation.csproj" />

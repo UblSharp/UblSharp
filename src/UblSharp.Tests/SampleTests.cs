@@ -50,7 +50,6 @@ namespace UblSharp.Tests
 
             bool areEqual = true;
 
-#if FEATURE_XMLDIFFPATCH
             XDocument sampleDocument;
             using (var strRdr = new StringReader(rawSample))
             using (var xmlRdr = XmlReader.Create(
@@ -79,7 +78,6 @@ namespace UblSharp.Tests
 #endif
 
             areEqual.Should().BeTrue("XML should be equal");
-#endif
 
             var sampleDoc = UblDocument.Parse<T>(rawSample);
             var trace = new StringBuilderTraceWriter();
