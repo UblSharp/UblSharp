@@ -168,6 +168,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType))]
         public object[] @__Items
@@ -188,6 +189,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<System.Object> _items1;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType), Order=2)]
         [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType))]
         public object[] @__Items1
@@ -342,6 +344,7 @@ namespace UblSharp.Xades
         private System.Collections.Generic.List<object> _any;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
 #if FEATURE_XMLDOCUMENT
@@ -376,6 +379,7 @@ namespace UblSharp.Xades
         private System.Collections.Generic.List<object> _anyAttr;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
 #if FEATURE_XMLDOCUMENT
         public System.Xml.XmlAttribute[] @__AnyAttr
@@ -461,6 +465,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<EncapsulatedPKIDataType> _cRLValues;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedCRLValue", IsNullable=false)]
         public EncapsulatedPKIDataType[] @__CRLValues
         {
@@ -476,6 +481,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<EncapsulatedPKIDataType> _oCSPValues;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedOCSPValue", IsNullable=false)]
         public EncapsulatedPKIDataType[] @__OCSPValues
         {
@@ -491,6 +497,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<AnyType> _otherValues;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("OtherValue", IsNullable=false)]
         public AnyType[] @__OtherValues
         {
@@ -557,6 +564,7 @@ namespace UblSharp.Xades
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType))]
         public object[] @__Items

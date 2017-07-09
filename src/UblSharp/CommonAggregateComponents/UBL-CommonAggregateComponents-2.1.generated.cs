@@ -117,6 +117,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Description
         {
@@ -589,6 +590,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _taxExemptionReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxExemptionReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__TaxExemptionReason
         {
@@ -894,6 +896,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AddressType> _jurisdictionRegionAddress;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("JurisdictionRegionAddress", Order=4)]
         public AddressType[] @__JurisdictionRegionAddress
         {
@@ -1143,6 +1146,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AddressLineType> _addressLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AddressLine", Order=24)]
         public AddressLineType[] @__AddressLine
         {
@@ -1162,6 +1166,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LocationCoordinateType> _locationCoordinate;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LocationCoordinate", Order=26)]
         public LocationCoordinateType[] @__LocationCoordinate
         {
@@ -2288,6 +2293,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__Note
         {
@@ -2307,6 +2313,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public TextType[] @__Description
         {
@@ -2326,6 +2333,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _contractDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContractDocumentReference", Order=11)]
         public DocumentReferenceType[] @__ContractDocumentReference
         {
@@ -2709,6 +2717,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CodeType> _descriptionCode;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DescriptionCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public CodeType[] @__DescriptionCode
         {
@@ -2724,6 +2733,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__Description
         {
@@ -2943,6 +2953,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _xPath;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("XPath", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__XPath
         {
@@ -2974,6 +2985,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _documentDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public TextType[] @__DocumentDescription
         {
@@ -3553,6 +3565,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType[] @__Description
         {
@@ -3876,6 +3889,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyIdentificationType> _partyIdentification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PartyIdentification", Order=6)]
         public PartyIdentificationType[] @__PartyIdentification
         {
@@ -3891,6 +3905,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyNameType> _partyName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PartyName", Order=7)]
         public PartyNameType[] @__PartyName
         {
@@ -3918,6 +3933,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyTaxSchemeType> _partyTaxScheme;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PartyTaxScheme", Order=11)]
         public PartyTaxSchemeType[] @__PartyTaxScheme
         {
@@ -3933,6 +3949,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyLegalEntityType> _partyLegalEntity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PartyLegalEntity", Order=12)]
         public PartyLegalEntityType[] @__PartyLegalEntity
         {
@@ -3952,6 +3969,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PersonType> _person;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Person", Order=14)]
         public PersonType[] @__Person
         {
@@ -3971,6 +3989,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ServiceProviderPartyType> _serviceProviderParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ServiceProviderParty", Order=16)]
         public ServiceProviderPartyType[] @__ServiceProviderParty
         {
@@ -3986,6 +4005,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PowerOfAttorneyType> _powerOfAttorney;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PowerOfAttorney", Order=17)]
         public PowerOfAttorneyType[] @__PowerOfAttorney
         {
@@ -4651,6 +4671,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -4666,6 +4687,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _conditions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Conditions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Conditions
         {
@@ -4701,6 +4723,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _validityPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Order=8)]
         public PeriodType[] @__ValidityPeriod
         {
@@ -4720,6 +4743,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LocationType> _subsidiaryLocation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubsidiaryLocation", Order=10)]
         public LocationType[] @__SubsidiaryLocation
         {
@@ -4735,6 +4759,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LocationCoordinateType> _locationCoordinate;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LocationCoordinate", Order=11)]
         public LocationCoordinateType[] @__LocationCoordinate
         {
@@ -5054,6 +5079,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _exemptionReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExemptionReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__ExemptionReason
         {
@@ -5318,6 +5344,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShareholderPartyType> _shareholderParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShareholderParty", Order=13)]
         public ShareholderPartyType[] @__ShareholderParty
         {
@@ -5713,6 +5740,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AddressType> _jurisdictionRegionAddress;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("JurisdictionRegionAddress", Order=3)]
         public AddressType[] @__JurisdictionRegionAddress
         {
@@ -5934,6 +5962,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__Note
         {
@@ -5949,6 +5978,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommunicationType> _otherCommunication;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OtherCommunication", Order=6)]
         public CommunicationType[] @__OtherCommunication
         {
@@ -6310,6 +6340,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _identityDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("IdentityDocumentReference", Order=15)]
         public DocumentReferenceType[] @__IdentityDocumentReference
         {
@@ -6794,6 +6825,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _paymentNote;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentNote", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__PaymentNote
         {
@@ -7297,6 +7329,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _serviceType;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ServiceType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__ServiceType
         {
@@ -7466,6 +7499,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -7489,6 +7523,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _witnessParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WitnessParty", Order=6)]
         public PartyType[] @__WitnessParty
         {
@@ -7504,6 +7539,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _mandateDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MandateDocumentReference", Order=7)]
         public DocumentReferenceType[] @__MandateDocumentReference
         {
@@ -8041,6 +8077,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _notifyParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotifyParty", Order=18)]
         public PartyType[] @__NotifyParty
         {
@@ -8060,6 +8097,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryTermsType> _deliveryTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Order=20)]
         public DeliveryTermsType[] @__DeliveryTerms
         {
@@ -8745,6 +8783,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _instructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Instructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType[] @__Instructions
         {
@@ -8776,6 +8815,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _notifyParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotifyParty", Order=15)]
         public PartyType[] @__NotifyParty
         {
@@ -9298,6 +9338,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _specialTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecialTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__SpecialTerms
         {
@@ -9317,6 +9358,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _lossRisk;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LossRisk", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__LossRisk
         {
@@ -9535,6 +9577,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _allowanceChargeReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceChargeReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__AllowanceChargeReason
         {
@@ -9582,6 +9625,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxCategoryType> _taxCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxCategory", Order=12)]
         public TaxCategoryType[] @__TaxCategory
         {
@@ -9601,6 +9645,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentMeansType> _paymentMeans;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Order=14)]
         public PaymentMeansType[] @__PaymentMeans
         {
@@ -10011,6 +10056,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxSubtotalType> _taxSubtotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxSubtotal", Order=4)]
         public TaxSubtotalType[] @__TaxSubtotal
         {
@@ -10490,6 +10536,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _instructionNote;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InstructionNote", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__InstructionNote
         {
@@ -10505,6 +10552,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<IdentifierType> _paymentID;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public IdentifierType[] @__PaymentID
         {
@@ -11295,6 +11343,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClauseType> _clause;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Clause", Order=9)]
         public ClauseType[] @__Clause
         {
@@ -11577,6 +11626,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _content;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Content", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Content
         {
@@ -11662,6 +11712,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=3)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -11685,6 +11736,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClauseType> _clause;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Clause", Order=6)]
         public ClauseType[] @__Clause
         {
@@ -11999,6 +12051,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _handlingInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HandlingInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__HandlingInstructions
         {
@@ -12014,6 +12067,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _information;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Information", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Information
         {
@@ -12077,6 +12131,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _specialInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecialInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=17)]
         public TextType[] @__SpecialInstructions
         {
@@ -12092,6 +12147,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _deliveryInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=18)]
         public TextType[] @__DeliveryInstructions
         {
@@ -12115,6 +12171,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsignmentType> _consignment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Consignment", Order=21)]
         public ConsignmentType[] @__Consignment
         {
@@ -12130,6 +12187,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemType> _goodsItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("GoodsItem", Order=22)]
         public GoodsItemType[] @__GoodsItem
         {
@@ -12145,6 +12203,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _shipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipmentStage", Order=23)]
         public ShipmentStageType[] @__ShipmentStage
         {
@@ -12164,6 +12223,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportHandlingUnitType> _transportHandlingUnit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportHandlingUnit", Order=25)]
         public TransportHandlingUnitType[] @__TransportHandlingUnit
         {
@@ -12199,6 +12259,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _freightAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FreightAllowanceCharge", Order=31)]
         public AllowanceChargeType[] @__FreightAllowanceCharge
         {
@@ -13031,6 +13092,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _summaryDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SummaryDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public TextType[] @__SummaryDescription
         {
@@ -13054,6 +13116,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _tariffDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TariffDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__TariffDescription
         {
@@ -13105,6 +13168,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _remarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Remarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=21)]
         public TextType[] @__Remarks
         {
@@ -13156,6 +13220,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _carrierServiceInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CarrierServiceInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=31)]
         public TextType[] @__CarrierServiceInstructions
         {
@@ -13171,6 +13236,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _customsClearanceServiceInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CustomsClearanceServiceInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=32)]
         public TextType[] @__CustomsClearanceServiceInstructions
         {
@@ -13186,6 +13252,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _forwarderServiceInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ForwarderServiceInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=33)]
         public TextType[] @__ForwarderServiceInstructions
         {
@@ -13201,6 +13268,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _specialServiceInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecialServiceInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=34)]
         public TextType[] @__SpecialServiceInstructions
         {
@@ -13228,6 +13296,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _handlingInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HandlingInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=38)]
         public TextType[] @__HandlingInstructions
         {
@@ -13243,6 +13312,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _information;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Information", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=39)]
         public TextType[] @__Information
         {
@@ -13282,6 +13352,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _specialInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecialInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=46)]
         public TextType[] @__SpecialInstructions
         {
@@ -13301,6 +13372,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _deliveryInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=48)]
         public TextType[] @__DeliveryInstructions
         {
@@ -13324,6 +13396,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _haulageInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HaulageInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=51)]
         public TextType[] @__HaulageInstructions
         {
@@ -13351,6 +13424,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentType> _consolidatedShipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsolidatedShipment", Order=55)]
         public ShipmentType[] @__ConsolidatedShipment
         {
@@ -13366,6 +13440,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CustomsDeclarationType> _customsDeclaration;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CustomsDeclaration", Order=56)]
         public CustomsDeclarationType[] @__CustomsDeclaration
         {
@@ -13397,6 +13472,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<StatusType> _status;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Status", Order=61)]
         public StatusType[] @__Status
         {
@@ -13412,6 +13488,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsignmentType> _childConsignment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ChildConsignment", Order=62)]
         public ConsignmentType[] @__ChildConsignment
         {
@@ -13503,6 +13580,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CountryType> _transitCountry;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransitCountry", Order=82)]
         public CountryType[] @__TransitCountry
         {
@@ -13522,6 +13600,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _transportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEvent", Order=84)]
         public TransportEventType[] @__TransportEvent
         {
@@ -13565,6 +13644,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _freightAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FreightAllowanceCharge", Order=92)]
         public AllowanceChargeType[] @__FreightAllowanceCharge
         {
@@ -13580,6 +13660,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _extraAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtraAllowanceCharge", Order=93)]
         public AllowanceChargeType[] @__ExtraAllowanceCharge
         {
@@ -13595,6 +13676,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _mainCarriageShipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MainCarriageShipmentStage", Order=94)]
         public ShipmentStageType[] @__MainCarriageShipmentStage
         {
@@ -13610,6 +13692,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _preCarriageShipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PreCarriageShipmentStage", Order=95)]
         public ShipmentStageType[] @__PreCarriageShipmentStage
         {
@@ -13625,6 +13708,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _onCarriageShipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OnCarriageShipmentStage", Order=96)]
         public ShipmentStageType[] @__OnCarriageShipmentStage
         {
@@ -13640,6 +13724,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportHandlingUnitType> _transportHandlingUnit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportHandlingUnit", Order=97)]
         public TransportHandlingUnitType[] @__TransportHandlingUnit
         {
@@ -16224,6 +16309,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Description
         {
@@ -16247,6 +16333,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<StatusType> _currentStatus;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CurrentStatus", Order=7)]
         public StatusType[] @__CurrentStatus
         {
@@ -16262,6 +16349,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ContactType> _contact;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Contact", Order=8)]
         public ContactType[] @__Contact
         {
@@ -16285,6 +16373,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _period;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Period", Order=11)]
         public PeriodType[] @__Period
         {
@@ -16602,6 +16691,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -16621,6 +16711,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _statusReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("StatusReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__StatusReason
         {
@@ -16640,6 +16731,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _text;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Text", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__Text
         {
@@ -16667,6 +16759,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConditionType> _condition;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Condition", Order=11)]
         public ConditionType[] @__Condition
         {
@@ -16979,6 +17072,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -17141,6 +17235,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -17465,6 +17560,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _transportationServiceDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportationServiceDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__TransportationServiceDescription
         {
@@ -17500,6 +17596,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _transportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEquipment", Order=10)]
         public TransportEquipmentType[] @__TransportEquipment
         {
@@ -17515,6 +17612,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _supportedTransportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SupportedTransportEquipment", Order=11)]
         public TransportEquipmentType[] @__SupportedTransportEquipment
         {
@@ -17530,6 +17628,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _unsupportedTransportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("UnsupportedTransportEquipment", Order=12)]
         public TransportEquipmentType[] @__UnsupportedTransportEquipment
         {
@@ -17545,6 +17644,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommodityClassificationType> _commodityClassification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CommodityClassification", Order=13)]
         public CommodityClassificationType[] @__CommodityClassification
         {
@@ -17560,6 +17660,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommodityClassificationType> _supportedCommodityClassification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SupportedCommodityClassification", Order=14)]
         public CommodityClassificationType[] @__SupportedCommodityClassification
         {
@@ -17575,6 +17676,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommodityClassificationType> _unsupportedCommodityClassification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("UnsupportedCommodityClassification", Order=15)]
         public CommodityClassificationType[] @__UnsupportedCommodityClassification
         {
@@ -17594,6 +17696,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _shipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipmentStage", Order=17)]
         public ShipmentStageType[] @__ShipmentStage
         {
@@ -17609,6 +17712,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _transportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEvent", Order=18)]
         public TransportEventType[] @__TransportEvent
         {
@@ -17628,6 +17732,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EnvironmentalEmissionType> _environmentalEmission;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EnvironmentalEmission", Order=20)]
         public EnvironmentalEmissionType[] @__EnvironmentalEmission
         {
@@ -17647,6 +17752,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ServiceFrequencyType> _scheduledServiceFrequency;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ScheduledServiceFrequency", Order=22)]
         public ServiceFrequencyType[] @__ScheduledServiceFrequency
         {
@@ -18190,6 +18296,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<IdentifierType> _referencedConsignmentID;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReferencedConsignmentID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public IdentifierType[] @__ReferencedConsignmentID
         {
@@ -18233,6 +18340,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _information;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Information", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public TextType[] @__Information
         {
@@ -18284,6 +18392,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _damageRemarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DamageRemarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=19)]
         public TextType[] @__DamageRemarks
         {
@@ -18299,6 +18408,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=20)]
         public TextType[] @__Description
         {
@@ -18314,6 +18424,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _specialTransportRequirements;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecialTransportRequirements", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=21)]
         public TextType[] @__SpecialTransportRequirements
         {
@@ -18353,6 +18464,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=28)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -18368,6 +18480,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentSealType> _transportEquipmentSeal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEquipmentSeal", Order=29)]
         public TransportEquipmentSealType[] @__TransportEquipmentSeal
         {
@@ -18423,6 +18536,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _positioningTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PositioningTransportEvent", Order=40)]
         public TransportEventType[] @__PositioningTransportEvent
         {
@@ -18438,6 +18552,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _quarantineTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("QuarantineTransportEvent", Order=41)]
         public TransportEventType[] @__QuarantineTransportEvent
         {
@@ -18453,6 +18568,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _deliveryTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryTransportEvent", Order=42)]
         public TransportEventType[] @__DeliveryTransportEvent
         {
@@ -18468,6 +18584,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _pickupTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PickupTransportEvent", Order=43)]
         public TransportEventType[] @__PickupTransportEvent
         {
@@ -18483,6 +18600,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _handlingTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HandlingTransportEvent", Order=44)]
         public TransportEventType[] @__HandlingTransportEvent
         {
@@ -18498,6 +18616,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _loadingTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LoadingTransportEvent", Order=45)]
         public TransportEventType[] @__LoadingTransportEvent
         {
@@ -18513,6 +18632,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _transportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEvent", Order=46)]
         public TransportEventType[] @__TransportEvent
         {
@@ -18532,6 +18652,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TradingTermsType> _haulageTradingTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HaulageTradingTerms", Order=48)]
         public TradingTermsType[] @__HaulageTradingTerms
         {
@@ -18547,6 +18668,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<HazardousGoodsTransitType> _hazardousGoodsTransit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HazardousGoodsTransit", Order=49)]
         public HazardousGoodsTransitType[] @__HazardousGoodsTransit
         {
@@ -18562,6 +18684,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportHandlingUnitType> _packagedTransportHandlingUnit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PackagedTransportHandlingUnit", Order=50)]
         public TransportHandlingUnitType[] @__PackagedTransportHandlingUnit
         {
@@ -18577,6 +18700,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _serviceAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ServiceAllowanceCharge", Order=51)]
         public AllowanceChargeType[] @__ServiceAllowanceCharge
         {
@@ -18592,6 +18716,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _freightAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FreightAllowanceCharge", Order=52)]
         public AllowanceChargeType[] @__FreightAllowanceCharge
         {
@@ -18607,6 +18732,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _attachedTransportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AttachedTransportEquipment", Order=53)]
         public TransportEquipmentType[] @__AttachedTransportEquipment
         {
@@ -18634,6 +18760,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _shipmentDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipmentDocumentReference", Order=57)]
         public DocumentReferenceType[] @__ShipmentDocumentReference
         {
@@ -18649,6 +18776,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _containedInTransportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContainedInTransportEquipment", Order=58)]
         public TransportEquipmentType[] @__ContainedInTransportEquipment
         {
@@ -18664,6 +18792,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _package;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Package", Order=59)]
         public PackageType[] @__Package
         {
@@ -18679,6 +18808,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemType> _goodsItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("GoodsItem", Order=60)]
         public GoodsItemType[] @__GoodsItem
         {
@@ -20122,6 +20252,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -20451,6 +20582,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -20554,6 +20686,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<IdentifierType> _additionalAccountID;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalAccountID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public IdentifierType[] @__AdditionalAccountID
         {
@@ -20786,6 +20919,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _registrationNationality;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RegistrationNationality", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__RegistrationNationality
         {
@@ -20837,6 +20971,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=12)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -21193,6 +21328,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _location;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Location", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Location
         {
@@ -21208,6 +21344,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=2)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -21477,6 +21614,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _shipsRequirements;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipsRequirements", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__ShipsRequirements
         {
@@ -21722,6 +21860,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _information;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Information", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__Information
         {
@@ -22067,6 +22206,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _handlingInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HandlingInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__HandlingInstructions
         {
@@ -22094,6 +22234,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _damageRemarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DamageRemarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__DamageRemarks
         {
@@ -22109,6 +22250,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _shippingMarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShippingMarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public TextType[] @__ShippingMarks
         {
@@ -22128,6 +22270,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DespatchLineType> _handlingUnitDespatchLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HandlingUnitDespatchLine", Order=10)]
         public DespatchLineType[] @__HandlingUnitDespatchLine
         {
@@ -22143,6 +22286,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _actualPackage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ActualPackage", Order=11)]
         public PackageType[] @__ActualPackage
         {
@@ -22158,6 +22302,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ReceiptLineType> _receivedHandlingUnitReceiptLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReceivedHandlingUnitReceiptLine", Order=12)]
         public ReceiptLineType[] @__ReceivedHandlingUnitReceiptLine
         {
@@ -22173,6 +22318,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _transportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEquipment", Order=13)]
         public TransportEquipmentType[] @__TransportEquipment
         {
@@ -22188,6 +22334,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportMeansType> _transportMeans;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportMeans", Order=14)]
         public TransportMeansType[] @__TransportMeans
         {
@@ -22203,6 +22350,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<HazardousGoodsTransitType> _hazardousGoodsTransit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HazardousGoodsTransit", Order=15)]
         public HazardousGoodsTransitType[] @__HazardousGoodsTransit
         {
@@ -22218,6 +22366,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=16)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -22241,6 +22390,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemType> _goodsItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("GoodsItem", Order=19)]
         public GoodsItemType[] @__GoodsItem
         {
@@ -22264,6 +22414,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _shipmentDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipmentDocumentReference", Order=22)]
         public DocumentReferenceType[] @__ShipmentDocumentReference
         {
@@ -22279,6 +22430,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<StatusType> _status;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Status", Order=23)]
         public StatusType[] @__Status
         {
@@ -22294,6 +22446,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CustomsDeclarationType> _customsDeclaration;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CustomsDeclaration", Order=24)]
         public CustomsDeclarationType[] @__CustomsDeclaration
         {
@@ -22309,6 +22462,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentType> _referencedShipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReferencedShipment", Order=25)]
         public ShipmentType[] @__ReferencedShipment
         {
@@ -22324,6 +22478,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _package;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Package", Order=26)]
         public PackageType[] @__Package
         {
@@ -22945,6 +23100,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -22972,6 +23128,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _backorderReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BackorderReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__BackorderReason
         {
@@ -22991,6 +23148,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _outstandingReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OutstandingReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public TextType[] @__OutstandingReason
         {
@@ -23010,6 +23168,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OrderLineReferenceType> _orderLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OrderLineReference", Order=10)]
         public OrderLineReferenceType[] @__OrderLineReference
         {
@@ -23025,6 +23184,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=11)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -23044,6 +23204,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentType> _shipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Shipment", Order=13)]
         public ShipmentType[] @__Shipment
         {
@@ -23832,6 +23993,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__Description
         {
@@ -23867,6 +24029,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _additionalInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__AdditionalInformation
         {
@@ -23882,6 +24045,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _keyword;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Keyword", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__Keyword
         {
@@ -23897,6 +24061,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _brandName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BrandName", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public NameType[] @__BrandName
         {
@@ -23912,6 +24077,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _modelName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ModelName", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public NameType[] @__ModelName
         {
@@ -23935,6 +24101,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemIdentificationType> _manufacturersItemIdentification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ManufacturersItemIdentification", Order=12)]
         public ItemIdentificationType[] @__ManufacturersItemIdentification
         {
@@ -23958,6 +24125,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemIdentificationType> _additionalItemIdentification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalItemIdentification", Order=15)]
         public ItemIdentificationType[] @__AdditionalItemIdentification
         {
@@ -23977,6 +24145,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _itemSpecificationDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemSpecificationDocumentReference", Order=17)]
         public DocumentReferenceType[] @__ItemSpecificationDocumentReference
         {
@@ -23996,6 +24165,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommodityClassificationType> _commodityClassification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CommodityClassification", Order=19)]
         public CommodityClassificationType[] @__CommodityClassification
         {
@@ -24011,6 +24181,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransactionConditionsType> _transactionConditions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransactionConditions", Order=20)]
         public TransactionConditionsType[] @__TransactionConditions
         {
@@ -24026,6 +24197,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<HazardousItemType> _hazardousItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HazardousItem", Order=21)]
         public HazardousItemType[] @__HazardousItem
         {
@@ -24041,6 +24213,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxCategoryType> _classifiedTaxCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ClassifiedTaxCategory", Order=22)]
         public TaxCategoryType[] @__ClassifiedTaxCategory
         {
@@ -24056,6 +24229,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemPropertyType> _additionalItemProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalItemProperty", Order=23)]
         public ItemPropertyType[] @__AdditionalItemProperty
         {
@@ -24071,6 +24245,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _manufacturerParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ManufacturerParty", Order=24)]
         public PartyType[] @__ManufacturerParty
         {
@@ -24090,6 +24265,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AddressType> _originAddress;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OriginAddress", Order=26)]
         public AddressType[] @__OriginAddress
         {
@@ -24105,6 +24281,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemInstanceType> _itemInstance;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemInstance", Order=27)]
         public ItemInstanceType[] @__ItemInstance
         {
@@ -24120,6 +24297,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CertificateType> _certificate;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Certificate", Order=28)]
         public CertificateType[] @__Certificate
         {
@@ -24135,6 +24313,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _dimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Dimension", Order=29)]
         public DimensionType[] @__Dimension
         {
@@ -24821,6 +25000,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PhysicalAttributeType> _physicalAttribute;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PhysicalAttribute", Order=3)]
         public PhysicalAttributeType[] @__PhysicalAttribute
         {
@@ -24836,6 +25016,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=4)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -25023,6 +25204,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -25294,6 +25476,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -25309,6 +25492,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=3)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -25437,6 +25621,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _additionalInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__AdditionalInformation
         {
@@ -25508,6 +25693,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SecondaryHazardType> _secondaryHazard;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SecondaryHazard", Order=18)]
         public SecondaryHazardType[] @__SecondaryHazard
         {
@@ -25523,6 +25709,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<HazardousGoodsTransitType> _hazardousGoodsTransit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("HazardousGoodsTransit", Order=19)]
         public HazardousGoodsTransitType[] @__HazardousGoodsTransit
         {
@@ -25546,6 +25733,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TemperatureType> _additionalTemperature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalTemperature", Order=22)]
         public TemperatureType[] @__AdditionalTemperature
         {
@@ -26162,6 +26350,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _extension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Extension", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Extension
         {
@@ -26338,6 +26527,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _valueQualifier;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ValueQualifier", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__ValueQualifier
         {
@@ -26357,6 +26547,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _listValue;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ListValue", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public TextType[] @__ListValue
         {
@@ -26376,6 +26567,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemPropertyGroupType> _itemPropertyGroup;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemPropertyGroup", Order=10)]
         public ItemPropertyGroupType[] @__ItemPropertyGroup
         {
@@ -26927,6 +27119,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemPropertyType> _additionalItemProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalItemProperty", Order=6)]
         public ItemPropertyType[] @__AdditionalItemProperty
         {
@@ -27166,6 +27359,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemPropertyType> _additionalItemProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalItemProperty", Order=2)]
         public ItemPropertyType[] @__AdditionalItemProperty
         {
@@ -27277,6 +27471,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _remarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Remarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Remarks
         {
@@ -27296,6 +27491,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=5)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -27311,6 +27507,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Order=6)]
         public SignatureType[] @__Signature
         {
@@ -27506,6 +27703,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _packingMaterial;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PackingMaterial", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__PackingMaterial
         {
@@ -27525,6 +27723,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _containedPackage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContainedPackage", Order=7)]
         public PackageType[] @__ContainedPackage
         {
@@ -27544,6 +27743,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemType> _goodsItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("GoodsItem", Order=9)]
         public GoodsItemType[] @__GoodsItem
         {
@@ -27559,6 +27759,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=10)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -27574,6 +27775,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryUnitType> _deliveryUnit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryUnit", Order=11)]
         public DeliveryUnitType[] @__DeliveryUnit
         {
@@ -27971,6 +28173,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -28074,6 +28277,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemType> _item;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Item", Order=25)]
         public ItemType[] @__Item
         {
@@ -28089,6 +28293,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemContainerType> _goodsItemContainer;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("GoodsItemContainer", Order=26)]
         public GoodsItemContainerType[] @__GoodsItemContainer
         {
@@ -28104,6 +28309,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _freightAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FreightAllowanceCharge", Order=27)]
         public AllowanceChargeType[] @__FreightAllowanceCharge
         {
@@ -28119,6 +28325,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<InvoiceLineType> _invoiceLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InvoiceLine", Order=28)]
         public InvoiceLineType[] @__InvoiceLine
         {
@@ -28134,6 +28341,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TemperatureType> _temperature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Temperature", Order=29)]
         public TemperatureType[] @__Temperature
         {
@@ -28149,6 +28357,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<GoodsItemType> _containedGoodsItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContainedGoodsItem", Order=30)]
         public GoodsItemType[] @__ContainedGoodsItem
         {
@@ -28180,6 +28389,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DimensionType> _measurementDimension;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeasurementDimension", Order=35)]
         public DimensionType[] @__MeasurementDimension
         {
@@ -28195,6 +28405,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _containingPackage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContainingPackage", Order=36)]
         public PackageType[] @__ContainingPackage
         {
@@ -29230,6 +29441,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEquipmentType> _transportEquipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEquipment", Order=2)]
         public TransportEquipmentType[] @__TransportEquipment
         {
@@ -29337,6 +29549,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -29380,6 +29593,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _invoicePeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Order=10)]
         public PeriodType[] @__InvoicePeriod
         {
@@ -29395,6 +29609,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OrderLineReferenceType> _orderLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OrderLineReference", Order=11)]
         public OrderLineReferenceType[] @__OrderLineReference
         {
@@ -29410,6 +29625,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _despatchLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DespatchLineReference", Order=12)]
         public LineReferenceType[] @__DespatchLineReference
         {
@@ -29425,6 +29641,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _receiptLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReceiptLineReference", Order=13)]
         public LineReferenceType[] @__ReceiptLineReference
         {
@@ -29440,6 +29657,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=14)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -29455,6 +29673,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=15)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -29478,6 +29697,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryType> _delivery;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Delivery", Order=18)]
         public DeliveryType[] @__Delivery
         {
@@ -29493,6 +29713,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=19)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -29508,6 +29729,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=20)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -29523,6 +29745,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=21)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -29538,6 +29761,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _withholdingTaxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WithholdingTaxTotal", Order=22)]
         public TaxTotalType[] @__WithholdingTaxTotal
         {
@@ -29565,6 +29789,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<InvoiceLineType> _subInvoiceLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubInvoiceLine", Order=26)]
         public InvoiceLineType[] @__SubInvoiceLine
         {
@@ -30378,6 +30603,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceLineType> _billingReferenceLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReferenceLine", Order=7)]
         public BillingReferenceLineType[] @__BillingReferenceLine
         {
@@ -30616,6 +30842,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=2)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -30718,6 +30945,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PriceType> _alternativeConditionPrice;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AlternativeConditionPrice", Order=1)]
         public PriceType[] @__AlternativeConditionPrice
         {
@@ -30809,6 +31037,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _tradingRestrictions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TradingRestrictions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__TradingRestrictions
         {
@@ -30824,6 +31053,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AddressType> _applicableTerritoryAddress;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ApplicableTerritoryAddress", Order=5)]
         public AddressType[] @__ApplicableTerritoryAddress
         {
@@ -30843,6 +31073,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryUnitType> _deliveryUnit;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryUnit", Order=7)]
         public DeliveryUnitType[] @__DeliveryUnit
         {
@@ -30858,6 +31089,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxCategoryType> _applicableTaxCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ApplicableTaxCategory", Order=8)]
         public TaxCategoryType[] @__ApplicableTaxCategory
         {
@@ -30877,6 +31109,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=10)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -31194,6 +31427,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _priceChangeReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PriceChangeReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__PriceChangeReason
         {
@@ -31221,6 +31455,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _validityPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Order=6)]
         public PeriodType[] @__ValidityPeriod
         {
@@ -31240,6 +31475,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=8)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -31509,6 +31745,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _validityPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Order=2)]
         public PeriodType[] @__ValidityPeriod
         {
@@ -32031,6 +32268,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<IdentifierType> _paymentMeansID;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentMeansID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public IdentifierType[] @__PaymentMeansID
         {
@@ -32050,6 +32288,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Note
         {
@@ -32614,6 +32853,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=1)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -32980,6 +33220,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -33015,6 +33256,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _rejectReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RejectReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=8)]
         public TextType[] @__RejectReason
         {
@@ -33058,6 +33300,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _despatchLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DespatchLineReference", Order=16)]
         public LineReferenceType[] @__DespatchLineReference
         {
@@ -33073,6 +33316,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=17)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -33088,6 +33332,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemType> _item;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Item", Order=18)]
         public ItemType[] @__Item
         {
@@ -33103,6 +33348,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentType> _shipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Shipment", Order=19)]
         public ShipmentType[] @__Shipment
         {
@@ -33646,6 +33892,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _instructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Instructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public TextType[] @__Instructions
         {
@@ -33661,6 +33908,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _demurrageInstructions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DemurrageInstructions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=13)]
         public TextType[] @__DemurrageInstructions
         {
@@ -33688,6 +33936,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _carrierParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CarrierParty", Order=17)]
         public PartyType[] @__CarrierParty
         {
@@ -33787,6 +34036,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _freightAllowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FreightAllowanceCharge", Order=39)]
         public AllowanceChargeType[] @__FreightAllowanceCharge
         {
@@ -33806,6 +34056,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _detentionTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DetentionTransportEvent", Order=41)]
         public TransportEventType[] @__DetentionTransportEvent
         {
@@ -33829,6 +34080,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _requestedWaypointTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequestedWaypointTransportEvent", Order=44)]
         public TransportEventType[] @__RequestedWaypointTransportEvent
         {
@@ -33852,6 +34104,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _plannedWaypointTransportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PlannedWaypointTransportEvent", Order=47)]
         public TransportEventType[] @__PlannedWaypointTransportEvent
         {
@@ -33879,6 +34132,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TransportEventType> _transportEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportEvent", Order=51)]
         public TransportEventType[] @__TransportEvent
         {
@@ -33902,6 +34156,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PersonType> _passengerPerson;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PassengerPerson", Order=54)]
         public PersonType[] @__PassengerPerson
         {
@@ -33917,6 +34172,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PersonType> _driverPerson;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DriverPerson", Order=55)]
         public PersonType[] @__DriverPerson
         {
@@ -33936,6 +34192,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PersonType> _crewMemberPerson;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CrewMemberPerson", Order=57)]
         public PersonType[] @__CrewMemberPerson
         {
@@ -35491,6 +35748,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -35506,6 +35764,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EmissionCalculationMethodType> _emissionCalculationMethod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EmissionCalculationMethod", Order=3)]
         public EmissionCalculationMethodType[] @__EmissionCalculationMethod
         {
@@ -35820,6 +36079,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryType> _delivery;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Delivery", Order=5)]
         public DeliveryType[] @__Delivery
         {
@@ -35835,6 +36095,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=6)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -35850,6 +36111,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=7)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -36150,6 +36412,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__Description
         {
@@ -36181,6 +36444,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionLineType> _consumptionLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsumptionLine", Order=5)]
         public ConsumptionLineType[] @__ConsumptionLine
         {
@@ -36358,6 +36622,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=2)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -36373,6 +36638,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=3)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -36579,6 +36845,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionReportType> _consumptionReport;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsumptionReport", Order=0)]
         public ConsumptionReportType[] @__ConsumptionReport
         {
@@ -36594,6 +36861,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EnergyTaxReportType> _energyTaxReport;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EnergyTaxReport", Order=1)]
         public EnergyTaxReportType[] @__EnergyTaxReport
         {
@@ -36609,6 +36877,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionAverageType> _consumptionAverage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsumptionAverage", Order=2)]
         public ConsumptionAverageType[] @__ConsumptionAverage
         {
@@ -36624,6 +36893,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionCorrectionType> _energyWaterConsumptionCorrection;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EnergyWaterConsumptionCorrection", Order=3)]
         public ConsumptionCorrectionType[] @__EnergyWaterConsumptionCorrection
         {
@@ -36739,6 +37009,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -36802,6 +37073,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionReportReferenceType> _consumptionReportReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsumptionReportReference", Order=16)]
         public ConsumptionReportReferenceType[] @__ConsumptionReportReference
         {
@@ -36817,6 +37089,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ConsumptionHistoryType> _consumptionHistory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConsumptionHistory", Order=17)]
         public ConsumptionHistoryType[] @__ConsumptionHistory
         {
@@ -37481,6 +37754,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__Description
         {
@@ -37827,6 +38101,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -37931,6 +38206,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__Description
         {
@@ -38295,6 +38571,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -38314,6 +38591,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TelecommunicationsSupplyLineType> _telecommunicationsSupplyLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TelecommunicationsSupplyLine", Order=5)]
         public TelecommunicationsSupplyLineType[] @__TelecommunicationsSupplyLine
         {
@@ -38482,6 +38760,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -38501,6 +38780,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ExchangeRateType> _exchangeRate;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", Order=4)]
         public ExchangeRateType[] @__ExchangeRate
         {
@@ -38516,6 +38796,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=5)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -38531,6 +38812,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=6)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -38546,6 +38828,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TelecommunicationsServiceType> _telecommunicationsService;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TelecommunicationsService", Order=7)]
         public TelecommunicationsServiceType[] @__TelecommunicationsService
         {
@@ -38808,6 +39091,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ExchangeRateType> _exchangeRate;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExchangeRate", Order=16)]
         public ExchangeRateType[] @__ExchangeRate
         {
@@ -38823,6 +39107,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=17)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -38838,6 +39123,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=18)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -38853,6 +39139,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DutyType> _callDuty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CallDuty", Order=19)]
         public DutyType[] @__CallDuty
         {
@@ -38868,6 +39155,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DutyType> _timeDuty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TimeDuty", Order=20)]
         public DutyType[] @__TimeDuty
         {
@@ -39835,6 +40123,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _valueQualifier;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ValueQualifier", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__ValueQualifier
         {
@@ -40030,6 +40319,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _meterReadingComments;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeterReadingComments", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__MeterReadingComments
         {
@@ -40413,6 +40703,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<MeterReadingType> _meterReading;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeterReading", Order=5)]
         public MeterReadingType[] @__MeterReading
         {
@@ -40428,6 +40719,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<MeterPropertyType> _meterProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MeterProperty", Order=6)]
         public MeterPropertyType[] @__MeterProperty
         {
@@ -40732,6 +41024,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -40771,6 +41064,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<MeterType> _utilityMeter;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("UtilityMeter", Order=8)]
         public MeterType[] @__UtilityMeter
         {
@@ -41027,6 +41321,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -41054,6 +41349,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OnAccountPaymentType> _onAccountPayment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OnAccountPayment", Order=6)]
         public OnAccountPaymentType[] @__OnAccountPayment
         {
@@ -41073,6 +41369,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SupplierConsumptionType> _supplierConsumption;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SupplierConsumption", Order=8)]
         public SupplierConsumptionType[] @__SupplierConsumption
         {
@@ -41315,6 +41612,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -41330,6 +41628,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=2)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -41439,6 +41738,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _remarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Remarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Remarks
         {
@@ -41809,6 +42109,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _notifyParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotifyParty", Order=3)]
         public PartyType[] @__NotifyParty
         {
@@ -41824,6 +42125,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _notificationPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotificationPeriod", Order=4)]
         public PeriodType[] @__NotificationPeriod
         {
@@ -41839,6 +42141,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LocationType> _notificationLocation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotificationLocation", Order=5)]
         public LocationType[] @__NotificationLocation
         {
@@ -42001,6 +42304,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _transportUserSpecialTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportUserSpecialTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__TransportUserSpecialTerms
         {
@@ -42016,6 +42320,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _transportServiceProviderSpecialTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TransportServiceProviderSpecialTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__TransportServiceProviderSpecialTerms
         {
@@ -42031,6 +42336,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _changeConditions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ChangeConditions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__ChangeConditions
         {
@@ -42046,6 +42352,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=3)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -42061,6 +42368,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryTermsType> _deliveryTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Order=4)]
         public DeliveryTermsType[] @__DeliveryTerms
         {
@@ -42088,6 +42396,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EnvironmentalEmissionType> _environmentalEmission;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EnvironmentalEmission", Order=8)]
         public EnvironmentalEmissionType[] @__EnvironmentalEmission
         {
@@ -42103,6 +42412,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NotificationRequirementType> _notificationRequirement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NotificationRequirement", Order=9)]
         public NotificationRequirementType[] @__NotificationRequirement
         {
@@ -42385,6 +42695,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _replenishmentOwnerDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReplenishmentOwnerDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__ReplenishmentOwnerDescription
         {
@@ -42686,6 +42997,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _exclusionReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExclusionReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__ExclusionReason
         {
@@ -42701,6 +43013,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _resolution;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Resolution", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Resolution
         {
@@ -42997,6 +43310,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _acceptedVariantsDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AcceptedVariantsDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__AcceptedVariantsDescription
         {
@@ -43012,6 +43326,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _priceRevisionFormulaDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PriceRevisionFormulaDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__PriceRevisionFormulaDescription
         {
@@ -43031,6 +43346,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _fundingProgram;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FundingProgram", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__FundingProgram
         {
@@ -43050,6 +43366,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=9)]
         public TextType[] @__Note
         {
@@ -43081,6 +43398,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _additionalConditions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalConditions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=14)]
         public TextType[] @__AdditionalConditions
         {
@@ -43104,6 +43422,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClauseType> _penaltyClause;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PenaltyClause", Order=17)]
         public ClauseType[] @__PenaltyClause
         {
@@ -43119,6 +43438,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<FinancialGuaranteeType> _requiredFinancialGuarantee;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredFinancialGuarantee", Order=18)]
         public FinancialGuaranteeType[] @__RequiredFinancialGuarantee
         {
@@ -43150,6 +43470,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _contractualDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContractualDocumentReference", Order=23)]
         public DocumentReferenceType[] @__ContractualDocumentReference
         {
@@ -43173,6 +43494,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=26)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -43188,6 +43510,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TendererQualificationRequestType> _tendererQualificationRequest;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TendererQualificationRequest", Order=27)]
         public TendererQualificationRequestType[] @__TendererQualificationRequest
         {
@@ -43203,6 +43526,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SubcontractTermsType> _allowedSubcontractTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowedSubcontractTerms", Order=28)]
         public SubcontractTermsType[] @__AllowedSubcontractTerms
         {
@@ -43218,6 +43542,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TenderPreparationType> _tenderPreparation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TenderPreparation", Order=29)]
         public TenderPreparationType[] @__TenderPreparation
         {
@@ -43233,6 +43558,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ContractExecutionRequirementType> _contractExecutionRequirement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContractExecutionRequirement", Order=30)]
         public ContractExecutionRequirementType[] @__ContractExecutionRequirement
         {
@@ -43268,6 +43594,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _tenderEvaluationParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TenderEvaluationParty", Order=36)]
         public PartyType[] @__TenderEvaluationParty
         {
@@ -43295,6 +43622,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LanguageType> _language;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Language", Order=40)]
         public LanguageType[] @__Language
         {
@@ -43310,6 +43638,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BudgetAccountLineType> _budgetAccountLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BudgetAccountLine", Order=41)]
         public BudgetAccountLineType[] @__BudgetAccountLine
         {
@@ -44344,6 +44673,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -44513,6 +44843,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _personalSituation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PersonalSituation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__PersonalSituation
         {
@@ -44536,6 +44867,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__Description
         {
@@ -44551,6 +44883,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClassificationSchemeType> _requiredBusinessClassificationScheme;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredBusinessClassificationScheme", Order=6)]
         public ClassificationSchemeType[] @__RequiredBusinessClassificationScheme
         {
@@ -44566,6 +44899,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvaluationCriterionType> _technicalEvaluationCriterion;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TechnicalEvaluationCriterion", Order=7)]
         public EvaluationCriterionType[] @__TechnicalEvaluationCriterion
         {
@@ -44581,6 +44915,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvaluationCriterionType> _financialEvaluationCriterion;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FinancialEvaluationCriterion", Order=8)]
         public EvaluationCriterionType[] @__FinancialEvaluationCriterion
         {
@@ -44596,6 +44931,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TendererRequirementType> _specificTendererRequirement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SpecificTendererRequirement", Order=9)]
         public TendererRequirementType[] @__SpecificTendererRequirement
         {
@@ -44611,6 +44947,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EconomicOperatorRoleType> _economicOperatorRole;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EconomicOperatorRole", Order=10)]
         public EconomicOperatorRoleType[] @__EconomicOperatorRole
         {
@@ -44888,6 +45225,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Note
         {
@@ -44907,6 +45245,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__Description
         {
@@ -44946,6 +45285,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClassificationCategoryType> _classificationCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ClassificationCategory", Order=13)]
         public ClassificationCategoryType[] @__ClassificationCategory
         {
@@ -45319,6 +45659,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -45334,6 +45675,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ClassificationCategoryType> _categorizesClassificationCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CategorizesClassificationCategory", Order=3)]
         public ClassificationCategoryType[] @__CategorizesClassificationCategory
         {
@@ -45461,6 +45803,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -45488,6 +45831,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _expression;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Expression", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__Expression
         {
@@ -45507,6 +45851,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvidenceType> _suggestedEvidence;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SuggestedEvidence", Order=7)]
         public EvidenceType[] @__SuggestedEvidence
         {
@@ -45728,6 +46073,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -45743,6 +46089,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _candidateStatement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CandidateStatement", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__CandidateStatement
         {
@@ -45948,6 +46295,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _name;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public NameType[] @__Name
         {
@@ -45967,6 +46315,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -45986,6 +46335,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvidenceType> _suggestedEvidence;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SuggestedEvidence", Order=4)]
         public EvidenceType[] @__SuggestedEvidence
         {
@@ -46127,6 +46477,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _roleDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RoleDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__RoleDescription
         {
@@ -46208,6 +46559,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -46433,6 +46785,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -46452,6 +46805,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ProcurementProjectLotType> _procurementProjectLot;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ProcurementProjectLot", Order=4)]
         public ProcurementProjectLotType[] @__ProcurementProjectLot
         {
@@ -46467,6 +46821,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TenderRequirementType> _documentTenderRequirement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentTenderRequirement", Order=5)]
         public TenderRequirementType[] @__DocumentTenderRequirement
         {
@@ -46632,6 +46987,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -46735,6 +47091,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _name;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public NameType[] @__Name
         {
@@ -46754,6 +47111,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -46849,6 +47207,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -46864,6 +47223,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _technicalCommitteeDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TechnicalCommitteeDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__TechnicalCommitteeDescription
         {
@@ -46879,6 +47239,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _lowTendersDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LowTendersDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__LowTendersDescription
         {
@@ -46898,6 +47259,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _prizeDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PrizeDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__PrizeDescription
         {
@@ -46913,6 +47275,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _paymentDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__PaymentDescription
         {
@@ -46936,6 +47299,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AwardingCriterionType> _awardingCriterion;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AwardingCriterion", Order=9)]
         public AwardingCriterionType[] @__AwardingCriterion
         {
@@ -46951,6 +47315,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PersonType> _technicalCommitteePerson;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TechnicalCommitteePerson", Order=10)]
         public PersonType[] @__TechnicalCommitteePerson
         {
@@ -47218,6 +47583,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -47237,6 +47603,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _weight;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Weight", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Weight
         {
@@ -47252,6 +47619,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _calculationExpression;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CalculationExpression", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__CalculationExpression
         {
@@ -47287,6 +47655,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _minimumImprovementBid;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MinimumImprovementBid", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__MinimumImprovementBid
         {
@@ -47302,6 +47671,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AwardingCriterionType> _subordinateAwardingCriterion;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubordinateAwardingCriterion", Order=12)]
         public AwardingCriterionType[] @__SubordinateAwardingCriterion
         {
@@ -47627,6 +47997,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__Description
         {
@@ -47803,6 +48174,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BudgetAccountType> _budgetAccount;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BudgetAccount", Order=2)]
         public BudgetAccountType[] @__BudgetAccount
         {
@@ -48009,6 +48381,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _name;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public NameType[] @__Name
         {
@@ -48024,6 +48397,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -48055,6 +48429,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _feeDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FeeDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__FeeDescription
         {
@@ -48078,6 +48453,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType[] @__Note
         {
@@ -48101,6 +48477,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CommodityClassificationType> _additionalCommodityClassification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalCommodityClassification", Order=13)]
         public CommodityClassificationType[] @__AdditionalCommodityClassification
         {
@@ -48116,6 +48493,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LocationType> _realizedLocation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RealizedLocation", Order=14)]
         public LocationType[] @__RealizedLocation
         {
@@ -48139,6 +48517,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RequestForTenderLineType> _requestForTenderLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequestForTenderLine", Order=17)]
         public RequestForTenderLineType[] @__RequestForTenderLine
         {
@@ -48600,6 +48979,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _monetaryScope;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MonetaryScope", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__MonetaryScope
         {
@@ -48619,6 +48999,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxCategoryType> _applicableTaxCategory;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ApplicableTaxCategory", Order=7)]
         public TaxCategoryType[] @__ApplicableTaxCategory
         {
@@ -48842,6 +49223,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _optionsDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OptionsDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__OptionsDescription
         {
@@ -48869,6 +49251,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RenewalType> _renewal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Renewal", Order=4)]
         public RenewalType[] @__Renewal
         {
@@ -49094,6 +49477,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -49137,6 +49521,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=10)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -49152,6 +49537,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _deliveryPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryPeriod", Order=11)]
         public PeriodType[] @__DeliveryPeriod
         {
@@ -49167,6 +49553,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemLocationQuantityType> _requiredItemLocationQuantity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredItemLocationQuantity", Order=12)]
         public ItemLocationQuantityType[] @__RequiredItemLocationQuantity
         {
@@ -49190,6 +49577,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RequestForTenderLineType> _subRequestForTenderLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubRequestForTenderLine", Order=15)]
         public RequestForTenderLineType[] @__SubRequestForTenderLine
         {
@@ -49595,6 +49983,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<NameType> _name;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Name", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public NameType[] @__Name
         {
@@ -49614,6 +50003,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -49629,6 +50019,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvidenceSuppliedType> _evidenceSupplied;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EvidenceSupplied", Order=3)]
         public EvidenceSuppliedType[] @__EvidenceSupplied
         {
@@ -49794,6 +50185,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -49809,6 +50201,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvidenceSuppliedType> _evidenceSupplied;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EvidenceSupplied", Order=4)]
         public EvidenceSuppliedType[] @__EvidenceSupplied
         {
@@ -50018,6 +50411,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<IdentifierType> _additionalAccountID;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalAccountID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public IdentifierType[] @__AdditionalAccountID
         {
@@ -50242,6 +50636,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -50265,6 +50660,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EvidenceSuppliedType> _evidenceSupplied;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EvidenceSupplied", Order=4)]
         public EvidenceSuppliedType[] @__EvidenceSupplied
         {
@@ -50441,6 +50837,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _personalSituation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PersonalSituation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__PersonalSituation
         {
@@ -50480,6 +50877,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CapabilityType> _technicalCapability;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TechnicalCapability", Order=8)]
         public CapabilityType[] @__TechnicalCapability
         {
@@ -50495,6 +50893,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CapabilityType> _financialCapability;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FinancialCapability", Order=9)]
         public CapabilityType[] @__FinancialCapability
         {
@@ -50510,6 +50909,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CompletedTaskType> _completedTask;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CompletedTask", Order=10)]
         public CompletedTaskType[] @__CompletedTask
         {
@@ -50525,6 +50925,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeclarationType> _declaration;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Declaration", Order=11)]
         public DeclarationType[] @__Declaration
         {
@@ -50881,6 +51282,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ProcurementProjectLotType> _interestedProcurementProjectLot;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InterestedProcurementProjectLot", Order=0)]
         public ProcurementProjectLotType[] @__InterestedProcurementProjectLot
         {
@@ -50900,6 +51302,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<QualifyingPartyType> _additionalQualifyingParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalQualifyingParty", Order=2)]
         public QualifyingPartyType[] @__AdditionalQualifyingParty
         {
@@ -50998,6 +51401,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -51220,6 +51624,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -51263,6 +51668,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=9)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -51302,6 +51708,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _invoicePeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Order=16)]
         public PeriodType[] @__InvoicePeriod
         {
@@ -51317,6 +51724,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=17)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -51332,6 +51740,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=18)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -51351,6 +51760,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=20)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -51366,6 +51776,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentType> _collectedPayment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CollectedPayment", Order=21)]
         public PaymentType[] @__CollectedPayment
         {
@@ -52105,6 +52516,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EventLineItemType> _eventLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EventLineItem", Order=1)]
         public EventLineItemType[] @__EventLineItem
         {
@@ -52186,6 +52598,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RetailPlannedImpactType> _retailPlannedImpact;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RetailPlannedImpact", Order=2)]
         public RetailPlannedImpactType[] @__RetailPlannedImpact
         {
@@ -52786,6 +53199,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PromotionalEventLineItemType> _promotionalEventLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PromotionalEventLineItem", Order=1)]
         public PromotionalEventLineItemType[] @__PromotionalEventLineItem
         {
@@ -52801,6 +53215,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EventTacticType> _eventTactic;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EventTactic", Order=2)]
         public EventTacticType[] @__EventTactic
         {
@@ -52908,6 +53323,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PromotionalSpecificationType> _promotionalSpecification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PromotionalSpecification", Order=4)]
         public PromotionalSpecificationType[] @__PromotionalSpecification
         {
@@ -53167,6 +53583,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -53194,6 +53611,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=6)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -53427,6 +53845,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Note
         {
@@ -53494,6 +53913,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _warrantyInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WarrantyInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=17)]
         public TextType[] @__WarrantyInformation
         {
@@ -53509,6 +53929,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryType> _delivery;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Delivery", Order=18)]
         public DeliveryType[] @__Delivery
         {
@@ -53532,6 +53953,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OrderedShipmentType> _orderedShipment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OrderedShipment", Order=21)]
         public OrderedShipmentType[] @__OrderedShipment
         {
@@ -53551,6 +53973,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=23)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -53574,6 +53997,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _subLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubLineItem", Order=26)]
         public LineItemType[] @__SubLineItem
         {
@@ -53597,6 +54021,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=29)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -53616,6 +54041,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _lineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LineReference", Order=31)]
         public LineReferenceType[] @__LineReference
         {
@@ -54408,6 +54834,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PackageType> _package;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Package", Order=1)]
         public PackageType[] @__Package
         {
@@ -54485,6 +54912,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -54548,6 +54976,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _invoicePeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Order=14)]
         public PeriodType[] @__InvoicePeriod
         {
@@ -54563,6 +54992,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=15)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -54578,6 +55008,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=16)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -55048,6 +55479,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -55099,6 +55531,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _reminderPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReminderPeriod", Order=11)]
         public PeriodType[] @__ReminderPeriod
         {
@@ -55114,6 +55547,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=12)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -55486,6 +55920,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -55517,6 +55952,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=6)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -55536,6 +55972,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _sellerProposedSubstituteLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SellerProposedSubstituteLineItem", Order=8)]
         public LineItemType[] @__SellerProposedSubstituteLineItem
         {
@@ -55551,6 +55988,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _alternativeLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AlternativeLineItem", Order=9)]
         public LineItemType[] @__AlternativeLineItem
         {
@@ -55864,6 +56302,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SalesItemType> _salesItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SalesItem", Order=7)]
         public SalesItemType[] @__SalesItem
         {
@@ -56096,6 +56535,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ActivityPropertyType> _activityProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ActivityProperty", Order=1)]
         public ActivityPropertyType[] @__ActivityProperty
         {
@@ -56111,6 +56551,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PriceType> _taxExclusivePrice;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxExclusivePrice", Order=2)]
         public PriceType[] @__TaxExclusivePrice
         {
@@ -56126,6 +56567,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PriceType> _taxInclusivePrice;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxInclusivePrice", Order=3)]
         public PriceType[] @__TaxInclusivePrice
         {
@@ -56343,6 +56785,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -56362,6 +56805,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _sellerProposedSubstituteLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SellerProposedSubstituteLineItem", Order=3)]
         public LineItemType[] @__SellerProposedSubstituteLineItem
         {
@@ -56377,6 +56821,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _sellerSubstitutedLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SellerSubstitutedLineItem", Order=4)]
         public LineItemType[] @__SellerSubstitutedLineItem
         {
@@ -56392,6 +56837,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineItemType> _buyerProposedSubstituteLineItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BuyerProposedSubstituteLineItem", Order=5)]
         public LineItemType[] @__BuyerProposedSubstituteLineItem
         {
@@ -56415,6 +56861,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OrderLineReferenceType> _orderLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OrderLineReference", Order=8)]
         public OrderLineReferenceType[] @__OrderLineReference
         {
@@ -56430,6 +56877,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=9)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -56690,6 +57138,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _period;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Period", Order=4)]
         public PeriodType[] @__Period
         {
@@ -56705,6 +57154,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SalesItemType> _salesItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SalesItem", Order=5)]
         public SalesItemType[] @__SalesItem
         {
@@ -56879,6 +57329,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _workPhase;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WorkPhase", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__WorkPhase
         {
@@ -56906,6 +57357,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _workOrderDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WorkOrderDocumentReference", Order=6)]
         public DocumentReferenceType[] @__WorkOrderDocumentReference
         {
@@ -57110,6 +57562,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<WorkPhaseReferenceType> _workPhaseReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WorkPhaseReference", Order=3)]
         public WorkPhaseReferenceType[] @__WorkPhaseReference
         {
@@ -57237,6 +57690,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -57490,6 +57944,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -57994,6 +58449,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ShipmentStageType> _shipmentStage;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ShipmentStage", Order=5)]
         public ShipmentStageType[] @__ShipmentStage
         {
@@ -58174,6 +58630,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -58189,6 +58646,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -58462,6 +58920,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -58905,6 +59364,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -58920,6 +59380,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -58971,6 +59432,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=12)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -59531,6 +59993,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -59578,6 +60041,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemType> _supplyItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SupplyItem", Order=10)]
         public ItemType[] @__SupplyItem
         {
@@ -59911,6 +60375,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -59950,6 +60415,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ResponseType> _discrepancyResponse;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DiscrepancyResponse", Order=9)]
         public ResponseType[] @__DiscrepancyResponse
         {
@@ -59965,6 +60431,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _despatchLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DespatchLineReference", Order=10)]
         public LineReferenceType[] @__DespatchLineReference
         {
@@ -59980,6 +60447,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _receiptLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReceiptLineReference", Order=11)]
         public LineReferenceType[] @__ReceiptLineReference
         {
@@ -59995,6 +60463,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=12)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -60010,6 +60479,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=13)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -60029,6 +60499,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryType> _delivery;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Delivery", Order=15)]
         public DeliveryType[] @__Delivery
         {
@@ -60044,6 +60515,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=16)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -60059,6 +60531,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=17)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -60082,6 +60555,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DebitNoteLineType> _subDebitNoteLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubDebitNoteLine", Order=20)]
         public DebitNoteLineType[] @__SubDebitNoteLine
         {
@@ -60581,6 +61055,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -60604,6 +61079,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<StatusType> _status;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Status", Order=5)]
         public StatusType[] @__Status
         {
@@ -60778,6 +61254,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -60821,6 +61298,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PeriodType> _invoicePeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("InvoicePeriod", Order=10)]
         public PeriodType[] @__InvoicePeriod
         {
@@ -60836,6 +61314,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<OrderLineReferenceType> _orderLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OrderLineReference", Order=11)]
         public OrderLineReferenceType[] @__OrderLineReference
         {
@@ -60851,6 +61330,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ResponseType> _discrepancyResponse;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DiscrepancyResponse", Order=12)]
         public ResponseType[] @__DiscrepancyResponse
         {
@@ -60866,6 +61346,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _despatchLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DespatchLineReference", Order=13)]
         public LineReferenceType[] @__DespatchLineReference
         {
@@ -60881,6 +61362,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineReferenceType> _receiptLineReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReceiptLineReference", Order=14)]
         public LineReferenceType[] @__ReceiptLineReference
         {
@@ -60896,6 +61378,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<BillingReferenceType> _billingReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("BillingReference", Order=15)]
         public BillingReferenceType[] @__BillingReference
         {
@@ -60911,6 +61394,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=16)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -60934,6 +61418,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryType> _delivery;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Delivery", Order=19)]
         public DeliveryType[] @__Delivery
         {
@@ -60949,6 +61434,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PaymentTermsType> _paymentTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PaymentTerms", Order=20)]
         public PaymentTermsType[] @__PaymentTerms
         {
@@ -60964,6 +61450,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=21)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -60979,6 +61466,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AllowanceChargeType> _allowanceCharge;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllowanceCharge", Order=22)]
         public AllowanceChargeType[] @__AllowanceCharge
         {
@@ -61002,6 +61490,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DeliveryTermsType> _deliveryTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DeliveryTerms", Order=25)]
         public DeliveryTermsType[] @__DeliveryTerms
         {
@@ -61017,6 +61506,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<CreditNoteLineType> _subCreditNoteLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubCreditNoteLine", Order=26)]
         public CreditNoteLineType[] @__SubCreditNoteLine
         {
@@ -61671,6 +62161,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _remarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Remarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Remarks
         {
@@ -61690,6 +62181,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Order=4)]
         public SignatureType[] @__Signature
         {
@@ -61984,6 +62476,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _remarks;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Remarks", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__Remarks
         {
@@ -62003,6 +62496,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EndorserPartyType> _endorserParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EndorserParty", Order=7)]
         public EndorserPartyType[] @__EndorserParty
         {
@@ -62038,6 +62532,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentDistributionType> _documentDistribution;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentDistribution", Order=13)]
         public DocumentDistributionType[] @__DocumentDistribution
         {
@@ -62053,6 +62548,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _supportingDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SupportingDocumentReference", Order=14)]
         public DocumentReferenceType[] @__SupportingDocumentReference
         {
@@ -62068,6 +62564,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Order=15)]
         public SignatureType[] @__Signature
         {
@@ -62585,6 +63082,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Note
         {
@@ -62604,6 +63102,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemLocationQuantityType> _requiredItemLocationQuantity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredItemLocationQuantity", Order=4)]
         public ItemLocationQuantityType[] @__RequiredItemLocationQuantity
         {
@@ -62790,6 +63289,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemLocationQuantityType> _requiredItemLocationQuantity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredItemLocationQuantity", Order=3)]
         public ItemLocationQuantityType[] @__RequiredItemLocationQuantity
         {
@@ -63141,6 +63641,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Note
         {
@@ -63180,6 +63681,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _warrantyInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WarrantyInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__WarrantyInformation
         {
@@ -63219,6 +63721,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemComparisonType> _itemComparison;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemComparison", Order=18)]
         public ItemComparisonType[] @__ItemComparison
         {
@@ -63234,6 +63737,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _componentRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ComponentRelatedItem", Order=19)]
         public RelatedItemType[] @__ComponentRelatedItem
         {
@@ -63249,6 +63753,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _accessoryRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AccessoryRelatedItem", Order=20)]
         public RelatedItemType[] @__AccessoryRelatedItem
         {
@@ -63264,6 +63769,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _requiredRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredRelatedItem", Order=21)]
         public RelatedItemType[] @__RequiredRelatedItem
         {
@@ -63279,6 +63785,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _replacementRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReplacementRelatedItem", Order=22)]
         public RelatedItemType[] @__ReplacementRelatedItem
         {
@@ -63294,6 +63801,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _complementaryRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ComplementaryRelatedItem", Order=23)]
         public RelatedItemType[] @__ComplementaryRelatedItem
         {
@@ -63309,6 +63817,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _replacedRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReplacedRelatedItem", Order=24)]
         public RelatedItemType[] @__ReplacedRelatedItem
         {
@@ -63324,6 +63833,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemLocationQuantityType> _requiredItemLocationQuantity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequiredItemLocationQuantity", Order=25)]
         public ItemLocationQuantityType[] @__RequiredItemLocationQuantity
         {
@@ -63339,6 +63849,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=26)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -63358,6 +63869,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemPropertyType> _keywordItemProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("KeywordItemProperty", Order=28)]
         public ItemPropertyType[] @__KeywordItemProperty
         {
@@ -64126,6 +64638,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -64251,6 +64764,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=6)]
         public TextType[] @__Note
         {
@@ -64266,6 +64780,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=7)]
         public TextType[] @__Description
         {
@@ -64552,6 +65067,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _justification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Justification", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Justification
         {
@@ -64567,6 +65083,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _frequency;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Frequency", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Frequency
         {
@@ -64586,6 +65103,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TenderRequirementType> _subsequentProcessTenderRequirement;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubsequentProcessTenderRequirement", Order=5)]
         public TenderRequirementType[] @__SubsequentProcessTenderRequirement
         {
@@ -64754,6 +65272,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _justificationDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("JustificationDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__JustificationDescription
         {
@@ -64769,6 +65288,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -64784,6 +65304,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _processDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ProcessDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__ProcessDescription
         {
@@ -64799,6 +65320,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _conditionsDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ConditionsDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__ConditionsDescription
         {
@@ -64814,6 +65336,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _electronicDeviceDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ElectronicDeviceDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=5)]
         public TextType[] @__ElectronicDeviceDescription
         {
@@ -65010,6 +65533,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=4)]
         public TextType[] @__Description
         {
@@ -65029,6 +65553,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<StatusType> _currentStatus;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("CurrentStatus", Order=6)]
         public StatusType[] @__CurrentStatus
         {
@@ -65044,6 +65569,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ContactType> _contact;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Contact", Order=7)]
         public ContactType[] @__Contact
         {
@@ -65285,6 +65811,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _limitationDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LimitationDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType[] @__LimitationDescription
         {
@@ -65312,6 +65839,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<PartyType> _preSelectedParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PreSelectedParty", Order=4)]
         public PartyType[] @__PreSelectedParty
         {
@@ -65466,6 +65994,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _processReason;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ProcessReason", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__ProcessReason
         {
@@ -65481,6 +66010,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -65608,6 +66138,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__Description
         {
@@ -65623,6 +66154,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _negotiationDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NegotiationDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__NegotiationDescription
         {
@@ -65686,6 +66218,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _noticeDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("NoticeDocumentReference", Order=16)]
         public DocumentReferenceType[] @__NoticeDocumentReference
         {
@@ -65701,6 +66234,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _additionalDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Order=17)]
         public DocumentReferenceType[] @__AdditionalDocumentReference
         {
@@ -65716,6 +66250,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ProcessJustificationType> _processJustification;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ProcessJustification", Order=18)]
         public ProcessJustificationType[] @__ProcessJustification
         {
@@ -65735,6 +66270,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<EventType> _openTenderEvent;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OpenTenderEvent", Order=20)]
         public EventType[] @__OpenTenderEvent
         {
@@ -66473,6 +67009,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ContractingPartyTypeType> _contractingPartyType1;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContractingPartyType", Order=1)]
         public ContractingPartyTypeType[] @__ContractingPartyType1
         {
@@ -66488,6 +67025,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ContractingActivityType> _contractingActivity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ContractingActivity", Order=2)]
         public ContractingActivityType[] @__ContractingActivity
         {
@@ -66681,6 +67219,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _awardingCriterionDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AwardingCriterionDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__AwardingCriterionDescription
         {
@@ -66696,6 +67235,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public TextType[] @__Description
         {
@@ -66719,6 +67259,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AwardingCriterionResponseType> _subordinateAwardingCriterionResponse;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubordinateAwardingCriterionResponse", Order=6)]
         public AwardingCriterionResponseType[] @__SubordinateAwardingCriterionResponse
         {
@@ -66909,6 +67450,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Note
         {
@@ -66956,6 +67498,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _warrantyInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WarrantyInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType[] @__WarrantyInformation
         {
@@ -66975,6 +67518,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=12)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -66994,6 +67538,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ItemLocationQuantityType> _offeredItemLocationQuantity;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("OfferedItemLocationQuantity", Order=14)]
         public ItemLocationQuantityType[] @__OfferedItemLocationQuantity
         {
@@ -67009,6 +67554,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<RelatedItemType> _replacementRelatedItem;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReplacementRelatedItem", Order=15)]
         public RelatedItemType[] @__ReplacementRelatedItem
         {
@@ -67032,6 +67578,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TenderLineType> _subTenderLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubTenderLine", Order=18)]
         public TenderLineType[] @__SubTenderLine
         {
@@ -67579,6 +68126,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _feeDescription;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("FeeDescription", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public TextType[] @__FeeDescription
         {
@@ -67606,6 +68154,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _evidenceDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EvidenceDocumentReference", Order=6)]
         public DocumentReferenceType[] @__EvidenceDocumentReference
         {
@@ -67621,6 +68170,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TaxTotalType> _taxTotal;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=7)]
         public TaxTotalType[] @__TaxTotal
         {
@@ -67640,6 +68190,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TenderLineType> _tenderLine;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TenderLine", Order=9)]
         public TenderLineType[] @__TenderLine
         {
@@ -67655,6 +68206,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<AwardingCriterionResponseType> _awardingCriterionResponse;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AwardingCriterionResponse", Order=10)]
         public AwardingCriterionResponseType[] @__AwardingCriterionResponse
         {
@@ -67932,6 +68484,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public TextType[] @__Description
         {
@@ -67995,6 +68548,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<SubcontractTermsType> _subcontractTerms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SubcontractTerms", Order=14)]
         public SubcontractTermsType[] @__SubcontractTerms
         {
@@ -68010,6 +68564,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<WinningPartyType> _winningParty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("WinningParty", Order=15)]
         public WinningPartyType[] @__WinningParty
         {
@@ -68431,6 +68986,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<ResponseType> _response;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Response", Order=1)]
         public ResponseType[] @__Response
         {
@@ -68508,6 +69064,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Order=1)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -68531,6 +69088,7 @@ namespace UblSharp.CommonAggregateComponents
         
         private System.Collections.Generic.List<LineResponseType> _lineResponse;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("LineResponse", Order=4)]
         public LineResponseType[] @__LineResponse
         {

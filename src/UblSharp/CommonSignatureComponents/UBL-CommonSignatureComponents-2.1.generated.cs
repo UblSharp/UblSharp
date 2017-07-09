@@ -28,6 +28,7 @@ namespace UblSharp.CommonSignatureComponents
         
         private System.Collections.Generic.List<SignatureInformationType> _signatureInformation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SignatureInformation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2", Order=0)]
         public SignatureInformationType[] @__SignatureInformation
         {
