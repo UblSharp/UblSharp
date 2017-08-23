@@ -114,7 +114,6 @@ namespace UblSharp.Tests
                 _output.WriteLine($"{error.Severity}: {error.Message}");
             }
 
-            _validater.IsValid(subject).Should().BeTrue();
             errors.Should().NotContain(x => x.Severity == XmlSeverityType.Error);
 #endif
 

@@ -16,7 +16,6 @@ namespace UblSharp.Tests
             this._output = output;
         }
 
-        [Fact(Skip = "Show issue in System.Xml")]
         public void CanSerializeTypeWithXmlNamespaceDeclarations()
         {
             var serializer = new XmlSerializer(typeof(TypeWithXmlNamespaceDeclarations));
@@ -28,8 +27,6 @@ namespace UblSharp.Tests
             }
 
             var xml = sb.ToString();
-
-            _output.WriteLine(xml);
         }
 
         public class TypeWithXmlNamespaceDeclarations
