@@ -27,6 +27,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<object> _any;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
@@ -109,6 +110,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<object> _any;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
@@ -242,6 +244,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ObjectType> _object;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Object")]
         public ObjectType[] @__Object
         {
@@ -346,6 +349,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ReferenceType> _reference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType[] @__Reference
         {
@@ -437,6 +441,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<object> _any;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
@@ -527,6 +532,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<TransformType> _transforms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
         public TransformType[] @__Transforms
         {
@@ -651,6 +657,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string))]
         public object[] @__Items
@@ -667,6 +674,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.String> _text;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] @__Text
         {
@@ -783,6 +791,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType))]
@@ -806,6 +815,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType2> _itemsElementName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType2[] @__ItemsElementName
@@ -822,6 +832,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.String> _text;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] @__Text
         {
@@ -895,6 +906,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.String> _text;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] @__Text
         {
@@ -1124,6 +1136,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType="base64Binary")]
@@ -1142,6 +1155,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType1> _itemsElementName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType1[] @__ItemsElementName
@@ -1200,6 +1214,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<TransformType> _transforms;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
         public TransformType[] @__Transforms
         {
@@ -1327,6 +1342,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.Object> _items;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType="base64Binary")]
@@ -1348,6 +1364,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ItemsChoiceType> _itemsElementName;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType[] @__ItemsElementName
@@ -1444,6 +1461,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<object> _any;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
@@ -1556,6 +1574,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<TransformType> _transform;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Transform")]
         public TransformType[] @__Transform
         {
@@ -1589,6 +1608,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<ReferenceType> _reference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType[] @__Reference
         {
@@ -1640,6 +1660,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<SignaturePropertyType> _signatureProperty;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SignatureProperty")]
         public SignaturePropertyType[] @__SignatureProperty
         {
@@ -1697,6 +1718,7 @@ namespace UblSharp.XmlDigitalSignature
         private System.Collections.Generic.List<object> _items;
 #endif
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
 #if FEATURE_XMLDOCUMENT
         public System.Xml.XmlElement[] @__Items
@@ -1724,6 +1746,7 @@ namespace UblSharp.XmlDigitalSignature
         
         private System.Collections.Generic.List<System.String> _text;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] @__Text
         {

@@ -30,6 +30,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<UBLExtensionType> _uBLExtensions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
         public UBLExtensionType[] @__UBLExtensions
@@ -86,6 +87,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _description;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__Description
         {
@@ -101,6 +103,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public TextType[] @__Note
         {
@@ -140,6 +143,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<ConsignmentType> _consignment;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Consignment", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
         public ConsignmentType[] @__Consignment
         {
@@ -155,6 +159,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
         public DocumentReferenceType[] @__DocumentReference
         {
@@ -170,6 +175,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
         public SignatureType[] @__Signature
         {
@@ -185,6 +191,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<LocationType> _requestedStatusLocation;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequestedStatusLocation", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public LocationType[] @__RequestedStatusLocation
         {
@@ -200,6 +207,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<PeriodType> _requestedStatusPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RequestedStatusPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public PeriodType[] @__RequestedStatusPeriod
         {

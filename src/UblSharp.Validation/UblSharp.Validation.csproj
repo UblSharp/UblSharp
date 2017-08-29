@@ -5,25 +5,29 @@
     <Description>Validate UBL XML documents and .NET types created with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.0-preview9</VersionPrefix>
+    <VersionPrefix>1.0.0-rc1</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp;ublsharp.validation</PackageTags>
-    <PackageProjectUrl>https://github.com/remcoros/UblSharp</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/remcoros/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/UblSharp/UblSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>UblSharp.Validation</RootNamespace>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <TargetFrameworks>net20;net35;net40;net45</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0</TargetFrameworks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <WarningsAsErrors>true</WarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="**\*.xsd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net20' ">
     <FrameworkPathOverride>C:\Windows\Microsoft.NET\Framework\v2.0.50727</FrameworkPathOverride>
@@ -38,6 +42,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>

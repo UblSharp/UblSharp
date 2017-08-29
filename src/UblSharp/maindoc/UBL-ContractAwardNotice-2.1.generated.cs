@@ -30,6 +30,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<UBLExtensionType> _uBLExtensions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
         public UBLExtensionType[] @__UBLExtensions
@@ -86,6 +87,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=11)]
         public TextType[] @__Note
         {
@@ -101,6 +103,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _regulatoryDomain;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RegulatoryDomain", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public TextType[] @__RegulatoryDomain
         {
@@ -120,6 +123,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<DocumentReferenceType> _previousDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("PreviousDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=14)]
         public DocumentReferenceType[] @__PreviousDocumentReference
         {
@@ -135,6 +139,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<DocumentReferenceType> _minutesDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("MinutesDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=15)]
         public DocumentReferenceType[] @__MinutesDocumentReference
         {
@@ -150,6 +155,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
         public SignatureType[] @__Signature
         {
@@ -189,6 +195,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<ProcurementProjectLotType> _procurementProjectLot;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ProcurementProjectLot", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public ProcurementProjectLotType[] @__ProcurementProjectLot
         {
@@ -204,6 +211,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TenderResultType> _tenderResult;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("TenderResult", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
         public TenderResultType[] @__TenderResult
         {

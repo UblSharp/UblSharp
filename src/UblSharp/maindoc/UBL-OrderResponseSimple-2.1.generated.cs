@@ -31,6 +31,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<UBLExtensionType> _uBLExtensions;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlArrayAttribute("UBLExtensions", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("UBLExtension", IsNullable=false)]
         public UBLExtensionType[] @__UBLExtensions
@@ -83,6 +84,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _note;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType[] @__Note
         {
@@ -102,6 +104,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<TextType> _rejectionNote;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("RejectionNote", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=12)]
         public TextType[] @__RejectionNote
         {
@@ -133,6 +136,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<DocumentReferenceType> _additionalDocumentReference;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
         public DocumentReferenceType[] @__AdditionalDocumentReference
         {
@@ -148,6 +152,7 @@ namespace UblSharp
         
         private System.Collections.Generic.List<SignatureType> _signature;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
         public SignatureType[] @__Signature
         {

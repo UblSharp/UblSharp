@@ -5,19 +5,18 @@
     <Description>Create and parse UBL documents in C# with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.0-preview9</VersionPrefix>
+    <VersionPrefix>1.0.0-rc1</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp</PackageTags>
-    <PackageProjectUrl>https://github.com/remcoros/UblSharp</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/remcoros/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/UblSharp/UblSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>UblSharp</RootNamespace>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <TargetFrameworks>net20;net35;net40;net45;netstandard1.0;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard1.0;netstandard1.3;netstandard2.0</TargetFrameworks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <WarningsAsErrors>true</WarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="$(OutputPath)\net20\UblSharp.XmlSerializers.dll">
@@ -27,40 +26,21 @@
       <PackagePath>lib\net35</PackagePath>
     </Content>
     <Content Include="$(OutputPath)\net40\UblSharp.XmlSerializers.dll">
-      <PackagePath>lib\net40</PackagePath> 
+      <PackagePath>lib\net40</PackagePath>
     </Content>
     <Content Include="$(OutputPath)\net45\UblSharp.XmlSerializers.dll">
       <PackagePath>lib\net45</PackagePath>
     </Content>
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net20' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
@@ -80,12 +60,15 @@
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ;DISABLE_XMLNSDECL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;DISABLE_XMLNSDECL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;DISABLE_XMLNSDECL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
-  </Project>
+</Project>

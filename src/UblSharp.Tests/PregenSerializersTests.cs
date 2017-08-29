@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if FEATURE_SGEN
+using System;
 using System.Collections;
 using System.Globalization;
 using System.Reflection;
@@ -80,3 +81,4 @@ namespace UblSharp.Tests
         } // AssertCanLoadXmlSerializers
     }
 }
+#endif

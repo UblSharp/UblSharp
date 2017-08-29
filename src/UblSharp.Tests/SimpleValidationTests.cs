@@ -1,4 +1,5 @@
-﻿using UblSharp.Validation;
+﻿#if FEATURE_VALIDATION
+using UblSharp.Validation;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -29,3 +30,4 @@ namespace UblSharp.Tests
         }
     }
 }
+#endif

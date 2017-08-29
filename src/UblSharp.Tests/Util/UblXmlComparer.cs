@@ -2,7 +2,6 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Schema;
 using Microsoft.XmlDiffPatch;
 using UblSharp.UnqualifiedDataTypes;
 using Xunit.Abstractions;
@@ -12,7 +11,7 @@ namespace UblSharp.Tests.Util
     public static class UblXmlComparer
     {
         private static readonly XNamespace cbcNamespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2";
-        private static readonly XName schemaLocationAttrName = XName.Get("schemaLocation", XmlSchema.InstanceNamespace);
+        private static readonly XName schemaLocationAttrName = XName.Get("schemaLocation", "http://www.w3.org/2001/XMLSchema-instance");
         private static readonly XName extensionsElementName = XName.Get("Extensions", "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2");
         private static XmlReaderSettings closeInputSettings = new XmlReaderSettings { CloseInput = true };
 
@@ -24,21 +23,22 @@ namespace UblSharp.Tests.Util
             bool areEqual = false;
 
             using (var fileReader = CreateReaderForSampleDocument2(sampleDocument))
-            using (var docReader = CreateReaderForDoc2(ublDocument))
+            using (var docReader = CreateReaderForSubjectDocument(ublDocument))
             {
                 var options = XmlDiffOptions.IgnoreComments | XmlDiffOptions.IgnoreWhitespace | XmlDiffOptions.IgnoreNamespaces | XmlDiffOptions.IgnorePI | XmlDiffOptions.IgnoreXmlDecl;
                 var xmlDiff = new XmlDiff(options);
 
                 using (var diffgramStream = new MemoryStream())
                 {
-                    using (var diffgramWriter = new XmlTextWriter(new StreamWriter(diffgramStream)))
+                    using (var streamWriter = new StreamWriter(diffgramStream))
+                    using (var diffgramWriter = XmlWriter.Create(streamWriter))
                     {
 
                         areEqual = xmlDiff.Compare(fileReader, docReader, diffgramWriter);
                         if (!areEqual)
                         {
                             diffgramStream.Position = 0;
-                            using (var tr = new XmlTextReader(diffgramStream))
+                            using (var tr = XmlReader.Create(diffgramStream))
                             {
                                 var xdoc = XDocument.Load(tr);
                                 var diff = xdoc.ToString();
@@ -60,7 +60,7 @@ namespace UblSharp.Tests.Util
             return stream;
         }
 
-        private static XmlReader CreateReaderForDoc2(XDocument document)
+        private static XmlReader CreateReaderForSubjectDocument(XDocument document)
         {
             return document.CreateReader();
         }
@@ -129,7 +129,7 @@ namespace UblSharp.Tests.Util
             // http://docs.oasis-open.org/ubl/os-UBL-2.1/UBL-2.1.html#S-EMPTY-ELEMENTS
             foreach (var node in xDoc.Root.Elements().Where(e => e.Name != extensionsElementName).Descendants().Where(n => n.IsEmpty).ToList())
             {
-                node.Remove();
+                // node.Remove();
             }
         }
     }

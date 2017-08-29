@@ -198,6 +198,9 @@ namespace UblSharp.Tests.Samples
                         },
                         ActivityOriginLocation = new LocationType
                         {
+                            ID = new IdentifierType
+                            {
+                            }
                         },
                         SalesItem = new List<SalesItemType>()
                         {

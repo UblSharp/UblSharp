@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Xml;
 using FluentAssertions;
@@ -39,6 +40,26 @@ namespace UblSharp.Tests
             time3.Value.Should().Be(new DateTime(now.Year, now.Month, now.Day, 15, 30, 0, 500, DateTimeKind.Unspecified));
             time3.Value.Offset.Should().Be(DateTimeOffset.Now.Offset);
             // time3.ValueString.Should().Be("15:30:00.5");
+        }
+
+        [Fact]
+        public void TimeTests()
+        {
+            var order = new OrderType();
+
+            order.IssueTime = "12:00:01.000";
+            var time = order.IssueTime.Value;
+            time.Hour.Should().Be(12);
+            time.Minute.Should().Be(0);
+            time.Second.Should().Be(1);
+            time.Offset.Should().Be(TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow));
+
+            order.IssueTime = "12:00:01.000+04:00";
+            time = order.IssueTime.Value;
+            time.Hour.Should().Be(12);
+            time.Minute.Should().Be(0);
+            time.Second.Should().Be(1);
+            time.Offset.Should().Be(TimeSpan.FromHours(4));
         }
     }
 }

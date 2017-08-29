@@ -116,6 +116,9 @@ namespace UblSharp.Tests.Samples
                                 listAgencyID = "UBL",
                                 listName = "Line Status",
                                 Value = "NoStatus"
+                            },
+                            Item = new ItemType
+                            {
                             }
                         }
                     },
@@ -129,6 +132,9 @@ namespace UblSharp.Tests.Samples
                                 listAgencyID = "UBL",
                                 listName = "Line Status",
                                 Value = "Disputed"
+                            },
+                            Item = new ItemType
+                            {
                             }
                         }
                     }

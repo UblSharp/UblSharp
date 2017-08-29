@@ -8,13 +8,8 @@ using UblSharp.UnqualifiedDataTypes;
 
 namespace UblSharp
 {
-    public partial class BaseDocument : IBaseDocument
+    public partial class BaseDocument
     {
-        public BaseDocument()
-        {
-            // UBLVersionID = "2.1";
-        }
-
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         public static XmlSerializerNamespaces DefaultXmlns { get; set; } = new XmlSerializerNamespaces(new[]
         {
@@ -23,7 +18,11 @@ namespace UblSharp
         });
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
+#if !DISABLE_XMLNSDECL
         [XmlNamespaceDeclarations]
+#else
+        [XmlIgnore]
+#endif
         public XmlSerializerNamespaces Xmlns { get; set; } = DefaultXmlns;
 
         [XmlIgnore]
