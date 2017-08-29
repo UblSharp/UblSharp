@@ -28,6 +28,7 @@ $suffix = @{ $true = "local"; $false = "ci$revision"}[$revision -eq "local"]
 $suffix = @{ $true = ""; $false = "$suffix"}[$suffix -ne "local" -and $tag -ne $NULL]
 $commitHash = $(git rev-parse --short HEAD)
 $buildSuffix = @{ $true = "$($suffix)-$($commitHash)"; $false = "$($branch)-$($commitHash)" }[$suffix -ne ""]
+$versionsuffix = @{ $true ="--version-suffix=$suffix"; $false = "" }[$suffix -ne ""]
 
 # clean artifacts
 if (Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
@@ -79,7 +80,7 @@ foreach ($project in $projects) {
 
     # Write-Host "Updated version in $project\package.nuspec to $version"
     $projectFile = $(Join-Path $project['root'] $project['csproj'])
-    exec { & dotnet pack $projectFile -c Release --no-build --version-suffix=$suffix --include-symbols -o "$PSScriptRoot\artifacts" }
+    exec { & dotnet pack $projectFile -c Release --no-build $versionsuffix --include-symbols -o "$PSScriptRoot\artifacts" }
 }
 
 Pop-Location
