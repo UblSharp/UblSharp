@@ -1,8 +1,8 @@
 -
   version: '{build}'
   image: Visual Studio 2017
-  cache: 
-  - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
+#  cache: 
+#  - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
   nuget:
     project_feed: true
     disable_publish_on_pr: true
@@ -26,8 +26,8 @@
       - /release.*/
   version: '{build}'
   image: Visual Studio 2017
-  cache: 
-  - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
+#  cache: 
+#  - '%userprofile%\.nuget\packages -> appveyor.yml.cache'
   nuget:
     project_feed: true
     disable_publish_on_pr: true
