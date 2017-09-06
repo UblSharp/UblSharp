@@ -47,7 +47,7 @@
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
-    <PackageReference Include="Microsoft.XmlSerializer.Generator" Version="1.0.0-preview2-25701-01" />
+    <PackageReference Include="Microsoft.XmlSerializer.Generator" Version="1.0.0-preview2-25701-01" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.XmlSerializer.Generator" Version="1.0.0-preview2-25701-01" />
