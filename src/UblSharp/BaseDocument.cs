@@ -23,7 +23,7 @@ namespace UblSharp
 #else
         [XmlIgnore]
 #endif
-        public XmlSerializerNamespaces Xmlns { get; set; } = DefaultXmlns;
+        public XmlSerializerNamespaces Xmlns { get; set; } = new XmlSerializerNamespaces(DefaultXmlns);
 
         [XmlIgnore]
         public List<UBLExtensionType> UBLExtensions
