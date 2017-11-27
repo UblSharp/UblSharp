@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 namespace UblSharp
 {
-    using UnqualifiedDataTypes;
-    using CommonAggregateComponents;
-    using CommonExtensionComponents;
+    using UblSharp.CommonAggregateComponents;
+    using UblSharp.UnqualifiedDataTypes;
+    using UblSharp.CommonExtensionComponents;
     
     
     /// <summary>

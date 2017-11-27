@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.CommonExtensionComponents
 {
-    using UnqualifiedDataTypes;
+    using UblSharp.UnqualifiedDataTypes;
     
     
     /// <summary>
@@ -18,7 +18,8 @@ namespace UblSharp.CommonExtensionComponents
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("UBLExtensionType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    [System.Xml.Serialization.XmlTypeAttribute("UBLExtension", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
+    [System.Xml.Serialization.XmlRootAttribute("UBLExtension", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", IsNullable=false)]
     public partial class UBLExtensionType
     {
         
@@ -32,31 +33,31 @@ namespace UblSharp.CommonExtensionComponents
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyID", Order=2)]
-        public ExtensionAgencyIDType @__ExtensionAgencyID;
+        public IdentifierType @__ExtensionAgencyID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyName", Order=3)]
-        public ExtensionAgencyNameType @__ExtensionAgencyName;
+        public TextType @__ExtensionAgencyName;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionVersionID", Order=4)]
-        public ExtensionVersionIDType @__ExtensionVersionID;
+        public IdentifierType @__ExtensionVersionID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionAgencyURI", Order=5)]
-        public ExtensionAgencyURIType @__ExtensionAgencyURI;
+        public IdentifierType @__ExtensionAgencyURI;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionURI", Order=6)]
-        public ExtensionURIType @__ExtensionURI;
+        public IdentifierType @__ExtensionURI;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionReasonCode", Order=7)]
-        public ExtensionReasonCodeType @__ExtensionReasonCode;
+        public CodeType @__ExtensionReasonCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionReason", Order=8)]
-        public ExtensionReasonType @__ExtensionReason;
+        public TextType @__ExtensionReason;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ExtensionContent", Order=9)]
@@ -108,11 +109,11 @@ namespace UblSharp.CommonExtensionComponents
         /// An agency that maintains one or more Extensions.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyIDType ExtensionAgencyID
+        public IdentifierType ExtensionAgencyID
         {
             get
             {
-                if (__ExtensionAgencyID == null) { __ExtensionAgencyID = new ExtensionAgencyIDType(); }
+                if (__ExtensionAgencyID == null) { __ExtensionAgencyID = new IdentifierType(); }
                 return __ExtensionAgencyID;
             }
             set
@@ -126,11 +127,11 @@ namespace UblSharp.CommonExtensionComponents
         /// The name of the agency that maintains the Extension.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyNameType ExtensionAgencyName
+        public TextType ExtensionAgencyName
         {
             get
             {
-                if (__ExtensionAgencyName == null) { __ExtensionAgencyName = new ExtensionAgencyNameType(); }
+                if (__ExtensionAgencyName == null) { __ExtensionAgencyName = new TextType(); }
                 return __ExtensionAgencyName;
             }
             set
@@ -144,11 +145,11 @@ namespace UblSharp.CommonExtensionComponents
         /// The version of the Extension.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionVersionIDType ExtensionVersionID
+        public IdentifierType ExtensionVersionID
         {
             get
             {
-                if (__ExtensionVersionID == null) { __ExtensionVersionID = new ExtensionVersionIDType(); }
+                if (__ExtensionVersionID == null) { __ExtensionVersionID = new IdentifierType(); }
                 return __ExtensionVersionID;
             }
             set
@@ -162,11 +163,11 @@ namespace UblSharp.CommonExtensionComponents
         /// A URI for the Agency that maintains the Extension.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionAgencyURIType ExtensionAgencyURI
+        public IdentifierType ExtensionAgencyURI
         {
             get
             {
-                if (__ExtensionAgencyURI == null) { __ExtensionAgencyURI = new ExtensionAgencyURIType(); }
+                if (__ExtensionAgencyURI == null) { __ExtensionAgencyURI = new IdentifierType(); }
                 return __ExtensionAgencyURI;
             }
             set
@@ -180,11 +181,11 @@ namespace UblSharp.CommonExtensionComponents
         /// A URI for the Extension.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionURIType ExtensionURI
+        public IdentifierType ExtensionURI
         {
             get
             {
-                if (__ExtensionURI == null) { __ExtensionURI = new ExtensionURIType(); }
+                if (__ExtensionURI == null) { __ExtensionURI = new IdentifierType(); }
                 return __ExtensionURI;
             }
             set
@@ -198,11 +199,11 @@ namespace UblSharp.CommonExtensionComponents
         /// A code for reason the Extension is being included.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionReasonCodeType ExtensionReasonCode
+        public CodeType ExtensionReasonCode
         {
             get
             {
-                if (__ExtensionReasonCode == null) { __ExtensionReasonCode = new ExtensionReasonCodeType(); }
+                if (__ExtensionReasonCode == null) { __ExtensionReasonCode = new CodeType(); }
                 return __ExtensionReasonCode;
             }
             set
@@ -216,11 +217,11 @@ namespace UblSharp.CommonExtensionComponents
         /// A description of the reason for the Extension.
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ExtensionReasonType ExtensionReason
+        public TextType ExtensionReason
         {
             get
             {
-                if (__ExtensionReason == null) { __ExtensionReason = new ExtensionReasonType(); }
+                if (__ExtensionReason == null) { __ExtensionReason = new TextType(); }
                 return __ExtensionReason;
             }
             set
@@ -250,146 +251,6 @@ namespace UblSharp.CommonExtensionComponents
             {
                 __ExtensionContent = value;
             }
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionReasonType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionReasonType : TextType
-    {
-        
-        public static implicit operator ExtensionReasonType(string value)
-        {
-             return value == null ? null : new ExtensionReasonType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionReasonType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionAgencyNameType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyNameType : TextType
-    {
-        
-        public static implicit operator ExtensionAgencyNameType(string value)
-        {
-             return value == null ? null : new ExtensionAgencyNameType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionAgencyNameType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionReasonCodeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionReasonCodeType : CodeType
-    {
-        
-        public static implicit operator ExtensionReasonCodeType(string value)
-        {
-             return value == null ? null : new ExtensionReasonCodeType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionReasonCodeType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionVersionIDType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionVersionIDType : IdentifierType
-    {
-        
-        public static implicit operator ExtensionVersionIDType(string value)
-        {
-             return value == null ? null : new ExtensionVersionIDType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionVersionIDType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionURIType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionURIType : IdentifierType
-    {
-        
-        public static implicit operator ExtensionURIType(string value)
-        {
-             return value == null ? null : new ExtensionURIType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionURIType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionAgencyURIType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyURIType : IdentifierType
-    {
-        
-        public static implicit operator ExtensionAgencyURIType(string value)
-        {
-             return value == null ? null : new ExtensionAgencyURIType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionAgencyURIType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ExtensionAgencyIDType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")]
-    public partial class ExtensionAgencyIDType : IdentifierType
-    {
-        
-        public static implicit operator ExtensionAgencyIDType(string value)
-        {
-             return value == null ? null : new ExtensionAgencyIDType { Value = value };
-        }
-
-        public static implicit operator string(ExtensionAgencyIDType value)
-        {
-             return value.Value;
         }
 
     }

@@ -24,6 +24,7 @@ namespace UblSharp.Generator.CodeFixers
                         x.Name.EndsWith("XmlElementAttribute")
                         || x.Name.EndsWith("XmlArrayAttribute")
                         || x.Name.EndsWith("XmlAnyElementAttribute"));
+
                 if (attr != null)
                 {
                     if (_codeNamespace.Name.EndsWith("XmlDigitalSignature"))

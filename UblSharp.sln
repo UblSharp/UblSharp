@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{1274EAC3-AE2A-4E11-A650-82831AB31B61}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Validation", "src\UblSharp.Validation\UblSharp.Validation.csproj", "{546CCD4B-612A-4CF1-824B-7C83722305A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Tests", "src\UblSharp.Tests\UblSharp.Tests.csproj", "{19131B14-CCD1-498A-9D89-67049D4EF427}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.SEeF", "src\UblSharp.SEeF\UblSharp.SEeF.csproj", "{88E889ED-EC22-4126-8572-B9E2EB3300D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.SEeF.Generator", "src\UblSharp.SEeF.Generator\UblSharp.SEeF.Generator.csproj", "{D1CA445B-3025-4FFB-879F-A50D9BA293E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +43,19 @@ Global
 		{19131B14-CCD1-498A-9D89-67049D4EF427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19131B14-CCD1-498A-9D89-67049D4EF427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19131B14-CCD1-498A-9D89-67049D4EF427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E889ED-EC22-4126-8572-B9E2EB3300D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E889ED-EC22-4126-8572-B9E2EB3300D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E889ED-EC22-4126-8572-B9E2EB3300D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E889ED-EC22-4126-8572-B9E2EB3300D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ECF3AF3-96E8-4C50-B2C9-F83ECFF29EED}
 	EndGlobalSection
 EndGlobal

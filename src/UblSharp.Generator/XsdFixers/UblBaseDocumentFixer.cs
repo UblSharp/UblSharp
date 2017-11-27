@@ -18,7 +18,12 @@ namespace UblSharp.Generator.XsdFixers
         {
             var schemas = schemaSet.Schemas().Cast<XmlSchema>().ToList();
             var maindocSchemas = schemas.Where(x => x.SourceUri.Contains("maindoc")).ToList();
-            var baseDocSchema = schemas.Single(x => x.SourceUri.Contains("BaseDocument"));
+            var baseDocSchema = schemas.FirstOrDefault(x => x.SourceUri.Contains("BaseDocument"));
+            if (baseDocSchema == null)
+            {
+                // Not included in schemas, probably an external document
+                return;
+            }
 
             var elementsToRemove = (baseDocSchema.Items.OfType<XmlSchemaComplexType>().Single().ContentTypeParticle as XmlSchemaSequence)
                                        ?.Items.Cast<XmlSchemaElement>()
@@ -36,7 +41,12 @@ namespace UblSharp.Generator.XsdFixers
                 maindocSchema.Namespaces.Add("abs", baseDocSchema.TargetNamespace);
                 maindocSchema.Includes.Add(baseDocSchemaImport);
 
-                var maindocSchemaComplexType = maindocSchema.Items.OfType<XmlSchemaComplexType>().Single();
+                var maindocSchemaComplexType = maindocSchema.Items.OfType<XmlSchemaComplexType>().FirstOrDefault();
+                if (maindocSchemaComplexType == null)
+                {
+                    throw new InvalidOperationException("Invalid maindoc document. Main documents must contain exactly one complex type");
+                }
+
                 var sequence = (XmlSchemaSequence)maindocSchemaComplexType.Particle;
                 var removed = 0;
                 for (var i = sequence.Items.Count - 1; i >= 0; i--)

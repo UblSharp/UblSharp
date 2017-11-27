@@ -47,23 +47,33 @@ namespace UblSharp.Generator.XsdFixers
 
         private static void RenameXmlDSigTypes(XmlSchemaSet schemaSet)
         {
-            var dsigSchema = schemaSet.Schemas(Namespaces.Xmldsig).OfType<XmlSchema>().Single();
-            var sacSchema = schemaSet.Schemas(Namespaces.Sac).OfType<XmlSchema>().Single();
-            var xadesSchema13 = schemaSet.Schemas(Namespaces.Xades132).OfType<XmlSchema>().Single();
-
-            var types = new[] { "SignatureType" };
-
-            foreach (var complexType in dsigSchema.Items.OfType<XmlSchemaComplexType>().Where(x => types.Contains(x.Name)))
+            var dsigSchema = schemaSet.Schemas(Namespaces.Xmldsig).OfType<XmlSchema>().FirstOrDefault();
+            if (dsigSchema != null)
             {
-                var complexName = complexType.Name;
-                complexType.Name = "Xml" + complexName;
-                var t = dsigSchema.Items.OfType<XmlSchemaElement>().Single(x => x.Name == complexName.Remove(complexName.Length - 5, 4));
-                t.SchemaTypeName = new XmlQualifiedName("Xml" + complexName, t.SchemaTypeName.Namespace);
+                var types = new[] { "SignatureType" };
+
+                foreach (var complexType in dsigSchema.Items.OfType<XmlSchemaComplexType>().Where(x => types.Contains(x.Name)))
+                {
+                    var complexName = complexType.Name;
+                    complexType.Name = "Xml" + complexName;
+                    var t = dsigSchema.Items.OfType<XmlSchemaElement>().Single(x => x.Name == complexName.Remove(complexName.Length - 5, 4));
+                    t.SchemaTypeName = new XmlQualifiedName("Xml" + complexName, t.SchemaTypeName.Namespace);
+                }
+
+                schemaSet.Reprocess(dsigSchema);
             }
 
-            schemaSet.Reprocess(dsigSchema);
-            schemaSet.Reprocess(xadesSchema13);
-            schemaSet.Reprocess(sacSchema);
+            var sacSchema = schemaSet.Schemas(Namespaces.Sac).OfType<XmlSchema>().FirstOrDefault();
+            if (sacSchema != null)
+            {
+                schemaSet.Reprocess(sacSchema);
+            }
+
+            var xadesSchema13 = schemaSet.Schemas(Namespaces.Xades132).OfType<XmlSchema>().FirstOrDefault();
+            if (xadesSchema13 != null)
+            {
+                schemaSet.Reprocess(xadesSchema13);
+            }
         }
     }
 }

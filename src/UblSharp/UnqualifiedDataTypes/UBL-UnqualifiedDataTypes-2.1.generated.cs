@@ -8,45 +8,8 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.UnqualifiedDataTypes
 {
-    using CoreComponentTypes;
-    using SignatureBasicComponents;
-    using CommonExtensionComponents;
+    using UblSharp.CoreComponentTypes;
     
-    
-    /// <summary>
-    /// A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.
-    /// <para />UniqueID: UBLUDT0000011
-    /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Identifier. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Identifier
-    /// <para />PrimitiveType: string
-    /// <para />UsageRule: Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the identifier list and thus, are not declared as attributes.
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("IdentifierType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class IdentifierType : CctIdentifierType
-    {
-        
-        public static implicit operator IdentifierType(string value)
-        {
-             return value == null ? null : new IdentifierType { Value = value };
-        }
-
-        public static implicit operator string(IdentifierType value)
-        {
-             return value.Value;
-        }
-
-    }
     
     /// <summary>
     /// A number of monetary units specified using a given unit of currency.
@@ -61,68 +24,104 @@ namespace UblSharp.UnqualifiedDataTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("AmountType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
     public partial class AmountType : CctAmountType
     {
     }
     
     /// <summary>
-    /// A character string (i.e. a finite set of characters), generally in the form of words of a language.
-    /// <para />UniqueID: UBLUDT0000019
+    /// A set of finite-length sequences of binary octets.
+    /// <para />UniqueID: UBLUDT000002
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Text. Type
+    /// <para />DictionaryEntryName: Binary Object. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Text
-    /// <para />PrimitiveType: string
+    /// <para />RepresentationTermName: Binary Object
+    /// <para />PrimitiveType: binary
     /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyNameType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("TextType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class TextType : CctTextType
+    [System.Xml.Serialization.XmlTypeAttribute("BinaryObjectType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class BinaryObjectType : CctBinaryObjectType
     {
-        
-        public static implicit operator TextType(string value)
-        {
-             return value == null ? null : new TextType { Value = value };
-        }
-
-        public static implicit operator string(TextType value)
-        {
-             return value.Value;
-        }
-
     }
     
     /// <summary>
-    /// A character string that constitutes the distinctive designation of a person, place, thing or concept.
-    /// <para />UniqueID: UBLUDT0000020
+    /// A video representation.
+    /// <para />UniqueID: UBLUDT000006
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Name. Type
+    /// <para />DictionaryEntryName: Video. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Name
-    /// <para />PrimitiveType: string
+    /// <para />RepresentationTermName: Video
+    /// <para />PrimitiveType: binary
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("NameType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class NameType : CctTextType
+    [System.Xml.Serialization.XmlTypeAttribute("VideoType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class VideoType : CctBinaryObjectType
     {
-        
-        public static implicit operator NameType(string value)
-        {
-             return value == null ? null : new NameType { Value = value };
-        }
-
-        public static implicit operator string(NameType value)
-        {
-             return value.Value;
-        }
-
+    }
+    
+    /// <summary>
+    /// An audio representation.
+    /// <para />UniqueID: UBLUDT000005
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Sound. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Sound
+    /// <para />PrimitiveType: binary
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SoundType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class SoundType : CctBinaryObjectType
+    {
+    }
+    
+    /// <summary>
+    /// A diagram, graph, mathematical curve, or similar representation.
+    /// <para />UniqueID: UBLUDT000004
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Picture. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Picture
+    /// <para />PrimitiveType: binary
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("PictureType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class PictureType : CctBinaryObjectType
+    {
+    }
+    
+    /// <summary>
+    /// A diagram, graph, mathematical curve, or similar representation.
+    /// <para />UniqueID: UBLUDT000003
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Graphic. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Graphic
+    /// <para />PrimitiveType: binary
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("GraphicType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class GraphicType : CctBinaryObjectType
+    {
     }
     
     /// <summary>
@@ -135,12 +134,12 @@ namespace UblSharp.UnqualifiedDataTypes
     /// <para />PrimitiveType: string
     /// <para />UsageRule: Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the code list and thus, are not declared as attributes.
     /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonCodeType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("CodeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
     public partial class CodeType : CctCodeType
     {
         
@@ -157,167 +156,52 @@ namespace UblSharp.UnqualifiedDataTypes
     }
     
     /// <summary>
-    /// A counted number of non-monetary units, possibly including a fractional part.
-    /// <para />UniqueID: UBLUDT0000018
+    /// A particular point in the progression of time, together with relevant supplementary information.
+    /// <para />UniqueID: UBLUDT000008
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Quantity. Type
+    /// <para />DictionaryEntryName: Date Time. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Quantity
-    /// <para />PrimitiveType: decimal
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("QuantityType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class QuantityType : CctQuantityType
-    {
-        
-        public static implicit operator QuantityType(decimal value)
-        {
-             return new QuantityType { Value = value };
-        }
-
-        public static implicit operator decimal(QuantityType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
-    /// <para />UniqueID: UBLUDT0000014
-    /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Numeric. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Numeric
+    /// <para />RepresentationTermName: Date Time
     /// <para />PrimitiveType: string
+    /// <para />UsageRule: Can be used for a date and/or time.
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("NumericType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class NumericType : CctNumericType
+    [System.Xml.Serialization.XmlTypeAttribute("DateTimeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class DateTimeType
     {
         
-        public static implicit operator NumericType(decimal value)
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public System.DateTime @__Value;
+        
+        public static implicit operator DateTimeType(System.DateTime value)
         {
-             return new NumericType { Value = value };
+             return new DateTimeType { Value = value };
         }
 
-        public static implicit operator decimal(NumericType value)
+        public static implicit operator System.DateTime(DateTimeType value)
         {
              return value.Value;
         }
 
-    }
-    
-    /// <summary>
-    /// A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
-    /// <para />UniqueID: UBLUDT0000017
-    /// <para />CategoryCode: UDT
-    /// <para />VersionID: 1.0
-    /// <para />DictionaryEntryName: Rate. Type
-    /// <para />RepresentationTermName: Rate
-    /// <para />PrimitiveType: string
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("RateType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class RateType : CctNumericType
-    {
         
-        public static implicit operator RateType(decimal value)
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.DateTime Value
         {
-             return new RateType { Value = value };
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
         }
 
-        public static implicit operator decimal(RateType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure.
-    /// <para />UniqueID: UBLUDT0000016
-    /// <para />CategoryCode: UDT
-    /// <para />VersionID: 1.0
-    /// <para />DictionaryEntryName: Percent. Type
-    /// <para />RepresentationTermName: Percent
-    /// <para />PrimitiveType: string
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("PercentType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class PercentType : CctNumericType
-    {
-        
-        public static implicit operator PercentType(decimal value)
-        {
-             return new PercentType { Value = value };
-        }
-
-        public static implicit operator decimal(PercentType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
-    /// <para />UniqueID: UBLUDT0000015
-    /// <para />CategoryCode: UDT
-    /// <para />VersionID: 1.0
-    /// <para />DictionaryEntryName: Value. Type
-    /// <para />RepresentationTermName: Value
-    /// <para />PrimitiveType: string
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ValueType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class ValueType : CctNumericType
-    {
-        
-        public static implicit operator ValueType(decimal value)
-        {
-             return new ValueType { Value = value };
-        }
-
-        public static implicit operator decimal(ValueType value)
-        {
-             return value.Value;
-        }
-
-    }
-    
-    /// <summary>
-    /// A numeric value determined by measuring an object using a specified unit of measure.
-    /// <para />UniqueID: UBLUDT0000013
-    /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Measure. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Measure
-    /// <para />PropertyTermName: Type
-    /// <para />PrimitiveType: decimal
-    /// </summary>
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("MeasureType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class MeasureType : CctMeasureType
-    {
     }
     
     /// <summary>
@@ -334,6 +218,7 @@ namespace UblSharp.UnqualifiedDataTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("DateType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
     public partial class DateType
     {
         
@@ -371,6 +256,7 @@ namespace UblSharp.UnqualifiedDataTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("TimeType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
     public partial class TimeType
     {
         
@@ -395,6 +281,37 @@ namespace UblSharp.UnqualifiedDataTypes
     }
     
     /// <summary>
+    /// A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.
+    /// <para />UniqueID: UBLUDT0000011
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Identifier. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Identifier
+    /// <para />PrimitiveType: string
+    /// <para />UsageRule: Other supplementary components in the CCT are captured as part of the token and name for the schema module containing the identifier list and thus, are not declared as attributes.
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("IdentifierType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class IdentifierType : CctIdentifierType
+    {
+        
+        public static implicit operator IdentifierType(string value)
+        {
+             return value == null ? null : new IdentifierType { Value = value };
+        }
+
+        public static implicit operator string(IdentifierType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+    /// <summary>
     /// A list of two mutually exclusive Boolean values that express the only possible states of a property.
     /// <para />UniqueID: UBLUDT0000012
     /// <para />CategoryCode: UDT
@@ -408,6 +325,7 @@ namespace UblSharp.UnqualifiedDataTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("IndicatorType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
     public partial class IndicatorType
     {
         
@@ -442,92 +360,232 @@ namespace UblSharp.UnqualifiedDataTypes
     }
     
     /// <summary>
-    /// A set of finite-length sequences of binary octets.
-    /// <para />UniqueID: UBLUDT000002
+    /// A numeric value determined by measuring an object using a specified unit of measure.
+    /// <para />UniqueID: UBLUDT0000013
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Binary Object. Type
+    /// <para />DictionaryEntryName: Measure. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Binary Object
-    /// <para />PrimitiveType: binary
+    /// <para />RepresentationTermName: Measure
+    /// <para />PropertyTermName: Type
+    /// <para />PrimitiveType: decimal
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("BinaryObjectType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class BinaryObjectType : CctBinaryObjectType
+    [System.Xml.Serialization.XmlTypeAttribute("MeasureType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class MeasureType : CctMeasureType
     {
     }
     
     /// <summary>
-    /// A video representation.
-    /// <para />UniqueID: UBLUDT000006
+    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
+    /// <para />UniqueID: UBLUDT0000014
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Video. Type
+    /// <para />DictionaryEntryName: Numeric. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Video
-    /// <para />PrimitiveType: binary
+    /// <para />RepresentationTermName: Numeric
+    /// <para />PrimitiveType: string
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("VideoType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class VideoType : CctBinaryObjectType
+    [System.Xml.Serialization.XmlTypeAttribute("NumericType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class NumericType : CctNumericType
     {
+        
+        public static implicit operator NumericType(decimal value)
+        {
+             return new NumericType { Value = value };
+        }
+
+        public static implicit operator decimal(NumericType value)
+        {
+             return value.Value;
+        }
+
     }
     
     /// <summary>
-    /// An audio representation.
-    /// <para />UniqueID: UBLUDT000005
+    /// A numeric expression of a rate that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
+    /// <para />UniqueID: UBLUDT0000017
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Sound. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Sound
-    /// <para />PrimitiveType: binary
+    /// <para />DictionaryEntryName: Rate. Type
+    /// <para />RepresentationTermName: Rate
+    /// <para />PrimitiveType: string
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("SoundType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class SoundType : CctBinaryObjectType
+    [System.Xml.Serialization.XmlTypeAttribute("RateType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class RateType : CctNumericType
     {
+        
+        public static implicit operator RateType(decimal value)
+        {
+             return new RateType { Value = value };
+        }
+
+        public static implicit operator decimal(RateType value)
+        {
+             return value.Value;
+        }
+
     }
     
     /// <summary>
-    /// A diagram, graph, mathematical curve, or similar representation.
-    /// <para />UniqueID: UBLUDT000004
+    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure.
+    /// <para />UniqueID: UBLUDT0000016
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Picture. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Picture
-    /// <para />PrimitiveType: binary
+    /// <para />DictionaryEntryName: Percent. Type
+    /// <para />RepresentationTermName: Percent
+    /// <para />PrimitiveType: string
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("PictureType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class PictureType : CctBinaryObjectType
+    [System.Xml.Serialization.XmlTypeAttribute("PercentType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class PercentType : CctNumericType
     {
+        
+        public static implicit operator PercentType(decimal value)
+        {
+             return new PercentType { Value = value };
+        }
+
+        public static implicit operator decimal(PercentType value)
+        {
+             return value.Value;
+        }
+
     }
     
     /// <summary>
-    /// A diagram, graph, mathematical curve, or similar representation.
-    /// <para />UniqueID: UBLUDT000003
+    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
+    /// <para />UniqueID: UBLUDT0000015
     /// <para />CategoryCode: UDT
-    /// <para />DictionaryEntryName: Graphic. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Graphic
-    /// <para />PrimitiveType: binary
+    /// <para />DictionaryEntryName: Value. Type
+    /// <para />RepresentationTermName: Value
+    /// <para />PrimitiveType: string
     /// </summary>
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("GraphicType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
-    public partial class GraphicType : CctBinaryObjectType
+    [System.Xml.Serialization.XmlTypeAttribute("ValueType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class ValueType : CctNumericType
     {
+        
+        public static implicit operator ValueType(decimal value)
+        {
+             return new ValueType { Value = value };
+        }
+
+        public static implicit operator decimal(ValueType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+    /// <summary>
+    /// A counted number of non-monetary units, possibly including a fractional part.
+    /// <para />UniqueID: UBLUDT0000018
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Quantity. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Quantity
+    /// <para />PrimitiveType: decimal
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("QuantityType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class QuantityType : CctQuantityType
+    {
+        
+        public static implicit operator QuantityType(decimal value)
+        {
+             return new QuantityType { Value = value };
+        }
+
+        public static implicit operator decimal(QuantityType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+    /// <summary>
+    /// A character string (i.e. a finite set of characters), generally in the form of words of a language.
+    /// <para />UniqueID: UBLUDT0000019
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Text. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Text
+    /// <para />PrimitiveType: string
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("TextType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class TextType : CctTextType
+    {
+        
+        public static implicit operator TextType(string value)
+        {
+             return value == null ? null : new TextType { Value = value };
+        }
+
+        public static implicit operator string(TextType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+    /// <summary>
+    /// A character string that constitutes the distinctive designation of a person, place, thing or concept.
+    /// <para />UniqueID: UBLUDT0000020
+    /// <para />CategoryCode: UDT
+    /// <para />DictionaryEntryName: Name. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Name
+    /// <para />PrimitiveType: string
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("NameType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2", IsNullable=true)]
+    public partial class NameType : CctTextType
+    {
+        
+        public static implicit operator NameType(string value)
+        {
+             return value == null ? null : new NameType { Value = value };
+        }
+
+        public static implicit operator string(NameType value)
+        {
+             return value.Value;
+        }
+
     }
 }

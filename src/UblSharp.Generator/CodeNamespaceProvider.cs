@@ -18,119 +18,126 @@ namespace UblSharp.Generator
  </auto-generated>
 ------------------------------------------------------------------------------";
         private readonly XmlSchemaSet _schemaSet;
+        private readonly UblGeneratorOptions _options;
 
-        private Dictionary<string, string[]> _namespaceMappings = new Dictionary<string, string[]>
+        private readonly Dictionary<string, string> _xmlToCsNamespaces = new Dictionary<string, string>
         {
-            [""] = new[] { "udt", "cac", "ext" },
-            ["cac"] = new[] { "udt" },
-            ["ext"] = new[] { "udt" },
-            ["udt"] = new[] { "cctscct", "sbc", "ext" },
-            ["sbc"] = new[] { "udt" },
-            ["cctscct"] = new[] { "udt", "sbc", "ext" },
-            ["abs"] = new[] { "udt", "cac", "ext" },
-            ["xades"] = new[] { "ds" },
-            ["sac"] = new[] { "udt", "sbc", "ds" },
-            ["csc"] = new[] { "sac" }
+            { Namespaces.BaseDocument, "" },
+            { Namespaces.Cac, "CommonAggregateComponents" },
+            { Namespaces.Cbc, "UnqualifiedDataTypes" }, // Use Udt instead of Cct (the types in Cbc are refactored out)
+            { Namespaces.Cct, "CoreComponentTypes" },
+            { Namespaces.Cec, "CommonExtensionComponents" },
+            { Namespaces.Csc, "CommonSignatureComponents" },
+            { Namespaces.Qdt, "QualifiedDataTypes" }, // There are no Qdt's in UBL
+            { Namespaces.Sac, "SignatureAggregateComponents" },
+            { Namespaces.Sbc, "SignatureBasicComponents" },
+            { Namespaces.Udt, "UnqualifiedDataTypes" },
+            { Namespaces.Xades132, "Xades" },
+            { Namespaces.Xades141, "Xades" },
+            { Namespaces.Xmldsig, "XmlDigitalSignature" }            
         };
 
-        private Dictionary<string, string> _realNamespaces = new Dictionary<string, string>
+        // Reverses imports (for cross namespace XmlIncludeAttribute usage)
+        private readonly Dictionary<string, string[]> _xmlToCsNamespacesReverse = new Dictionary<string, string[]>()
         {
-            [""] = "",
-            ["cac"] = "CommonAggregateComponents",
-            ["ext"] = "CommonExtensionComponents",
-            ["udt"] = "UnqualifiedDataTypes",
-            ["sbc"] = "SignatureBasicComponents",
-            ["cctscct"] = "CoreComponentTypes",
-            ["ccts-cct"] = "CoreComponentTypes",
-            ["ccts"] = "CoreComponentTypes",
-            ["cct"] = "CoreComponentTypes",
-            ["abs"] = "",
-            ["xades"] = "Xades",
-            ["sac"] = "SignatureAggregateComponents",
-            ["csc"] = "CommonSignatureComponents",
-            ["cbc"] = "CommonBasicComponents",
-            ["qdt"] = "QualifiedDataTypes",
-            ["ds"] = "XmlDigitalSignature",
+            { Namespaces.Cct, new[] { Namespaces.Udt } }
         };
-
-        private Dictionary<string, string> _xml2CSharpNamespaceMapping;
-        private Dictionary<string, string> _namespace2Foldermapping;
-        private readonly string[] _unwantedPrefixes = { "", "xsd", "abs", "cct" };
-        private readonly string[] _unwantedFolderPrefixes = { "", "xsd" };
 
         public CodeNamespaceProvider(XmlSchemaSet schemaSet, UblGeneratorOptions options)
         {
             _schemaSet = schemaSet;
-
-            _xml2CSharpNamespaceMapping = schemaSet.Schemas().Cast<XmlSchema>()
-                .SelectMany(schema => schema.Namespaces.ToArray().Where(qname => !_unwantedPrefixes.Contains(qname.Name)))
-                .Select(qname => new { qname.Namespace, qname.Name })
-                .Distinct()
-                .ToDictionary(key => key.Namespace, val => $"{options.Namespace}.{_realNamespaces[val.Name]}");
-
-            _namespace2Foldermapping = schemaSet.Schemas().Cast<XmlSchema>()
-                .SelectMany(schema => schema.Namespaces.ToArray().Where(qname => !_unwantedFolderPrefixes.Contains(qname.Name)))
-                .Select(qname => new { qname.Namespace, qname.Name })
-                .GroupBy(x => x.Namespace)
-                .ToDictionary(key => key.Key, val => $"{_realNamespaces[val.First().Name]}");
+            _options = options;
 
             var mainSchemas = schemaSet.Schemas().Cast<XmlSchema>().Where(x => x.SourceUri.Contains("maindoc"));
             foreach (var schema in mainSchemas)
             {
                 var targetNamespace = schema.TargetNamespace;
-                if (!_xml2CSharpNamespaceMapping.ContainsKey(targetNamespace))
-                {
-                    _xml2CSharpNamespaceMapping[targetNamespace] = options.Namespace;
-                }
+                _xmlToCsNamespaces[targetNamespace] = string.Empty;
             }
 
-            _namespaceMappings = _namespaceMappings.ToDictionary(k => options.Namespace + (k.Key == "" ? "" : ".") + _realNamespaces[k.Key], v => v.Value.Select(n => _realNamespaces[n]).ToArray());
-
-            _xml2CSharpNamespaceMapping[Namespaces.Csc] = $"{options.Namespace}.{_realNamespaces["csc"]}";
-            _xml2CSharpNamespaceMapping[Namespaces.Xades132] = $"{options.Namespace}.{_realNamespaces["xades"]}";
-            _xml2CSharpNamespaceMapping[Namespaces.Xades141] = $"{options.Namespace}.{_realNamespaces["xades"]}";
-            _namespace2Foldermapping[Namespaces.Csc] = $"{_realNamespaces["csc"]}";
-            _namespace2Foldermapping[Namespaces.Xades132] = $"{_realNamespaces["xades"]}";
-            _namespace2Foldermapping[Namespaces.Xades141] = $"{_realNamespaces["xades"]}";
+            foreach (var mapping in options.XmlToCsNamespaceMapping)
+            {
+                _xmlToCsNamespaces[mapping.Key] = mapping.Value;
+            }
         }
 
-        public CodeNamespace CreateCodeNamespace(string xmlNamespace)
+        public CodeNamespace CreateCodeNamespace(XmlSchema schema)
         {
-            if (_xml2CSharpNamespaceMapping.ContainsKey(xmlNamespace))
+            string xmlNamespace = schema.TargetNamespace;
+            var csScopeName = "Extensions";
+
+            if (_xmlToCsNamespaces.ContainsKey(xmlNamespace))
             {
-                var csScopeName = _xml2CSharpNamespaceMapping[xmlNamespace];
-                var codeNs = new CodeNamespace(csScopeName);
+                csScopeName = _xmlToCsNamespaces[xmlNamespace];
+            }
 
-                codeNs.Comments.Add(new CodeCommentStatement(new CodeComment(NamespaceHeader)));
+            if (!string.IsNullOrEmpty(csScopeName))
+            {
+                csScopeName = "." + csScopeName;
+            }
 
-                if (xmlNamespace.Equals(Namespaces.BaseDocument))
-                {
-                    csScopeName += ".Abs";
-                }
+            csScopeName = _options.UblSharpNamespace + csScopeName;
 
-                if (_namespaceMappings.ContainsKey(csScopeName))
-                {
-                    foreach (var usingNamespace in _namespaceMappings[csScopeName])
-                    {
-                        codeNs.Imports.Add(new CodeNamespaceImport(usingNamespace));
-                    }
-                }
+            var codeNs = new CodeNamespace(csScopeName);
+            codeNs.UserData[CodeTypeMemberExtensions.XmlSchemaKey] = schema;
+
+            codeNs.Comments.Add(new CodeCommentStatement(new CodeComment(NamespaceHeader)));
+
+            if (xmlNamespace.Equals(Namespaces.BaseDocument))
+            {
                 return codeNs;
+                // csScopeName += ".Abs";
             }
-            else
+
+            foreach (var import in schema.Includes.OfType<XmlSchemaImport>())
             {
-                throw new InvalidOperationException("Cannot find namespace for: " + xmlNamespace);
+                if (_xmlToCsNamespaces.ContainsKey(import.Namespace))
+                {
+                    var importNs = _xmlToCsNamespaces[import.Namespace];
+                    if (string.IsNullOrEmpty(importNs))
+                    {
+                        continue;
+                    }
+
+                    importNs = _options.UblSharpNamespace + "." + importNs;
+
+                    codeNs.Imports.Add(new CodeNamespaceImport(importNs));
+                }
             }
+
+            if (_xmlToCsNamespacesReverse.TryGetValue(schema.TargetNamespace, out var reverseNamespaces))
+            {
+                foreach (var ns in reverseNamespaces)
+                {
+                    var importNs = _xmlToCsNamespaces[ns];
+                    if (string.IsNullOrEmpty(importNs))
+                    {
+                        continue;
+                    }
+
+                    importNs = _options.UblSharpNamespace + "." + importNs;
+
+                    codeNs.Imports.Add(new CodeNamespaceImport(importNs));
+                }
+            }
+
+            return codeNs;
         }
 
         public string GetNamespaceFolderName(XmlSchema schema)
         {
             if (schema.IsMaindocSchema() || schema.SourceUri.Contains("BaseDocument"))
             {
+                // This is only for 'UblSharp' base library, else it goes to the root
                 return "maindoc";
             }
 
-            return _namespace2Foldermapping[schema.TargetNamespace];
+            string ns;
+            if (_xmlToCsNamespaces.TryGetValue(schema.TargetNamespace, out ns))
+                return ns;
+
+            return string.Empty;
+            // throw new InvalidOperationException("Cannot find target folder for namespace: " + schema.TargetNamespace);
         }
     }
 }
