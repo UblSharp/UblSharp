@@ -18,7 +18,7 @@ namespace UblSharp.SEeF.Generator
                     OutputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\UblSharp.SEeF"),
                     Namespace = "UblSharp.SEeF",
                     ValidationHandler = ValidationHandler,
-                    GenerateCommonFiles = true,
+                    GenerateCommonFiles = false,
                     XmlToCsNamespaceMapping =
                     {
                         { "urn:www.energie-efactuur.nl:profile:invoice:ver2.0", "" }

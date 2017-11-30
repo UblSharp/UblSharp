@@ -16,7 +16,7 @@ namespace UblSharp.Generator
                     OutputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\UblSharp"),
                     Namespace = "UblSharp",
                     ValidationHandler = ValidationHandler,
-                    GenerateCommonFiles = false
+                    GenerateCommonFiles = true
                 });
 
             Console.WriteLine("Done.");
