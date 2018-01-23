@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{1274EAC3-AE2A-4E11-A650-82831AB31B61}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Tests.Generator", "src\UblSharp.Tests.Generator\UblSharp.Tests.Generator.csproj", "{1F4D051D-5090-4A32-86F1-0329AB522983}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp", "src\UblSharp\UblSharp.csproj", "{DF56EE48-75EA-43ED-B3FC-EFC3FA2FC3E4}"
@@ -17,16 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.SEeF", "src\UblSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.SEeF.Generator", "src\UblSharp.SEeF.Generator\UblSharp.SEeF.Generator.csproj", "{D1CA445B-3025-4FFB-879F-A50D9BA293E0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{D5170DCA-8D48-426E-BB2C-949A9673AC7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1274EAC3-AE2A-4E11-A650-82831AB31B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1274EAC3-AE2A-4E11-A650-82831AB31B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1274EAC3-AE2A-4E11-A650-82831AB31B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1274EAC3-AE2A-4E11-A650-82831AB31B61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F4D051D-5090-4A32-86F1-0329AB522983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F4D051D-5090-4A32-86F1-0329AB522983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F4D051D-5090-4A32-86F1-0329AB522983}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1CA445B-3025-4FFB-879F-A50D9BA293E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

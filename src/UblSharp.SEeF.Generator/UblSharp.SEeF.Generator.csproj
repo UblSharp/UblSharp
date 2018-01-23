@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UblSharp.Generator\UblSharp.Generator.csproj">
-      <Project>{1274EAC3-AE2A-4E11-A650-82831AB31B61}</Project>
+      <Project>{d5170dca-8d48-426e-bb2c-949a9673ac7c}</Project>
       <Name>UblSharp.Generator</Name>
     </ProjectReference>
   </ItemGroup>
