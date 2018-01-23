@@ -61,22 +61,7 @@ namespace UblSharp.Generator
             options.Validate();
 
             var baseInputDirectory = options.XsdBasePath;
-            //var commonDirectory = Path.Combine(baseInputDirectory, "common");
-            // var extDirectory = Path.Combine(baseInputDirectory, "ext");
-            //var commonfiles = new DirectoryInfo(commonDirectory).GetFiles("*.xsd").ToList();
-            //var preAddFiles = new List<string>();
-            //preAddFiles.Add(new DirectoryInfo(commonDirectory).GetFiles("UBL-xmldsig-core-schema-*.xsd").Single().FullName);
-            //preAddFiles.Add(new DirectoryInfo(commonDirectory).GetFiles("UBL-XAdESv141-2.1.xsd").Single().FullName);
-
-            // var maindocDirectory = Path.Combine(baseInputDirectory);
             var maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
-            //var extfiles = new DirectoryInfo(extDirectory).GetFiles("*.xsd").ToList();
-            // var maindocfiles = new DirectoryInfo(maindocDirectory).GetFiles("UBL-Order-2.1.xsd").ToList();
-            // maindocfiles.Add(new DirectoryInfo(maindocDirectory).GetFiles("UBL-BaseDocument-*.xsd").Single());
-            //var knownSchema = commonfiles.ToDictionary(x => x.Name, x => x.FullName);
-            // var xsdResolver = new UblXsdResolver(commonfiles.ToDictionary(x => x.Name, x => x.FullName));
-
-            var xsdResolver = new UblXsdResolver();
             var maindocSchemaSet = new XmlSchemaSet()
             {
                 // XmlResolver = xsdResolver
@@ -95,15 +80,6 @@ namespace UblSharp.Generator
 
             AddCommonFiles(maindocSchemaSet, readerSettings);
 
-            //foreach (var preAddFile in preAddFiles)
-            //{
-            //    using (var reader = XmlReader.Create(preAddFile, readerSettings))
-            //    {
-            //        var schema = XmlSchema.Read(reader, null);
-            //        maindocSchemaSet.Add(schema);
-            //    }
-            //}
-
             Console.WriteLine($"Add schema files from {baseInputDirectory}...");
 
             var schemasToGenerate = new List<XmlSchema>();
@@ -118,19 +94,6 @@ namespace UblSharp.Generator
                     schemasToGenerate.Add(schema);
                 }
             }
-
-            //var extRootNamespaces = new List<string>();
-            //foreach (var extfile in extfiles)
-            //{
-            //    using (var reader = XmlReader.Create(extfile.FullName, readerSettings))
-            //    {
-            //        var schema = XmlSchema.Read(reader, null);
-            //        ReplaceKnownSchemaIncludes(schema, knownSchema);
-
-            //        maindocSchemaSet.Add(schema);
-            //        extRootNamespaces.Add(schema.TargetNamespace);
-            //    }
-            //}
 
             Console.WriteLine("Fixing schema...");
 
@@ -384,33 +347,5 @@ namespace UblSharp.Generator
 
             return compileUnit;
         }
-
-        //private class UblXsdResolver : XmlUrlResolver
-        //{
-        //    private readonly IDictionary<string, string> _knownSchemas;
-
-        //    public UblXsdResolver(IDictionary<string, string> knownSchemas)
-        //    {
-        //        _knownSchemas = knownSchemas;
-        //    }
-
-        //    public override object GetEntity(Uri absoluteUri, string role, Type ofObjectToReturn)
-        //    {
-        //        if (absoluteUri.Scheme.StartsWith("http", StringComparison.OrdinalIgnoreCase))
-        //        {
-        //            var uri = absoluteUri.ToString();
-
-        //            var knownSchemaName = _knownSchemas.Keys.FirstOrDefault(x => uri.EndsWith(x, StringComparison.OrdinalIgnoreCase));
-        //            if (!string.IsNullOrEmpty(knownSchemaName))
-        //            {
-        //                return File.OpenRead(_knownSchemas[knownSchemaName]);
-        //            }
-        //        }
-
-        //        return base.GetEntity(absoluteUri, role, ofObjectToReturn);
-        //    }
-
-        //    public override ICredentials Credentials { set { throw new NotImplementedException(); } }
-        //}
     }
 }
