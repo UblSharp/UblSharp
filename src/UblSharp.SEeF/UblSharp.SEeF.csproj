@@ -7,10 +7,10 @@
     <Authors>Remco Ros</Authors>
     <VersionPrefix>1.0.0-preview1</VersionPrefix>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/UblSharp/UblSharp.SEeF</RepositoryUrl>
+    <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp;ublsharp.seef;seef;energie e-factuur</PackageTags>
-    <PackageProjectUrl>https://github.com/UblSharp/UblSharp.SEeF</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp.SEeF/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/UblSharp/UblSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>UblSharp.SEeF</RootNamespace>
     <NeutralLanguage>en-US</NeutralLanguage>
     <TargetFrameworks>net20;net35;net40;net45;netstandard1.0;netstandard1.3;netstandard2.0</TargetFrameworks>
