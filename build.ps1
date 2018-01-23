@@ -64,7 +64,7 @@ exec { & dotnet restore .\src\UblSharp.Tests\UblSharp.Tests.csproj }
 exec { & dotnet build .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-dependencies }
 
 # manually copy sgen assemblies to test bin directory
-# hack: hard-coded platform name
+# hack: hard-coded platform name, note that we have a 'net45' sgen assembly, but the test project is a 'net46' project.
 Copy-Item -Path ".\src\UblSharp\bin\$configuration\net45\UblSharp.XmlSerializers.dll" -Destination ".\src\UblSharp.Tests\bin\$configuration\net46\" -Force
 
 # Build/Run tests
@@ -72,13 +72,6 @@ exec { & dotnet test .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-
 
 # Create packages  
 foreach ($project in $projects) {   
-    # $version = (ConvertFrom-Json -InputObject (Get-Content $project\project.json -Raw)).version
-
-    # [xml]$nuspec = Get-Content "$($project.Root)\package.nuspec" -Encoding UTF8
-    # $nuspec.package.metadata.version = $version
-    # $nuspec.Save((Resolve-Path "$project\package.nuspec"))
-
-    # Write-Host "Updated version in $project\package.nuspec to $version"
     $projectFile = $(Join-Path $project['root'] $project['csproj'])
     exec { & dotnet pack $projectFile -c Release --no-build $versionsuffix --include-symbols -o "$PSScriptRoot\artifacts" }
 }
