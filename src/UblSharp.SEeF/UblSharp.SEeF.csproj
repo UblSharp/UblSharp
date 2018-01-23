@@ -19,9 +19,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="**\*.xsd" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

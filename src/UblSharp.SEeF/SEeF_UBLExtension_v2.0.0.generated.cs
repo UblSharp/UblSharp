@@ -6,8 +6,9 @@
 //
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace UblSharp
+namespace UblSharp.SEeF
 {
+    using UblSharp;
     using UblSharp.UnqualifiedDataTypes;
     using UblSharp.CommonAggregateComponents;
     

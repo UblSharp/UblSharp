@@ -64,7 +64,7 @@ namespace UblSharp.Generator
         public CodeNamespace CreateCodeNamespace(XmlSchema schema)
         {
             string xmlNamespace = schema.TargetNamespace;
-            var csScopeName = "Extensions";
+            var csScopeName = "";
 
             if (_xmlToCsNamespaces.ContainsKey(xmlNamespace))
             {
@@ -76,7 +76,7 @@ namespace UblSharp.Generator
                 csScopeName = "." + csScopeName;
             }
 
-            csScopeName = _options.UblSharpNamespace + csScopeName;
+            csScopeName = _options.Namespace + csScopeName;
 
             var codeNs = new CodeNamespace(csScopeName);
             codeNs.UserData[CodeTypeMemberExtensions.XmlSchemaKey] = schema;
@@ -86,7 +86,11 @@ namespace UblSharp.Generator
             if (xmlNamespace.Equals(Namespaces.BaseDocument))
             {
                 return codeNs;
-                // csScopeName += ".Abs";
+            }
+
+            if (_options.UblSharpNamespace != _options.Namespace)
+            {
+                codeNs.Imports.Add(new CodeNamespaceImport(_options.UblSharpNamespace));
             }
 
             foreach (var import in schema.Includes.OfType<XmlSchemaImport>())

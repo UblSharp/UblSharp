@@ -46,12 +46,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Schemas\SEeF_UBLExtension_v2.0.0.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UblSharp.Generator\UblSharp.Generator.csproj">
+    <ProjectReference Include="..\UblSharp.Generator.Core\UblSharp.Generator.Core.csproj">
       <Project>{d5170dca-8d48-426e-bb2c-949a9673ac7c}</Project>
-      <Name>UblSharp.Generator</Name>
+      <Name>UblSharp.Generator.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Tests.Generator", "src\UblSharp.Tests.Generator\UblSharp.Tests.Generator.csproj", "{1F4D051D-5090-4A32-86F1-0329AB522983}"
 EndProject
@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.SEeF", "src\UblSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.SEeF.Generator", "src\UblSharp.SEeF.Generator\UblSharp.SEeF.Generator.csproj", "{D1CA445B-3025-4FFB-879F-A50D9BA293E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{D5170DCA-8D48-426E-BB2C-949A9673AC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Generator.Core", "src\UblSharp.Generator.Core\UblSharp.Generator.Core.csproj", "{D5170DCA-8D48-426E-BB2C-949A9673AC7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5170DCA-8D48-426E-BB2C-949A9673AC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
