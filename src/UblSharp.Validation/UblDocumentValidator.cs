@@ -16,10 +16,10 @@ namespace UblSharp.Validation
     {
         private const string BaseNamespace = "UblSharp.Validation.Resources";
         private readonly XmlSchemaSet _cachedSchema;
-        private readonly Assembly _executingAssembly = Assembly.GetExecutingAssembly();
         private static readonly ValidationEventHandler _schemaValHandler = (s, e) => { throw new Exception(e.Message); };
         private readonly UblXsdResolver _xsdResolver = new UblXsdResolver();
-        private static readonly XmlWriterSettings _xmlWriterSettings = new XmlWriterSettings()
+#if FEATURE_LINQ
+        private static readonly XmlWriterSettings s_xmlWriterSettings = new XmlWriterSettings()
         {
             CloseOutput = false,
             Indent = false,
@@ -30,6 +30,7 @@ namespace UblSharp.Validation
 #endif
             Encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
         };
+#endif
 
         public UblDocumentValidator()
         {
@@ -38,33 +39,39 @@ namespace UblSharp.Validation
                 XmlResolver = _xsdResolver
             };
 
-            var xsdName = $"{BaseNamespace}.maindoc.UBL-";
-            foreach (var manifestStreamName in _executingAssembly.GetManifestResourceNames())
+            var thisAssembly = typeof(UblDocumentValidator).Assembly;
+
+            var xsdName = $"{BaseNamespace}.maindoc.";
+            foreach (var manifestStreamName in thisAssembly.GetManifestResourceNames())
             {
                 if (manifestStreamName.StartsWith(xsdName, StringComparison.Ordinal)
                     && manifestStreamName.EndsWith(".xsd", StringComparison.Ordinal))
                 {
-                    using (var manifestStream = _executingAssembly.GetManifestResourceStream(manifestStreamName))
+                    using (var manifestStream = thisAssembly.GetManifestResourceStream(manifestStreamName))
                     {
                         if (manifestStream == null)
                         {
                             throw new InvalidOperationException($"Error while getting manifest resource '{manifestStreamName}'");
                         }
 
-                        _cachedSchema.Add(XmlSchema.Read(manifestStream, _schemaValHandler));
+                        var schema = XmlSchema.Read(manifestStream, _schemaValHandler);
+                        schema.SourceUri = "file:///" + manifestStreamName.Replace(xsdName, "");
+                        _cachedSchema.Add(schema);
                     }
                 }
             }
 
             var resourceName = $"{BaseNamespace}.common.UBL-xmldsig-core-schema-2.1.xsd";
-            using (var stream = _executingAssembly.GetManifestResourceStream(resourceName))
+            using (var stream = thisAssembly.GetManifestResourceStream(resourceName))
             {
                 if (stream == null)
                 {
                     throw new InvalidOperationException($"Error while getting manifest resource '{resourceName}'");
                 }
 
-                _cachedSchema.Add(XmlSchema.Read(stream, _schemaValHandler));
+                var schema = XmlSchema.Read(stream, _schemaValHandler);
+                schema.SourceUri = "file:///UBL-xmldsig-core-schema-2.1.xsd";
+                _cachedSchema.Add(schema);
             }
 
             _cachedSchema.Compile();
@@ -180,7 +187,7 @@ namespace UblSharp.Validation
             if (xmlDocument.Root == null) throw new InvalidOperationException("Document must have a root node.");
 
             using (var memStream = new MemoryStream())
-            using (var writer = XmlWriter.Create(memStream, _xmlWriterSettings))
+            using (var writer = XmlWriter.Create(memStream, s_xmlWriterSettings))
             {
                 xmlDocument.Save(writer);
                 writer.Flush();

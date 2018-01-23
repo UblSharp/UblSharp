@@ -8,9 +8,10 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.SignatureAggregateComponents
 {
-    using UnqualifiedDataTypes;
-    using SignatureBasicComponents;
-    using XmlDigitalSignature;
+    using UblSharp.SignatureBasicComponents;
+    using UblSharp.UnqualifiedDataTypes;
+    using UblSharp.XmlDigitalSignature;
+    using UblSharp.Xades;
     
     
     /// <summary>
@@ -30,11 +31,11 @@ namespace UblSharp.SignatureAggregateComponents
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
-        public IdentifierType @__ID;
+        public UnqualifiedDataTypes.IdentifierType @__ID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ReferencedSignatureID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2", Order=1)]
-        public ReferencedSignatureIDType @__ReferencedSignatureID;
+        public UnqualifiedDataTypes.IdentifierType @__ReferencedSignatureID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=2)]
@@ -51,11 +52,11 @@ namespace UblSharp.SignatureAggregateComponents
         /// <para />DataType: Identifier. Type
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public IdentifierType ID
+        public UnqualifiedDataTypes.IdentifierType ID
         {
             get
             {
-                if (__ID == null) { __ID = new IdentifierType(); }
+                if (__ID == null) { __ID = new UnqualifiedDataTypes.IdentifierType(); }
                 return __ID;
             }
             set
@@ -76,11 +77,11 @@ namespace UblSharp.SignatureAggregateComponents
         /// <para />DataType: Identifier. Type
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public ReferencedSignatureIDType ReferencedSignatureID
+        public UnqualifiedDataTypes.IdentifierType ReferencedSignatureID
         {
             get
             {
-                if (__ReferencedSignatureID == null) { __ReferencedSignatureID = new ReferencedSignatureIDType(); }
+                if (__ReferencedSignatureID == null) { __ReferencedSignatureID = new UnqualifiedDataTypes.IdentifierType(); }
                 return __ReferencedSignatureID;
             }
             set

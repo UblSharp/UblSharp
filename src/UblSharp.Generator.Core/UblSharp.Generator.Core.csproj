@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>UblSharp.Generator.Core</AssemblyName>
+    <AssemblyTitle>UblSharp class generator core library.</AssemblyTitle>
+    <Description>Core generator library used to generate C# classes for UblSharp.</Description>
+    <Copyright>Copyright 2017 Remco Ros</Copyright>
+    <Authors>Remco Ros</Authors>
+    <VersionPrefix>1.0.0-preview1</VersionPrefix>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
+    <PackageTags>ubl;ublsharp</PackageTags>
+    <PackageProjectUrl>https://github.com/UblSharp/UblSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <RootNamespace>UblSharp.Generator</RootNamespace>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <TargetFrameworks>net46</TargetFrameworks>
+    <LangVersion>7.1</LangVersion>
+    <NoWarn>$(NoWarn)</NoWarn>
+    <WarningsAsErrors>false</WarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\**\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\**\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="1.0.8" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  </PropertyGroup>
+</Project>

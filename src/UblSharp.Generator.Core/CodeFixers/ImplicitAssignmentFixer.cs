@@ -55,8 +55,7 @@ namespace UblSharp.Generator.CodeFixers
 
             var codeDeclsBase = classes.Where(c =>
                     !c.HasAnyRequiredMembers() &&
-                    c.Members.OfType<CodeTypeMember>().Any(m =>
-                        (m is CodeMemberField || m is CodeMemberProperty)
+                    c.Members.OfType<CodeTypeMember>().Any(m => m.Name == "Value"
                         && (m.Attributes.HasFlag(MemberAttributes.Public))
                         && m.HasAnyXmlTextAttribute())
                     ).ToList();
@@ -79,11 +78,32 @@ namespace UblSharp.Generator.CodeFixers
                         )
                     .Select(c => new MemberTypeTuple
                     {
-                        BaseMemberType = decendantsAtNextLevel.Where(d => d.CodeDecl.Name == c.BaseTypes[0].BaseType).Select(d => d.BaseMemberType).Single(),
+                        BaseMemberType = decendantsAtNextLevel.Where(d => d.CodeDecl.Name == c.BaseTypes[0].BaseType).Select(d => d.BaseMemberType).First(),
                         CodeDecl = c
                     }).ToList();
                 accumulatedTupleList.AddRange(decendantsAtNextLevel);
             } while (decendantsAtNextLevel.Any());
+
+            // Dont generate implicit assignment if the type of Value property doesn't match
+            foreach (var lowLevelAbstractTuple in accumulatedTupleList.ToList())
+            {
+                var valueMember = lowLevelAbstractTuple.CodeDecl.Members.OfType<CodeTypeMember>().FirstOrDefault(x => x.Name == "Value");
+                if (valueMember == null) continue;
+
+                var valueType = (valueMember as CodeMemberProperty)?.Type ?? (valueMember as CodeMemberField)?.Type;
+                if (valueType == null) continue;
+
+                string valueTypeName = valueType.BaseType;
+                if (valueType.ArrayRank > 0)
+                {
+                    valueTypeName = valueTypeName + "[]";
+                }
+
+                if (valueTypeName.ToLowerInvariant() != lowLevelAbstractTuple.BaseMemberType?.FullName?.ToLowerInvariant())
+                {
+                    accumulatedTupleList.Remove(lowLevelAbstractTuple);
+                }
+            }
 
             // Dont generate implicit assignment for abstract types
             foreach (var lowLevelAbstractTuple in accumulatedTupleList.Where(t => t.CodeDecl.TypeAttributes.HasFlag(TypeAttributes.Abstract)).ToList())

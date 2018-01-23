@@ -1,6 +1,8 @@
 param (
     [Parameter(Mandatory = $false)]
-    [switch] $NuGet
+    [switch] $NuGet,
+    [Parameter(Mandatory = $false)]
+    [switch] $SkipTests
 )
 
 # Build script configuration
@@ -9,7 +11,9 @@ $sgen = "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tool
 
 $projects = @(
     @{root = '.\src\UblSharp'; csproj = 'UblSharp.csproj'; sgen = @("net20", "net35", "net40")},
-    @{root = '.\src\UblSharp.Validation'; csproj = 'UblSharp.Validation.csproj'}
+    @{root = '.\src\UblSharp.Validation'; csproj = 'UblSharp.Validation.csproj'},
+    @{root = '.\src\UblSharp.Generator.Core'; csproj = 'UblSharp.Generator.Core.csproj'},
+    @{root = '.\src\UblSharp.SEeF'; csproj = 'UblSharp.SEeF.csproj'}
 )
 
 # End configuration
@@ -28,7 +32,7 @@ $suffix = @{ $true = "local"; $false = "ci$revision"}[$revision -eq "local"]
 $suffix = @{ $true = ""; $false = "$suffix"}[$suffix -ne "local" -and $tag -ne $NULL]
 $commitHash = $(git rev-parse --short HEAD)
 $buildSuffix = @{ $true = "$($suffix)-$($commitHash)"; $false = "$($branch)-$($commitHash)" }[$suffix -ne ""]
-$versionsuffix = @{ $true ="--version-suffix=$suffix"; $false = "" }[$suffix -ne ""]
+$versionsuffix = @{ $true = "--version-suffix=$suffix"; $false = "" }[$suffix -ne ""]
 
 # clean artifacts
 if (Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
@@ -59,26 +63,21 @@ While (Get-Job -State "Running") { Start-Sleep 1 }
 Get-Job | Receive-Job
 Remove-Job *
 
-# build tests first
-exec { & dotnet restore .\src\UblSharp.Tests\UblSharp.Tests.csproj }
-exec { & dotnet build .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-dependencies }
+If ($SkipTests -eq $false) {
+    # build tests first
+    exec { & dotnet restore .\src\UblSharp.Tests\UblSharp.Tests.csproj }
+    exec { & dotnet build .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-dependencies }
 
-# manually copy sgen assemblies to test bin directory
-# hack: hard-coded platform name
-Copy-Item -Path ".\src\UblSharp\bin\$configuration\net45\UblSharp.XmlSerializers.dll" -Destination ".\src\UblSharp.Tests\bin\$configuration\net46\" -Force
+    # manually copy sgen assemblies to test bin directory
+    # hack: hard-coded platform name, note that we have a 'net45' sgen assembly, but the test project is a 'net46' project.
+    Copy-Item -Path ".\src\UblSharp\bin\$configuration\net45\UblSharp.XmlSerializers.dll" -Destination ".\src\UblSharp.Tests\bin\$configuration\net46\" -Force
 
-# Build/Run tests
-exec { & dotnet test .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-build }
+    # Build/Run tests
+    exec { & dotnet test .\src\UblSharp.Tests\UblSharp.Tests.csproj -c Release --no-build }
+}
 
 # Create packages  
 foreach ($project in $projects) {   
-    # $version = (ConvertFrom-Json -InputObject (Get-Content $project\project.json -Raw)).version
-
-    # [xml]$nuspec = Get-Content "$($project.Root)\package.nuspec" -Encoding UTF8
-    # $nuspec.package.metadata.version = $version
-    # $nuspec.Save((Resolve-Path "$project\package.nuspec"))
-
-    # Write-Host "Updated version in $project\package.nuspec to $version"
     $projectFile = $(Join-Path $project['root'] $project['csproj'])
     exec { & dotnet pack $projectFile -c Release --no-build $versionsuffix --include-symbols -o "$PSScriptRoot\artifacts" }
 }

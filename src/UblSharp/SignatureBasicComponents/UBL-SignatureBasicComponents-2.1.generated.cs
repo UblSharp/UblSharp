@@ -8,26 +8,6 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.SignatureBasicComponents
 {
-    using UnqualifiedDataTypes;
+    using UblSharp.UnqualifiedDataTypes;
     
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ReferencedSignatureIDType", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2")]
-    public partial class ReferencedSignatureIDType : IdentifierType
-    {
-        
-        public static implicit operator ReferencedSignatureIDType(string value)
-        {
-             return value == null ? null : new ReferencedSignatureIDType { Value = value };
-        }
-
-        public static implicit operator string(ReferencedSignatureIDType value)
-        {
-             return value.Value;
-        }
-
-    }
 }

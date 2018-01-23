@@ -8,331 +8,15 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.Xades
 {
-    using XmlDigitalSignature;
+    using UblSharp.XmlDigitalSignature;
     
     
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ReferenceInfoType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    public partial class ReferenceInfoType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=0)]
-        public DigestMethodType @__DigestMethod;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DigestValue", Namespace = "http://www.w3.org/2000/09/xmldsig#", DataType="base64Binary", Order=1)]
-        public byte[] @__DigestValue;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
-        public string @__Id;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
-        public string @__URI;
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public DigestMethodType DigestMethod
-        {
-            get
-            {
-                if (__DigestMethod == null) { __DigestMethod = new DigestMethodType(); }
-                return __DigestMethod;
-            }
-            set
-            {
-                __DigestMethod = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public byte[] DigestValue
-        {
-            get
-            {
-                return __DigestValue;
-            }
-            set
-            {
-                __DigestValue = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Id
-        {
-            get
-            {
-                return __Id;
-            }
-            set
-            {
-                __Id = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string URI
-        {
-            get
-            {
-                return __URI;
-            }
-            set
-            {
-                __URI = value;
-            }
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("IncludeType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    public partial class IncludeType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
-        public string @__URI;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("referencedData")]
-        public bool @__referencedData;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool @__referencedDataSpecified;
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string URI
-        {
-            get
-            {
-                return __URI;
-            }
-            set
-            {
-                __URI = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public bool referencedData
-        {
-            get
-            {
-                return __referencedData;
-            }
-            set
-            {
-                __referencedData = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public bool referencedDataSpecified
-        {
-            get
-            {
-                return __referencedDataSpecified;
-            }
-            set
-            {
-                __referencedDataSpecified = value;
-            }
-        }
-
-    }
-    
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherTimeStampType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(XAdESTimeStampType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("GenericTimeStampType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    public abstract partial class GenericTimeStampType
-    {
-        
-        private System.Collections.Generic.List<System.Object> _items;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType))]
-        public object[] @__Items
-        {
-            get
-            {
-                return _items?.ToArray();
-            }
-            set
-            {
-                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
-            }
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=1)]
-        public CanonicalizationMethodType @__CanonicalizationMethod;
-        
-        private System.Collections.Generic.List<System.Object> _items1;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType), Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType))]
-        public object[] @__Items1
-        {
-            get
-            {
-                return _items1?.ToArray();
-            }
-            set
-            {
-                _items1 = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
-            }
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
-        public string @__Id;
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<System.Object> Items
-        {
-            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
-            set { _items = value; }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<System.Object> Items1
-        {
-            get { return _items1 ?? (_items1 = new System.Collections.Generic.List<System.Object>()); }
-            set { _items1 = value; }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public CanonicalizationMethodType CanonicalizationMethod
-        {
-            get
-            {
-                if (__CanonicalizationMethod == null) { __CanonicalizationMethod = new CanonicalizationMethodType(); }
-                return __CanonicalizationMethod;
-            }
-            set
-            {
-                __CanonicalizationMethod = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Id
-        {
-            get
-            {
-                return __Id;
-            }
-            set
-            {
-                __Id = value;
-            }
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("EncapsulatedPKIDataType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    public partial class EncapsulatedPKIDataType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
-        public string @__Id;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("Encoding", DataType="anyURI")]
-        public string @__Encoding;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
-        public byte[] @__Value;
-        
-        public static implicit operator EncapsulatedPKIDataType(byte[] value)
-        {
-             return new EncapsulatedPKIDataType { Value = value };
-        }
-
-        public static implicit operator byte[](EncapsulatedPKIDataType value)
-        {
-             return value.Value;
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Id
-        {
-            get
-            {
-                return __Id;
-            }
-            set
-            {
-                __Id = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Encoding
-        {
-            get
-            {
-                return __Encoding;
-            }
-            set
-            {
-                __Encoding = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public byte[] Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
-    
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("AnyType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlTypeAttribute("Any", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("Any", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
     public partial class AnyType
     {
         
@@ -450,7 +134,516 @@ namespace UblSharp.Xades
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("OtherTimeStampType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlTypeAttribute("ObjectIdentifier", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("ObjectIdentifier", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class ObjectIdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Identifier", Order=0)]
+        public Xades.IdentifierType @__Identifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Description", Order=1)]
+        public string @__Description;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentationReferences", Order=2)]
+        public DocumentationReferencesType @__DocumentationReferences;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public Xades.IdentifierType Identifier
+        {
+            get
+            {
+                if (__Identifier == null) { __Identifier = new Xades.IdentifierType(); }
+                return __Identifier;
+            }
+            set
+            {
+                __Identifier = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Description
+        {
+            get
+            {
+                return __Description;
+            }
+            set
+            {
+                __Description = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DocumentationReferencesType DocumentationReferences
+        {
+            get
+            {
+                if (__DocumentationReferences == null) { __DocumentationReferences = new DocumentationReferencesType(); }
+                return __DocumentationReferences;
+            }
+            set
+            {
+                __DocumentationReferences = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("IdentifierType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class IdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Qualifier")]
+        public QualifierType @__Qualifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool @__QualifierSpecified;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="anyURI")]
+        public string @__Value;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public QualifierType Qualifier
+        {
+            get
+            {                
+                return __Qualifier;
+            }
+            set
+            {
+                __Qualifier = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public bool QualifierSpecified
+        {
+            get
+            {
+                return __QualifierSpecified;
+            }
+            set
+            {
+                __QualifierSpecified = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("UblSharp.Generator", "1.0.0.0")]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    public enum QualifierType
+    {
+        
+        OIDAsURI,
+        
+        OIDAsURN,
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("DocumentationReferencesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class DocumentationReferencesType
+    {
+        
+        private System.Collections.Generic.List<System.String> _documentationReference;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentationReference", DataType="anyURI", Order=0)]
+        public string[] @__DocumentationReference
+        {
+            get
+            {
+                return _documentationReference?.ToArray();
+            }
+            set
+            {
+                _documentationReference = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.String> DocumentationReference
+        {
+            get { return _documentationReference ?? (_documentationReference = new System.Collections.Generic.List<System.String>()); }
+            set { _documentationReference = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("EncapsulatedPKIData", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("EncapsulatedPKIData", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class EncapsulatedPKIDataType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Encoding", DataType="anyURI")]
+        public string @__Encoding;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        public byte[] @__Value;
+        
+        public static implicit operator EncapsulatedPKIDataType(byte[] value)
+        {
+             return new EncapsulatedPKIDataType { Value = value };
+        }
+
+        public static implicit operator byte[](EncapsulatedPKIDataType value)
+        {
+             return value.Value;
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Encoding
+        {
+            get
+            {
+                return __Encoding;
+            }
+            set
+            {
+                __Encoding = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public byte[] Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("Include", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("Include", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class IncludeType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("referencedData")]
+        public bool @__referencedData;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool @__referencedDataSpecified;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public bool referencedData
+        {
+            get
+            {
+                return __referencedData;
+            }
+            set
+            {
+                __referencedData = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public bool referencedDataSpecified
+        {
+            get
+            {
+                return __referencedDataSpecified;
+            }
+            set
+            {
+                __referencedDataSpecified = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("ReferenceInfo", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("ReferenceInfo", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class ReferenceInfoType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=0)]
+        public DigestMethodType @__DigestMethod;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestValue", Namespace = "http://www.w3.org/2000/09/xmldsig#", DataType="base64Binary", Order=1)]
+        public byte[] @__DigestValue;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestMethodType DigestMethod
+        {
+            get
+            {
+                if (__DigestMethod == null) { __DigestMethod = new DigestMethodType(); }
+                return __DigestMethod;
+            }
+            set
+            {
+                __DigestMethod = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public byte[] DigestValue
+        {
+            get
+            {
+                return __DigestValue;
+            }
+            set
+            {
+                __DigestValue = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("XAdESTimeStamp", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("XAdESTimeStamp", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class XAdESTimeStampType : GenericTimeStampType
+    {
+    }
+    
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OtherTimeStampType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(XAdESTimeStampType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("GenericTimeStampType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public abstract partial class GenericTimeStampType
+    {
+        
+        private System.Collections.Generic.List<System.Object> _items;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType))]
+        public object[] @__Items
+        {
+            get
+            {
+                return _items?.ToArray();
+            }
+            set
+            {
+                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CanonicalizationMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=1)]
+        public CanonicalizationMethodType @__CanonicalizationMethod;
+        
+        private System.Collections.Generic.List<System.Object> _items1;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType))]
+        public object[] @__Items1
+        {
+            get
+            {
+                return _items1?.ToArray();
+            }
+            set
+            {
+                _items1 = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items
+        {
+            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
+            set { _items = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items1
+        {
+            get { return _items1 ?? (_items1 = new System.Collections.Generic.List<System.Object>()); }
+            set { _items1 = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public CanonicalizationMethodType CanonicalizationMethod
+        {
+            get
+            {
+                if (__CanonicalizationMethod == null) { __CanonicalizationMethod = new CanonicalizationMethodType(); }
+                return __CanonicalizationMethod;
+            }
+            set
+            {
+                __CanonicalizationMethod = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OtherTimeStamp", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("OtherTimeStamp", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
     public partial class OtherTimeStampType : GenericTimeStampType
     {
     }
@@ -459,13 +652,1635 @@ namespace UblSharp.Xades
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("RevocationValuesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlTypeAttribute("QualifyingProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("QualifyingProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class QualifyingPropertiesType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignedProperties", Order=0)]
+        public SignedPropertiesType @__SignedProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("UnsignedProperties", Order=1)]
+        public UnsignedPropertiesType @__UnsignedProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Target", DataType="anyURI")]
+        public string @__Target;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignedPropertiesType SignedProperties
+        {
+            get
+            {
+                if (__SignedProperties == null) { __SignedProperties = new SignedPropertiesType(); }
+                return __SignedProperties;
+            }
+            set
+            {
+                __SignedProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public UnsignedPropertiesType UnsignedProperties
+        {
+            get
+            {
+                if (__UnsignedProperties == null) { __UnsignedProperties = new UnsignedPropertiesType(); }
+                return __UnsignedProperties;
+            }
+            set
+            {
+                __UnsignedProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Target
+        {
+            get
+            {
+                return __Target;
+            }
+            set
+            {
+                __Target = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignedProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignedProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignedPropertiesType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignedSignatureProperties", Order=0)]
+        public SignedSignaturePropertiesType @__SignedSignatureProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignedDataObjectProperties", Order=1)]
+        public SignedDataObjectPropertiesType @__SignedDataObjectProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignedSignaturePropertiesType SignedSignatureProperties
+        {
+            get
+            {
+                if (__SignedSignatureProperties == null) { __SignedSignatureProperties = new SignedSignaturePropertiesType(); }
+                return __SignedSignatureProperties;
+            }
+            set
+            {
+                __SignedSignatureProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignedDataObjectPropertiesType SignedDataObjectProperties
+        {
+            get
+            {
+                if (__SignedDataObjectProperties == null) { __SignedDataObjectProperties = new SignedDataObjectPropertiesType(); }
+                return __SignedDataObjectProperties;
+            }
+            set
+            {
+                __SignedDataObjectProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignedSignatureProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignedSignatureProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignedSignaturePropertiesType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SigningTime", Order=0)]
+        public System.DateTime @__SigningTime;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool @__SigningTimeSpecified;
+        
+        private System.Collections.Generic.List<CertIDType> _signingCertificate;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("SigningCertificate", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Cert", IsNullable=false)]
+        public CertIDType[] @__SigningCertificate
+        {
+            get
+            {
+                return _signingCertificate?.ToArray();
+            }
+            set
+            {
+                _signingCertificate = value == null ? null : new System.Collections.Generic.List<CertIDType>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyIdentifier", Order=2)]
+        public SignaturePolicyIdentifierType @__SignaturePolicyIdentifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureProductionPlace", Order=3)]
+        public SignatureProductionPlaceType @__SignatureProductionPlace;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignerRole", Order=4)]
+        public SignerRoleType @__SignerRole;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CertIDType> SigningCertificate
+        {
+            get { return _signingCertificate ?? (_signingCertificate = new System.Collections.Generic.List<CertIDType>()); }
+            set { _signingCertificate = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.DateTime SigningTime
+        {
+            get
+            {
+                return __SigningTime;
+            }
+            set
+            {
+                __SigningTime = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public bool SigningTimeSpecified
+        {
+            get
+            {
+                return __SigningTimeSpecified;
+            }
+            set
+            {
+                __SigningTimeSpecified = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignaturePolicyIdentifierType SignaturePolicyIdentifier
+        {
+            get
+            {
+                if (__SignaturePolicyIdentifier == null) { __SignaturePolicyIdentifier = new SignaturePolicyIdentifierType(); }
+                return __SignaturePolicyIdentifier;
+            }
+            set
+            {
+                __SignaturePolicyIdentifier = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignatureProductionPlaceType SignatureProductionPlace
+        {
+            get
+            {
+                if (__SignatureProductionPlace == null) { __SignatureProductionPlace = new SignatureProductionPlaceType(); }
+                return __SignatureProductionPlace;
+            }
+            set
+            {
+                __SignatureProductionPlace = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public SignerRoleType SignerRole
+        {
+            get
+            {
+                if (__SignerRole == null) { __SignerRole = new SignerRoleType(); }
+                return __SignerRole;
+            }
+            set
+            {
+                __SignerRole = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CertIDType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CertIDType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CertDigest", Order=0)]
+        public DigestAlgAndValueType @__CertDigest;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IssuerSerial", Order=1)]
+        public X509IssuerSerialType @__IssuerSerial;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestAlgAndValueType CertDigest
+        {
+            get
+            {
+                if (__CertDigest == null) { __CertDigest = new DigestAlgAndValueType(); }
+                return __CertDigest;
+            }
+            set
+            {
+                __CertDigest = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public X509IssuerSerialType IssuerSerial
+        {
+            get
+            {
+                if (__IssuerSerial == null) { __IssuerSerial = new X509IssuerSerialType(); }
+                return __IssuerSerial;
+            }
+            set
+            {
+                __IssuerSerial = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("DigestAlgAndValueType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class DigestAlgAndValueType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=0)]
+        public DigestMethodType @__DigestMethod;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestValue", Namespace = "http://www.w3.org/2000/09/xmldsig#", DataType="base64Binary", Order=1)]
+        public byte[] @__DigestValue;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestMethodType DigestMethod
+        {
+            get
+            {
+                if (__DigestMethod == null) { __DigestMethod = new DigestMethodType(); }
+                return __DigestMethod;
+            }
+            set
+            {
+                __DigestMethod = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public byte[] DigestValue
+        {
+            get
+            {
+                return __DigestValue;
+            }
+            set
+            {
+                __DigestValue = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignaturePolicyIdentifier", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignaturePolicyIdentifier", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignaturePolicyIdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyId", typeof(SignaturePolicyIdType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyImplied", typeof(object))]
+        public object @__Item;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public object Item
+        {
+            get
+            {
+                return __Item;
+            }
+            set
+            {
+                __Item = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignaturePolicyIdType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class SignaturePolicyIdType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SigPolicyId", Order=0)]
+        public ObjectIdentifierType @__SigPolicyId;
+        
+        private System.Collections.Generic.List<TransformType> _transforms;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("Transforms", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
+        public TransformType[] @__Transforms
+        {
+            get
+            {
+                return _transforms?.ToArray();
+            }
+            set
+            {
+                _transforms = value == null ? null : new System.Collections.Generic.List<TransformType>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SigPolicyHash", Order=2)]
+        public DigestAlgAndValueType @__SigPolicyHash;
+        
+        private System.Collections.Generic.List<AnyType> _sigPolicyQualifiers;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("SigPolicyQualifiers", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=3)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("SigPolicyQualifier", IsNullable=false)]
+        public AnyType[] @__SigPolicyQualifiers
+        {
+            get
+            {
+                return _sigPolicyQualifiers?.ToArray();
+            }
+            set
+            {
+                _sigPolicyQualifiers = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<TransformType> Transforms
+        {
+            get { return _transforms ?? (_transforms = new System.Collections.Generic.List<TransformType>()); }
+            set { _transforms = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> SigPolicyQualifiers
+        {
+            get { return _sigPolicyQualifiers ?? (_sigPolicyQualifiers = new System.Collections.Generic.List<AnyType>()); }
+            set { _sigPolicyQualifiers = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ObjectIdentifierType SigPolicyId
+        {
+            get
+            {
+                if (__SigPolicyId == null) { __SigPolicyId = new ObjectIdentifierType(); }
+                return __SigPolicyId;
+            }
+            set
+            {
+                __SigPolicyId = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestAlgAndValueType SigPolicyHash
+        {
+            get
+            {
+                if (__SigPolicyHash == null) { __SigPolicyHash = new DigestAlgAndValueType(); }
+                return __SigPolicyHash;
+            }
+            set
+            {
+                __SigPolicyHash = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignatureProductionPlace", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignatureProductionPlace", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignatureProductionPlaceType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("City", Order=0)]
+        public string @__City;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("StateOrProvince", Order=1)]
+        public string @__StateOrProvince;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("PostalCode", Order=2)]
+        public string @__PostalCode;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CountryName", Order=3)]
+        public string @__CountryName;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string City
+        {
+            get
+            {
+                return __City;
+            }
+            set
+            {
+                __City = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string StateOrProvince
+        {
+            get
+            {
+                return __StateOrProvince;
+            }
+            set
+            {
+                __StateOrProvince = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string PostalCode
+        {
+            get
+            {
+                return __PostalCode;
+            }
+            set
+            {
+                __PostalCode = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string CountryName
+        {
+            get
+            {
+                return __CountryName;
+            }
+            set
+            {
+                __CountryName = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignerRole", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignerRole", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignerRoleType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _claimedRoles;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("ClaimedRoles", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ClaimedRole", IsNullable=false)]
+        public AnyType[] @__ClaimedRoles
+        {
+            get
+            {
+                return _claimedRoles?.ToArray();
+            }
+            set
+            {
+                _claimedRoles = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<EncapsulatedPKIDataType> _certifiedRoles;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("CertifiedRoles", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("CertifiedRole", IsNullable=false)]
+        public EncapsulatedPKIDataType[] @__CertifiedRoles
+        {
+            get
+            {
+                return _certifiedRoles?.ToArray();
+            }
+            set
+            {
+                _certifiedRoles = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> ClaimedRoles
+        {
+            get { return _claimedRoles ?? (_claimedRoles = new System.Collections.Generic.List<AnyType>()); }
+            set { _claimedRoles = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> CertifiedRoles
+        {
+            get { return _certifiedRoles ?? (_certifiedRoles = new System.Collections.Generic.List<EncapsulatedPKIDataType>()); }
+            set { _certifiedRoles = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SignedDataObjectProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SignedDataObjectProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SignedDataObjectPropertiesType
+    {
+        
+        private System.Collections.Generic.List<DataObjectFormatType> _dataObjectFormat;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DataObjectFormat", Order=0)]
+        public DataObjectFormatType[] @__DataObjectFormat
+        {
+            get
+            {
+                return _dataObjectFormat?.ToArray();
+            }
+            set
+            {
+                _dataObjectFormat = value == null ? null : new System.Collections.Generic.List<DataObjectFormatType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<CommitmentTypeIndicationType> _commitmentTypeIndication;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CommitmentTypeIndication", Order=1)]
+        public CommitmentTypeIndicationType[] @__CommitmentTypeIndication
+        {
+            get
+            {
+                return _commitmentTypeIndication?.ToArray();
+            }
+            set
+            {
+                _commitmentTypeIndication = value == null ? null : new System.Collections.Generic.List<CommitmentTypeIndicationType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<XAdESTimeStampType> _allDataObjectsTimeStamp;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("AllDataObjectsTimeStamp", Order=2)]
+        public XAdESTimeStampType[] @__AllDataObjectsTimeStamp
+        {
+            get
+            {
+                return _allDataObjectsTimeStamp?.ToArray();
+            }
+            set
+            {
+                _allDataObjectsTimeStamp = value == null ? null : new System.Collections.Generic.List<XAdESTimeStampType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<XAdESTimeStampType> _individualDataObjectsTimeStamp;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IndividualDataObjectsTimeStamp", Order=3)]
+        public XAdESTimeStampType[] @__IndividualDataObjectsTimeStamp
+        {
+            get
+            {
+                return _individualDataObjectsTimeStamp?.ToArray();
+            }
+            set
+            {
+                _individualDataObjectsTimeStamp = value == null ? null : new System.Collections.Generic.List<XAdESTimeStampType>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DataObjectFormatType> DataObjectFormat
+        {
+            get { return _dataObjectFormat ?? (_dataObjectFormat = new System.Collections.Generic.List<DataObjectFormatType>()); }
+            set { _dataObjectFormat = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CommitmentTypeIndicationType> CommitmentTypeIndication
+        {
+            get { return _commitmentTypeIndication ?? (_commitmentTypeIndication = new System.Collections.Generic.List<CommitmentTypeIndicationType>()); }
+            set { _commitmentTypeIndication = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<XAdESTimeStampType> AllDataObjectsTimeStamp
+        {
+            get { return _allDataObjectsTimeStamp ?? (_allDataObjectsTimeStamp = new System.Collections.Generic.List<XAdESTimeStampType>()); }
+            set { _allDataObjectsTimeStamp = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<XAdESTimeStampType> IndividualDataObjectsTimeStamp
+        {
+            get { return _individualDataObjectsTimeStamp ?? (_individualDataObjectsTimeStamp = new System.Collections.Generic.List<XAdESTimeStampType>()); }
+            set { _individualDataObjectsTimeStamp = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("DataObjectFormat", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("DataObjectFormat", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class DataObjectFormatType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Description", Order=0)]
+        public string @__Description;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ObjectIdentifier", Order=1)]
+        public ObjectIdentifierType @__ObjectIdentifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("MimeType", Order=2)]
+        public string @__MimeType;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Encoding", DataType="anyURI", Order=3)]
+        public string @__Encoding;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("ObjectReference", DataType="anyURI")]
+        public string @__ObjectReference;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Description
+        {
+            get
+            {
+                return __Description;
+            }
+            set
+            {
+                __Description = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ObjectIdentifierType ObjectIdentifier
+        {
+            get
+            {
+                if (__ObjectIdentifier == null) { __ObjectIdentifier = new ObjectIdentifierType(); }
+                return __ObjectIdentifier;
+            }
+            set
+            {
+                __ObjectIdentifier = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string MimeType
+        {
+            get
+            {
+                return __MimeType;
+            }
+            set
+            {
+                __MimeType = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Encoding
+        {
+            get
+            {
+                return __Encoding;
+            }
+            set
+            {
+                __Encoding = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string ObjectReference
+        {
+            get
+            {
+                return __ObjectReference;
+            }
+            set
+            {
+                __ObjectReference = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CommitmentTypeIndication", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("CommitmentTypeIndication", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CommitmentTypeIndicationType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CommitmentTypeId", Order=0)]
+        public ObjectIdentifierType @__CommitmentTypeId;
+        
+        private System.Collections.Generic.List<System.Object> _items;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("AllSignedDataObjects", typeof(object), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ObjectReference", typeof(string), DataType="anyURI")]
+        public object[] @__Items
+        {
+            get
+            {
+                return _items?.ToArray();
+            }
+            set
+            {
+                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<AnyType> _commitmentTypeQualifiers;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("CommitmentTypeQualifiers", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("CommitmentTypeQualifier", IsNullable=false)]
+        public AnyType[] @__CommitmentTypeQualifiers
+        {
+            get
+            {
+                return _commitmentTypeQualifiers?.ToArray();
+            }
+            set
+            {
+                _commitmentTypeQualifiers = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items
+        {
+            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
+            set { _items = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> CommitmentTypeQualifiers
+        {
+            get { return _commitmentTypeQualifiers ?? (_commitmentTypeQualifiers = new System.Collections.Generic.List<AnyType>()); }
+            set { _commitmentTypeQualifiers = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ObjectIdentifierType CommitmentTypeId
+        {
+            get
+            {
+                if (__CommitmentTypeId == null) { __CommitmentTypeId = new ObjectIdentifierType(); }
+                return __CommitmentTypeId;
+            }
+            set
+            {
+                __CommitmentTypeId = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("UnsignedProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("UnsignedProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class UnsignedPropertiesType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("UnsignedSignatureProperties", Order=0)]
+        public UnsignedSignaturePropertiesType @__UnsignedSignatureProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("UnsignedDataObjectProperties", Order=1)]
+        public UnsignedDataObjectPropertiesType @__UnsignedDataObjectProperties;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public UnsignedSignaturePropertiesType UnsignedSignatureProperties
+        {
+            get
+            {
+                if (__UnsignedSignatureProperties == null) { __UnsignedSignatureProperties = new UnsignedSignaturePropertiesType(); }
+                return __UnsignedSignatureProperties;
+            }
+            set
+            {
+                __UnsignedSignatureProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public UnsignedDataObjectPropertiesType UnsignedDataObjectProperties
+        {
+            get
+            {
+                if (__UnsignedDataObjectProperties == null) { __UnsignedDataObjectProperties = new UnsignedDataObjectPropertiesType(); }
+                return __UnsignedDataObjectProperties;
+            }
+            set
+            {
+                __UnsignedDataObjectProperties = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("UnsignedSignatureProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("UnsignedSignatureProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class UnsignedSignaturePropertiesType
+    {
+        
+        private System.Collections.Generic.List<System.Object> _items;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ArchiveTimeStamp", typeof(XAdESTimeStampType))]
+        [System.Xml.Serialization.XmlElementAttribute("AttrAuthoritiesCertValues", typeof(CertificateValuesType))]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeCertificateRefs", typeof(CompleteCertificateRefsType))]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationRefs", typeof(CompleteRevocationRefsType))]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationValues", typeof(RevocationValuesType))]
+        [System.Xml.Serialization.XmlElementAttribute("CertificateValues", typeof(CertificateValuesType))]
+        [System.Xml.Serialization.XmlElementAttribute("CompleteCertificateRefs", typeof(CompleteCertificateRefsType))]
+        [System.Xml.Serialization.XmlElementAttribute("CompleteRevocationRefs", typeof(CompleteRevocationRefsType))]
+        [System.Xml.Serialization.XmlElementAttribute("CounterSignature", typeof(CounterSignatureType))]
+        [System.Xml.Serialization.XmlElementAttribute("RefsOnlyTimeStamp", typeof(XAdESTimeStampType))]
+        [System.Xml.Serialization.XmlElementAttribute("RevocationValues", typeof(RevocationValuesType))]
+        [System.Xml.Serialization.XmlElementAttribute("SigAndRefsTimeStamp", typeof(XAdESTimeStampType))]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureTimeStamp", typeof(XAdESTimeStampType))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("__ItemsElementName")]
+        public object[] @__Items
+        {
+            get
+            {
+                return _items?.ToArray();
+            }
+            set
+            {
+                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<UnsignedSignaturePropertiesTypeItem> _itemsElementName;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public UnsignedSignaturePropertiesTypeItem[] @__ItemsElementName
+        {
+            get
+            {
+                return _itemsElementName?.ToArray();
+            }
+            set
+            {
+                _itemsElementName = value == null ? null : new System.Collections.Generic.List<UnsignedSignaturePropertiesTypeItem>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items
+        {
+            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
+            set { _items = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<UnsignedSignaturePropertiesTypeItem> ItemsElementName
+        {
+            get { return _itemsElementName ?? (_itemsElementName = new System.Collections.Generic.List<UnsignedSignaturePropertiesTypeItem>()); }
+            set { _itemsElementName = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CertificateValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("CertificateValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CertificateValuesType
+    {
+        
+        private System.Collections.Generic.List<System.Object> _items;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType))]
+        public object[] @__Items
+        {
+            get
+            {
+                return _items?.ToArray();
+            }
+            set
+            {
+                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.Object> Items
+        {
+            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
+            set { _items = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CompleteCertificateRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("CompleteCertificateRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CompleteCertificateRefsType
+    {
+        
+        private System.Collections.Generic.List<CertIDType> _certRefs;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("CertRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Cert", IsNullable=false)]
+        public CertIDType[] @__CertRefs
+        {
+            get
+            {
+                return _certRefs?.ToArray();
+            }
+            set
+            {
+                _certRefs = value == null ? null : new System.Collections.Generic.List<CertIDType>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CertIDType> CertRefs
+        {
+            get { return _certRefs ?? (_certRefs = new System.Collections.Generic.List<CertIDType>()); }
+            set { _certRefs = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CompleteRevocationRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("CompleteRevocationRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CompleteRevocationRefsType
+    {
+        
+        private System.Collections.Generic.List<CRLRefType> _cRLRefs;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("CRLRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("CRLRef", IsNullable=false)]
+        public CRLRefType[] @__CRLRefs
+        {
+            get
+            {
+                return _cRLRefs?.ToArray();
+            }
+            set
+            {
+                _cRLRefs = value == null ? null : new System.Collections.Generic.List<CRLRefType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<OCSPRefType> _oCSPRefs;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("OCSPRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("OCSPRef", IsNullable=false)]
+        public OCSPRefType[] @__OCSPRefs
+        {
+            get
+            {
+                return _oCSPRefs?.ToArray();
+            }
+            set
+            {
+                _oCSPRefs = value == null ? null : new System.Collections.Generic.List<OCSPRefType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<AnyType> _otherRefs;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("OtherRefs", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("OtherRef", IsNullable=false)]
+        public AnyType[] @__OtherRefs
+        {
+            get
+            {
+                return _otherRefs?.ToArray();
+            }
+            set
+            {
+                _otherRefs = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CRLRefType> CRLRefs
+        {
+            get { return _cRLRefs ?? (_cRLRefs = new System.Collections.Generic.List<CRLRefType>()); }
+            set { _cRLRefs = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<OCSPRefType> OCSPRefs
+        {
+            get { return _oCSPRefs ?? (_oCSPRefs = new System.Collections.Generic.List<OCSPRefType>()); }
+            set { _oCSPRefs = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> OtherRefs
+        {
+            get { return _otherRefs ?? (_otherRefs = new System.Collections.Generic.List<AnyType>()); }
+            set { _otherRefs = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CRLRefType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CRLRefType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestAlgAndValue", Order=0)]
+        public DigestAlgAndValueType @__DigestAlgAndValue;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CRLIdentifier", Order=1)]
+        public CRLIdentifierType @__CRLIdentifier;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestAlgAndValueType DigestAlgAndValue
+        {
+            get
+            {
+                if (__DigestAlgAndValue == null) { __DigestAlgAndValue = new DigestAlgAndValueType(); }
+                return __DigestAlgAndValue;
+            }
+            set
+            {
+                __DigestAlgAndValue = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public CRLIdentifierType CRLIdentifier
+        {
+            get
+            {
+                if (__CRLIdentifier == null) { __CRLIdentifier = new CRLIdentifierType(); }
+                return __CRLIdentifier;
+            }
+            set
+            {
+                __CRLIdentifier = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CRLIdentifierType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CRLIdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Issuer", Order=0)]
+        public string @__Issuer;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("IssueTime", Order=1)]
+        public System.DateTime @__IssueTime;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Number", DataType="integer", Order=2)]
+        public string @__Number;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Issuer
+        {
+            get
+            {
+                return __Issuer;
+            }
+            set
+            {
+                __Issuer = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.DateTime IssueTime
+        {
+            get
+            {
+                return __IssueTime;
+            }
+            set
+            {
+                __IssueTime = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Number
+        {
+            get
+            {
+                return __Number;
+            }
+            set
+            {
+                __Number = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OCSPRefType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OCSPRefType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("OCSPIdentifier", Order=0)]
+        public OCSPIdentifierType @__OCSPIdentifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("DigestAlgAndValue", Order=1)]
+        public DigestAlgAndValueType @__DigestAlgAndValue;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public OCSPIdentifierType OCSPIdentifier
+        {
+            get
+            {
+                if (__OCSPIdentifier == null) { __OCSPIdentifier = new OCSPIdentifierType(); }
+                return __OCSPIdentifier;
+            }
+            set
+            {
+                __OCSPIdentifier = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DigestAlgAndValueType DigestAlgAndValue
+        {
+            get
+            {
+                if (__DigestAlgAndValue == null) { __DigestAlgAndValue = new DigestAlgAndValueType(); }
+                return __DigestAlgAndValue;
+            }
+            set
+            {
+                __DigestAlgAndValue = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OCSPIdentifierType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OCSPIdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ResponderID", Order=0)]
+        public ResponderIDType @__ResponderID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProducedAt", Order=1)]
+        public System.DateTime @__ProducedAt;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public ResponderIDType ResponderID
+        {
+            get
+            {
+                if (__ResponderID == null) { __ResponderID = new ResponderIDType(); }
+                return __ResponderID;
+            }
+            set
+            {
+                __ResponderID = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.DateTime ProducedAt
+        {
+            get
+            {
+                return __ProducedAt;
+            }
+            set
+            {
+                __ProducedAt = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("ResponderIDType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class ResponderIDType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ByKey", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ByName", typeof(string))]
+        public object @__Item;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public object Item
+        {
+            get
+            {
+                return __Item;
+            }
+            set
+            {
+                __Item = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("RevocationValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("RevocationValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
     public partial class RevocationValuesType
     {
         
         private System.Collections.Generic.List<EncapsulatedPKIDataType> _cRLValues;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("CRLValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedCRLValue", IsNullable=false)]
         public EncapsulatedPKIDataType[] @__CRLValues
         {
@@ -482,6 +2297,7 @@ namespace UblSharp.Xades
         private System.Collections.Generic.List<EncapsulatedPKIDataType> _oCSPValues;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("OCSPValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
         [System.Xml.Serialization.XmlArrayItemAttribute("EncapsulatedOCSPValue", IsNullable=false)]
         public EncapsulatedPKIDataType[] @__OCSPValues
         {
@@ -498,6 +2314,7 @@ namespace UblSharp.Xades
         private System.Collections.Generic.List<AnyType> _otherValues;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("OtherValues", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=2)]
         [System.Xml.Serialization.XmlArrayItemAttribute("OtherValue", IsNullable=false)]
         public AnyType[] @__OtherValues
         {
@@ -558,24 +2375,91 @@ namespace UblSharp.Xades
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CertificateValuesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    public partial class CertificateValuesType
+    [System.Xml.Serialization.XmlTypeAttribute("CounterSignature", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("CounterSignature", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CounterSignatureType
     {
         
-        private System.Collections.Generic.List<System.Object> _items;
-        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType))]
-        public object[] @__Items
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#", Order=0)]
+        public XmlSignatureType @__Signature;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public XmlSignatureType Signature
         {
             get
             {
-                return _items?.ToArray();
+                if (__Signature == null) { __Signature = new XmlSignatureType(); }
+                return __Signature;
             }
             set
             {
-                _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
+                __Signature = value;
+            }
+        }
+
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("UblSharp.Generator", "1.0.0.0")]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IncludeInSchema=false)]
+    public enum UnsignedSignaturePropertiesTypeItem
+    {
+        
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
+        
+        ArchiveTimeStamp,
+        
+        AttrAuthoritiesCertValues,
+        
+        AttributeCertificateRefs,
+        
+        AttributeRevocationRefs,
+        
+        AttributeRevocationValues,
+        
+        CertificateValues,
+        
+        CompleteCertificateRefs,
+        
+        CompleteRevocationRefs,
+        
+        CounterSignature,
+        
+        RefsOnlyTimeStamp,
+        
+        RevocationValues,
+        
+        SigAndRefsTimeStamp,
+        
+        SignatureTimeStamp,
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("UnsignedDataObjectProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("UnsignedDataObjectProperties", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class UnsignedDataObjectPropertiesType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _unsignedDataObjectProperty;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("UnsignedDataObjectProperty", Order=0)]
+        public AnyType[] @__UnsignedDataObjectProperty
+        {
+            get
+            {
+                return _unsignedDataObjectProperty?.ToArray();
+            }
+            set
+            {
+                _unsignedDataObjectProperty = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
             }
         }
         
@@ -584,10 +2468,10 @@ namespace UblSharp.Xades
         public string @__Id;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public System.Collections.Generic.List<System.Object> Items
+        public System.Collections.Generic.List<AnyType> UnsignedDataObjectProperty
         {
-            get { return _items ?? (_items = new System.Collections.Generic.List<System.Object>()); }
-            set { _items = value; }
+            get { return _unsignedDataObjectProperty ?? (_unsignedDataObjectProperty = new System.Collections.Generic.List<AnyType>()); }
+            set { _unsignedDataObjectProperty = value; }
         }
 
         
@@ -610,9 +2494,553 @@ namespace UblSharp.Xades
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ArchiveTimeStampV2", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
-    [System.Xml.Serialization.XmlRootAttribute("ArchiveTimeStampV2", Namespace = "http://uri.etsi.org/01903/v1.4.1#", IsNullable=false)]
-    public partial class XAdESTimeStampType : GenericTimeStampType
+    [System.Xml.Serialization.XmlTypeAttribute("QualifyingPropertiesReference", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("QualifyingPropertiesReference", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class QualifyingPropertiesReferenceType
     {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("URI", DataType="anyURI")]
+        public string @__URI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("Id", DataType="ID")]
+        public string @__Id;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string URI
+        {
+            get
+            {
+                return __URI;
+            }
+            set
+            {
+                __URI = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Id
+        {
+            get
+            {
+                return __Id;
+            }
+            set
+            {
+                __Id = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SigningCertificate", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SigningCertificate", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class CertIDListType
+    {
+        
+        private System.Collections.Generic.List<CertIDType> _cert;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Cert", Order=0)]
+        public CertIDType[] @__Cert
+        {
+            get
+            {
+                return _cert?.ToArray();
+            }
+            set
+            {
+                _cert = value == null ? null : new System.Collections.Generic.List<CertIDType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CertIDType> Cert
+        {
+            get { return _cert ?? (_cert = new System.Collections.Generic.List<CertIDType>()); }
+            set { _cert = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SPUserNotice", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute("SPUserNotice", Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=false)]
+    public partial class SPUserNoticeType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("NoticeRef", Order=0)]
+        public NoticeReferenceType @__NoticeRef;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ExplicitText", Order=1)]
+        public string @__ExplicitText;
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public NoticeReferenceType NoticeRef
+        {
+            get
+            {
+                if (__NoticeRef == null) { __NoticeRef = new NoticeReferenceType(); }
+                return __NoticeRef;
+            }
+            set
+            {
+                __NoticeRef = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string ExplicitText
+        {
+            get
+            {
+                return __ExplicitText;
+            }
+            set
+            {
+                __ExplicitText = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("NoticeReferenceType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class NoticeReferenceType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("Organization", Order=0)]
+        public string @__Organization;
+        
+        private System.Collections.Generic.List<System.String> _noticeNumbers;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlArrayAttribute("NoticeNumbers", Namespace = "http://uri.etsi.org/01903/v1.3.2#", Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("int", DataType="integer", IsNullable=false)]
+        public string[] @__NoticeNumbers
+        {
+            get
+            {
+                return _noticeNumbers?.ToArray();
+            }
+            set
+            {
+                _noticeNumbers = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.String> NoticeNumbers
+        {
+            get { return _noticeNumbers ?? (_noticeNumbers = new System.Collections.Generic.List<System.String>()); }
+            set { _noticeNumbers = value; }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Organization
+        {
+            get
+            {
+                return __Organization;
+            }
+            set
+            {
+                __Organization = value;
+            }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("SigPolicyQualifiersListType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class SigPolicyQualifiersListType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _sigPolicyQualifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("SigPolicyQualifier", Order=0)]
+        public AnyType[] @__SigPolicyQualifier
+        {
+            get
+            {
+                return _sigPolicyQualifier?.ToArray();
+            }
+            set
+            {
+                _sigPolicyQualifier = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> SigPolicyQualifier
+        {
+            get { return _sigPolicyQualifier ?? (_sigPolicyQualifier = new System.Collections.Generic.List<AnyType>()); }
+            set { _sigPolicyQualifier = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("IntegerListType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class IntegerListType
+    {
+        
+        private System.Collections.Generic.List<System.String> _int;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("int", DataType="integer", Order=0)]
+        public string[] @__Int
+        {
+            get
+            {
+                return _int?.ToArray();
+            }
+            set
+            {
+                _int = value == null ? null : new System.Collections.Generic.List<System.String>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<System.String> Int
+        {
+            get { return _int ?? (_int = new System.Collections.Generic.List<System.String>()); }
+            set { _int = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CommitmentTypeQualifiersListType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CommitmentTypeQualifiersListType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _commitmentTypeQualifier;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CommitmentTypeQualifier", Order=0)]
+        public AnyType[] @__CommitmentTypeQualifier
+        {
+            get
+            {
+                return _commitmentTypeQualifier?.ToArray();
+            }
+            set
+            {
+                _commitmentTypeQualifier = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> CommitmentTypeQualifier
+        {
+            get { return _commitmentTypeQualifier ?? (_commitmentTypeQualifier = new System.Collections.Generic.List<AnyType>()); }
+            set { _commitmentTypeQualifier = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("ClaimedRolesListType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class ClaimedRolesListType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _claimedRole;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ClaimedRole", Order=0)]
+        public AnyType[] @__ClaimedRole
+        {
+            get
+            {
+                return _claimedRole?.ToArray();
+            }
+            set
+            {
+                _claimedRole = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> ClaimedRole
+        {
+            get { return _claimedRole ?? (_claimedRole = new System.Collections.Generic.List<AnyType>()); }
+            set { _claimedRole = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CertifiedRolesListType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CertifiedRolesListType
+    {
+        
+        private System.Collections.Generic.List<EncapsulatedPKIDataType> _certifiedRole;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CertifiedRole", Order=0)]
+        public EncapsulatedPKIDataType[] @__CertifiedRole
+        {
+            get
+            {
+                return _certifiedRole?.ToArray();
+            }
+            set
+            {
+                _certifiedRole = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> CertifiedRole
+        {
+            get { return _certifiedRole ?? (_certifiedRole = new System.Collections.Generic.List<EncapsulatedPKIDataType>()); }
+            set { _certifiedRole = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CRLRefsType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CRLRefsType
+    {
+        
+        private System.Collections.Generic.List<CRLRefType> _cRLRef;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CRLRef", Order=0)]
+        public CRLRefType[] @__CRLRef
+        {
+            get
+            {
+                return _cRLRef?.ToArray();
+            }
+            set
+            {
+                _cRLRef = value == null ? null : new System.Collections.Generic.List<CRLRefType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<CRLRefType> CRLRef
+        {
+            get { return _cRLRef ?? (_cRLRef = new System.Collections.Generic.List<CRLRefType>()); }
+            set { _cRLRef = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OCSPRefsType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OCSPRefsType
+    {
+        
+        private System.Collections.Generic.List<OCSPRefType> _oCSPRef;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("OCSPRef", Order=0)]
+        public OCSPRefType[] @__OCSPRef
+        {
+            get
+            {
+                return _oCSPRef?.ToArray();
+            }
+            set
+            {
+                _oCSPRef = value == null ? null : new System.Collections.Generic.List<OCSPRefType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<OCSPRefType> OCSPRef
+        {
+            get { return _oCSPRef ?? (_oCSPRef = new System.Collections.Generic.List<OCSPRefType>()); }
+            set { _oCSPRef = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OtherCertStatusRefsType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OtherCertStatusRefsType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _otherRef;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("OtherRef", Order=0)]
+        public AnyType[] @__OtherRef
+        {
+            get
+            {
+                return _otherRef?.ToArray();
+            }
+            set
+            {
+                _otherRef = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> OtherRef
+        {
+            get { return _otherRef ?? (_otherRef = new System.Collections.Generic.List<AnyType>()); }
+            set { _otherRef = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CRLValuesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class CRLValuesType
+    {
+        
+        private System.Collections.Generic.List<EncapsulatedPKIDataType> _encapsulatedCRLValue;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedCRLValue", Order=0)]
+        public EncapsulatedPKIDataType[] @__EncapsulatedCRLValue
+        {
+            get
+            {
+                return _encapsulatedCRLValue?.ToArray();
+            }
+            set
+            {
+                _encapsulatedCRLValue = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> EncapsulatedCRLValue
+        {
+            get { return _encapsulatedCRLValue ?? (_encapsulatedCRLValue = new System.Collections.Generic.List<EncapsulatedPKIDataType>()); }
+            set { _encapsulatedCRLValue = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OCSPValuesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OCSPValuesType
+    {
+        
+        private System.Collections.Generic.List<EncapsulatedPKIDataType> _encapsulatedOCSPValue;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("EncapsulatedOCSPValue", Order=0)]
+        public EncapsulatedPKIDataType[] @__EncapsulatedOCSPValue
+        {
+            get
+            {
+                return _encapsulatedOCSPValue?.ToArray();
+            }
+            set
+            {
+                _encapsulatedOCSPValue = value == null ? null : new System.Collections.Generic.List<EncapsulatedPKIDataType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<EncapsulatedPKIDataType> EncapsulatedOCSPValue
+        {
+            get { return _encapsulatedOCSPValue ?? (_encapsulatedOCSPValue = new System.Collections.Generic.List<EncapsulatedPKIDataType>()); }
+            set { _encapsulatedOCSPValue = value; }
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("OtherCertStatusValuesType", Namespace = "http://uri.etsi.org/01903/v1.3.2#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://uri.etsi.org/01903/v1.3.2#", IsNullable=true)]
+    public partial class OtherCertStatusValuesType
+    {
+        
+        private System.Collections.Generic.List<AnyType> _otherValue;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("OtherValue", Order=0)]
+        public AnyType[] @__OtherValue
+        {
+            get
+            {
+                return _otherValue?.ToArray();
+            }
+            set
+            {
+                _otherValue = value == null ? null : new System.Collections.Generic.List<AnyType>(value);
+            }
+        }
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<AnyType> OtherValue
+        {
+            get { return _otherValue ?? (_otherValue = new System.Collections.Generic.List<AnyType>()); }
+            set { _otherValue = value; }
+        }
+
     }
 }

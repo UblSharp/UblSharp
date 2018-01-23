@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.Xades
 {
-    using XmlDigitalSignature;
+    using UblSharp.Xades;
     
     
 #if FEATURE_SERIALIZATION

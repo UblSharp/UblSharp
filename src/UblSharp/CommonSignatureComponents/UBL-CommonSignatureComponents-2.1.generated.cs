@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.CommonSignatureComponents
 {
-    using SignatureAggregateComponents;
+    using UblSharp.SignatureAggregateComponents;
     
     
     /// <summary>

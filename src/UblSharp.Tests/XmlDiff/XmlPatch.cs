@@ -147,13 +147,9 @@ namespace Microsoft.XmlDiffPatch
                         {
                             enc = ((XmlTextReader)sourceReader).Encoding;
                         }
-                        else if (sourceReader is XmlValidatingReader)
-                        {
-                            enc = ((XmlValidatingReader)sourceReader).Encoding;
-                        }
                         else
                         {
-                            enc = Encoding.Unicode;
+                            enc = Encoding.UTF8;
                         }
 #endif
                     }
