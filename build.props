@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+      <UblSharpVersion>1.1.0-preview1</UblSharpVersion>
+      <UblSharpValidationVersion>1.1.0-preview1</UblSharpValidationVersion>
+      <UblSharpGeneratorCoreVersion>1.1.0-preview1</UblSharpGeneratorCoreVersion>
+      <UblSharpSEeFVersion>1.1.0-preview1</UblSharpSEeFVersion>
+  </PropertyGroup>
+</Project>

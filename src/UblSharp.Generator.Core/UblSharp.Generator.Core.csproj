@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build.props" />
   <PropertyGroup>
     <AssemblyName>UblSharp.Generator.Core</AssemblyName>
     <AssemblyTitle>UblSharp class generator core library.</AssemblyTitle>
     <Description>Core generator library used to generate C# classes for UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.0-preview1</VersionPrefix>
+    <VersionPrefix>$(UblSharpGeneratorCoreVersion)</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp</PackageTags>

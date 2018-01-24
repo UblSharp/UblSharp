@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build.props" />
   <PropertyGroup>
     <AssemblyName>UblSharp.SEeF</AssemblyName>
     <AssemblyTitle>Create and parse UBL Energie E-Factuur documents in C# with UblSharp.</AssemblyTitle>
     <Description>Create and parse UBL Energie E-Factuur documents in C# with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.1.0-preview1</VersionPrefix>
+    <VersionPrefix>$(UblSharpSEeFVersion)</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp;ublsharp.seef;seef;energie e-factuur</PackageTags>
