@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build.props" />
   <PropertyGroup>
     <AssemblyName>UblSharp.Validation</AssemblyName>
     <AssemblyTitle>Validate UBL XML documents and .NET types created with UblSharp.</AssemblyTitle>
     <Description>Validate UBL XML documents and .NET types created with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>$(UblSharpValidationVersion)</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp;ublsharp.validation</PackageTags>
@@ -41,7 +42,7 @@
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+    <DefineConstants>$(DefineConstants);NET45;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <DefineConstants>$(DefineConstants);NETSTANDARD2_0;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>

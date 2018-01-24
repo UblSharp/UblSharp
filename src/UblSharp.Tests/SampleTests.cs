@@ -88,7 +88,10 @@ namespace UblSharp.Tests
                         .ExcludingProperties()
                         .ExcludingFields()
                         .Including(x => x.SelectedMemberInfo.Name.StartsWith("__", StringComparison.Ordinal))
-                        .WithTracing(trace));
+#if DEBUG
+                        .WithTracing(trace)
+#endif
+                );
             }
             catch
             {
@@ -104,7 +107,9 @@ namespace UblSharp.Tests
             }
             finally
             {
+#if DEBUG
                 _output.WriteLine(trace.ToString());
+#endif
             }
 
 #if FEATURE_VALIDATION

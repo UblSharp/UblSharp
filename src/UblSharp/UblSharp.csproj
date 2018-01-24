@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build.props" />
   <PropertyGroup>
     <AssemblyName>UblSharp</AssemblyName>
     <AssemblyTitle>Create and parse UBL documents in C# with UblSharp.</AssemblyTitle>
     <Description>Create and parse UBL documents in C# with UblSharp.</Description>
     <Copyright>Copyright 2017 Remco Ros</Copyright>
     <Authors>Remco Ros</Authors>
-    <VersionPrefix>1.0.1</VersionPrefix>
+    <VersionPrefix>$(UblSharpVersion)</VersionPrefix>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
     <PackageTags>ubl;ublsharp</PackageTags>
@@ -31,6 +32,9 @@
     <Content Include="$(OutputPath)\net45\UblSharp.XmlSerializers.dll">
       <PackagePath>lib\net45</PackagePath>
     </Content>
+    <Content Include="$(OutputPath)\netstandard2.0\UblSharp.XmlSerializers.dll">
+      <PackagePath>lib\netstandard2.0</PackagePath>
+    </Content>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
@@ -44,6 +48,10 @@
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+    <PackageReference Include="Microsoft.XmlSerializer.Generator" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.XmlSerializer.Generator" Version="1.0.0" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net20' ">
     <FrameworkPathOverride>C:\Windows\Microsoft.NET\Framework\v2.0.50727</FrameworkPathOverride>
@@ -57,7 +65,7 @@
     <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+    <DefineConstants>$(DefineConstants);NET45;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ;DISABLE_XMLNSDECL</DefineConstants>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Michiel Stornebrink (TNO ICT) -->
+<!-- ===== xsd:schema Element With Namespaces Declarations ===== -->
+<xsd:schema xmlns="urn:www.energie-efactuur.nl:profile:invoice:ver2.0" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:www.energie-efactuur.nl:profile:invoice:ver2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+	<!-- ===== Imports ===== -->
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===== SEeF extension root element ===== -->
+	<xsd:element name="SEEFExtensionWrapper" type="SEEFExtensionWrapperType"/>
+	<!-- ===== SEeF extension elements that can be used ===== -->
+	<xsd:element name="UtilityConsumptionPoint" type="ConsumptionPointType"/>
+	<xsd:element name="TaxTotalPerSupplierParty" type="TaxTotalPerSupplierPartyType"/>
+	<!-- ===== Element Declarations ===== -->
+	<xsd:element name="LatestMeterQuantity" type="LatestMeterQuantityType"/>
+	<xsd:element name="LatestMeterReadingDate" type="LatestMeterReadingDateType"/>
+	<xsd:element name="LatestMeterReadingMethodCode" type="LatestMeterReadingMethodCodeType"/>
+	<xsd:element name="MeterReadingComments" type="MeterReadingCommentsType"/>
+	<xsd:element name="MeterConstant" type="MeterConstantType"/>
+	<xsd:element name="MeterNumber" type="MeterNumberType"/>
+	<xsd:element name="MeterReadingTypeCode" type="MeterReadingTypeCodeType"/>
+	<xsd:element name="PreviousMeterQuantity" type="PreviousMeterQuantityType"/>
+	<xsd:element name="PreviousMeterReadingDate" type="PreviousMeterReadingDateType"/>
+	<xsd:element name="PreviousMeterReadingMethodCode" type="PreviousMeterReadingMethodCodeType"/>
+	<!-- ===== Type Declarations ===== -->
+	<xsd:complexType name="SEEFExtensionWrapperType">
+		<xsd:sequence>
+			<xsd:element ref="UtilityConsumptionPoint" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="TaxTotalPerSupplierParty" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsumptionPointType">
+		<xsd:sequence>
+			<xsd:element ref="cbc:ID" minOccurs="0"/>
+			<xsd:element name="Address" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:restriction base="cac:AddressType">
+							<xsd:sequence>
+								<xsd:element ref="cbc:ID" minOccurs="0"/>
+								<xsd:element ref="cbc:Postbox" minOccurs="0"/>
+								<xsd:element ref="cbc:StreetName" minOccurs="0"/>
+								<xsd:element ref="cbc:BuildingNumber" minOccurs="0"/>
+								<xsd:element ref="cbc:CityName" minOccurs="0"/>
+								<xsd:element ref="cbc:PostalZone" minOccurs="0"/>
+								<xsd:element ref="cac:Country" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:restriction>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UtilityMeter" type="MeterType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MeterType">
+		<xsd:sequence>
+			<xsd:element ref="MeterNumber" minOccurs="0"/>
+			<xsd:element ref="MeterConstant" minOccurs="0" maxOccurs="2"/>
+			<xsd:element name="MeterReading" type="MeterReadingType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MeterReadingType">
+		<xsd:sequence>
+			<xsd:element ref="MeterReadingTypeCode" minOccurs="0"/>
+			<xsd:element ref="PreviousMeterReadingDate" minOccurs="0"/>
+			<xsd:element ref="PreviousMeterQuantity" minOccurs="0"/>
+			<xsd:element ref="LatestMeterReadingDate" minOccurs="0"/>
+			<xsd:element ref="LatestMeterQuantity" minOccurs="0"/>
+			<xsd:element ref="PreviousMeterReadingMethodCode" minOccurs="0"/>
+			<xsd:element ref="LatestMeterReadingMethodCode" minOccurs="0"/>
+			<xsd:element ref="MeterReadingComments" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="FuelMix" type="FuelMixType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LatestMeterQuantityType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:QuantityType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LatestMeterReadingDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LatestMeterReadingMethodCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeterConstantType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeterNumberType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeterReadingCommentsType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MeterReadingTypeCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PreviousMeterQuantityType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:QuantityType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PreviousMeterReadingDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:DateType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PreviousMeterReadingMethodCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TaxTotalPerSupplierPartyType">
+		<xsd:sequence>
+			<xsd:element ref="cac:Party"/>
+			<xsd:element ref="cac:TaxTotal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FuelMixType">
+		<xsd:sequence>
+			<xsd:element name="FuelType" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FuelTypeCode" type="udt:CodeType"/>
+						<xsd:element name="Name" minOccurs="0"/>
+						<xsd:element name="Percentage" type="udt:PercentType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

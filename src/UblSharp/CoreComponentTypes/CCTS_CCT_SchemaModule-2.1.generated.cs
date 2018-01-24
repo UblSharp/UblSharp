@@ -8,249 +8,8 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.CoreComponentTypes
 {
-    using UnqualifiedDataTypes;
-    using SignatureBasicComponents;
-    using CommonExtensionComponents;
+    using UblSharp.UnqualifiedDataTypes;
     
-    
-    /// <summary>
-    /// A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.
-    /// <para />UniqueID: UNDT000011
-    /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Identifier. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Identifier
-    /// <para />PrimitiveType: string
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdentifierType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReferencedSignatureIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionVersionIDType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyURIType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyIDType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctIdentifierType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctIdentifierType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeID", DataType="normalizedString")]
-        public string @__schemeID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeName")]
-        public string @__schemeName;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeAgencyID", DataType="normalizedString")]
-        public string @__schemeAgencyID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeAgencyName")]
-        public string @__schemeAgencyName;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeVersionID", DataType="normalizedString")]
-        public string @__schemeVersionID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeDataURI", DataType="anyURI")]
-        public string @__schemeDataURI;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("schemeURI", DataType="anyURI")]
-        public string @__schemeURI;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute(DataType="normalizedString")]
-        public string @__Value;
-        
-        /// <summary>
-        /// The identification of the identification scheme.
-        /// <para />UniqueID: UNDT000011-SC2
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme. Identifier
-        /// <para />ObjectClass: Identification Scheme
-        /// <para />PropertyTermName: Identification
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeID
-        {
-            get
-            {
-                return __schemeID;
-            }
-            set
-            {
-                __schemeID = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The name of the identification scheme.
-        /// <para />UniqueID: UNDT000011-SC3
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme. Name. Text
-        /// <para />ObjectClass: Identification Scheme
-        /// <para />PropertyTermName: Name
-        /// <para />RepresentationTermName: Text
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeName
-        {
-            get
-            {
-                return __schemeName;
-            }
-            set
-            {
-                __schemeName = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The identification of the agency that maintains the identification scheme.
-        /// <para />UniqueID: UNDT000011-SC4
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme Agency. Identifier
-        /// <para />ObjectClass: Identification Scheme Agency
-        /// <para />PropertyTermName: Identification
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// <para />UsageRule: Defaults to the UN/EDIFACT data element 3055 code list.
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeAgencyID
-        {
-            get
-            {
-                return __schemeAgencyID;
-            }
-            set
-            {
-                __schemeAgencyID = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The name of the agency that maintains the identification scheme.
-        /// <para />UniqueID: UNDT000011-SC5
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme Agency. Name. Text
-        /// <para />ObjectClass: Identification Scheme Agency
-        /// <para />PropertyTermName: Agency Name
-        /// <para />RepresentationTermName: Text
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeAgencyName
-        {
-            get
-            {
-                return __schemeAgencyName;
-            }
-            set
-            {
-                __schemeAgencyName = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The version of the identification scheme.
-        /// <para />UniqueID: UNDT000011-SC6
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme. Version. Identifier
-        /// <para />ObjectClass: Identification Scheme
-        /// <para />PropertyTermName: Version
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeVersionID
-        {
-            get
-            {
-                return __schemeVersionID;
-            }
-            set
-            {
-                __schemeVersionID = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The Uniform Resource Identifier that identifies where the identification scheme data is located.
-        /// <para />UniqueID: UNDT000011-SC7
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme Data. Uniform Resource. Identifier
-        /// <para />ObjectClass: Identification Scheme Data
-        /// <para />PropertyTermName: Uniform Resource Identifier
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeDataURI
-        {
-            get
-            {
-                return __schemeDataURI;
-            }
-            set
-            {
-                __schemeDataURI = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The Uniform Resource Identifier that identifies where the identification scheme is located.
-        /// <para />UniqueID: UNDT000011-SC8
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Identification Scheme. Uniform Resource. Identifier
-        /// <para />ObjectClass: Identification Scheme
-        /// <para />PropertyTermName: Uniform Resource Identifier
-        /// <para />RepresentationTermName: Identifier
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string schemeURI
-        {
-            get
-            {
-                return __schemeURI;
-            }
-            set
-            {
-                __schemeURI = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
     
     /// <summary>
     /// A number of monetary units specified in a currency where the unit of the currency is explicit or implied.
@@ -267,6 +26,7 @@ namespace UblSharp.CoreComponentTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("CctAmountType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
     public abstract partial class CctAmountType
     {
         
@@ -347,88 +107,202 @@ namespace UblSharp.CoreComponentTypes
     }
     
     /// <summary>
-    /// A character string (i.e. a finite set of characters) generally in the form of words of a language.
-    /// <para />UniqueID: UNDT000019
+    /// A set of finite-length sequences of binary octets.
+    /// <para />UniqueID: UNDT000002
     /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Text. Type
+    /// <para />DictionaryEntryName: Binary Object. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Text
-    /// <para />PrimitiveType: string
+    /// <para />RepresentationTermName: Binary Object
+    /// <para />PrimitiveType: binary
     /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionAgencyNameType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoundType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PictureType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GraphicType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BinaryObjectType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctTextType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctTextType
+    [System.Xml.Serialization.XmlTypeAttribute("CctBinaryObjectType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctBinaryObjectType
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("languageID", DataType="language")]
-        public string @__languageID;
+        [System.Xml.Serialization.XmlAttributeAttribute("format")]
+        public string @__format;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("languageLocaleID", DataType="normalizedString")]
-        public string @__languageLocaleID;
+        [System.Xml.Serialization.XmlAttributeAttribute("mimeCode", DataType="normalizedString")]
+        public string @__mimeCode;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string @__Value;
+        [System.Xml.Serialization.XmlAttributeAttribute("encodingCode", DataType="normalizedString")]
+        public string @__encodingCode;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("characterSetCode", DataType="normalizedString")]
+        public string @__characterSetCode;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("uri", DataType="anyURI")]
+        public string @__uri;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("filename")]
+        public string @__filename;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        public byte[] @__Value;
         
         /// <summary>
-        /// The identifier of the language used in the content component.
-        /// <para />UniqueID: UNDT000019-SC2
+        /// The format of the binary content.
+        /// <para />UniqueID: UNDT000002-SC2
         /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Language. Identifier
-        /// <para />ObjectClass: Language
-        /// <para />PropertyTermName: Identification
-        /// <para />RepresentationTermName: Identifier
+        /// <para />DictionaryEntryName: Binary Object. Format. Text
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Format
+        /// <para />RepresentationTermName: Text
         /// <para />PrimitiveType: string
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string languageID
+        public string format
         {
             get
             {
-                return __languageID;
+                return __format;
             }
             set
             {
-                __languageID = value;
+                __format = value;
             }
         }
 
         
         /// <summary>
-        /// The identification of the locale of the language.
-        /// <para />UniqueID: UNDT000019-SC3
+        /// The mime type of the binary object.
+        /// <para />UniqueID: UNDT000002-SC3
         /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Language. Locale. Identifier
-        /// <para />ObjectClass: Language
-        /// <para />PropertyTermName: Locale
+        /// <para />DictionaryEntryName: Binary Object. Mime. Code
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Mime
+        /// <para />RepresentationTermName: Code
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string mimeCode
+        {
+            get
+            {
+                return __mimeCode;
+            }
+            set
+            {
+                __mimeCode = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// Specifies the decoding algorithm of the binary object.
+        /// <para />UniqueID: UNDT000002-SC4
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Binary Object. Encoding. Code
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Encoding
+        /// <para />RepresentationTermName: Code
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string encodingCode
+        {
+            get
+            {
+                return __encodingCode;
+            }
+            set
+            {
+                __encodingCode = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The character set of the binary object if the mime type is text.
+        /// <para />UniqueID: UNDT000002-SC5
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Binary Object. Character Set. Code
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Character Set
+        /// <para />RepresentationTermName: Code
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string characterSetCode
+        {
+            get
+            {
+                return __characterSetCode;
+            }
+            set
+            {
+                __characterSetCode = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The Uniform Resource Identifier that identifies where the binary object is located.
+        /// <para />UniqueID: UNDT000002-SC6
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Binary Object. Uniform Resource. Identifier
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Uniform Resource Identifier
         /// <para />RepresentationTermName: Identifier
         /// <para />PrimitiveType: string
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string languageLocaleID
+        public string uri
         {
             get
             {
-                return __languageLocaleID;
+                return __uri;
             }
             set
             {
-                __languageLocaleID = value;
+                __uri = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The filename of the binary object.
+        /// <para />UniqueID: UNDT000002-SC7
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Binary Object. Filename.Text
+        /// <para />ObjectClass: Binary Object
+        /// <para />PropertyTermName: Filename
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string filename
+        {
+            get
+            {
+                return __filename;
+            }
+            set
+            {
+                __filename = value;
             }
         }
 
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string Value
+        public byte[] Value
         {
             get
             {
@@ -453,12 +327,12 @@ namespace UblSharp.CoreComponentTypes
     /// <para />UsageRule: Should not be used if the character string identifies an instance of an object class or an object in the real world, in which case the Identifier. Type should be used.
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CodeType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtensionReasonCodeType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("CctCodeType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
     public abstract partial class CctCodeType
     {
         
@@ -735,6 +609,536 @@ namespace UblSharp.CoreComponentTypes
     }
     
     /// <summary>
+    /// A particular point in the progression of time together with the relevant supplementary information.
+    /// <para />UniqueID: UNDT000008
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Date Time. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Date Time
+    /// <para />PrimitiveType: string
+    /// <para />UsageRule: Can be used for a date and/or time.
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctDateTimeType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctDateTimeType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("format")]
+        public string @__format;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string @__Value;
+        
+        /// <summary>
+        /// The format of the date time content
+        /// <para />UniqueID: UNDT000008-SC1
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Date Time. Format. Text
+        /// <para />ObjectClass: Date Time
+        /// <para />PropertyTermName: Format
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string format
+        {
+            get
+            {
+                return __format;
+            }
+            set
+            {
+                __format = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.
+    /// <para />UniqueID: UNDT000011
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Identifier. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Identifier
+    /// <para />PrimitiveType: string
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdentifierType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctIdentifierType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctIdentifierType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeID", DataType="normalizedString")]
+        public string @__schemeID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeName")]
+        public string @__schemeName;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeAgencyID", DataType="normalizedString")]
+        public string @__schemeAgencyID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeAgencyName")]
+        public string @__schemeAgencyName;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeVersionID", DataType="normalizedString")]
+        public string @__schemeVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeDataURI", DataType="anyURI")]
+        public string @__schemeDataURI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("schemeURI", DataType="anyURI")]
+        public string @__schemeURI;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute(DataType="normalizedString")]
+        public string @__Value;
+        
+        /// <summary>
+        /// The identification of the identification scheme.
+        /// <para />UniqueID: UNDT000011-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme. Identifier
+        /// <para />ObjectClass: Identification Scheme
+        /// <para />PropertyTermName: Identification
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeID
+        {
+            get
+            {
+                return __schemeID;
+            }
+            set
+            {
+                __schemeID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The name of the identification scheme.
+        /// <para />UniqueID: UNDT000011-SC3
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme. Name. Text
+        /// <para />ObjectClass: Identification Scheme
+        /// <para />PropertyTermName: Name
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeName
+        {
+            get
+            {
+                return __schemeName;
+            }
+            set
+            {
+                __schemeName = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The identification of the agency that maintains the identification scheme.
+        /// <para />UniqueID: UNDT000011-SC4
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme Agency. Identifier
+        /// <para />ObjectClass: Identification Scheme Agency
+        /// <para />PropertyTermName: Identification
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// <para />UsageRule: Defaults to the UN/EDIFACT data element 3055 code list.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeAgencyID
+        {
+            get
+            {
+                return __schemeAgencyID;
+            }
+            set
+            {
+                __schemeAgencyID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The name of the agency that maintains the identification scheme.
+        /// <para />UniqueID: UNDT000011-SC5
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme Agency. Name. Text
+        /// <para />ObjectClass: Identification Scheme Agency
+        /// <para />PropertyTermName: Agency Name
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeAgencyName
+        {
+            get
+            {
+                return __schemeAgencyName;
+            }
+            set
+            {
+                __schemeAgencyName = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The version of the identification scheme.
+        /// <para />UniqueID: UNDT000011-SC6
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme. Version. Identifier
+        /// <para />ObjectClass: Identification Scheme
+        /// <para />PropertyTermName: Version
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeVersionID
+        {
+            get
+            {
+                return __schemeVersionID;
+            }
+            set
+            {
+                __schemeVersionID = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The Uniform Resource Identifier that identifies where the identification scheme data is located.
+        /// <para />UniqueID: UNDT000011-SC7
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme Data. Uniform Resource. Identifier
+        /// <para />ObjectClass: Identification Scheme Data
+        /// <para />PropertyTermName: Uniform Resource Identifier
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeDataURI
+        {
+            get
+            {
+                return __schemeDataURI;
+            }
+            set
+            {
+                __schemeDataURI = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The Uniform Resource Identifier that identifies where the identification scheme is located.
+        /// <para />UniqueID: UNDT000011-SC8
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Identification Scheme. Uniform Resource. Identifier
+        /// <para />ObjectClass: Identification Scheme
+        /// <para />PropertyTermName: Uniform Resource Identifier
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string schemeURI
+        {
+            get
+            {
+                return __schemeURI;
+            }
+            set
+            {
+                __schemeURI = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// A list of two mutually exclusive Boolean values that express the only possible states of a Property.
+    /// <para />UniqueID: UNDT000012
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Indicator. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Indicator
+    /// <para />PrimitiveType: string
+    /// </summary>
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctIndicatorType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctIndicatorType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("format")]
+        public string @__format;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string @__Value;
+        
+        /// <summary>
+        /// Whether the indicator is numeric, textual or binary.
+        /// <para />UniqueID: UNDT000012-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Indicator. Format. Text
+        /// <para />ObjectClass: Indicator
+        /// <para />PropertyTermName: Format
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string format
+        {
+            get
+            {
+                return __format;
+            }
+            set
+            {
+                __format = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// A numeric value determined by measuring an object along with the specified unit of measure.
+    /// <para />UniqueID: UNDT000013
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Measure. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Measure
+    /// <para />PrimitiveType: decimal
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasureType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctMeasureType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctMeasureType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("unitCode", DataType="normalizedString")]
+        public string @__unitCode;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("unitCodeListVersionID", DataType="normalizedString")]
+        public string @__unitCodeListVersionID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal @__Value;
+        
+        /// <summary>
+        /// The type of unit of measure.
+        /// <para />UniqueID: UNDT000013-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Measure Unit. Code
+        /// <para />ObjectClass: Measure Unit
+        /// <para />PropertyTermName: Code
+        /// <para />RepresentationTermName: Code
+        /// <para />PrimitiveType: string
+        /// <para />UsageRule: Reference UNECE Rec. 20 and X12 355
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string unitCode
+        {
+            get
+            {
+                return __unitCode;
+            }
+            set
+            {
+                __unitCode = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// The version of the measure unit code list.
+        /// <para />UniqueID: UNDT000013-SC3
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Measure Unit. Code List Version. Identifier
+        /// <para />ObjectClass: Measure Unit
+        /// <para />PropertyTermName: Code List Version
+        /// <para />RepresentationTermName: Identifier
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string unitCodeListVersionID
+        {
+            get
+            {
+                return __unitCodeListVersionID;
+            }
+            set
+            {
+                __unitCodeListVersionID = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public decimal Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
+    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
+    /// <para />UniqueID: UNDT000014
+    /// <para />CategoryCode: CCT
+    /// <para />DictionaryEntryName: Numeric. Type
+    /// <para />VersionID: 1.0
+    /// <para />RepresentationTermName: Numeric
+    /// <para />PrimitiveType: string
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RateType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ValueType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumericType))]
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("CctNumericType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctNumericType
+    {
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("format")]
+        public string @__format;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal @__Value;
+        
+        /// <summary>
+        /// Whether the number is an integer, decimal, real number or percentage.
+        /// <para />UniqueID: UNDT000014-SC2
+        /// <para />CategoryCode: SC
+        /// <para />DictionaryEntryName: Numeric. Format. Text
+        /// <para />ObjectClass: Numeric
+        /// <para />PropertyTermName: Format
+        /// <para />RepresentationTermName: Text
+        /// <para />PrimitiveType: string
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string format
+        {
+            get
+            {
+                return __format;
+            }
+            set
+            {
+                __format = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public decimal Value
+        {
+            get
+            {
+                return __Value;
+            }
+            set
+            {
+                __Value = value;
+            }
+        }
+
+    }
+    
+    /// <summary>
     /// A counted number of non-monetary units possibly including fractions.
     /// <para />UniqueID: UNDT000018
     /// <para />CategoryCode: CCT
@@ -749,6 +1153,7 @@ namespace UblSharp.CoreComponentTypes
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("CctQuantityType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
     public abstract partial class CctQuantityType
     {
         
@@ -885,363 +1290,87 @@ namespace UblSharp.CoreComponentTypes
     }
     
     /// <summary>
-    /// Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
-    /// <para />UniqueID: UNDT000014
+    /// A character string (i.e. a finite set of characters) generally in the form of words of a language.
+    /// <para />UniqueID: UNDT000019
     /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Numeric. Type
+    /// <para />DictionaryEntryName: Text. Type
     /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Numeric
+    /// <para />RepresentationTermName: Text
     /// <para />PrimitiveType: string
     /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RateType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PercentType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ValueType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumericType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctNumericType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctNumericType
+    [System.Xml.Serialization.XmlTypeAttribute("CctTextType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2", IsNullable=true)]
+    public abstract partial class CctTextType
     {
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("format")]
-        public string @__format;
+        [System.Xml.Serialization.XmlAttributeAttribute("languageID", DataType="language")]
+        public string @__languageID;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlAttributeAttribute("languageLocaleID", DataType="normalizedString")]
+        public string @__languageLocaleID;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlTextAttribute()]
-        public decimal @__Value;
+        public string @__Value;
         
         /// <summary>
-        /// Whether the number is an integer, decimal, real number or percentage.
-        /// <para />UniqueID: UNDT000014-SC2
+        /// The identifier of the language used in the content component.
+        /// <para />UniqueID: UNDT000019-SC2
         /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Numeric. Format. Text
-        /// <para />ObjectClass: Numeric
-        /// <para />PropertyTermName: Format
-        /// <para />RepresentationTermName: Text
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string format
-        {
-            get
-            {
-                return __format;
-            }
-            set
-            {
-                __format = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public decimal Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
-    
-    /// <summary>
-    /// A numeric value determined by measuring an object along with the specified unit of measure.
-    /// <para />UniqueID: UNDT000013
-    /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Measure. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Measure
-    /// <para />PrimitiveType: decimal
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MeasureType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctMeasureType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctMeasureType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("unitCode", DataType="normalizedString")]
-        public string @__unitCode;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("unitCodeListVersionID", DataType="normalizedString")]
-        public string @__unitCodeListVersionID;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public decimal @__Value;
-        
-        /// <summary>
-        /// The type of unit of measure.
-        /// <para />UniqueID: UNDT000013-SC2
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Measure Unit. Code
-        /// <para />ObjectClass: Measure Unit
-        /// <para />PropertyTermName: Code
-        /// <para />RepresentationTermName: Code
-        /// <para />PrimitiveType: string
-        /// <para />UsageRule: Reference UNECE Rec. 20 and X12 355
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string unitCode
-        {
-            get
-            {
-                return __unitCode;
-            }
-            set
-            {
-                __unitCode = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The version of the measure unit code list.
-        /// <para />UniqueID: UNDT000013-SC3
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Measure Unit. Code List Version. Identifier
-        /// <para />ObjectClass: Measure Unit
-        /// <para />PropertyTermName: Code List Version
+        /// <para />DictionaryEntryName: Language. Identifier
+        /// <para />ObjectClass: Language
+        /// <para />PropertyTermName: Identification
         /// <para />RepresentationTermName: Identifier
         /// <para />PrimitiveType: string
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string unitCodeListVersionID
+        public string languageID
         {
             get
             {
-                return __unitCodeListVersionID;
+                return __languageID;
             }
             set
             {
-                __unitCodeListVersionID = value;
-            }
-        }
-
-        
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public decimal Value
-        {
-            get
-            {
-                return __Value;
-            }
-            set
-            {
-                __Value = value;
-            }
-        }
-
-    }
-    
-    /// <summary>
-    /// A set of finite-length sequences of binary octets.
-    /// <para />UniqueID: UNDT000002
-    /// <para />CategoryCode: CCT
-    /// <para />DictionaryEntryName: Binary Object. Type
-    /// <para />VersionID: 1.0
-    /// <para />RepresentationTermName: Binary Object
-    /// <para />PrimitiveType: binary
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoundType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PictureType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GraphicType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BinaryObjectType))]
-#if FEATURE_SERIALIZATION
-    [System.SerializableAttribute()]
-#endif
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("CctBinaryObjectType", Namespace = "urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2")]
-    public abstract partial class CctBinaryObjectType
-    {
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("format")]
-        public string @__format;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("mimeCode", DataType="normalizedString")]
-        public string @__mimeCode;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("encodingCode", DataType="normalizedString")]
-        public string @__encodingCode;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("characterSetCode", DataType="normalizedString")]
-        public string @__characterSetCode;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("uri", DataType="anyURI")]
-        public string @__uri;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlAttributeAttribute("filename")]
-        public string @__filename;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
-        public byte[] @__Value;
-        
-        /// <summary>
-        /// The format of the binary content.
-        /// <para />UniqueID: UNDT000002-SC2
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Format. Text
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Format
-        /// <para />RepresentationTermName: Text
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string format
-        {
-            get
-            {
-                return __format;
-            }
-            set
-            {
-                __format = value;
+                __languageID = value;
             }
         }
 
         
         /// <summary>
-        /// The mime type of the binary object.
-        /// <para />UniqueID: UNDT000002-SC3
+        /// The identification of the locale of the language.
+        /// <para />UniqueID: UNDT000019-SC3
         /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Mime. Code
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Mime
-        /// <para />RepresentationTermName: Code
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string mimeCode
-        {
-            get
-            {
-                return __mimeCode;
-            }
-            set
-            {
-                __mimeCode = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// Specifies the decoding algorithm of the binary object.
-        /// <para />UniqueID: UNDT000002-SC4
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Encoding. Code
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Encoding
-        /// <para />RepresentationTermName: Code
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string encodingCode
-        {
-            get
-            {
-                return __encodingCode;
-            }
-            set
-            {
-                __encodingCode = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The character set of the binary object if the mime type is text.
-        /// <para />UniqueID: UNDT000002-SC5
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Character Set. Code
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Character Set
-        /// <para />RepresentationTermName: Code
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string characterSetCode
-        {
-            get
-            {
-                return __characterSetCode;
-            }
-            set
-            {
-                __characterSetCode = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The Uniform Resource Identifier that identifies where the binary object is located.
-        /// <para />UniqueID: UNDT000002-SC6
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Uniform Resource. Identifier
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Uniform Resource Identifier
+        /// <para />DictionaryEntryName: Language. Locale. Identifier
+        /// <para />ObjectClass: Language
+        /// <para />PropertyTermName: Locale
         /// <para />RepresentationTermName: Identifier
         /// <para />PrimitiveType: string
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string uri
+        public string languageLocaleID
         {
             get
             {
-                return __uri;
+                return __languageLocaleID;
             }
             set
             {
-                __uri = value;
-            }
-        }
-
-        
-        /// <summary>
-        /// The filename of the binary object.
-        /// <para />UniqueID: UNDT000002-SC7
-        /// <para />CategoryCode: SC
-        /// <para />DictionaryEntryName: Binary Object. Filename.Text
-        /// <para />ObjectClass: Binary Object
-        /// <para />PropertyTermName: Filename
-        /// <para />RepresentationTermName: Text
-        /// <para />PrimitiveType: string
-        /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute]
-        public string filename
-        {
-            get
-            {
-                return __filename;
-            }
-            set
-            {
-                __filename = value;
+                __languageLocaleID = value;
             }
         }
 
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public byte[] Value
+        public string Value
         {
             get
             {

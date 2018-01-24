@@ -126,6 +126,17 @@ namespace UblSharp.Generator.CodeFixers
                         xmlElAttr.Arguments.Insert(0, new CodeAttributeArgument(new CodePrimitiveExpression(member.Name)));
                     }
                 }
+
+                xmlElAttr = attributes.FirstOrDefault(x => x.Name == "System.Xml.Serialization.XmlArrayItemAttribute");
+                if (xmlElAttr != null)
+                {
+                    var elAttr = attributes.FirstOrDefault(x => x.Name == "System.Xml.Serialization.XmlArrayAttribute");
+                    if (elAttr == null)
+                    {
+                        var ns = CurrentType.GetSchema().TargetNamespace;
+                        member.CustomAttributes.Insert(0, new CodeAttributeDeclaration("System.Xml.Serialization.XmlArrayAttribute", new CodeAttributeArgument(new CodePrimitiveExpression(member.Name)), new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(ns))));
+                    }
+                }
             }
 
             base.VisitField(member);

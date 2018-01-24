@@ -78,6 +78,27 @@ namespace UblSharp.Generator.CodeFixers
             }}
         }}" + Environment.NewLine;
 
+        private string _enumPropertyTemplate = @"        [System.Xml.Serialization.XmlIgnoreAttribute]
+        {4}{2} {3}{1}
+        {{
+            get
+            {{                
+                return {0};
+            }}
+            set
+            {{
+                {0} = value;
+            }}
+        }}" + Environment.NewLine;
+
+        private CodeNamespace _currentNamespace;
+
+        protected override void VisitNamespace(CodeNamespace codeNamespace)
+        {
+            _currentNamespace = codeNamespace;
+            base.VisitNamespace(codeNamespace);
+        }
+
         protected override void VisitClass(CodeTypeDeclaration type)
         {
             FixType(type);
@@ -106,15 +127,22 @@ namespace UblSharp.Generator.CodeFixers
                     propertyVisibility = "";
                 }
 
+                string propertyTemplate = _defaultPropertyTemplate;
+
                 if (field.Type.ArrayElementType != null
                     || _systemTypes.Any(x => x == field.Type.BaseType || field.Type.BaseType == _csharp.GetTypeOutput(new CodeTypeReference(x))))
                 {
-                    snippet.Text = string.Format(_emptyPropertyTemplate, fieldName, propertyName, typeName, baseInterfaceType, propertyVisibility);
+                    propertyTemplate = _emptyPropertyTemplate;
                 }
-                else
+
+                // try best to detect enums
+                var propertyType = _currentNamespace.Types.Cast<CodeTypeDeclaration>().FirstOrDefault(x => x.Name == field.Type.BaseType);
+                if (propertyType != null && propertyType.IsEnum)
                 {
-                    snippet.Text = string.Format(_defaultPropertyTemplate, fieldName, propertyName, typeName, baseInterfaceType, propertyVisibility);
+                    propertyTemplate = _enumPropertyTemplate;
                 }
+
+                snippet.Text = string.Format(propertyTemplate, fieldName, propertyName, typeName, baseInterfaceType, propertyVisibility);
 
                 snippet.Comments.AddRange(field.Comments);
                 snippet.UserData["PropertyName"] = propertyName;
