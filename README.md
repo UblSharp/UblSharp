@@ -8,7 +8,7 @@ UblSharp is a C# / .NET / XML library for working with OASIS UBL 2.0 and 2.1 doc
 
 It supports all .NET full framework versions from .NET 2.0 - 4.6 and .NET Standard 1.0 and higher. See 'Available packages' below for a table of available packages and framework compatibility.
 
-# Installation
+## Installation
 
 Use the nuget packages. See the table below for an overview of available packages.
 
@@ -21,20 +21,21 @@ Or using the dotnet cli:
 
     dotnet add package UblSharp
 
-
-## Available packages
+### Available packages
 
 | Package               | .NET Support | Description |
 | --------------------- | ------------ | ----------- |
-| UblSharp              | net20 - net46,<br /> netstandard1.0 | Contains all UBL 2.0/2.1 common, aggregate and document types, annotated with System.Xml.* attributes. Also contains some basic serialization functions. | 
+| UblSharp              | net20 - net46,<br /> netstandard1.0+ | Contains all UBL 2.0/2.1 common, aggregate and document types, annotated with System.Xml.* attributes. Also contains some basic serialization functions. | 
 | UblSharp.Validation   | net20 - net46, netstandard2.0 | Contains validation functions to validate XML documents and UblSharp (.NET) objects using the OASIS UBL 2.1 xsd specifications. |
+| UblSharp.SEeF   | net20 - net46,<br /> netstandard1.0+ | Additional types to support the UBL extension 'Standaard Energie eFactuur'. |
+| UblSharp.Generator.Core   | net46 | The code generator library used to generate C# classes from XSD schemas. |
 
-> We can't support validation on netstandard1.0, because System.Xml.Schema and validation is only available on desktop .net and netstandard2.0.
+> We can't support validation on netstandard1.0, because System.Xml.Schema and validation is only available on desktop .net and netstandard2.0 and higher.
 
-# Credits
+## Credits
 
 - The (test) generator of UblSharp was taken from https://github.com/Gammern/ubllarsen (a lot has changed since).
 
-# License
+## License
 
 [The MIT License (MIT)](LICENSE)
