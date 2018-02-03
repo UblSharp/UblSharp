@@ -47,8 +47,14 @@ namespace UblSharp.Generator.XsdFixers
 
         private static void RenameXmlDSigTypes(XmlSchemaSet schemaSet)
         {
-            var dsigSchema = schemaSet.Schemas(Namespaces.Xmldsig).OfType<XmlSchema>().FirstOrDefault();
-            if (dsigSchema != null)
+            var dsigSchemas = schemaSet.Schemas(Namespaces.Xmldsig).OfType<XmlSchema>()
+                .ToList();
+            if (dsigSchemas.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot find Xmldsig schema");
+            }
+
+            foreach (var dsigSchema in dsigSchemas)
             {
                 var types = new[] { "SignatureType" };
 
@@ -63,17 +69,17 @@ namespace UblSharp.Generator.XsdFixers
                 schemaSet.Reprocess(dsigSchema);
             }
 
-            var sacSchema = schemaSet.Schemas(Namespaces.Sac).OfType<XmlSchema>().FirstOrDefault();
-            if (sacSchema != null)
-            {
-                schemaSet.Reprocess(sacSchema);
-            }
+            //var sacSchema = schemaSet.Schemas(Namespaces.Sac).OfType<XmlSchema>().FirstOrDefault();
+            //if (sacSchema != null)
+            //{
+            //    schemaSet.Reprocess(sacSchema);
+            //}
 
-            var xadesSchema13 = schemaSet.Schemas(Namespaces.Xades132).OfType<XmlSchema>().FirstOrDefault();
-            if (xadesSchema13 != null)
-            {
-                schemaSet.Reprocess(xadesSchema13);
-            }
+            //var xadesSchema13 = schemaSet.Schemas(Namespaces.Xades132).OfType<XmlSchema>().FirstOrDefault();
+            //if (xadesSchema13 != null)
+            //{
+            //    schemaSet.Reprocess(xadesSchema13);
+            //}
         }
     }
 }

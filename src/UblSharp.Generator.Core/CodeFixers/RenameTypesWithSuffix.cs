@@ -1,5 +1,6 @@
 using System.CodeDom;
 using System.Linq;
+using UblSharp.Generator.Extensions;
 
 namespace UblSharp.Generator.CodeFixers
 {
@@ -15,6 +16,10 @@ namespace UblSharp.Generator.CodeFixers
 
         protected override void VisitType(CodeTypeDeclaration type)
         {
+            var targetNs = type.GetSchema().TargetNamespace;
+            if (targetNs == Namespaces.Xades132 || targetNs == Namespaces.Xades141)
+                return;
+
             if (!type.Name.StartsWith("ItemsChoiceType") && (type.Name.EndsWith("1") || type.Name.EndsWith("2") || type.Name.EndsWith("3")))
             {
                 var newName = type.Name.Substring(0, type.Name.Length - 1);

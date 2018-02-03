@@ -36,7 +36,7 @@ namespace UblSharp.Generator
             new RemoveConflictingTypes(),
             new RenameXadesIntPropertyFixer(),
             new ItemsChoiceTypeRenamer(), // and this really last (after properties are converted)
-            new RenameTypesWithSuffix(),
+            // new RenameTypesWithSuffix(), // Disabled, because not needed anymore? (conflicts with types like CertIDTypeV2)
             new FixAmbigiousIdentifierType(),
             new UblDocumentationFixer(),
             new XmlAttributesFixer(),
@@ -61,7 +61,12 @@ namespace UblSharp.Generator
             options.Validate();
 
             var baseInputDirectory = options.XsdBasePath;
-            var maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            var maindocfiles = new List<FileInfo>();
+            if (!string.IsNullOrEmpty(baseInputDirectory))
+            {
+                maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            }
+
             var maindocSchemaSet = new XmlSchemaSet()
             {
                 // XmlResolver = xsdResolver
@@ -221,7 +226,7 @@ namespace UblSharp.Generator
             //Add("UBL-CommonAggregateComponents-2.1.xsd");
 
             Add("UBL-xmldsig-core-schema-2.1.xsd");
-            //Add("UBL-XAdESv132-2.1.xsd");
+            //Add("UBL-XAdES01903v132-201601-2.2.xsd");
             //Add("UBL-XAdESv141-2.1.xsd");
             //Add("UBL-SignatureAggregateComponents-2.1.xsd");
 
@@ -307,6 +312,7 @@ namespace UblSharp.Generator
                 foreach (XmlSchemaComplexType element in schema.SchemaTypes.Values.OfType<XmlSchemaComplexType>().Where(x => !baseTypes.Contains(x.Name)))
                 {
                     Console.WriteLine($"Import schema type for {element.QualifiedName.Namespace} : {element.QualifiedName.Name}");
+
                     var xmlTypeMapping = schemaImporter.ImportSchemaType(element.QualifiedName);
                     codeExporter.ExportTypeMapping(xmlTypeMapping);
                 }
