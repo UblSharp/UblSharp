@@ -16,7 +16,8 @@ namespace UblSharp.Generator
         public const string Sbc = "urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2";
 
         public const string Xmldsig = "http://www.w3.org/2000/09/xmldsig#";
-
+        public const string Xmldsig11 = "http://www.w3.org/2009/xmldsig11#";
+        
         public const string Xades132 = "http://uri.etsi.org/01903/v1.3.2#";
         public const string Xades141 = "http://uri.etsi.org/01903/v1.4.1#";
     }

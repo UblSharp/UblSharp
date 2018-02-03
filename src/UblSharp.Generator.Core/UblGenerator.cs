@@ -225,7 +225,7 @@ namespace UblSharp.Generator
 
             //Add("UBL-CommonAggregateComponents-2.1.xsd");
 
-            Add("UBL-xmldsig-core-schema-2.1.xsd");
+            //Add("UBL-xmldsig-core-schema-2.2.xsd");
             //Add("UBL-XAdESv132-2.1.xsd");
             //Add("UBL-XAdESv141-2.1.xsd");
             //Add("UBL-SignatureAggregateComponents-2.1.xsd");

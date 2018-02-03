@@ -34,7 +34,8 @@ namespace UblSharp.Generator
             { Namespaces.Udt, "UnqualifiedDataTypes" },
             { Namespaces.Xades132, "Xades" },
             { Namespaces.Xades141, "Xades" },
-            { Namespaces.Xmldsig, "XmlDigitalSignature" }            
+            { Namespaces.Xmldsig, "XmlDigitalSignature" },
+            { Namespaces.Xmldsig11, "XmlDigitalSignature" }
         };
 
         // Reverses imports (for cross namespace XmlIncludeAttribute usage)
