@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 namespace UblSharp.SignatureAggregateComponents
 {
-    using UblSharp.SignatureBasicComponents;
     using UblSharp.UnqualifiedDataTypes;
     using UblSharp.XmlDigitalSignature;
     using UblSharp.Xades;

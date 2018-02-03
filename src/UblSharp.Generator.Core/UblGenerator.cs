@@ -65,7 +65,7 @@ namespace UblSharp.Generator
             var maindocSchemaSet = new XmlSchemaSet()
             {
                 // XmlResolver = xsdResolver
-                XmlResolver = null
+                // XmlResolver = null
             };
 
             Console.WriteLine("Read common UBL files from embedded resources...");
@@ -210,32 +210,25 @@ namespace UblSharp.Generator
         {
             var thisAssembly = typeof(UblGenerator).Assembly;
 
-            Add("CCTS_CCT_SchemaModule-2.1.xsd");
-            // schemas.Compile();
+            //Add("CCTS_CCT_SchemaModule-2.1.xsd");
 
-            Add("UBL-UnqualifiedDataTypes-2.1.xsd");
-            Add("UBL-QualifiedDataTypes-2.1.xsd");
-            Add("UBL-SignatureBasicComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-UnqualifiedDataTypes-2.1.xsd");
+            //Add("UBL-QualifiedDataTypes-2.1.xsd");
+            //Add("UBL-SignatureBasicComponents-2.1.xsd");
 
-            Add("UBL-CommonBasicComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonBasicComponents-2.1.xsd");
 
-            Add("UBL-CommonAggregateComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonAggregateComponents-2.1.xsd");
 
             Add("UBL-xmldsig-core-schema-2.1.xsd");
-            Add("UBL-XAdESv132-2.1.xsd");
-            Add("UBL-XAdESv141-2.1.xsd");
-            Add("UBL-SignatureAggregateComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-XAdESv132-2.1.xsd");
+            //Add("UBL-XAdESv141-2.1.xsd");
+            //Add("UBL-SignatureAggregateComponents-2.1.xsd");
 
-            Add("UBL-CommonSignatureComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonSignatureComponents-2.1.xsd");
 
-            Add("UBL-ExtensionContentDataType-2.1.xsd");
-            Add("UBL-CommonExtensionComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-ExtensionContentDataType-2.1.xsd");
+            //Add("UBL-CommonExtensionComponents-2.1.xsd");
 
             void Add(string filename)
             {
