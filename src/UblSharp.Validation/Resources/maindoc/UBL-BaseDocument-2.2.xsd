@@ -11,7 +11,7 @@
             targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:BaseDocument-2"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified"
-            version="2.1">
+            version="2.2">
    <!-- ===== Imports ===== -->
   <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
               schemaLocation="../common/UBL-CommonAggregateComponents-2.2.xsd"/>

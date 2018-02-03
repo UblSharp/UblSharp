@@ -11,6 +11,7 @@ namespace UblSharp.Generator.XsdFixers
         {
             var coreCompSchema = schemaSet.Schemas(Namespaces.Cct).OfType<XmlSchema>().Single();
             var unqualSchema = schemaSet.Schemas(Namespaces.Udt).OfType<XmlSchema>().Single();
+            var qdtSchema = schemaSet.Schemas(Namespaces.Qdt).OfType<XmlSchema>().Single();
 
             foreach (var complexType in coreCompSchema.Items.OfType<XmlSchemaComplexType>())
             {
@@ -38,9 +39,11 @@ namespace UblSharp.Generator.XsdFixers
                 };
 
             process(unqualSchema, "Cct", Namespaces.Cct);
+            process(qdtSchema, "Cct", Namespaces.Cct);
 
             schemaSet.Reprocess(coreCompSchema);
             schemaSet.Reprocess(unqualSchema);
+            // schemaSet.Reprocess(qdtSchema);
 
             RenameXmlDSigTypes(schemaSet);
         }

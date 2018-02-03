@@ -61,7 +61,12 @@ namespace UblSharp.Generator
             options.Validate();
 
             var baseInputDirectory = options.XsdBasePath;
-            var maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            var maindocfiles = new List<FileInfo>();
+            if (!string.IsNullOrEmpty(baseInputDirectory))
+            {
+                maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            }
+
             var maindocSchemaSet = new XmlSchemaSet()
             {
                 // XmlResolver = xsdResolver
