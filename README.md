@@ -32,6 +32,19 @@ Or using the dotnet cli:
 
 > We can't support validation on netstandard1.0, because System.Xml.Schema and validation is only available on desktop .net and netstandard2.0 and higher.
 
+## UblSharp / OASIS UBL version compatibility
+
+The table below shows which version of OASIS UBL is implemented in UblSharp. Note that minor updates to UBL (2.x) are backwards compatible. It is possible to read 'UBL 2.0/2.1' documents with UblSharp 2.0 (which is based on UBL 2.2).
+
+In some occasions, UblSharp C# types are not binary compatible with types from earlier releases. In that case UblSharp will use major version increase.
+
+> For example: between UBL 2.1 and 2.2, the cardinality of *CallForTenders.ContractingParty* changed from 1..1 to 1..n. This changed the C# class to contain a property of *List\<ContractingPartyType\>* instead of just *ContractingPartyType*. Due to the nature of XML, this was not a breaking change for UBL, but it is in C#.
+
+| UblSharp version      | UBL Version  |
+| --------------------- | ------------ |
+| 1.*                   | 2.0 / 2.1    |
+| 2.*                   | 2.2          |
+
 ## Credits
 
 - The (test) generator of UblSharp was taken from https://github.com/Gammern/ubllarsen (a lot has changed since).

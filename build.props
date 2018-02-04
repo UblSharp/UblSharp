@@ -1,8 +1,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-      <UblSharpVersion>1.1.0</UblSharpVersion>
-      <UblSharpValidationVersion>1.1.0</UblSharpValidationVersion>
-      <UblSharpGeneratorCoreVersion>1.1.0</UblSharpGeneratorCoreVersion>
-      <UblSharpSEeFVersion>1.1.0</UblSharpSEeFVersion>
+      <UblSharpVersion>2.0.0</UblSharpVersion>
+      <UblSharpValidationVersion>2.0.0</UblSharpValidationVersion>
+      <UblSharpGeneratorCoreVersion>2.0.0</UblSharpGeneratorCoreVersion>
+      <UblSharpSEeFVersion>2.0.0</UblSharpSEeFVersion>
   </PropertyGroup>
 </Project>
