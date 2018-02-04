@@ -119,6 +119,13 @@ namespace UblSharp.Tests.Samples
                             },
                             Item = new ItemType
                             {
+                                Description = new List<TextType>()
+                                {
+                                    new TextType
+                                    {
+                                        Value = "Red paint"
+                                    }
+                                },
                             }
                         }
                     },
@@ -135,6 +142,13 @@ namespace UblSharp.Tests.Samples
                             },
                             Item = new ItemType
                             {
+                                Description = new List<TextType>()
+                                {
+                                    new TextType
+                                    {
+                                        Value = "Very good pencils for red paint."
+                                    }
+                                },
                             }
                         }
                     }

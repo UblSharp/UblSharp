@@ -40,14 +40,18 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:LineStatusCode listAgencyID="UBL" listName="Line Status">NoStatus</cbc:LineStatusCode>
-      <cac:Item/>
+      <cac:Item>
+        <cbc:Description>Red paint</cbc:Description>
+      </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:LineStatusCode listAgencyID="UBL" listName="Line Status">Disputed</cbc:LineStatusCode>
-      <cac:Item/>
+      <cac:Item>
+        <cbc:Description>Very good pencils for red paint.</cbc:Description>
+      </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
 </OrderResponse>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalAgreement 
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:DigitalAgreement-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+  <cbc:ID>A12345-2016</cbc:ID>
+  <cbc:IssueDate>2016-11-07</cbc:IssueDate>
+  <cbc:AgreementTypeCode>Bilateral</cbc:AgreementTypeCode>
+  <cbc:VersionID>1.1</cbc:VersionID>
+  <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
+  <cac:ParticipantParty>
+    <cbc:InitiatingPartyIndicator>true</cbc:InitiatingPartyIndicator>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cac:Party>
+      <cbc:EndpointID schemeAgencyID="9" schemeID="GLN">1234567987654</cbc:EndpointID>
+      <cac:PartyName>
+        <cbc:Name>Vendor Inc.</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:CityName>New York</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>John Smith</cbc:Name>
+      <cbc:ElectronicMail>john.smith@vendor.net</cbc:ElectronicMail>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Paul McQueen</cbc:Name>
+      <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Paul McQueen</cbc:Name>
+      <cbc:ElectronicMail>paul.mcqueen@vendor.net</cbc:ElectronicMail>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Jennifer de Niro</cbc:Name>
+      <cbc:ElectronicMail>jennifer.deniro@vendor.net</cbc:ElectronicMail>
+    </cac:CommercialContact>
+  </cac:ParticipantParty>
+  <cac:ParticipantParty>
+    <cbc:PrivatePartyIndicator>true</cbc:PrivatePartyIndicator>
+    <cac:Party>
+      <cbc:EndpointID schemeAgencyID="9" schemeID="GLN">9994567987654</cbc:EndpointID>
+      <cac:PartyName>
+        <cbc:Name>Buyer GmbH</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:CityName>Munchen</cbc:CityName>
+        <cac:Country>
+          <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:Party>
+    <cac:LegalContact>
+      <cbc:Name>Peter Gruen</cbc:Name>
+      <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+    </cac:LegalContact>
+    <cac:TechnicalContact>
+      <cbc:Name>Peter Gruen</cbc:Name>
+      <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+    </cac:TechnicalContact>
+    <cac:SupportContact>
+      <cbc:Name>Peter Gruen</cbc:Name>
+      <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+    </cac:SupportContact>
+    <cac:CommercialContact>
+      <cbc:Name>Peter Gruen</cbc:Name>
+      <cbc:ElectronicMail>peter.gruen@buyer.de</cbc:ElectronicMail>
+    </cac:CommercialContact>
+  </cac:ParticipantParty>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:DigitalAgreementTerms>
+    <cbc:Description>Trading Partner Agreement Terms</cbc:Description>
+    <cac:AdoptionPeriod>	  
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:AdoptionPeriod>
+	<cac:ServiceLevelAgreement>
+	  <cbc:ID>1</cbc:ID>
+	  <cbc:ServiceTypeCode>AP</cbc:ServiceTypeCode>
+	  <cbc:AvailabilityTimePercent>98.5</cbc:AvailabilityTimePercent>
+	  <cbc:MondayAvailabilityIndicator>true</cbc:MondayAvailabilityIndicator>
+	  <cbc:TuesdayAvailabilityIndicator>true</cbc:TuesdayAvailabilityIndicator>
+	  <cbc:WednesdayAvailabilityIndicator>true</cbc:WednesdayAvailabilityIndicator>
+	  <cbc:ThursdayAvailabilityIndicator>true</cbc:ThursdayAvailabilityIndicator>
+	  <cbc:FridayAvailabilityIndicator>true</cbc:FridayAvailabilityIndicator>
+	  <cbc:MinimumResponseTimeDurationMeasure unitCode="SEC">300</cbc:MinimumResponseTimeDurationMeasure>
+	  <cbc:MinimumDownTimeScheduleDurationMeasure unitCode="DAY">3</cbc:MinimumDownTimeScheduleDurationMeasure>
+	  <cbc:MaximumIncidentNotificationDurationMeasure unitCode="HUR">4</cbc:MaximumIncidentNotificationDurationMeasure>
+	  <cbc:MaximumDataLossDurationMeasure unitCode="HUR">24</cbc:MaximumDataLossDurationMeasure>
+	  <cbc:MeanTimeToRecoverDurationMeasure unitCode="HUR">3</cbc:MeanTimeToRecoverDurationMeasure>
+      <cac:ServiceAvailabilityPeriod>
+        <cbc:StartTime>09:00:00</cbc:StartTime>
+        <cbc:EndTime>16:00:00</cbc:EndTime>
+      </cac:ServiceAvailabilityPeriod>
+      <cac:ServiceMaintenancePeriod>
+        <cbc:StartTime>22:00:00</cbc:StartTime>
+        <cbc:EndTime>06:00:00</cbc:EndTime>
+      </cac:ServiceMaintenancePeriod>
+	</cac:ServiceLevelAgreement>
+	<cac:ServiceLevelAgreement>
+	  <cbc:ID>2</cbc:ID>
+	  <cbc:ServiceTypeCode>AP</cbc:ServiceTypeCode>
+	  <cbc:AvailabilityTimePercent>94.0</cbc:AvailabilityTimePercent>
+	  <cbc:SaturdayAvailabilityIndicator>true</cbc:SaturdayAvailabilityIndicator>
+	  <cbc:SundayAvailabilityIndicator>true</cbc:SundayAvailabilityIndicator>
+      <cac:ServiceAvailabilityPeriod>
+        <cbc:StartTime>09:00:00</cbc:StartTime>
+        <cbc:EndTime>16:00:00</cbc:EndTime>
+      </cac:ServiceAvailabilityPeriod>
+      <cac:ServiceMaintenancePeriod>
+        <cbc:StartTime>22:00:00</cbc:StartTime>
+        <cbc:EndTime>06:00:00</cbc:EndTime>
+      </cac:ServiceMaintenancePeriod>
+	</cac:ServiceLevelAgreement>
+  </cac:DigitalAgreementTerms>
+  <cac:DigitalProcess>
+    <cbc:ID>1</cbc:ID>
+    <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>1</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>Invoice</cbc:ID>
+        <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.2</cbc:VersionID>
+          <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listAgencyID="6" listID="UN/ECE 1001">380</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
+          <cbc:ParticipantID schemeAgencyID="9" schemeID="GLN">1234567987654</cbc:ParticipantID>
+          <cbc:TestIndicator>true</cbc:TestIndicator>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS2</cbc:ProtocolID>
+            <cbc:EndpointURI>http://as2.buyer.de</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>CreditNote</cbc:ID>
+        <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.2</cbc:VersionID>
+          <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listAgencyID="6" listID="UN/ECE 1001">381</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
+          <cbc:ParticipantID schemeAgencyID="9" schemeID="GLN">1234567987654</cbc:ParticipantID>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS2</cbc:ProtocolID>
+			         <cbc:EndpointURI>http://as2.vendor.biz</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+  </cac:DigitalProcess>
+</DigitalAgreement>

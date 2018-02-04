@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessCard xmlns="urn:oasis:names:specification:ubl:schema:xsd:BusinessCard-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+  <cbc:ID>BC1-2016</cbc:ID>
+  <cbc:IssueDate>2016-11-07</cbc:IssueDate>
+  <cbc:VersionID>1.1</cbc:VersionID>
+  <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
+  <cbc:BriefDescription>OASIS is a nonprofit consortium that drives the development, convergence and adoption of open standards for the global information society.  OASIS promotes industry consensus and produces worldwide standards for security, Internet of Things, cloud computing, energy, content technologies, emergency management, and other areas. OASIS open standards offer the potential to lower cost, stimulate innovation, grow global markets, and protect the right of free choice of technology.  OASIS members broadly represent the marketplace of public and private sector technology leaders, users and influencers. The consortium has more than 5,000 participants representing over 600 organizations and individual members in more than 65 countries.  OASIS is distinguished by its transparent governance and operating procedures. Members themselves set the OASIS technical agenda, using a lightweight process expressly designed to promote industry consensus and unite disparate efforts. Completed work is ratified by open ballot. Governance is accountable and unrestricted. Officers of both the OASIS Board of Directors and Technical Advisory Board are chosen by democratic election to serve two-year terms. Consortium leadership is based on individual merit and is not tied to financial contribution, corporate standing, or special appointment.  OASIS Member Sections include AMQP, Emergency, IDtrust, LegalXML, Open CSA, OSLC, and WS-I.</cbc:BriefDescription>
+  <cac:SenderParty>
+    <cbc:WebsiteURI>https://www.oasis-open.org</cbc:WebsiteURI>
+    <cbc:LogoReferenceID>https://www.oasis-open.org/sites/www.oasis-open.org/files/logo.png</cbc:LogoReferenceID>
+    <cac:PartyName>
+      <cbc:Name>OASIS</cbc:Name>
+    </cac:PartyName>
+    <cac:PartyName>
+      <cbc:Name>Organization for the Advancement of Structured Information Standards</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Corporate Drive Suite 150</cbc:StreetName>
+      <cbc:BuildingNumber>35</cbc:BuildingNumber>
+      <cbc:CityName>Burlington</cbc:CityName>
+      <cbc:PostalZone>01803-4238</cbc:PostalZone>
+      <cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+      <cac:Country>
+        <cbc:IdentificationCode>US</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PhysicalLocation>
+      <cbc:InformationURI>https://goo.gl/maps/2k242</cbc:InformationURI>
+    </cac:PhysicalLocation>
+    <cac:Contact>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Telephone>+1 781 425 5073</cbc:Telephone>
+      <cbc:Telefax>+1 781 425 5072</cbc:Telefax>
+      <cbc:ElectronicMail>info@oasis-open.org</cbc:ElectronicMail>
+    </cac:Contact>
+    <cac:AdditionalWebSite>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Name>RSS</cbc:Name>
+      <cbc:URI>https://www.oasis-open.org/feed</cbc:URI>
+    </cac:AdditionalWebSite>
+    <cac:SocialMediaProfile>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Name>LinkedIN</cbc:Name>
+      <cbc:SocialMediaTypeCode>Business</cbc:SocialMediaTypeCode>
+      <cbc:URI>https://www.linkedin.com/company/oasis</cbc:URI>
+    </cac:SocialMediaProfile>
+    <cac:SocialMediaProfile>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Name>Twitter</cbc:Name>
+      <cbc:URI>http://twitter.com/OASISopen</cbc:URI>
+    </cac:SocialMediaProfile>
+    <cac:SocialMediaProfile>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Name>Facebook</cbc:Name>
+      <cbc:URI>http://facebook.com/oasis.open</cbc:URI>
+    </cac:SocialMediaProfile>
+    <cac:SocialMediaProfile>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Name>YouTube</cbc:Name>
+      <cbc:URI>http://www.youtube.com/oasisopen</cbc:URI>
+    </cac:SocialMediaProfile>
+    <cac:SocialMediaProfile>
+      <cbc:ID>5</cbc:ID>
+      <cbc:Name>Google+</cbc:Name>
+      <cbc:URI>https://plus.google.com/+Oasis-openOrg</cbc:URI>
+    </cac:SocialMediaProfile>
+  </cac:SenderParty>
+  <cac:BusinessParty>
+    <cbc:EndpointID schemeID="GLN" schemeAgencyID="9">9994567987654</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="GB:VAT">GB999999973</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>World Events Ltd.</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:CityName>London</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>GB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:BusinessParty>
+  <cac:BusinessCapability>
+    <cbc:CapabilityTypeCode>General</cbc:CapabilityTypeCode>
+    <cbc:Description>Advancing open standards for the information society.</cbc:Description>
+  </cac:BusinessCapability>
+</BusinessCard>

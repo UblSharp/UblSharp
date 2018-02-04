@@ -15,6 +15,14 @@ namespace UblSharp.Tests
         }
 
 
+        [UblSampleFact("UBL-BusinessCard-2.2-Example.xml")]
+        public void UBLBusinessCard22ExampleTest()
+        {
+            bool areEqual = TestDocument("UBL-BusinessCard-2.2-Example.xml", Samples.UBLBusinessCard22Example.Create);
+            Assert.True(areEqual, "Written BusinessCardType differs from the one read");
+        }
+
+
         [UblSampleFact("UBL-CreditNote-2.0-Example.xml")]
         public void UBLCreditNote20ExampleTest()
         {
@@ -47,6 +55,30 @@ namespace UblSharp.Tests
         }
 
 
+        [UblSampleFact("UBL-DigitalAgreement-2.2-Example-Multilateral.xml")]
+        public void UBLDigitalAgreement22ExampleMultilateralTest()
+        {
+            bool areEqual = TestDocument("UBL-DigitalAgreement-2.2-Example-Multilateral.xml", Samples.UBLDigitalAgreement22ExampleMultilateral.Create);
+            Assert.True(areEqual, "Written DigitalAgreementType differs from the one read");
+        }
+
+
+        [UblSampleFact("UBL-DigitalAgreement-2.2-Example.xml")]
+        public void UBLDigitalAgreement22ExampleTest()
+        {
+            bool areEqual = TestDocument("UBL-DigitalAgreement-2.2-Example.xml", Samples.UBLDigitalAgreement22Example.Create);
+            Assert.True(areEqual, "Written DigitalAgreementType differs from the one read");
+        }
+
+
+        [UblSampleFact("UBL-DigitalCapability-2.2-Example.xml")]
+        public void UBLDigitalCapability22ExampleTest()
+        {
+            bool areEqual = TestDocument("UBL-DigitalCapability-2.2-Example.xml", Samples.UBLDigitalCapability22Example.Create);
+            Assert.True(areEqual, "Written DigitalCapabilityType differs from the one read");
+        }
+
+
         [UblSampleFact("UBL-ExceptionCriteria-2.1-Example.xml")]
         public void UBLExceptionCriteria21ExampleTest()
         {
@@ -60,6 +92,14 @@ namespace UblSharp.Tests
         {
             bool areEqual = TestDocument("UBL-ExceptionNotification-2.1-Example.xml", Samples.UBLExceptionNotification21Example.Create);
             Assert.True(areEqual, "Written ExceptionNotificationType differs from the one read");
+        }
+
+
+        [UblSampleFact("UBL-ExpressionOfInterestRequest-2.2-Example.xml")]
+        public void UBLExpressionOfInterestRequest22ExampleTest()
+        {
+            bool areEqual = TestDocument("UBL-ExpressionOfInterestRequest-2.2-Example.xml", Samples.UBLExpressionOfInterestRequest22Example.Create);
+            Assert.True(areEqual, "Written ExpressionOfInterestRequestType differs from the one read");
         }
 
 
@@ -263,6 +303,22 @@ namespace UblSharp.Tests
         }
 
 
+        [UblSampleFact("UBL-PriorInformationNotice-2.2-Example-Embedded.xml")]
+        public void UBLPriorInformationNotice22ExampleEmbeddedTest()
+        {
+            bool areEqual = TestDocument("UBL-PriorInformationNotice-2.2-Example-Embedded.xml", Samples.UBLPriorInformationNotice22ExampleEmbedded.Create);
+            Assert.True(areEqual, "Written PriorInformationNoticeType differs from the one read");
+        }
+
+
+        [UblSampleFact("UBL-PriorInformationNotice-2.2-Example-External.xml")]
+        public void UBLPriorInformationNotice22ExampleExternalTest()
+        {
+            bool areEqual = TestDocument("UBL-PriorInformationNotice-2.2-Example-External.xml", Samples.UBLPriorInformationNotice22ExampleExternal.Create);
+            Assert.True(areEqual, "Written PriorInformationNoticeType differs from the one read");
+        }
+
+
         [UblSampleFact("UBL-ProductActivity-2.1-Example-1.xml")]
         public void UBLProductActivity21Example1Test()
         {
@@ -452,6 +508,14 @@ namespace UblSharp.Tests
         {
             bool areEqual = TestDocument("UBL-Waybill-2.0-Example-International.xml", Samples.UBLWaybill20ExampleInternational.Create);
             Assert.True(areEqual, "Written WaybillType differs from the one read");
+        }
+
+
+        [UblSampleFact("UBL-WeightStatement-2.2-Example.xml")]
+        public void UBLWeightStatement22ExampleTest()
+        {
+            bool areEqual = TestDocument("UBL-WeightStatement-2.2-Example.xml", Samples.UBLWeightStatement22Example.Create);
+            Assert.True(areEqual, "Written WeightStatementType differs from the one read");
         }
 
 

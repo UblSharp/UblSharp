@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WeightStatement 
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+>
+	<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+	<cbc:ID>GOA294107</cbc:ID>
+	<cbc:IssueDate>2016-11-03</cbc:IssueDate>
+	<cbc:IssueTime>09:30:00</cbc:IssueTime>
+	<cbc:WeightStatementTypeCode listAgencyID="6" listID="UN/ECE 1001" listVersionID="d16a">749</cbc:WeightStatementTypeCode>
+	<cac:SenderParty>
+		<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">1234567987654</cbc:EndpointID>
+		<cbc:IndustryClassificationCode listAgencyID="6" listID="UN/ECE 3035">CA</cbc:IndustryClassificationCode>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyID="306" schemeAgencyName="SMDG" schemeID="LINES"
+			schemeName="SMDG master liner code list">XXX</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>ACME Ltd.</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>One Hundred Road</cbc:StreetName>
+			<cbc:BuildingNumber>100</cbc:BuildingNumber>
+			<cbc:CityName>London</cbc:CityName>
+			<cac:Country>
+				<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">9994567987654</cbc:EndpointID>
+		<cbc:IndustryClassificationCode listAgencyID="6" listID="UN/ECE 3035">TR</cbc:IndustryClassificationCode>
+		<cac:PartyName>
+			<cbc:Name>La Spezia Container Terminal</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:CityName>La Spezia</cbc:CityName>
+			<cac:Country>
+				<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+	</cac:ReceiverParty>
+	<cac:WeighingParty>
+		<cbc:IndustryClassificationCode listAgencyID="6" listID="UN/ECE 3035">WPA</cbc:IndustryClassificationCode>
+		<cac:PartyName>
+			<cbc:Name>LEONARDO</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:CityName>La Spezia</cbc:CityName>
+			<cac:Country>
+                <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Person>
+			<cbc:FirstName>GIORGIO</cbc:FirstName>
+			<cbc:FamilyName>VERDI</cbc:FamilyName>
+			<cbc:RoleCode listAgencyID="6" listID="UN/ECE 3139">BN</cbc:RoleCode>
+		</cac:Person>
+	</cac:WeighingParty>
+	<cac:ResponsibleParty>
+		<cbc:IndustryClassificationCode listAgencyID="6" listID="UN/ECE 3035">SPC</cbc:IndustryClassificationCode>
+		<cac:PartyName>
+			<cbc:Name>LEONARDO</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:CityName>La Spezia</cbc:CityName>
+			<cac:Country>
+                <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Person>
+			<cbc:FirstName>STEFANO</cbc:FirstName>
+			<cbc:FamilyName>ROSSI</cbc:FamilyName>
+			<cbc:RoleCode listAgencyID="6" listID="UN/ECE 3139">RP</cbc:RoleCode>
+		</cac:Person>
+	</cac:ResponsibleParty>
+	<cac:Shipment>
+		<cbc:ID>123456</cbc:ID>
+		<cac:TransportHandlingUnit>
+			<cac:TransportEquipment>
+				<cbc:ID schemeAgencyID="5" schemeID="ISO 6346">TRHU1652173</cbc:ID>
+				<cbc:TransportEquipmentTypeCode listAgencyID="6" listID="UN/ECE 8053">CN</cbc:TransportEquipmentTypeCode>
+				<cbc:SizeTypeCode listAgencyID="5" listID="ISO 6346">22G1</cbc:SizeTypeCode>
+				<cbc:FullnessIndicationCode listAgencyID="6" listID="UN/ECE 8169">5</cbc:FullnessIndicationCode>
+				<cac:VerifiedGrossMass>
+					<cbc:ID>123</cbc:ID>
+					<cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
+					<cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+					<cbc:WeighingMethodCode listAgencyID="54" listID="IMO SOLAS">SM1</cbc:WeighingMethodCode>
+					<cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
+					<cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>
+					<cbc:GrossMassMeasure unitCode="KGM">25730</cbc:GrossMassMeasure>
+					<cac:DocumentReference>
+						<cbc:ID>W123</cbc:ID>
+						<cbc:IssueDate>2016-11-02</cbc:IssueDate>
+						<cbc:DocumentTypeCode listAgencyID="306" listAgencyName="SMDG" listID="VGM">SM1</cbc:DocumentTypeCode>
+						<cbc:DocumentType/>
+						<cbc:DocumentDescription>Certificate for determination of VGM according to method 1</cbc:DocumentDescription>
+					</cac:DocumentReference>
+				</cac:VerifiedGrossMass>
+			</cac:TransportEquipment>
+			<cac:ShipmentDocumentReference>
+				<cbc:ID>GOA294107</cbc:ID>
+				<cbc:DocumentTypeCode listAgencyID="6" listID="UN/ECE 1153">BN</cbc:DocumentTypeCode>
+			</cac:ShipmentDocumentReference>
+		</cac:TransportHandlingUnit>
+	</cac:Shipment>
+</WeightStatement>

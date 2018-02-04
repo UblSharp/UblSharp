@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PriorInformationNotice
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+  <cbc:IssueDate>2016-05-29</cbc:IssueDate>
+  <cac:ContractingParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>Other</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:TenderPreparation>
+      <cbc:TenderEnvelopeID>abc</cbc:TenderEnvelopeID>
+      <cac:TenderEncryptionData>
+        <cbc:MessageFormat>1.2.840.113549.1.9.16.0.1</cbc:MessageFormat>
+        <cac:EncryptionCertificateAttachment>
+          <cac:ExternalReference>
+            <cbc:URI>www.digst.dk/udbud/NemID.cer </cbc:URI>
+          </cac:ExternalReference>
+        </cac:EncryptionCertificateAttachment>
+        <cac:EncryptionCertificatePathChain>
+          <cbc:URI>https://www.trust2408/certPaths/Trust2408_issuingCA12_chain.p7c</cbc:URI>
+        </cac:EncryptionCertificatePathChain>
+        <cac:EncryptionSymmetricAlgorithm>
+          <cbc:OID>2.16.840.1.101.3.4.1.2</cbc:OID>
+        </cac:EncryptionSymmetricAlgorithm>
+        <cac:EncryptionSymmetricAlgorithm>
+          <cbc:OID>2.16.840.1.101.3.4.1.42</cbc:OID>
+        </cac:EncryptionSymmetricAlgorithm>
+      </cac:TenderEncryptionData>
+    </cac:TenderPreparation>
+  </cac:TenderingTerms>
+</PriorInformationNotice>

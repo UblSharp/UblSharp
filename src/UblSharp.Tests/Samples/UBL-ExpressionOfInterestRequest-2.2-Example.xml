@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExpressionOfInterestRequest
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestRequest-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+  <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:www.cenbii.eu:transaction:BiiTrns081:ver2.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:www.cenbii.eu:profile:bii46:ver2.0</cbc:ProfileID>
+  <cbc:ID>234486-2017</cbc:ID>
+  <cbc:UUID>x2344vghjjrhhfhrrrgd4567</cbc:UUID>
+  <cbc:ContractFolderID>2017/S 214-3792289</cbc:ContractFolderID>
+  <cbc:IssueDate>2017-10-16</cbc:IssueDate>
+  <cbc:IssueTime>17:30:00+01:00</cbc:IssueTime>
+  <cbc:Note>We are very interested please send us all information possible</cbc:Note>
+
+  <cac:EconomicOperatorParty>
+    <cac:Party>
+      <cbc:WebsiteURI>http://super.company.dk</cbc:WebsiteURI>
+      <cbc:EndpointID schemeAgencyID="9" schemeID="FI:OVT">01842222222222</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeAgencyID="9" schemeID="GLN">5790000127777</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>SuperCompany</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:AddressFormatCode listAgencyID="700" listID="CENBII3"
+          >Structured</cbc:AddressFormatCode>
+        <cbc:StreetName>Korsbygade 34</cbc:StreetName>
+        <cbc:CityName>Aalborg</cbc:CityName>
+        <cbc:PostalZone>9000</cbc:PostalZone>
+        <cbc:CountrySubentity/>
+        <cac:Country>
+          <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>SuperCompany</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="DK:CVR">DK59873677</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:ID>7778</cbc:ID>
+        <cbc:Name>Ole Hansen</cbc:Name>
+        <cbc:Telephone>4526532147</cbc:Telephone>
+        <cbc:Telefax>4526532146</cbc:Telefax>
+        <cbc:ElectronicMail>Ole@super.company.dk</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:EconomicOperatorParty>
+
+  <cac:ContractingParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="FI:OVT">01841111111111</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeAgencyID="9" schemeID="GLN">5398000392577</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>FirstAgency</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+        <cbc:Name>Ole Ellerbæk Madsen</cbc:Name>
+      </cac:Contact>
+    </cac:Party>
+  </cac:ContractingParty>
+
+  <cac:ProcurementProject>
+    <cbc:ID>DP</cbc:ID>
+    <cbc:Name>DigitalPost</cbc:Name>
+    <cbc:Description>Only Lot2</cbc:Description>
+  </cac:ProcurementProject>
+
+  <cac:ProcurementProjectLotReference>
+    <cbc:ID>Lot2</cbc:ID>
+  </cac:ProcurementProjectLotReference>
+
+</ExpressionOfInterestRequest>

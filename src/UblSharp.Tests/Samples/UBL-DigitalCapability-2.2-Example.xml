@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalCapability 
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:DigitalCapability-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+  >
+  <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+  <cbc:ID>C12345-2016</cbc:ID>
+  <cbc:IssueDate>2016-11-07</cbc:IssueDate>
+  <cbc:VersionID>1.1</cbc:VersionID>
+  <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
+  <cac:SenderParty>
+    <cbc:EndpointID schemeID="GLN" schemeAgencyID="9">1234567987654</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="DK:CVR">DK12345678</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Papirøen Food ApS</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:StreetName>Trangravsvej</cbc:StreetName>
+      <cbc:BuildingNumber>12</cbc:BuildingNumber>
+      <cbc:CityName>Copenhagen</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>DK</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:SenderParty>
+  <cac:BusinessParty>
+    <cbc:EndpointID schemeID="GLN" schemeAgencyID="9">9994567987654</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="IT:VAT">IT01234567890</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Slow Food Srl</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:CityName>La Spezia</cbc:CityName>
+      <cac:Country>
+        <cbc:IdentificationCode>IT</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:BusinessParty>
+  <cac:DigitalProcess>
+    <cbc:ID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ID>
+    <cbc:ProfileID>BII</cbc:ProfileID>
+    <cac:DigitalCollaboration>
+      <cbc:ID>1</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>Invoice</cbc:ID>
+        <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.2</cbc:VersionID>
+          <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listAgencyID="6" listID="UN/ECE 1001">380</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
+          <cbc:ParticipantID schemeAgencyID="9" schemeID="GLN">1234567987654</cbc:ParticipantID>
+          <cbc:TestIndicator>true</cbc:TestIndicator>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS2</cbc:ProtocolID>
+            <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>CreditNote</cbc:ID>
+        <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.2</cbc:VersionID>
+          <cbc:SchemaURI>urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listAgencyID="6" listID="UN/ECE 1001">381</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>OpenPEPPOL</cbc:NetworkID>
+          <cbc:ParticipantID schemeAgencyID="9" schemeID="GLN">1234567987654</cbc:ParticipantID>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS2</cbc:ProtocolID>
+            <cbc:EndpointURI>http://as2.papifood.dk</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+  </cac:DigitalProcess>
+</DigitalCapability>
