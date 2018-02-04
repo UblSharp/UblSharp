@@ -61,19 +61,6 @@ namespace UblSharp.Validation
                 }
             }
 
-            var resourceName = $"{BaseNamespace}.common.UBL-xmldsig-core-schema-2.1.xsd";
-            using (var stream = thisAssembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                {
-                    throw new InvalidOperationException($"Error while getting manifest resource '{resourceName}'");
-                }
-
-                var schema = XmlSchema.Read(stream, _schemaValHandler);
-                schema.SourceUri = "file:///UBL-xmldsig-core-schema-2.1.xsd";
-                _cachedSchema.Add(schema);
-            }
-
             _cachedSchema.Compile();
         }
 
