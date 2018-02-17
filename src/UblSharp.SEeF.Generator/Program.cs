@@ -14,7 +14,7 @@ namespace UblSharp.SEeF.Generator
             generator.Generate(
                 new UblGeneratorOptions()
                 {
-                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Schemas\"),
+                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"V1\"),
                     OutputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\UblSharp.SEeF"),
                     Namespace = "UblSharp.SEeF",
                     ValidationHandler = ValidationHandler,

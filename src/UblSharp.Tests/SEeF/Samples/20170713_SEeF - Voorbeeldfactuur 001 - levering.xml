@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a fictional invoice and serves as an example of an invoice message sent by an energy supplier. -->
+<!-- Authors: Michiel Stornebrink & Wouter van den Berg (TNO) -->
+<!-- Documentation: Standaard Energie eFactuur (http://www.energie-efactuur.nl) -->
+<!-- Date: 2016-02-29 -->
+
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:seef="urn:www.energie-efactuur.nl:profile:invoice:ver2.0" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"  xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
+    http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd urn:www.energie-efactuur.nl:profile:invoice:ver2.0 ../SEeF_UBLExtension_v2.0.0.xsd">
+	
+	<!-- Het UBLExtensions element bevat de Energie specifieke uitbreidingen, waaronder de specificatie van meterstanden die ten grondslag liggen aan het verbuik -->
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>	
+				<seef:SEEFExtensionWrapper>
+					 <seef:UtilityConsumptionPoint> 
+						<cbc:ID schemeName="EAN">871687400001234567</cbc:ID>
+						<seef:Address>
+							<cbc:StreetName>Stadhuisplein</cbc:StreetName>
+							<cbc:BuildingNumber>1</cbc:BuildingNumber>
+							<cbc:CityName>Stedendorp</cbc:CityName>
+							<cbc:PostalZone>1234AB</cbc:PostalZone>
+							<cac:Country>
+								<cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NL</cbc:IdentificationCode>
+							</cac:Country>
+						</seef:Address>
+						<seef:UtilityMeter>
+							<seef:MeterNumber>40222431</seef:MeterNumber>
+							
+							<!-- Telwerk LAAG verbruik juli: 2582 -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">LAAG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2015-07-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">10105</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2015-07-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">12687</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>100</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							<!-- Telwerk HOOG verbruik juli: 3930 -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">HOOG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2015-07-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">21387</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2015-07-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">25317</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>60</seef:Percentage>
+									</seef:FuelType>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">SOLAR</seef:FuelTypeCode>
+										<seef:Name>Groene stroom - Zon</seef:Name>
+										<seef:Percentage>40</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							
+							<!-- Telwerk LAAG verbruik augustus: 2631 -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">LAAG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2015-08-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">12687</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2015-08-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">15318</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>100</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							<!-- Telwerk HOOG verbruik augustus: 4416 -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">HOOG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2015-08-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">25317</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2015-08-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCodeListID="SEeF:unitCodes" unitCode="KWH">29733</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>60</seef:Percentage>
+									</seef:FuelType>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">SOLAR</seef:FuelTypeCode>
+										<seef:Name>Groene stroom - Zon</seef:Name>
+										<seef:Percentage>40</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+						</seef:UtilityMeter>
+					</seef:UtilityConsumptionPoint>
+				</seef:SEEFExtensionWrapper>
+ 			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	
+	<!-- Technische elementen voor interpretatie van UBL bericht -->
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID> <!-- Required by SI v1.1 -->
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0:extended:urn:www.simplerinvoicing.org:si:si-ubl:ver1.1</cbc:CustomizationID> 
+	<!-- Required by SI v1.1 -->
+ 	<cbc:ProfileID>urn:www.energie-efactuur.nl:profile:invoice:ver1.0</cbc:ProfileID> 
+	
+	<!-- Vanaf hier: kernfactuur elementen -->
+	<cbc:ID>F201512345</cbc:ID>	
+	<cbc:IssueDate>2015-09-01</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="UNCL1001" listAgencyID="6">380</cbc:InvoiceTypeCode>		
+	<cbc:Note>Periodieke Afrekening</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+	<cbc:AccountingCost>3510233</cbc:AccountingCost>				
+	<cac:InvoicePeriod>
+		<cbc:StartDate>2015-07-01</cbc:StartDate>
+		<cbc:EndDate>2015-08-31</cbc:EndDate>
+	</cac:InvoicePeriod>
+
+	<!-- Verwijzing naar Purchase Order -->
+	<cac:OrderReference>
+		<cbc:ID>PO123456789</cbc:ID>
+	</cac:OrderReference>
+
+	<!-- BillingReference hier gebruiken indien het bericht een credit factuur betreft en er dus een verwijzing naar debet factuur nodig is -->
+	
+	<!-- Verwijzing naar (raam)contract -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>F201512345</cbc:ID>
+		<cbc:DocumentType>FWAGREEMENT</cbc:DocumentType>
+		<cac:Attachment>
+			<cac:ExternalReference>
+				<cbc:URI>http://www.organisatie.nl/api/documents/hashkey/F201512345</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+
+	<!-- Specificatie van Leverancier -->
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="ZZZ" schemeID="NL:KVK">27376655</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Elektriciteit Leverancier N.V.</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:Postbox>233769</cbc:Postbox>
+				<cbc:StreetName>Kampweg</cbc:StreetName>
+				<cbc:BuildingNumber>5a</cbc:BuildingNumber>
+				<cbc:CityName>Soesterberg</cbc:CityName>
+				<cbc:PostalZone>3769 DE</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listAgencyID="6" listID="ISO3166-1:Alpha2">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeAgencyID="ZZZ" schemeID="NL:VAT">NL002875718B01</cbc:CompanyID>
+				<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID schemeAgencyID="ZZZ" schemeID="NL:KVK">27376655</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<cbc:CityName>Soesterberg</cbc:CityName>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Afdeling debiteuren</cbc:Name>
+				<cbc:Telephone>0031881234567</cbc:Telephone>
+				<cbc:ElectronicMail>debiteuren@organisatie.nl</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	
+	<!-- Specificatie van Klant -->
+	<cac:AccountingCustomerParty>
+		<cbc:SupplierAssignedAccountID>123456789</cbc:SupplierAssignedAccountID>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="ZZZ" schemeID="NL:KVK">>12345678</cbc:ID> 
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Nederlandse Gemeente xyz</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Stadsstraat</cbc:StreetName>
+				<cbc:BuildingNumber>1</cbc:BuildingNumber>
+				<cbc:CityName>Stedendorp</cbc:CityName>
+				<cbc:PostalZone>0000AA</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Nederlandse Gemeente xyz</cbc:RegistrationName>
+				<cbc:CompanyID schemeAgencyID="ZZZ" schemeID="NL:KVK">08135596</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>John Smit</cbc:Name>
+				<cbc:Telephone>555-9876543</cbc:Telephone>
+				<cbc:ElectronicMail>contact@stedendorp.nl</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>			
+
+	<!-- Betalingsgegevens -->
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461" listAgencyID="6">42</cbc:PaymentMeansCode> <!-- 42 = Payment to bank account, 49 = Direct debit/incasso  -->
+		<cbc:PaymentDueDate>2015-08-14</cbc:PaymentDueDate>
+	
+		<!-- In geval van incasso, kan in het element PayerFinancialAccount de bankgegevens van de betaler worden gespecificeerd.-->
+		<!--
+		<cac:PayerFinancialAccount>
+			<cbc:ID schemeID="IBAN">NL10INGB0007654321</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">INGBNL2A</cbc:ID>
+					<cbc:Name>ING Bank</cbc:Name>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayerFinancialAccount>
+		-->
+		
+		<!-- Bankgegevens van de leverancier waarop betaald dient te worden -->
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="IBAN">NL20INGB0001234567</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">INGBLNL2A</cbc:ID>
+					<cbc:Name>ING Bank</cbc:Name>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	
+	<cac:PaymentTerms>
+		<cbc:Note>Opmerking tbv betaling</cbc:Note>
+	</cac:PaymentTerms>
+	
+	<!-- BTW totalen -->
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">279.04</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">1328.74</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">279.04</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	
+	<!-- Factuur totalen -->
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">1328.74</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">1328.74</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1607.78</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1607.78</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+
+	<!-- Factuurregels -->	
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH" unitCodeListID="UNECERec20">2582</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">115.83</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-07-01</cbc:StartDate>
+			<cbc:EndDate>2015-07-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">24.32</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">115.83</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">24.32</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>	
+		<cac:Item>
+			<cbc:Description>Verbruik daluren</cbc:Description>
+			<cbc:Name>Verbruik daluren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVD</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04486</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH" unitCodeListID="UNECERec20">3930</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">248.14</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-07-01</cbc:StartDate>
+			<cbc:EndDate>2015-07-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">52.11</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">248.14</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">52.11</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>		
+		<cac:Item>
+			<cbc:Description>Verbruik piekuren</cbc:Description>
+			<cbc:Name>Verbruik piekuren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVP</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.06314</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">6512</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">280.67</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-07-01</cbc:StartDate>
+			<cbc:EndDate>2015-07-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">58.94</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">280.67</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">58.94</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Energiebelasting (EB) zone 2</cbc:Description>
+			<cbc:Name>Energiebelasting (EB) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EB2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04310</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>4</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">6512</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">17.58</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-07-01</cbc:StartDate>
+			<cbc:EndDate>2015-07-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">3.69</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">17.58</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">3.69</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Opslag duurzame energie (ODE) zone 2</cbc:Description>
+			<cbc:Name>Opslag duurzame energie (ODE) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>ODE2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.00270</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+	<cac:InvoiceLine>
+		<cbc:ID>5</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH" unitCodeListID="UNECERec20">2631</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">118.03</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-08-01</cbc:StartDate>
+			<cbc:EndDate>2015-08-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">24.79</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">118.03</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">24.79</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>	
+		<cac:Item>
+			<cbc:Description>Verbruik daluren</cbc:Description>
+			<cbc:Name>Verbruik daluren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVD</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04486</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>6</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH" unitCodeListID="UNECERec20">4416</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">278.83</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-08-01</cbc:StartDate>
+			<cbc:EndDate>2015-08-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">58.55</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">278.83</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">58.55</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>		
+		<cac:Item>
+			<cbc:Description>Verbruik piekuren</cbc:Description>
+			<cbc:Name>Verbruik piekuren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVP</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.06314</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>7</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">7047</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">303.73</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-08-01</cbc:StartDate>
+			<cbc:EndDate>2015-08-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">63.78</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">303.73</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">63.78</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Energiebelasting (EB) zone 2</cbc:Description>
+			<cbc:Name>Energiebelasting (EB) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EB2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04310</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>8</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">7047</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">19.03</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-08-01</cbc:StartDate>
+			<cbc:EndDate>2015-08-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">19.03</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Opslag duurzame energie (ODE) zone 2</cbc:Description>
+			<cbc:Name>Opslag duurzame energie (ODE) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>ODE2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.00270</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>9</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="C62">2</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">-53.10</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2015-07-01</cbc:StartDate>
+			<cbc:EndDate>2015-08-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:Delivery>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="EAN">871687400001234567</cbc:ID>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">-11.15</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">-53.10</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">-11.15</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>EB vermindering</cbc:Description>
+			<cbc:Name>EB vermindering</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EBRED</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:CommodityCode listID="UNSPSC">83101800</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="SEeF:ItemClassificationCodes">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">-26.55</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+</Invoice>
