@@ -29,6 +29,10 @@
     <NoWarn>1701;1702;1705;CS1589</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="SEeF\Samples\20160704_SEeF - Voorbeeldfactuur 001 - levering.xml" />
+    <None Remove="SEeF\Samples\20170713_SEeF - Voorbeeldfactuur 001 - levering.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="FluentAssertions" Version="4.19.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
@@ -39,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
+    <ProjectReference Include="..\UblSharp.SEeF\UblSharp.SEeF.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />

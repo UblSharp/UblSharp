@@ -46,7 +46,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Schemas\SEeF_UBLExtension_v2.0.0.xsd">
+    <None Include="V1\SEeF_UBLExtension_v1.0.1.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="V2\SEeF_UBLExtension_v2.0.0.xsd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

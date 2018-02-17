@@ -3,6 +3,6 @@
       <UblSharpVersion>1.1.0</UblSharpVersion>
       <UblSharpValidationVersion>1.1.0</UblSharpValidationVersion>
       <UblSharpGeneratorCoreVersion>1.1.0</UblSharpGeneratorCoreVersion>
-      <UblSharpSEeFVersion>1.1.0</UblSharpSEeFVersion>
+      <UblSharpSEeFVersion>1.1.1</UblSharpSEeFVersion>
   </PropertyGroup>
 </Project>

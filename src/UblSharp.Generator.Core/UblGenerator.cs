@@ -36,7 +36,7 @@ namespace UblSharp.Generator
             new RemoveConflictingTypes(),
             new RenameXadesIntPropertyFixer(),
             new ItemsChoiceTypeRenamer(), // and this really last (after properties are converted)
-            new RenameTypesWithSuffix(),
+            // new RenameTypesWithSuffix(), // Disabled, because not needed anymore? (conflicts with types like CertIDTypeV2)
             new FixAmbigiousIdentifierType(),
             new UblDocumentationFixer(),
             new XmlAttributesFixer(),
@@ -61,11 +61,16 @@ namespace UblSharp.Generator
             options.Validate();
 
             var baseInputDirectory = options.XsdBasePath;
-            var maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            var maindocfiles = new List<FileInfo>();
+            if (!string.IsNullOrEmpty(baseInputDirectory))
+            {
+                maindocfiles = new DirectoryInfo(baseInputDirectory).GetFiles("*.xsd").ToList();
+            }
+
             var maindocSchemaSet = new XmlSchemaSet()
             {
                 // XmlResolver = xsdResolver
-                XmlResolver = null
+                // XmlResolver = null
             };
 
             Console.WriteLine("Read common UBL files from embedded resources...");
@@ -210,32 +215,25 @@ namespace UblSharp.Generator
         {
             var thisAssembly = typeof(UblGenerator).Assembly;
 
-            Add("CCTS_CCT_SchemaModule-2.1.xsd");
-            // schemas.Compile();
+            //Add("CCTS_CCT_SchemaModule-2.1.xsd");
 
-            Add("UBL-UnqualifiedDataTypes-2.1.xsd");
-            Add("UBL-QualifiedDataTypes-2.1.xsd");
-            Add("UBL-SignatureBasicComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-UnqualifiedDataTypes-2.1.xsd");
+            //Add("UBL-QualifiedDataTypes-2.1.xsd");
+            //Add("UBL-SignatureBasicComponents-2.1.xsd");
 
-            Add("UBL-CommonBasicComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonBasicComponents-2.1.xsd");
 
-            Add("UBL-CommonAggregateComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonAggregateComponents-2.1.xsd");
 
             Add("UBL-xmldsig-core-schema-2.1.xsd");
-            Add("UBL-XAdESv132-2.1.xsd");
-            Add("UBL-XAdESv141-2.1.xsd");
-            Add("UBL-SignatureAggregateComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-XAdES01903v132-201601-2.2.xsd");
+            //Add("UBL-XAdESv141-2.1.xsd");
+            //Add("UBL-SignatureAggregateComponents-2.1.xsd");
 
-            Add("UBL-CommonSignatureComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-CommonSignatureComponents-2.1.xsd");
 
-            Add("UBL-ExtensionContentDataType-2.1.xsd");
-            Add("UBL-CommonExtensionComponents-2.1.xsd");
-            // schemas.Compile();
+            //Add("UBL-ExtensionContentDataType-2.1.xsd");
+            //Add("UBL-CommonExtensionComponents-2.1.xsd");
 
             void Add(string filename)
             {
@@ -314,6 +312,7 @@ namespace UblSharp.Generator
                 foreach (XmlSchemaComplexType element in schema.SchemaTypes.Values.OfType<XmlSchemaComplexType>().Where(x => !baseTypes.Contains(x.Name)))
                 {
                     Console.WriteLine($"Import schema type for {element.QualifiedName.Namespace} : {element.QualifiedName.Name}");
+
                     var xmlTypeMapping = schemaImporter.ImportSchemaType(element.QualifiedName);
                     codeExporter.ExportTypeMapping(xmlTypeMapping);
                 }

@@ -30,7 +30,7 @@ namespace UblSharp.Generator
             { Namespaces.Csc, "CommonSignatureComponents" },
             { Namespaces.Qdt, "QualifiedDataTypes" }, // There are no Qdt's in UBL
             { Namespaces.Sac, "SignatureAggregateComponents" },
-            { Namespaces.Sbc, "SignatureBasicComponents" },
+            { Namespaces.Sbc, "" },
             { Namespaces.Udt, "UnqualifiedDataTypes" },
             { Namespaces.Xades132, "Xades" },
             { Namespaces.Xades141, "Xades" },
