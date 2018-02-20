@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Xml.Linq;
 using FluentAssertions;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.SEeF;
@@ -101,11 +102,9 @@ namespace UblSharp.Tests.SEeF
             using (var sw = new StringWriter(sb))
             {
                 UblDocument.Save(invoice, sw);
+            }
 
-                sb.ToString()
-                    .Replace("\r\n", "\n")
-                    .Should().Be(
-                        @"<?xml version=""1.0"" encoding=""utf-16""?>
+            var expected = @"<?xml version=""1.0"" encoding=""utf-16""?>
 <Invoice xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:cac=""urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"" xmlns:cbc=""urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"" xmlns=""urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"">
 	<UBLExtensions xmlns=""urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"">
 		<UBLExtension xmlns:sig=""urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"" xmlns:sbc=""urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"">
@@ -119,8 +118,9 @@ namespace UblSharp.Tests.SEeF
 		</UBLExtension>
 	</UBLExtensions>
 	<cbc:ID>id</cbc:ID>
-</Invoice>".Replace("\r\n", "\n"));
-            }
+</Invoice>";
+
+            UblXmlComparer.IsCopyEqual(XDocument.Parse(expected), XDocument.Parse(sb.ToString()), _output).Should().BeTrue();
         }
     }
 }
