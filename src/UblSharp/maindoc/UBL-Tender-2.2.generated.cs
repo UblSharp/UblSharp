@@ -125,10 +125,14 @@ namespace UblSharp
         [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=14)]
         public PeriodType @__ValidityPeriod;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CallForTenderDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=15)]
+        public DocumentReferenceType @__CallForTenderDocumentReference;
+        
         private System.Collections.Generic.List<DocumentReferenceType> _documentReference;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
         public DocumentReferenceType[] @__DocumentReference
         {
             get
@@ -144,7 +148,7 @@ namespace UblSharp
         private System.Collections.Generic.List<SignatureType> _signature;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
         public SignatureType[] @__Signature
         {
             get
@@ -160,7 +164,7 @@ namespace UblSharp
         private System.Collections.Generic.List<PartyType> _tendererParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TendererParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute("TendererParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
         public PartyType[] @__TendererParty
         {
             get
@@ -174,13 +178,13 @@ namespace UblSharp
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TendererQualificationDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute("TendererQualificationDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
         public DocumentReferenceType @__TendererQualificationDocumentReference;
         
         private System.Collections.Generic.List<PartyType> _subcontractorParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SubcontractorParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute("SubcontractorParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
         public PartyType[] @__SubcontractorParty
         {
             get
@@ -196,7 +200,7 @@ namespace UblSharp
         private System.Collections.Generic.List<ContractingPartyType> _contractingParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ContractingParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute("ContractingParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
         public ContractingPartyType[] @__ContractingParty
         {
             get
@@ -210,13 +214,13 @@ namespace UblSharp
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public CustomerPartyType @__OriginatorCustomerParty;
         
         private System.Collections.Generic.List<TenderedProjectType> _tenderedProject;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TenderedProject", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute("TenderedProject", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public TenderedProjectType[] @__TenderedProject
         {
             get
@@ -688,6 +692,32 @@ namespace UblSharp
             set
             {
                 __ValidityPeriod = value;
+            }
+        }
+
+        
+        /// <summary>
+        /// A reference to the call for tender document of which this tender result of.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Tender. Call For Tender_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..1
+        /// <para />ObjectClass: Tender
+        /// <para />PropertyTermQualifier: Call For Tender
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public DocumentReferenceType CallForTenderDocumentReference
+        {
+            get
+            {
+                if (__CallForTenderDocumentReference == null) { __CallForTenderDocumentReference = new DocumentReferenceType(); }
+                return __CallForTenderDocumentReference;
+            }
+            set
+            {
+                __CallForTenderDocumentReference = value;
             }
         }
 

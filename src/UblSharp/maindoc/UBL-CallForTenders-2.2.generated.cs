@@ -121,10 +121,42 @@ namespace UblSharp
         [System.Xml.Serialization.XmlElementAttribute("TechnicalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=16)]
         public DocumentReferenceType @__TechnicalDocumentReference;
         
+        private System.Collections.Generic.List<DocumentReferenceType> _requiredDocumentReference;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("RequiredDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
+        public DocumentReferenceType[] @__RequiredDocumentReference
+        {
+            get
+            {
+                return _requiredDocumentReference?.ToArray();
+            }
+            set
+            {
+                _requiredDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
+        private System.Collections.Generic.List<DocumentReferenceType> _providedDocumentReference;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ProvidedDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
+        public DocumentReferenceType[] @__ProvidedDocumentReference
+        {
+            get
+            {
+                return _providedDocumentReference?.ToArray();
+            }
+            set
+            {
+                _providedDocumentReference = value == null ? null : new System.Collections.Generic.List<DocumentReferenceType>(value);
+            }
+        }
+        
         private System.Collections.Generic.List<DocumentReferenceType> _additionalDocumentReference;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
         public DocumentReferenceType[] @__AdditionalDocumentReference
         {
             get
@@ -140,7 +172,7 @@ namespace UblSharp
         private System.Collections.Generic.List<SignatureType> _signature;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute("Signature", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
         public SignatureType[] @__Signature
         {
             get
@@ -156,7 +188,7 @@ namespace UblSharp
         private System.Collections.Generic.List<ContractingPartyType> _contractingParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ContractingParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute("ContractingParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
         public ContractingPartyType[] @__ContractingParty
         {
             get
@@ -172,7 +204,7 @@ namespace UblSharp
         private System.Collections.Generic.List<CustomerPartyType> _originatorCustomerParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute("OriginatorCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
         public CustomerPartyType[] @__OriginatorCustomerParty
         {
             get
@@ -186,25 +218,25 @@ namespace UblSharp
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute("ReceiverParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
         public PartyType @__ReceiverParty;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TenderingTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute("TenderingTerms", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
         public TenderingTermsType @__TenderingTerms;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TenderingProcess", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute("TenderingProcess", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=25)]
         public TenderingProcessType @__TenderingProcess;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ProcurementProject", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute("ProcurementProject", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=26)]
         public ProcurementProjectType @__ProcurementProject;
         
         private System.Collections.Generic.List<ProcurementProjectLotType> _procurementProjectLot;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ProcurementProjectLot", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute("ProcurementProjectLot", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=27)]
         public ProcurementProjectLotType[] @__ProcurementProjectLot
         {
             get
@@ -243,6 +275,44 @@ namespace UblSharp
         {
             get { return _note ?? (_note = new System.Collections.Generic.List<TextType>()); }
             set { _note = value; }
+        }
+
+        
+        /// <summary>
+        /// A reference to a required document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Call For Tenders. Required_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Call For Tenders
+        /// <para />PropertyTermQualifier: Required
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> RequiredDocumentReference
+        {
+            get { return _requiredDocumentReference ?? (_requiredDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>()); }
+            set { _requiredDocumentReference = value; }
+        }
+
+        
+        /// <summary>
+        /// A reference to a provided document.
+        /// <para />ComponentType: ASBIE
+        /// <para />DictionaryEntryName: Call For Tenders. Provided_ Document Reference. Document Reference
+        /// <para />Cardinality: 0..n
+        /// <para />ObjectClass: Call For Tenders
+        /// <para />PropertyTermQualifier: Provided
+        /// <para />PropertyTerm: Document Reference
+        /// <para />AssociatedObjectClass: Document Reference
+        /// <para />RepresentationTerm: Document Reference
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public System.Collections.Generic.List<DocumentReferenceType> ProvidedDocumentReference
+        {
+            get { return _providedDocumentReference ?? (_providedDocumentReference = new System.Collections.Generic.List<DocumentReferenceType>()); }
+            set { _providedDocumentReference = value; }
         }
 
         
