@@ -76,10 +76,13 @@ namespace UblSharp
         public static XmlSerializer GetSerializer(Type type)
         {
             XmlSerializer serializer;
-            if (!s_typeCache.TryGetValue(type, out serializer))
+            lock (s_typeCache)
             {
-                serializer = new XmlSerializer(type);
-                s_typeCache[type] = serializer;
+                if (!s_typeCache.TryGetValue(type, out serializer))
+                {
+                    serializer = new XmlSerializer(type);
+                    s_typeCache[type] = serializer;
+                }
             }
 
             return serializer;
