@@ -28,7 +28,7 @@ namespace UblSharp.SEeF
             s_serializerV1 = new XmlSerializer(typeof(V1.SEEFExtensionWrapperType));
 
 #if NETSTANDARD1_0 || NETSTANDARD1_3
-            var assembly = typeof(SEEFExtensionWrapperType).GetTypeInfo().Assembly;
+            var assembly = typeof(V1.SEEFExtensionWrapperType).GetTypeInfo().Assembly;
 #else
             var assembly = typeof(V1.SEEFExtensionWrapperType).Assembly;
 #endif

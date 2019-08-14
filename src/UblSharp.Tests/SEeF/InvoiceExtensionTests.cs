@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using FluentAssertions;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.SEeF;
+using UblSharp.SEeF.V1;
 using UblSharp.Tests.Util;
 using Xunit;
 using Xunit.Abstractions;
