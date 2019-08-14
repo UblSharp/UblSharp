@@ -6,7 +6,7 @@
 //
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace UblSharp.SEeF.V1
+namespace UblSharp.SEeF.V3
 {
     using UblSharp;
     using UblSharp.UnqualifiedDataTypes;
@@ -17,8 +17,8 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("SEEFExtensionWrapper", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute("SEEFExtensionWrapper", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute("SEEFExtensionWrapper", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute("SEEFExtensionWrapper", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=false)]
     public partial class SEEFExtensionWrapperType
     {
         
@@ -75,8 +75,8 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("UtilityConsumptionPoint", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute("UtilityConsumptionPoint", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute("UtilityConsumptionPoint", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute("UtilityConsumptionPoint", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=false)]
     public partial class ConsumptionPointType
     {
         
@@ -147,8 +147,29 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("TaxTotalPerSupplierParty", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute("TaxTotalPerSupplierParty", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute("MeterQuantityType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=true)]
+    public partial class MeterQuantityType : QuantityType
+    {
+        
+        public static implicit operator MeterQuantityType(decimal value)
+        {
+             return new MeterQuantityType { Value = value };
+        }
+
+        public static implicit operator decimal(MeterQuantityType value)
+        {
+             return value.Value;
+        }
+
+    }
+    
+#if FEATURE_SERIALIZATION
+    [System.SerializableAttribute()]
+#endif
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute("TaxTotalPerSupplierParty", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute("TaxTotalPerSupplierParty", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=false)]
     public partial class TaxTotalPerSupplierPartyType
     {
         
@@ -195,8 +216,8 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("MeterReadingType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("MeterReadingType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=true)]
     public partial class MeterReadingType
     {
         
@@ -228,10 +249,18 @@ namespace UblSharp.SEeF.V1
         [System.Xml.Serialization.XmlElementAttribute("LatestMeterReadingMethodCode", Order=6)]
         public CodeType @__LatestMeterReadingMethodCode;
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("ConsumptionQuantity", Order=7)]
+        public MeterQuantityType @__ConsumptionQuantity;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+        [System.Xml.Serialization.XmlElementAttribute("CorrectedConsumptionQuantity", Order=8)]
+        public MeterQuantityType @__CorrectedConsumptionQuantity;
+        
         private System.Collections.Generic.List<TextType> _meterReadingComments;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("MeterReadingComments", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute("MeterReadingComments", Order=9)]
         public TextType[] @__MeterReadingComments
         {
             get
@@ -247,7 +276,7 @@ namespace UblSharp.SEeF.V1
         private System.Collections.Generic.List<FuelMixTypeFuelType> _fuelMix;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlArrayAttribute("FuelMix", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", Order=8)]
+        [System.Xml.Serialization.XmlArrayAttribute("FuelMix", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", Order=10)]
         [System.Xml.Serialization.XmlArrayItemAttribute("FuelType", IsNullable=false)]
         public FuelMixTypeFuelType[] @__FuelMix
         {
@@ -381,13 +410,43 @@ namespace UblSharp.SEeF.V1
             }
         }
 
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public MeterQuantityType ConsumptionQuantity
+        {
+            get
+            {
+                if (__ConsumptionQuantity == null) { __ConsumptionQuantity = new MeterQuantityType(); }
+                return __ConsumptionQuantity;
+            }
+            set
+            {
+                __ConsumptionQuantity = value;
+            }
+        }
+
+        
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public MeterQuantityType CorrectedConsumptionQuantity
+        {
+            get
+            {
+                if (__CorrectedConsumptionQuantity == null) { __CorrectedConsumptionQuantity = new MeterQuantityType(); }
+                return __CorrectedConsumptionQuantity;
+            }
+            set
+            {
+                __CorrectedConsumptionQuantity = value;
+            }
+        }
+
     }
     
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("FuelMixTypeFuelType", AnonymousType=true, Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
+    [System.Xml.Serialization.XmlTypeAttribute("FuelMixTypeFuelType", AnonymousType=true, Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
     public partial class FuelMixTypeFuelType
     {
         
@@ -452,8 +511,8 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("MeterType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("MeterType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=true)]
     public partial class MeterType
     {
         
@@ -529,7 +588,7 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("ConsumptionPointTypeAddress", AnonymousType=true, Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
+    [System.Xml.Serialization.XmlTypeAttribute("ConsumptionPointTypeAddress", AnonymousType=true, Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
     public partial class ConsumptionPointTypeAddress : AddressType
     {
     }
@@ -538,8 +597,8 @@ namespace UblSharp.SEeF.V1
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("FuelMixType", TypeName="FuelMixType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0")]
-    [System.Xml.Serialization.XmlRootAttribute("FuelMixType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0", IsNullable=true)]
+    [System.Xml.Serialization.XmlTypeAttribute("FuelMixType", TypeName="FuelMixType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0")]
+    [System.Xml.Serialization.XmlRootAttribute("FuelMixType", Namespace = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", IsNullable=true)]
     public partial class FuelMixType1
     {
         

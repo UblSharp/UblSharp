@@ -14,15 +14,15 @@ namespace UblSharp.SEeF.Generator
             generator.Generate(
                 new UblGeneratorOptions()
                 {
-                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"V1\"),
+                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"V3\"),
                     OutputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\UblSharp.SEeF"),
                     Namespace = "UblSharp.SEeF",
                     ValidationHandler = ValidationHandler,
                     GenerateCommonFiles = false,
-                    //XmlToCsNamespaceMapping =
-                    //{
-                    //    { "urn:www.energie-efactuur.nl:profile:invoice:ver2.0", "SEeF" }
-                    //}
+                    XmlToCsNamespaceMapping =
+                    {
+                        { "urn:www.energie-efactuur.nl:profile:invoice:ver3.0", "SEeF" }
+                    }
                 });
 
             Console.WriteLine("Done.");
