@@ -11,9 +11,11 @@ namespace UblSharp.SEeF
     {
         // private const string XmlnsV1 = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0";
         private const string XmlnsV2 = "urn:www.energie-efactuur.nl:profile:invoice:ver2.0";
+        private const string XmlnsV2point1 = "urn:www.energie-efactuur.nl:profile:invoice:ver2.1";
 
         private static readonly XmlSerializer s_serializerV1;
         private static readonly XmlSerializer s_serializerV2;
+        private static readonly XmlSerializer s_serializerV2point1;
 
         public static XmlSerializerFactory Default { get; } = new XmlSerializerFactory();
 
@@ -27,24 +29,25 @@ namespace UblSharp.SEeF
             var assembly = typeof(SEEFExtensionWrapperType).Assembly;
 #endif
 
-            var overrides = CreateXmlAttributeOverrides(assembly, XmlnsV2);
+            var overridesV2 = CreateXmlAttributeOverrides(assembly, XmlnsV2);
+            s_serializerV2 = new XmlSerializer(typeof(SEEFExtensionWrapperType), overridesV2);
 
-            s_serializerV2 = new XmlSerializer(typeof(SEEFExtensionWrapperType), overrides);
+            var overridesV2point1 = CreateXmlAttributeOverrides(assembly, XmlnsV2point1);
+            s_serializerV2point1 = new XmlSerializer(typeof(SEEFExtensionWrapperType), overridesV2point1);
         }
 
         public virtual XmlSerializer GetSerializer(SEeFVersion version = SEeFVersion.V1)
         {
-            if (version == SEeFVersion.V1)
+            switch (version)
             {
-                return s_serializerV1;
+                case SEeFVersion.V1: return s_serializerV1;
+                case SEeFVersion.V2: return s_serializerV2;
+                case SEeFVersion.V2point1: return s_serializerV2point1;
+                default:
+                    throw new ArgumentException("Invalid SEeFVersion", nameof(version));
             }
 
-            if (version == SEeFVersion.V2)
-            {
-                return s_serializerV2;
-            }
-
-            throw new ArgumentException("Invalid SEeFVersion", nameof(version));
+            
         }
 
         protected static XmlAttributeOverrides CreateXmlAttributeOverrides(Assembly assemblytoScan, string xmlns)
