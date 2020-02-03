@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Tests.Generator", "src\UblSharp.Tests.Generator\UblSharp.Tests.Generator.csproj", "{1F4D051D-5090-4A32-86F1-0329AB522983}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.Generator.Core", "src\UblSharp.Generator.Core\UblSharp.Generator.Core.csproj", "{D5170DCA-8D48-426E-BB2C-949A9673AC7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.Generator", "src\UblSharp.Generator\UblSharp.Generator.csproj", "{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UblSharp.SCSN.Generator", "src\UblSharp.SCSN.Generator\UblSharp.SCSN.Generator.csproj", "{661B2D0E-F992-4EC9-9BA3-DC883B7F31B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UblSharp.SCSN", "src\UblSharp.SCSN\UblSharp.SCSN.csproj", "{D4DEC59D-5E8D-4845-8FD9-FE23EB425B08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A0C79B3-37FF-446D-A941-4AB80B0E3F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661B2D0E-F992-4EC9-9BA3-DC883B7F31B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661B2D0E-F992-4EC9-9BA3-DC883B7F31B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661B2D0E-F992-4EC9-9BA3-DC883B7F31B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661B2D0E-F992-4EC9-9BA3-DC883B7F31B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DEC59D-5E8D-4845-8FD9-FE23EB425B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DEC59D-5E8D-4845-8FD9-FE23EB425B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DEC59D-5E8D-4845-8FD9-FE23EB425B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DEC59D-5E8D-4845-8FD9-FE23EB425B08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

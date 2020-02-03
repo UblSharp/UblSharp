@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BillOfMaterials xmlns="SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials" xmlns:scsn="SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cbc:ID>123</cbc:ID>
+    <cbc:VersionID>1.0</cbc:VersionID>
+	<cbc:IssueDate>2018-10-01</cbc:IssueDate>
+	<cbc:DocumentStatusCode>RELEASED</cbc:DocumentStatusCode>
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">[Party identifier]</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>[Company name]</cbc:Name>
+			</cac:PartyName>
+			<cac:PhysicalLocation>
+				<cbc:ID schemeID="GLN">5790001398644</cbc:ID>
+				<cbc:Description>[Free-form description of the location]</cbc:Description>
+				<cac:Address>
+					<cbc:StreetName>Antoon Coolenlaan</cbc:StreetName>
+					<cbc:BuildingNumber>1 B</cbc:BuildingNumber>
+					<cbc:CityName>Eindhoven</cbc:CityName>
+					<cbc:PostalZone>5644RX</cbc:PostalZone>
+					<cac:AddressLine>
+						<cbc:Line>Inkoopafdeling</cbc:Line>
+					</cac:AddressLine>
+					<cac:Country>
+						<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:PhysicalLocation>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>[VAT number]</cbc:CompanyID>
+				<cac:TaxScheme/>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID schemeID="NL:KVK">[KVK nummer]</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>040-1234567</cbc:Telephone>
+				<cbc:Telefax>040-2345678</cbc:Telefax>
+				<cbc:ElectronicMail>info@bedrijf.nl</cbc:ElectronicMail>
+				<cac:OtherCommunication>
+					<cbc:Value>http://www.bedrijf.nl</cbc:Value>
+				</cac:OtherCommunication>
+			</cac:Contact>
+			<cac:Person>
+				<cbc:FirstName>Maria</cbc:FirstName>
+				<cbc:FamilyName>Pietersen</cbc:FamilyName>
+				<cbc:Title>Mevr.</cbc:Title>
+				<cbc:JobTitle>Inkoop manager</cbc:JobTitle>
+				<cbc:OrganizationDepartment>Afdeling</cbc:OrganizationDepartment>
+				<cac:Contact>
+					<cbc:Telephone>040-1234567</cbc:Telephone>
+					<cbc:Telefax>040-2345678</cbc:Telefax>
+					<cbc:ElectronicMail>info@bedrijf.nl</cbc:ElectronicMail>
+					<cac:OtherCommunication>
+						<cbc:Value>http://www.bedrijf.nl</cbc:Value>
+					</cac:OtherCommunication>
+				</cac:Contact>
+			</cac:Person>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">[Party identifier]</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>[Company name]</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Postbus</cbc:StreetName>
+				<cbc:BuildingNumber>31</cbc:BuildingNumber>
+				<cbc:CityName>Eindhoven</cbc:CityName>
+				<cbc:PostalZone>5612AP</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>Inkoopafdeling</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PhysicalLocation>
+				<cbc:ID schemeID="GLN">5790001398644</cbc:ID>
+				<cbc:Description>[Free-form description of the location]</cbc:Description>
+				<cac:Address>
+					<cbc:StreetName>Rondom</cbc:StreetName>
+					<cbc:BuildingNumber>1 B</cbc:BuildingNumber>
+					<cbc:CityName>Eindhoven</cbc:CityName>
+					<cbc:PostalZone>5612AP</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:PhysicalLocation>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>[VAT number]</cbc:CompanyID>
+				<cac:TaxScheme/>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID schemeID="NL:KVK">[KVK nummer]</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>040-1234567</cbc:Telephone>
+				<cbc:Telefax>040-2345678</cbc:Telefax>
+				<cbc:ElectronicMail>info@bedrijf.nl</cbc:ElectronicMail>
+				<cac:OtherCommunication>
+					<cbc:Value>http://www.bedrijf.nl</cbc:Value>
+				</cac:OtherCommunication>
+			</cac:Contact>
+			<cac:Person>
+				<cbc:FirstName>Jan</cbc:FirstName>
+				<cbc:FamilyName>Janssen</cbc:FamilyName>
+				<cbc:Title>Dhr.</cbc:Title>
+				<cbc:JobTitle>Sales manager</cbc:JobTitle>
+				<cbc:OrganizationDepartment>[Department name]</cbc:OrganizationDepartment>
+				<cac:Contact>
+					<cbc:Telephone>040-2233445</cbc:Telephone>
+					<cbc:Telefax>040-2345678</cbc:Telefax>
+					<cbc:ElectronicMail>jan.janssen@leverbedrijf.nl</cbc:ElectronicMail>
+					<cac:OtherCommunication>
+						<cbc:Value>http://www.leverbedrijf.nl/afdeling</cbc:Value>
+					</cac:OtherCommunication>
+				</cac:Contact>
+			</cac:Person>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+    <cac:BuyersItemIdentification>
+        <cbc:ID>AN123</cbc:ID>
+        <cbc:ExtendedID>A</cbc:ExtendedID>
+    </cac:BuyersItemIdentification>
+    <cac:SellersItemIdentification>
+        <cbc:ID>AN0000123456</cbc:ID>
+        <cbc:ExtendedID>A1</cbc:ExtendedID>
+    </cac:SellersItemIdentification>
+	<scsn:BOMLine>
+        <cbc:LineID>1</cbc:LineID>
+        <cbc:Quantity unitCode="KGM">50</cbc:Quantity>
+        <cac:Item>
+            <cbc:Description>[Description of the item]</cbc:Description>
+            <cbc:Name>[Item name]</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>[Identifier of the item issued by the BuyerCustomer]</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>AN0000123456</cbc:ID>
+                <cbc:ExtendedID>A1</cbc:ExtendedID>
+            </cac:SellersItemIdentification>
+            <cac:ItemSpecificationDocumentReference>
+                <cbc:ID>[Document identifier]</cbc:ID>
+                <cbc:IssueDate>2018-10-05</cbc:IssueDate>
+                <cbc:DocumentType>TPD</cbc:DocumentType>
+                <cbc:VersionID>[version number]</cbc:VersionID>
+                <cac:Attachment>
+                    <cac:ExternalReference>
+                        <cbc:URI>[URL where the file is available]</cbc:URI>
+                        <cbc:DocumentHash>[Hashcode of the file]</cbc:DocumentHash>
+                        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+                        <cbc:FileName>[File name]</cbc:FileName>
+                        <cbc:Description>[Description of the file]</cbc:Description>
+                    </cac:ExternalReference>
+                </cac:Attachment>
+            </cac:ItemSpecificationDocumentReference>
+            <cac:AdditionalItemProperty>
+                <cbc:Name/>
+                <cbc:Value>55</cbc:Value>
+            </cac:AdditionalItemProperty>
+            <cac:ManufacturerParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeID="GLN">[Party identifier]</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                    <cbc:Name>[Company name]</cbc:Name>
+                </cac:PartyName>
+            </cac:ManufacturerParty>
+            <cac:Dimension>
+                <cbc:AttributeID>Length</cbc:AttributeID>
+                <cbc:Measure unitCode="MMT">220</cbc:Measure>
+            </cac:Dimension>
+        </cac:Item>
+        <cac:ValidityPeriod>
+            <cbc:StartDate>2018-10-01</cbc:StartDate>
+            <cbc:EndDate>2018-11-01</cbc:EndDate>
+        </cac:ValidityPeriod>
+        <scsn:SubstituteLineID>2</scsn:SubstituteLineID>
+        <scsn:AlternativeItem>
+            <cbc:Description>[Description of the item]</cbc:Description>
+            <cbc:Name>[Item name]</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>[Identifier of the item issued by the BuyerCustomer]</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>AN0000123456</cbc:ID>
+                <cbc:ExtendedID>A1</cbc:ExtendedID>
+            </cac:SellersItemIdentification>
+            <cac:ItemSpecificationDocumentReference>
+                <cbc:ID>[Document identifier]</cbc:ID>
+                <cbc:IssueDate>2018-10-05</cbc:IssueDate>
+                <cbc:DocumentType>TPD</cbc:DocumentType>
+                <cbc:VersionID>[version number]</cbc:VersionID>
+                <cac:Attachment>
+                    <cac:ExternalReference>
+                        <cbc:URI>[URL where the file is available]</cbc:URI>
+                        <cbc:DocumentHash>[Hashcode of the file]</cbc:DocumentHash>
+                        <cbc:MimeCode>application/pdf</cbc:MimeCode>
+                        <cbc:FileName>[File name]</cbc:FileName>
+                        <cbc:Description>[Description of the file]</cbc:Description>
+                    </cac:ExternalReference>
+                </cac:Attachment>
+            </cac:ItemSpecificationDocumentReference>
+            <cac:AdditionalItemProperty>
+                <cbc:Name/>
+                <cbc:Value>55</cbc:Value>
+            </cac:AdditionalItemProperty>
+            <cac:ManufacturerParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeID="GLN">[Party identifier]</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                    <cbc:Name>[Company name]</cbc:Name>
+                </cac:PartyName>
+            </cac:ManufacturerParty>
+            <cac:Dimension>
+                <cbc:AttributeID>Length</cbc:AttributeID>
+                <cbc:Measure unitCode="MMT">220</cbc:Measure>
+            </cac:Dimension>
+        </scsn:AlternativeItem>
+        <scsn:TrackingIndicator>true</scsn:TrackingIndicator>
+        <scsn:SerialIDRegistrationIndicator>true</scsn:SerialIDRegistrationIndicator>
+        <scsn:InstructionCode>grade indication</scsn:InstructionCode>
+        <scsn:ReferenceDesignator>
+            <scsn:PositionID>1</scsn:PositionID>
+            <cbc:Description>[description]</cbc:Description>
+            <cbc:Quantity unitCode="KGM">50</cbc:Quantity>
+        </scsn:ReferenceDesignator>
+        <scsn:MultipartIndicator>false</scsn:MultipartIndicator>
+        <scsn:BOMReference>
+            <cbc:ID>[Document identifier]</cbc:ID>
+            <cbc:IssueDate>2018-10-05</cbc:IssueDate>
+            <cbc:DocumentType>BOM</cbc:DocumentType>
+            <cbc:VersionID>[version number]</cbc:VersionID>
+            <cac:Attachment>
+                <cac:ExternalReference>
+                    <cbc:URI>[URL where the file is available]</cbc:URI>
+                    <cbc:DocumentHash>[Hashcode of the file]</cbc:DocumentHash>
+                    <cbc:MimeCode>application/pdf</cbc:MimeCode>
+                    <cbc:FileName>[File name]</cbc:FileName>
+                    <cbc:Description>[Description of the file]</cbc:Description>
+                </cac:ExternalReference>
+            </cac:Attachment>
+        </scsn:BOMReference>
+        <cbc:Note>[note]</cbc:Note>
+	</scsn:BOMLine>
+</BillOfMaterials>
