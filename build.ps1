@@ -13,7 +13,8 @@ $projects = @(
     @{root = '.\src\UblSharp'; csproj = 'UblSharp.csproj'; sgen = @("net20", "net35", "net40")},
     @{root = '.\src\UblSharp.Validation'; csproj = 'UblSharp.Validation.csproj'},
     @{root = '.\src\UblSharp.Generator.Core'; csproj = 'UblSharp.Generator.Core.csproj'},
-    @{root = '.\src\UblSharp.SEeF'; csproj = 'UblSharp.SEeF.csproj'}
+    @{root = '.\src\UblSharp.SEeF'; csproj = 'UblSharp.SEeF.csproj'},
+    @{root = '.\src\UblSharp.SCSN'; csproj = 'UblSharp.SCSN.csproj'}
 )
 
 # End configuration
