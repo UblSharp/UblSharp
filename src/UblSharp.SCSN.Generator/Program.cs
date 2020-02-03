@@ -14,7 +14,7 @@ namespace UblSharp.SCSN.Generator
             generator.Generate(
                 new UblGeneratorOptions()
                 {
-                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"V1\"),
+                    XsdBasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"maindoc\"),
                     OutputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\UblSharp.SCSN"),
                     Namespace = "UblSharp.SCSN",
                     ValidationHandler = ValidationHandler,

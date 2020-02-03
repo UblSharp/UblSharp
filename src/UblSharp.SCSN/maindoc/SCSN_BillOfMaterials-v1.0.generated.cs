@@ -12,53 +12,53 @@ namespace UblSharp.SCSN
     using UblSharp.CommonAggregateComponents;
     using UblSharp.UnqualifiedDataTypes;
     using UblSharp.CommonExtensionComponents;
-
-
+    
+    
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("BillOfMaterials", Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials")]
-    [System.Xml.Serialization.XmlRootAttribute("BillOfMaterials", Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute("BillOfMaterials", Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable=false)]
     public partial class BillOfMaterialsType : BaseDocument, IBaseDocument
     {
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("ID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IdentifierType @__ID;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("VersionID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public IdentifierType @__VersionID;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 2)]
+        [System.Xml.Serialization.XmlElementAttribute("IssueDate", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=2)]
         public DateType @__IssueDate;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute("DocumentStatusCode", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=3)]
         public CodeType @__DocumentStatusCode;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 4)]
+        [System.Xml.Serialization.XmlElementAttribute("BuyerCustomerParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=4)]
         public CustomerPartyType @__BuyerCustomerParty;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute("SellerSupplierParty", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=5)]
         public SupplierPartyType @__SellerSupplierParty;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BuyersItemIdentification", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute("BuyersItemIdentification", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=6)]
         public ItemIdentificationType @__BuyersItemIdentification;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SellersItemIdentification", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute("SellersItemIdentification", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=7)]
         public ItemIdentificationType @__SellersItemIdentification;
-
+        
         private System.Collections.Generic.List<BOMLineType> _bOMLine;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BOMLine", Order = 8)]
+        [System.Xml.Serialization.XmlElementAttribute("BOMLine", Order=8)]
         public BOMLineType[] @__BOMLine
         {
             get
@@ -70,7 +70,7 @@ namespace UblSharp.SCSN
                 _bOMLine = value == null ? null : new System.Collections.Generic.List<BOMLineType>(value);
             }
         }
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public System.Collections.Generic.List<BOMLineType> BOMLine
         {
@@ -78,14 +78,13 @@ namespace UblSharp.SCSN
             set { _bOMLine = value; }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
-        public IdentifierType ID
+        IdentifierType IBaseDocument.ID
         {
             get
             {
-                if (__ID == null)
-                { __ID = new IdentifierType(); }
+                if (__ID == null) { __ID = new IdentifierType(); }
                 return __ID;
             }
             set
@@ -94,14 +93,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public IdentifierType VersionID
         {
             get
             {
-                if (__VersionID == null)
-                { __VersionID = new IdentifierType(); }
+                if (__VersionID == null) { __VersionID = new IdentifierType(); }
                 return __VersionID;
             }
             set
@@ -110,14 +108,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public DateType IssueDate
         {
             get
             {
-                if (__IssueDate == null)
-                { __IssueDate = new DateType(); }
+                if (__IssueDate == null) { __IssueDate = new DateType(); }
                 return __IssueDate;
             }
             set
@@ -126,14 +123,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public CodeType DocumentStatusCode
         {
             get
             {
-                if (__DocumentStatusCode == null)
-                { __DocumentStatusCode = new CodeType(); }
+                if (__DocumentStatusCode == null) { __DocumentStatusCode = new CodeType(); }
                 return __DocumentStatusCode;
             }
             set
@@ -142,14 +138,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public CustomerPartyType BuyerCustomerParty
         {
             get
             {
-                if (__BuyerCustomerParty == null)
-                { __BuyerCustomerParty = new CustomerPartyType(); }
+                if (__BuyerCustomerParty == null) { __BuyerCustomerParty = new CustomerPartyType(); }
                 return __BuyerCustomerParty;
             }
             set
@@ -158,14 +153,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public SupplierPartyType SellerSupplierParty
         {
             get
             {
-                if (__SellerSupplierParty == null)
-                { __SellerSupplierParty = new SupplierPartyType(); }
+                if (__SellerSupplierParty == null) { __SellerSupplierParty = new SupplierPartyType(); }
                 return __SellerSupplierParty;
             }
             set
@@ -174,14 +168,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public ItemIdentificationType BuyersItemIdentification
         {
             get
             {
-                if (__BuyersItemIdentification == null)
-                { __BuyersItemIdentification = new ItemIdentificationType(); }
+                if (__BuyersItemIdentification == null) { __BuyersItemIdentification = new ItemIdentificationType(); }
                 return __BuyersItemIdentification;
             }
             set
@@ -190,14 +183,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public ItemIdentificationType SellersItemIdentification
         {
             get
             {
-                if (__SellersItemIdentification == null)
-                { __SellersItemIdentification = new ItemIdentificationType(); }
+                if (__SellersItemIdentification == null) { __SellersItemIdentification = new ItemIdentificationType(); }
                 return __SellersItemIdentification;
             }
             set
@@ -207,31 +199,30 @@ namespace UblSharp.SCSN
         }
 
     }
-
+    
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("ReferenceDesignatorType", Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable = true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable=true)]
     public partial class ReferenceDesignatorType
     {
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("Description", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public TextType @__Description;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Quantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("Quantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public QuantityType @__Quantity;
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public TextType Description
         {
             get
             {
-                if (__Description == null)
-                { __Description = new TextType(); }
+                if (__Description == null) { __Description = new TextType(); }
                 return __Description;
             }
             set
@@ -240,14 +231,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public QuantityType Quantity
         {
             get
             {
-                if (__Quantity == null)
-                { __Quantity = new QuantityType(); }
+                if (__Quantity == null) { __Quantity = new QuantityType(); }
                 return __Quantity;
             }
             set
@@ -257,36 +247,36 @@ namespace UblSharp.SCSN
         }
 
     }
-
+    
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("BOMLineType", Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable = true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials", IsNullable=true)]
     public partial class BOMLineType
     {
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("LineID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("LineID", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=0)]
         public IdentifierType @__LineID;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Quantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("Quantity", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=1)]
         public QuantityType @__Quantity;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Item", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 2)]
+        [System.Xml.Serialization.XmlElementAttribute("Item", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=2)]
         public ItemType @__Item;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute("ValidityPeriod", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", Order=3)]
         public PeriodType @__ValidityPeriod;
-
+        
         private System.Collections.Generic.List<ItemType> _alternativeItem;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("AlternativeItem", Order = 4)]
+        [System.Xml.Serialization.XmlElementAttribute("AlternativeItem", Order=4)]
         public ItemType[] @__AlternativeItem
         {
             get
@@ -298,19 +288,19 @@ namespace UblSharp.SCSN
                 _alternativeItem = value == null ? null : new System.Collections.Generic.List<ItemType>(value);
             }
         }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("TrackingIndicator", Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute("TrackingIndicator", Order=5)]
         public bool @__TrackingIndicator;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("SerialIDRegistrationIndicator", Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute("SerialIDRegistrationIndicator", Order=6)]
         public bool @__SerialIDRegistrationIndicator;
-
+        
         private System.Collections.Generic.List<ReferenceDesignatorType> _referenceDesignator;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("ReferenceDesignator", Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute("ReferenceDesignator", Order=7)]
         public ReferenceDesignatorType[] @__ReferenceDesignator
         {
             get
@@ -322,16 +312,16 @@ namespace UblSharp.SCSN
                 _referenceDesignator = value == null ? null : new System.Collections.Generic.List<ReferenceDesignatorType>(value);
             }
         }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("MultipartIndicator", Order = 8)]
+        [System.Xml.Serialization.XmlElementAttribute("MultipartIndicator", Order=8)]
         public bool @__MultipartIndicator;
-
+        
         private System.Collections.Generic.List<System.Object> _items;
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("BOMLine", typeof(BOMLineType), Order = 9)]
-        [System.Xml.Serialization.XmlElementAttribute("BOMReference", typeof(BOMLineTypeBOMReference))]
+        [System.Xml.Serialization.XmlElementAttribute("BOMLine", typeof(BOMLineType), Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute("BOMReference", typeof(BOMLineTypeBOMReference), Order=9)]
         public object[] @__Items
         {
             get
@@ -343,11 +333,11 @@ namespace UblSharp.SCSN
                 _items = value == null ? null : new System.Collections.Generic.List<System.Object>(value);
             }
         }
-
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order = 10)]
+        [System.Xml.Serialization.XmlElementAttribute("Note", Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", Order=10)]
         public TextType @__Note;
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public System.Collections.Generic.List<ItemType> AlternativeItem
         {
@@ -355,7 +345,7 @@ namespace UblSharp.SCSN
             set { _alternativeItem = value; }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public System.Collections.Generic.List<ReferenceDesignatorType> ReferenceDesignator
         {
@@ -363,7 +353,7 @@ namespace UblSharp.SCSN
             set { _referenceDesignator = value; }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public System.Collections.Generic.List<System.Object> Items
         {
@@ -371,14 +361,13 @@ namespace UblSharp.SCSN
             set { _items = value; }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public IdentifierType LineID
         {
             get
             {
-                if (__LineID == null)
-                { __LineID = new IdentifierType(); }
+                if (__LineID == null) { __LineID = new IdentifierType(); }
                 return __LineID;
             }
             set
@@ -387,14 +376,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public QuantityType Quantity
         {
             get
             {
-                if (__Quantity == null)
-                { __Quantity = new QuantityType(); }
+                if (__Quantity == null) { __Quantity = new QuantityType(); }
                 return __Quantity;
             }
             set
@@ -403,14 +391,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public ItemType Item
         {
             get
             {
-                if (__Item == null)
-                { __Item = new ItemType(); }
+                if (__Item == null) { __Item = new ItemType(); }
                 return __Item;
             }
             set
@@ -419,14 +406,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public PeriodType ValidityPeriod
         {
             get
             {
-                if (__ValidityPeriod == null)
-                { __ValidityPeriod = new PeriodType(); }
+                if (__ValidityPeriod == null) { __ValidityPeriod = new PeriodType(); }
                 return __ValidityPeriod;
             }
             set
@@ -435,7 +421,7 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool TrackingIndicator
         {
@@ -449,7 +435,7 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool SerialIDRegistrationIndicator
         {
@@ -463,7 +449,7 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public bool MultipartIndicator
         {
@@ -477,14 +463,13 @@ namespace UblSharp.SCSN
             }
         }
 
-
+        
         [System.Xml.Serialization.XmlIgnoreAttribute]
         public TextType Note
         {
             get
             {
-                if (__Note == null)
-                { __Note = new TextType(); }
+                if (__Note == null) { __Note = new TextType(); }
                 return __Note;
             }
             set
@@ -494,12 +479,12 @@ namespace UblSharp.SCSN
         }
 
     }
-
+    
 #if FEATURE_SERIALIZATION
     [System.SerializableAttribute()]
 #endif
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute("BOMLineTypeBOMReference", AnonymousType = true, Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials")]
+    [System.Xml.Serialization.XmlTypeAttribute("BOMLineTypeBOMReference", AnonymousType=true, Namespace = "SmartConnectedSupplierNetwork:schema:xsd:BillOfMaterials")]
     public partial class BOMLineTypeBOMReference : DocumentReferenceType
     {
     }
