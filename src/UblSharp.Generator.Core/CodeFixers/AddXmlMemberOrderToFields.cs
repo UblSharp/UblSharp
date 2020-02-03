@@ -19,13 +19,14 @@ namespace UblSharp.Generator.CodeFixers
             var order = 0;
             foreach (var field in members)
             {
-                var attr = field.CustomAttributes.Cast<CodeAttributeDeclaration>()
-                    .FirstOrDefault(x =>
+                var attributes = field.CustomAttributes.Cast<CodeAttributeDeclaration>()
+                    .Where(x =>
                         x.Name.EndsWith("XmlElementAttribute")
                         || x.Name.EndsWith("XmlArrayAttribute")
                         || x.Name.EndsWith("XmlAnyElementAttribute"));
 
-                if (attr != null)
+                bool increaseOrder = false;
+                foreach (var attr in attributes)
                 {
                     if (_codeNamespace.Name.EndsWith("XmlDigitalSignature"))
                     {
@@ -38,8 +39,13 @@ namespace UblSharp.Generator.CodeFixers
                     else
                     {
                         attr.Arguments.Add(new CodeAttributeArgument("Order", new CodePrimitiveExpression(order)));
-                        order++;
+                        increaseOrder = true;
                     }
+                }
+
+                if (increaseOrder)
+                {
+                    order++;
                 }
             }
         }
