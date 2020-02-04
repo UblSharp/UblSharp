@@ -48,7 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="maindoc\SCSN_BillOfMaterials-v1.0.xsd">
+    <None Include="maindoc\20181207_SCSN_BillOfMaterials-v1.0.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maindoc\20181210_SCSN_OrderStatus-v1.0.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maindoc\20181211_SCSN_TPDPackage-v0.9.2.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="SmartConnectedSupplierNetwork:schema:xsd:TPDPackage" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ccts="urn:un:unece:uncefact:documentation:2" targetNamespace="SmartConnectedSupplierNetwork:schema:xsd:TPDPackage" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.9">
+	<!-- ===== Imports of UBL ===== -->
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<!-- ===== Root element ====== -->
+	<xsd:element name="TPDPackage" type="TPDPackageType">
+		<xsd:annotation>
+			<xsd:documentation>Comment describing your root element</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- ===== Type Definitions ===== -->
+	<xsd:complexType name="TPDPackageType">
+		<xsd:sequence>
+			<xsd:element ref="cbc:ID"/>
+			<xsd:element ref="cbc:VersionID"/>
+			<xsd:element ref="cbc:IssueDate"/>
+			<xsd:element ref="cbc:DocumentStatusCode"/>
+			<xsd:element ref="cac:BuyersItemIdentification"/>
+			<xsd:element ref="cbc:DocumentHash" minOccurs="0"/>
+			<xsd:element name="TPDDocument" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:restriction base="cac:DocumentReferenceType">
+							<xsd:sequence>
+								<xsd:element ref="cbc:ID">
+									<xsd:annotation>
+										<xsd:documentation>
+											<ccts:Component>
+												<ccts:ComponentType>BBIE</ccts:ComponentType>
+												<ccts:DictionaryEntryName>Document Reference. Identifier</ccts:DictionaryEntryName>
+												<ccts:Definition>An identifier for the referenced document.</ccts:Definition>
+												<ccts:Cardinality>1</ccts:Cardinality>
+												<ccts:ObjectClass>Document Reference</ccts:ObjectClass>
+												<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+												<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+												<ccts:DataType>Identifier. Type</ccts:DataType>
+												<ccts:Examples>PO-001 3333-44-123 </ccts:Examples>
+											</ccts:Component>
+										</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element ref="cbc:IssueDate">
+									<xsd:annotation>
+										<xsd:documentation>
+											<ccts:Component>
+												<ccts:ComponentType>BBIE</ccts:ComponentType>
+												<ccts:DictionaryEntryName>Document Reference. Issue Date. Date</ccts:DictionaryEntryName>
+												<ccts:Definition>The date, assigned by the sender of the referenced document, on which the document was issued.</ccts:Definition>
+												<ccts:Cardinality>0..1</ccts:Cardinality>
+												<ccts:ObjectClass>Document Reference</ccts:ObjectClass>
+												<ccts:PropertyTerm>Issue Date</ccts:PropertyTerm>
+												<ccts:RepresentationTerm>Date</ccts:RepresentationTerm>
+												<ccts:DataType>Date. Type</ccts:DataType>
+											</ccts:Component>
+										</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element ref="cbc:DocumentType"/>
+								<xsd:element ref="cbc:VersionID">
+									<xsd:annotation>
+										<xsd:documentation>
+											<ccts:Component>
+												<ccts:ComponentType>BBIE</ccts:ComponentType>
+												<ccts:DictionaryEntryName>Document Reference. Version. Identifier</ccts:DictionaryEntryName>
+												<ccts:Definition>An identifier for the current version of the referenced document.</ccts:Definition>
+												<ccts:Cardinality>0..1</ccts:Cardinality>
+												<ccts:ObjectClass>Document Reference</ccts:ObjectClass>
+												<ccts:PropertyTerm>Version</ccts:PropertyTerm>
+												<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+												<ccts:DataType>Identifier. Type</ccts:DataType>
+												<ccts:Examples>1.1 </ccts:Examples>
+											</ccts:Component>
+										</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element ref="cac:Attachment" minOccurs="0">
+									<xsd:annotation>
+										<xsd:documentation>
+											<ccts:Component>
+												<ccts:ComponentType>ASBIE</ccts:ComponentType>
+												<ccts:DictionaryEntryName>Document Reference. Attachment</ccts:DictionaryEntryName>
+												<ccts:Definition>The referenced document as an attachment to the document from which it is referenced.</ccts:Definition>
+												<ccts:Cardinality>0..1</ccts:Cardinality>
+												<ccts:ObjectClass>Document Reference</ccts:ObjectClass>
+												<ccts:PropertyTerm>Attachment</ccts:PropertyTerm>
+												<ccts:AssociatedObjectClass>Attachment</ccts:AssociatedObjectClass>
+												<ccts:RepresentationTerm>Attachment</ccts:RepresentationTerm>
+											</ccts:Component>
+										</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:restriction>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
