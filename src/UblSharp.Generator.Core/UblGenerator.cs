@@ -225,7 +225,7 @@ namespace UblSharp.Generator
 
             //Add("UBL-CommonAggregateComponents-2.1.xsd");
 
-            Add("UBL-xmldsig-core-schema-2.1.xsd");
+            Add("common", "UBL-xmldsig-core-schema-2.1.xsd");
             //Add("UBL-XAdES01903v132-201601-2.2.xsd");
             //Add("UBL-XAdESv141-2.1.xsd");
             //Add("UBL-SignatureAggregateComponents-2.1.xsd");
@@ -234,10 +234,11 @@ namespace UblSharp.Generator
 
             //Add("UBL-ExtensionContentDataType-2.1.xsd");
             //Add("UBL-CommonExtensionComponents-2.1.xsd");
+            Add("maindoc", "UBL-BaseDocument-2.1.xsd");
 
-            void Add(string filename)
+            void Add(string directory, string filename)
             {
-                var resourceName = $"{typeof(UblGenerator).Namespace}.Resources.common.{filename}";
+                var resourceName = $"{typeof(UblGenerator).Namespace}.Resources.{directory}.{filename}";
 
                 using (var manifestStream = thisAssembly.GetManifestResourceStream(resourceName))
                 {
