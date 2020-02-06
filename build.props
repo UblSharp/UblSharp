@@ -2,7 +2,7 @@
   <PropertyGroup>
       <UblSharpVersion>1.1.1</UblSharpVersion>
       <UblSharpValidationVersion>1.1.0</UblSharpValidationVersion>
-      <UblSharpGeneratorCoreVersion>1.1.0</UblSharpGeneratorCoreVersion>
+      <UblSharpGeneratorCoreVersion>1.1.1</UblSharpGeneratorCoreVersion>
       <UblSharpSEeFVersion>1.1.1</UblSharpSEeFVersion>
       <UblSharpSCSNVersion>0.9.0</UblSharpSCSNVersion>
   </PropertyGroup>
