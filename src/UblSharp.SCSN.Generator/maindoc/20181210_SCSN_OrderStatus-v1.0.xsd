@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 sp1 (x64) (http://www.altova.com) by Information Services (TNO Corporate Staforganen) -->
+<xsd:schema xmlns="SmartConnectedSupplierNetwork:schema:xsd:OrderStatus" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2" targetNamespace="SmartConnectedSupplierNetwork:schema:xsd:OrderStatus" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.9">
+	<!-- ===== Imports of UBL ===== -->
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonAggregateComponents-2.1.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonBasicComponents-2.1.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-CommonExtensionComponents-2.1.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2" schemaLocation="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/common/UBL-UnqualifiedDataTypes-2.1.xsd"/>
+	<!-- ===== Root element ====== -->
+	<xsd:element name="OrderStatus" type="OrderStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Comment describing your root element</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- ===== Type Definitions ===== -->
+	<xsd:complexType name="OrderStatusType">
+		<xsd:sequence>
+			<xsd:element name="IssueDateTime" type="udt:DateTimeType"/>
+			<xsd:element ref="cac:OrderReference"/>
+			<xsd:element name="OrderLineStatus" type="OrderLineStatusType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OrderLineStatusType">
+		<xsd:sequence>
+			<xsd:element ref="cac:OrderLineReference"/>
+			<xsd:element name="DeliveryStatus" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DeliveryReference" type="cbc:IDType"/>
+						<xsd:element name="StatusDateTime" type="udt:DateTimeType"/>
+						<xsd:element ref="cbc:StatusCode"/>
+						<xsd:element name="StatusValue" type="cbc:ValueType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

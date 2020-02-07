@@ -42,6 +42,7 @@
     <ProjectReference Include="..\UblSharp.Validation\UblSharp.Validation.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UblSharp.SCSN\UblSharp.SCSN.csproj" />
     <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
     <ProjectReference Include="..\UblSharp.SEeF\UblSharp.SEeF.csproj" />
   </ItemGroup>

@@ -554,7 +554,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("Include", typeof(IncludeType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType))]
+        [System.Xml.Serialization.XmlElementAttribute("ReferenceInfo", typeof(ReferenceInfoType), Order=0)]
         public object[] @__Items
         {
             get
@@ -575,7 +575,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EncapsulatedTimeStamp", typeof(EncapsulatedPKIDataType), Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType))]
+        [System.Xml.Serialization.XmlElementAttribute("XMLTimeStamp", typeof(AnyType), Order=2)]
         public object[] @__Items1
         {
             get
@@ -1068,7 +1068,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyId", typeof(SignaturePolicyIdType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyImplied", typeof(object))]
+        [System.Xml.Serialization.XmlElementAttribute("SignaturePolicyImplied", typeof(object), Order=0)]
         public object @__Item;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]
@@ -1568,7 +1568,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("AllSignedDataObjects", typeof(object), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("ObjectReference", typeof(string), DataType="anyURI")]
+        [System.Xml.Serialization.XmlElementAttribute("ObjectReference", typeof(string), DataType="anyURI", Order=1)]
         public object[] @__Items
         {
             get
@@ -1709,19 +1709,19 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ArchiveTimeStamp", typeof(XAdESTimeStampType))]
-        [System.Xml.Serialization.XmlElementAttribute("AttrAuthoritiesCertValues", typeof(CertificateValuesType))]
-        [System.Xml.Serialization.XmlElementAttribute("AttributeCertificateRefs", typeof(CompleteCertificateRefsType))]
-        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationRefs", typeof(CompleteRevocationRefsType))]
-        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationValues", typeof(RevocationValuesType))]
-        [System.Xml.Serialization.XmlElementAttribute("CertificateValues", typeof(CertificateValuesType))]
-        [System.Xml.Serialization.XmlElementAttribute("CompleteCertificateRefs", typeof(CompleteCertificateRefsType))]
-        [System.Xml.Serialization.XmlElementAttribute("CompleteRevocationRefs", typeof(CompleteRevocationRefsType))]
-        [System.Xml.Serialization.XmlElementAttribute("CounterSignature", typeof(CounterSignatureType))]
-        [System.Xml.Serialization.XmlElementAttribute("RefsOnlyTimeStamp", typeof(XAdESTimeStampType))]
-        [System.Xml.Serialization.XmlElementAttribute("RevocationValues", typeof(RevocationValuesType))]
-        [System.Xml.Serialization.XmlElementAttribute("SigAndRefsTimeStamp", typeof(XAdESTimeStampType))]
-        [System.Xml.Serialization.XmlElementAttribute("SignatureTimeStamp", typeof(XAdESTimeStampType))]
+        [System.Xml.Serialization.XmlElementAttribute("ArchiveTimeStamp", typeof(XAdESTimeStampType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("AttrAuthoritiesCertValues", typeof(CertificateValuesType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeCertificateRefs", typeof(CompleteCertificateRefsType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationRefs", typeof(CompleteRevocationRefsType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("AttributeRevocationValues", typeof(RevocationValuesType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CertificateValues", typeof(CertificateValuesType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CompleteCertificateRefs", typeof(CompleteCertificateRefsType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CompleteRevocationRefs", typeof(CompleteRevocationRefsType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CounterSignature", typeof(CounterSignatureType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("RefsOnlyTimeStamp", typeof(XAdESTimeStampType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("RevocationValues", typeof(RevocationValuesType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SigAndRefsTimeStamp", typeof(XAdESTimeStampType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SignatureTimeStamp", typeof(XAdESTimeStampType), Order=0)]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("__ItemsElementName")]
         public object[] @__Items
         {
@@ -1800,7 +1800,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("EncapsulatedX509Certificate", typeof(EncapsulatedPKIDataType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType))]
+        [System.Xml.Serialization.XmlElementAttribute("OtherCertificate", typeof(AnyType), Order=0)]
         public object[] @__Items
         {
             get
@@ -2250,7 +2250,7 @@ namespace UblSharp.Xades
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Xml.Serialization.XmlElementAttribute("ByKey", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ByName", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("ByName", typeof(string), Order=0)]
         public object @__Item;
         
         [System.Xml.Serialization.XmlIgnoreAttribute]

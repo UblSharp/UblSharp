@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build.props" />
+  <PropertyGroup>
+    <AssemblyName>UblSharp.SCSN</AssemblyName>
+    <AssemblyTitle>Create and parse SCSN (UBL) documents in C# with UblSharp.</AssemblyTitle>
+    <Description>Create and parse SCSN (UBL) documents in C# with UblSharp.</Description>
+    <Copyright>Copyright 2020 Remco Ros</Copyright>
+    <Authors>Remco Ros</Authors>
+    <VersionPrefix>$(UblSharpSCSNVersion)</VersionPrefix>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/UblSharp/UblSharp</RepositoryUrl>
+    <PackageTags>ubl;ublsharp;ublsharp.scsn;scsn</PackageTags>
+    <PackageProjectUrl>https://github.com/UblSharp/UblSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/UblSharp/UblSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <RootNamespace>UblSharp.SCSN</RootNamespace>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard1.0;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <WarningsAsErrors>true</WarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UblSharp\UblSharp.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="maindoc\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net20' ">
+    <FrameworkPathOverride>C:\Windows\Microsoft.NET\Framework\v2.0.50727</FrameworkPathOverride>
+    <DefineConstants>$(DefineConstants);NET20;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' ">
+    <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
+    <DefineConstants>$(DefineConstants);NET35;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <DefineConstants>$(DefineConstants);NET40;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);NET45;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_0;FEATURE_LINQ;DISABLE_XMLNSDECL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT;DISABLE_XMLNSDECL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;FEATURE_LINQ;FEATURE_SERIALIZATION;FEATURE_XMLDOCUMENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  </PropertyGroup>
+</Project>
