@@ -41,7 +41,7 @@
   - provider: NuGet
     name: production
     api_key:
-      secure: ZNq/2o9B5bK1D+1MwI6GzaLoSQfTcNJoO3X0MaAbm1874GR7OcMtdBB8cPALAJDB
+      secure: 0SGylsdqJ0IQNY/q7z7JRWLFtTpeCK4ZXZiNoMmzcqpXZnGGRy9/wi5i9YryiyiV
     on:
       appveyor_repo_tag: true
   - provider: GitHub
