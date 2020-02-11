@@ -4,8 +4,6 @@ using System.Linq;
 #endif
 using System.Reflection;
 using System.Xml.Serialization;
-using UblSharp.SEeF.V1;
-using UblSharp.SEeF.V3;
 
 namespace UblSharp.SEeF
 {
