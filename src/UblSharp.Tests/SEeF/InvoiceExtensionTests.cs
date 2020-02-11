@@ -6,7 +6,6 @@ using System.Xml.Linq;
 using FluentAssertions;
 using UblSharp.CommonExtensionComponents;
 using UblSharp.SEeF;
-using UblSharp.SEeF.V1;
 using UblSharp.Tests.Util;
 using Xunit;
 using Xunit.Abstractions;
@@ -33,7 +32,7 @@ namespace UblSharp.Tests.SEeF
             var extContent = invoice.UBLExtensions[0].ExtensionContent.OuterXml;
             using (var sr = new StringReader(extContent))
             {
-                var seef = (SEEFExtensionWrapperType)xmlSerializer.Deserialize(sr);
+                var seef = (UblSharp.SEeF.V1.SEEFExtensionWrapperType)xmlSerializer.Deserialize(sr);
 
                 seef.UtilityConsumptionPoint.Should().NotBeEmpty();
                 seef.UtilityConsumptionPoint[0].ID.Value.Should().Be("871687400001234567");
@@ -51,7 +50,25 @@ namespace UblSharp.Tests.SEeF
             var extContent = invoice.UBLExtensions[0].ExtensionContent.OuterXml;
             using (var sr = new StringReader(extContent))
             {
-                var seef = (SEEFExtensionWrapperType)xmlSerializer.Deserialize(sr);
+                var seef = (UblSharp.SEeF.V1.SEEFExtensionWrapperType)xmlSerializer.Deserialize(sr);
+
+                seef.UtilityConsumptionPoint.Should().NotBeEmpty();
+                seef.UtilityConsumptionPoint[0].ID.Value.Should().Be("871687400001234567");
+            }
+        }
+
+        [Fact]
+        public void CanDeserializeSEeF_V3()
+        {
+            var xmlSerializer = UblSharp.SEeF.XmlSerializerFactory.Default.GetSerializer(SEeFVersion.V3);
+
+            var seefV3Doc = ResourceHelper.GetResource("SEeF.Samples.20190326_SEeF 3.0  - Voorbeeldfactuur 001 - levering.xml");
+            var invoice = UblDocument.Load<InvoiceType>(seefV3Doc);
+
+            var extContent = invoice.UBLExtensions[0].ExtensionContent.OuterXml;
+            using (var sr = new StringReader(extContent))
+            {
+                var seef = (UblSharp.SEeF.V3.SEEFExtensionWrapperType)xmlSerializer.Deserialize(sr);
 
                 seef.UtilityConsumptionPoint.Should().NotBeEmpty();
                 seef.UtilityConsumptionPoint[0].ID.Value.Should().Be("871687400001234567");
@@ -63,11 +80,11 @@ namespace UblSharp.Tests.SEeF
         {
             var xmlSerializer = UblSharp.SEeF.XmlSerializerFactory.Default.GetSerializer(SEeFVersion.V1);
 
-            var seef = new SEEFExtensionWrapperType()
+            var seef = new UblSharp.SEeF.V1.SEEFExtensionWrapperType()
             {
                 UtilityConsumptionPoint =
                 {
-                    new ConsumptionPointType()
+                    new UblSharp.SEeF.V1.ConsumptionPointType()
                     {
                         ID = "ConsumptionPointType_ID"
                     }
