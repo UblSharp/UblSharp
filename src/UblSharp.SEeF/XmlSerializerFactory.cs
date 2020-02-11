@@ -13,12 +13,10 @@ namespace UblSharp.SEeF
     {
         // private const string XmlnsV1 = "urn:www.energie-efactuur.nl:profile:invoice:ver1.0";
         private const string XmlnsV2 = "urn:www.energie-efactuur.nl:profile:invoice:ver2.0";
-        private const string XmlnsV2point1 = "urn:www.energie-efactuur.nl:profile:invoice:ver2.1";
         private const string XmlnsV3 = "urn:www.energie-efactuur.nl:profile:invoice:ver3.0";
 
         private static readonly XmlSerializer s_serializerV1;
         private static readonly XmlSerializer s_serializerV2;
-        private static readonly XmlSerializer s_serializerV2point1;
         private static readonly XmlSerializer s_serializerV3;
 
         public static XmlSerializerFactory Default { get; } = new XmlSerializerFactory();
@@ -36,9 +34,6 @@ namespace UblSharp.SEeF
             var overridesV2 = CreateXmlAttributeOverrides(assembly, XmlnsV2);
             s_serializerV2 = new XmlSerializer(typeof(V1.SEEFExtensionWrapperType), overridesV2);
 
-            var overridesV2point1 = CreateXmlAttributeOverrides(assembly, XmlnsV2point1);
-            s_serializerV2point1 = new XmlSerializer(typeof(V1.SEEFExtensionWrapperType), overridesV2point1);
-
             var overridesV3 = CreateXmlAttributeOverrides(assembly, XmlnsV3);
             s_serializerV3 = new XmlSerializer(typeof(V3.SEEFExtensionWrapperType), overridesV3);
 
@@ -50,7 +45,6 @@ namespace UblSharp.SEeF
             {
                 case SEeFVersion.V1: return s_serializerV1;
                 case SEeFVersion.V2: return s_serializerV2;
-                case SEeFVersion.V2point1: return s_serializerV2point1;
                 case SEeFVersion.V3: return s_serializerV3;
                 default:
                     throw new ArgumentException("Invalid SEeFVersion", nameof(version));
