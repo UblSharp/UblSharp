@@ -23,14 +23,15 @@ Or using the dotnet cli:
 
 ### Available packages
 
-| Package               | .NET Support | Description |
-| --------------------- | ------------ | ----------- |
-| UblSharp              | net20 - net46,<br /> netstandard1.0+ | Contains all UBL 2.0/2.1 common, aggregate and document types, annotated with System.Xml.* attributes. Also contains some basic serialization functions. | 
-| UblSharp.Validation   | net20 - net46, netstandard2.0 | Contains validation functions to validate XML documents and UblSharp (.NET) objects using the OASIS UBL 2.1 xsd specifications. |
-| UblSharp.SEeF   | net20 - net46,<br /> netstandard1.0+ | Additional types to support the UBL extension 'Standaard Energie eFactuur'. |
-| UblSharp.Generator.Core   | net46 | The code generator library used to generate C# classes from XSD schemas. |
+| Package                                                                           | .NET Support                         | Description                                                                                                                                                   |
+| --------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [UblSharp](https://www.nuget.org/packages/UblSharp)                               | net20 - net46,<br /> netstandard1.0+ | Contains all UBL 2.0/2.1 common, aggregate and document types, annotated with System.Xml.* attributes. Also contains some basic serialization functions.      |
+| [UblSharp.Validation](https://www.nuget.org/packages/UblSharp.Validation)         | net20 - net46, netstandard2.0*        | Contains validation functions to validate XML documents and UblSharp (.NET) objects using the OASIS UBL 2.1 xsd specifications.                               |
+| [UblSharp.SEeF](https://www.nuget.org/packages/UblSharp.SEeF)                     | net20 - net46,<br /> netstandard1.0+ | Additional types to support ['Standaard Energie eFactuur (SEeF)'](https://energie-efactuur.nl) UBL documents.                                                 |
+| [UblSharp.SCSN](https://www.nuget.org/packages/UblSharp.SCSN)                     | net20 - net46,<br /> netstandard1.0+ | Additional types to support ['Smart Connected Supplier Network (SCSN)'](https://smartindustry.nl/fieldlabs/8-smart-connected-supplier-network) UBL documents. |
+| [UblSharp.Generator.Core](https://www.nuget.org/packages/UblSharp.Generator.Core) | net46                                | The code generator library used to generate C# classes from XSD schemas.                                                                                      |
 
-> We can't support validation on netstandard1.0, because System.Xml.Schema and validation is only available on desktop .net and netstandard2.0 and higher.
+> \* Validation is not available on netstandard1.0, because System.Xml.Schema and validation is only available on desktop .net and netstandard2.0 and higher.
 
 ## Credits
 
