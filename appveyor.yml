@@ -46,7 +46,7 @@
       appveyor_repo_tag: true
   - provider: GitHub
     auth_token:
-      secure: voP35JF5npCVqWOFWeEUQnjC+qXk6QAPcIAxRDcgaaB9NovL05c6YjavzQepCA8b
+      secure: cmP12kHTK+EEa0hz38AYLYcCWMMEfL2nhUWg5apPnWFPGPkI15LzpoSFG3WRlscF
     artifact: NuGet
     draft: true
     prerelease: true
