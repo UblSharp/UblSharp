@@ -31,6 +31,7 @@
   <ItemGroup>
     <None Remove="SEeF\Samples\20160704_SEeF - Voorbeeldfactuur 001 - levering.xml" />
     <None Remove="SEeF\Samples\20170713_SEeF - Voorbeeldfactuur 001 - levering.xml" />
+    <None Remove="SEeF\Samples\20190326_SEeF 3.0  - Voorbeeldfactuur 001 - levering.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.2.0" />

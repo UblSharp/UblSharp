@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a fictional Standard Energie eFactuur 3.0 invoice and serves as an example of an invoice message sent by an energy supplier. --> 
+<!-- Authors: Michiel Stornebrink & Wouter van den Berg (TNO) -->
+<!-- Documentation: Standaard Energie eFactuur (http://www.energie-efactuur.nl) and SI-UBL 2.0 (https://stpe.t4smm.nl) -->
+<!-- Date: 2019-03-26 -->
+
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:seef="urn:www.energie-efactuur.nl:profile:invoice:ver3.0" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"  xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2
+    http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd urn:www.energie-efactuur.nl:profile:invoice:ver3.0 ../SEeF_UBLExtension_v3.0.0.xsd">
+	
+	<!-- The UBLExtensions element contains the Energy sector-specific extension, including meter readings that are used to determine consumption -->
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>	
+				<seef:SEEFExtensionWrapper>
+					 <seef:UtilityConsumptionPoint> 
+						<cbc:ID>871687400001234567</cbc:ID>
+						<seef:Address>
+							<cbc:StreetName>Stadhuisplein 1</cbc:StreetName>
+							<cbc:CityName>Stedendorp</cbc:CityName>
+							<cbc:PostalZone>1234AB</cbc:PostalZone>
+							<cac:Country>
+								<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+							</cac:Country>
+						</seef:Address>
+						<seef:UtilityMeter>
+							<seef:MeterNumber>40222431</seef:MeterNumber>
+							
+							<!-- Telwerk LAAG verbruik januari -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">LAAG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2019-01-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCode="KWH">10105</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2019-01-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCode="KWH">12687</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:ConsumptionQuantity>2582</seef:ConsumptionQuantity>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>100</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							<!-- Telwerk HOOG verbruik januari -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">HOOG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2019-01-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCode="KWH">21387</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2019-01-31</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCode="KWH">25317</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:ConsumptionQuantity>3930</seef:ConsumptionQuantity>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>60</seef:Percentage>
+									</seef:FuelType>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">SOLAR</seef:FuelTypeCode>
+										<seef:Name>Groene stroom - Zon</seef:Name>
+										<seef:Percentage>40</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							
+							<!-- Telwerk LAAG verbruik februari -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">LAAG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2019-02-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCode="KWH">12687</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2019-02-28</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCode="KWH">15318</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:ConsumptionQuantity>2631</seef:ConsumptionQuantity>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>100</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+							<!-- Telwerk HOOG verbruik februari -->
+							<seef:MeterReading>
+								<seef:MeterReadingTypeCode listID="SEeF:MeterReadingTypes">HOOG</seef:MeterReadingTypeCode>
+								<seef:PreviousMeterReadingDate>2019-02-01</seef:PreviousMeterReadingDate>
+								<seef:PreviousMeterQuantity unitCode="KWH">25317</seef:PreviousMeterQuantity>
+								<seef:LatestMeterReadingDate>2019-02-28</seef:LatestMeterReadingDate>
+								<seef:LatestMeterQuantity unitCode="KWH">29733</seef:LatestMeterQuantity>
+								<seef:PreviousMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:PreviousMeterReadingMethodCode>
+								<seef:LatestMeterReadingMethodCode listID="SEeF:MeterReadingMethods">MRM001</seef:LatestMeterReadingMethodCode>
+								<seef:ConsumptionQuantity>4416</seef:ConsumptionQuantity>
+								<seef:FuelMix>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">FOSSIL</seef:FuelTypeCode>
+										<seef:Name>Grijze stroom</seef:Name>
+										<seef:Percentage>60</seef:Percentage>
+									</seef:FuelType>
+									<seef:FuelType>
+										<seef:FuelTypeCode listID="SEeF:FuelTypes">SOLAR</seef:FuelTypeCode>
+										<seef:Name>Groene stroom - Zon</seef:Name>
+										<seef:Percentage>40</seef:Percentage>
+									</seef:FuelType>
+								</seef:FuelMix>
+							</seef:MeterReading>
+						</seef:UtilityMeter>
+					</seef:UtilityConsumptionPoint>
+				</seef:SEEFExtensionWrapper>
+ 			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID> <!-- Required by SI-UBL v2.0 -->
+	<cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:nen.nl:nlcius:v1.0#conformant#urn:fdc:energie-efactuur.nl:invoice:v3.0</cbc:CustomizationID> 
+	
+	<!-- If transmission of the e-invoice is done via the SI network, then value below is required by SI-UBL 2.0 -->
+ 	<cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID> 
+	
+	<!-- From here on: core invoice elements -->
+	<cbc:ID>F201912345</cbc:ID>	
+	<cbc:IssueDate>2019-04-01</cbc:IssueDate>
+	<cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>		
+	<cbc:Note>Periodieke Afrekening</cbc:Note>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cbc:AccountingCost>3510233</cbc:AccountingCost>				
+	<cac:InvoicePeriod>
+		<cbc:StartDate>2019-01-01</cbc:StartDate>
+		<cbc:EndDate>2019-02-28</cbc:EndDate>
+	</cac:InvoicePeriod>
+
+	<!-- Reference to Purchase Order, if applicable-->
+	<cac:OrderReference>
+		<cbc:ID>PO123456789</cbc:ID>
+	</cac:OrderReference>
+
+	<!-- BillingReference placed here to refer to previous invoice(s) -->
+	
+	<!-- Verwijzing naar (raam)contract -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>F201912345</cbc:ID>
+		<cbc:DocumentDescription>raamcontract</cbc:DocumentDescription>
+		<cac:Attachment>
+			<cac:ExternalReference>
+				<cbc:URI>http://www.organisatie.nl/api/documents/hashkey/F201912345</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+
+	<!-- Specification of the Seller/Supplier-->
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PostalAddress>
+				<cbc:StreetName>Kampweg 55</cbc:StreetName>
+				<cbc:CityName>Soesterberg</cbc:CityName>
+				<cbc:PostalZone>3769 DE</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>NL002875718B01</cbc:CompanyID>
+				<cac:TaxScheme>
+						<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Elektriciteit Leverancier N.V.</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0106">27376655</cbc:CompanyID> <!-- 0106 = Kamer van Koophandel nummer -->
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Afdeling debiteuren</cbc:Name>
+				<cbc:Telephone>0031881234567</cbc:Telephone>
+				<cbc:ElectronicMail>debiteuren@organisatie.nl</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	
+	<!-- Specification of the Buyer/Customer -->
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PostalAddress>
+				<cbc:StreetName>Stadsstraat 1</cbc:StreetName>
+				<cbc:CityName>Stedendorp</cbc:CityName>
+				<cbc:PostalZone>0000AA</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Nederlandse Gemeente xyz</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0190">00000001003227522010</cbc:CompanyID> <!-- 0190 = OIN nummer -->
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>John Smit</cbc:Name>
+				<cbc:Telephone>555-9876543</cbc:Telephone>
+				<cbc:ElectronicMail>contact@stedendorp.nl</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>			
+
+	<!-- Payment  information -->
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode>58</cbc:PaymentMeansCode> <!-- 58 = SEPA credit transfer -->
+		
+		<!-- Payment information of the  van de leverancier waarop betaald dient te worden -->
+		<cac:PayeeFinancialAccount>
+			<cbc:ID>NL20INGB0001234567</cbc:ID>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	
+	<cac:PaymentTerms>
+		<cbc:Note>Graag betalen voor 1 mei 2019</cbc:Note>
+	</cac:PaymentTerms>
+	
+	<!-- VAT Totals -->
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">279.04</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">1328.74</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">279.04</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	
+	<!-- Invoice totals -->
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">1328.74</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">1328.74</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1607.78</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1607.78</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+
+	<!-- Invoice lines -->	
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">2582</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">115.83</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-01-01</cbc:StartDate>
+			<cbc:EndDate>2019-01-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Verbruik daluren</cbc:Description>
+			<cbc:Name>Verbruik daluren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVD</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04486</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">3930</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">248.14</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-01-01</cbc:StartDate>
+			<cbc:EndDate>2019-01-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Verbruik piekuren</cbc:Description>
+			<cbc:Name>Verbruik piekuren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVP</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.06314</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">6512</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">280.67</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-01-01</cbc:StartDate>
+			<cbc:EndDate>2019-01-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Energiebelasting (EB) zone 2</cbc:Description>
+			<cbc:Name>Energiebelasting (EB) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EB2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04310</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>4</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">6512</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">17.58</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-01-01</cbc:StartDate>
+			<cbc:EndDate>2019-01-31</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Opslag duurzame energie (ODE) zone 2</cbc:Description>
+			<cbc:Name>Opslag duurzame energie (ODE) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>ODE2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.00270</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+	<cac:InvoiceLine>
+		<cbc:ID>5</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">2631</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">118.03</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-02-01</cbc:StartDate>
+			<cbc:EndDate>2019-02-28</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Verbruik daluren</cbc:Description>
+			<cbc:Name>Verbruik daluren</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVD</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04486</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>6</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">4416</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">278.83</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-02-01</cbc:StartDate>
+			<cbc:EndDate>2019-02-28</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Verbruik piekuren</cbc:Description>
+			<cbc:Name>Verbruik piekurenn</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>LEVP</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.06314</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>7</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">7047</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">303.73</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-02-01</cbc:StartDate>
+			<cbc:EndDate>2019-02-28</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Energiebelasting (EB) zone 2</cbc:Description>
+			<cbc:Name>Energiebelasting (EB) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EB2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.04310</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>8</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="KWH">7047</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">19.03</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-02-01</cbc:StartDate>
+			<cbc:EndDate>2019-02-28</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>Opslag duurzame energie (ODE) zone 2</cbc:Description>
+			<cbc:Name>Opslag duurzame energie (ODE) zone 2</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>ODE2</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">0.00270</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	
+	<cac:InvoiceLine>
+		<cbc:ID>9</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="C62">-2</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">-53.10</cbc:LineExtensionAmount>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2019-01-01</cbc:StartDate>
+			<cbc:EndDate>2019-02-28</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="AVE">871687400001234567</cbc:ID> <!-- AVE specifies a Metering Point reference (i.e. EAN code) -->
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Description>EB vermindering</cbc:Description>
+			<cbc:Name>EB vermindering</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>EBRED</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ">83101800</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CG">SUPPLY</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">26.55</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+
+</Invoice>
