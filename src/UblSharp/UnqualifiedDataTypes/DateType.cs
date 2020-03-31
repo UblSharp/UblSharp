@@ -17,7 +17,15 @@ namespace UblSharp.UnqualifiedDataTypes
             }
             set
             {
-                Value = XmlConvert.ToDateTimeOffset(value);
+                try
+                {
+                    Value = XmlConvert.ToDateTimeOffset(value);
+
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Value = DateTimeOffset.MinValue;
+                }
             }
         }
 
